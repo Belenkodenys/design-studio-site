@@ -1,0 +1,11 @@
+# Robots.txt for Belenko Design Studio
+# https://belenko-studio.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://belenko-studio.vercel.app/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

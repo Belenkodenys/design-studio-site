@@ -1,0 +1,383 @@
+.about {
+  padding: 0;
+  background: #fff;
+  color: #0a0a0a;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.about-left {
+  padding: 80px 60px 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 520px;
+}
+
+.about-paragraph {
+  font-size: 19px;
+  line-height: 1.58;
+  color: #1d1d1f;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.about-paragraph.muted {
+  color: #86868b;
+}
+
+.about-paragraph strong {
+  color: #1d1d1f;
+  font-weight: 600;
+}
+
+.about-right {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.about-main-image {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.about-main-image .parallax-container {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.about-main-image img {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+.about-image-quote {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  max-width: 350px;
+  color: #fff;
+  text-align: right;
+}
+
+.about-image-quote p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stats Section */
+.about-stats-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 100px 40px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.about-stats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-stats-header {
+  margin-bottom: 80px;
+}
+
+.about-stats-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 100px;
+}
+
+.about-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f5f5f7;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.about-heading.accent {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.highlight-block {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-description {
+  font-size: 17px;
+  line-height: 1.58;
+  color: #86868b;
+  letter-spacing: -0.01em;
+}
+
+.about-description.large {
+  font-size: 21px;
+  line-height: 1.48;
+  color: #f5f5f7;
+}
+
+.about-description strong {
+  color: #f5f5f7;
+  font-weight: 600;
+}
+
+.about-description.highlight {
+  color: #fff;
+  font-weight: 500;
+}
+
+.about-quote {
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  border-left: 2px solid #fff;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+.about-quote.large {
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.featured-quote {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quote-author {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 15px;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-list li {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  padding-left: 20px;
+  position: relative;
+}
+
+.about-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.about-content-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-content-image {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.about-content-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-content-image.single img {
+  height: 100%;
+  min-height: 500px;
+  object-position: top;
+}
+
+.about-content-image:hover img {
+  transform: scale(1.05);
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-number {
+  font-size: clamp(56px, 10vw, 96px);
+  font-weight: 600;
+  color: #f5f5f7;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-label {
+  font-size: 19px;
+  font-weight: 600;
+  color: #f5f5f7;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.stat-description {
+  font-size: 14px;
+  line-height: 1.47;
+  color: #86868b;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 1100px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-left {
+    padding: 80px 40px;
+    order: 2;
+  }
+
+  .about-right {
+    order: 1;
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .about-main-image {
+    min-height: auto;
+    height: 100%;
+  }
+
+  .about-main-image .parallax-container {
+    min-height: auto;
+    height: 100%;
+  }
+
+  .about-main-image img {
+    min-height: auto;
+    height: 100%;
+  }
+
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .about-container {
+    height: auto;
+    max-height: none;
+  }
+
+  .about-left {
+    padding: 60px 20px;
+    overflow: visible;
+  }
+
+  .about-right {
+    display: none;
+  }
+
+  .about-paragraph {
+    font-size: 16px;
+  }
+
+  .about-stats-section {
+    padding: 60px 20px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .stat-item {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-heading.accent {
+    font-size: 20px;
+  }
+
+  .about-quote.large {
+    font-size: 18px;
+  }
+
+  .about-description.large {
+    font-size: 18px;
+  }
+}

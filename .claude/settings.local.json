@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:turquoise-tuatara-mgac.squarespace.com)",
+      "Bash(curl:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}
