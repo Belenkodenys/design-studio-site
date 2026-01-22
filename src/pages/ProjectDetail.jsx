@@ -21,6 +21,7 @@ function ProjectDetail() {
   const touchCurrentX = useRef(0)
   const startTime = useRef(0)
   const velocity = useRef(0)
+  const videoRef = useRef(null)
 
   const project = projects.find(p => p.id === parseInt(id))
   const currentIndex = projects.findIndex(p => p.id === parseInt(id))
@@ -43,6 +44,15 @@ function ProjectDetail() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [id])
+
+  // Ensure video autoplay works
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay was prevented, video will start muted on user interaction
+      })
+    }
+  }, [id, project?.video])
 
   const handleContactClick = (e) => {
     e.preventDefault()
@@ -287,6 +297,7 @@ function ProjectDetail() {
           <div className="project-video-section">
             <div className="project-video">
               <video
+                ref={videoRef}
                 src={project.video}
                 autoPlay
                 muted

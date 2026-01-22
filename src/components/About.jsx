@@ -140,6 +140,9 @@ function About() {
                   speed={0.05}
                 />
               </AnimatedBlock>
+              <AnimatedBlock className="founder-quote-block" animation="animate-fade-up" delay={4}>
+                <p>{t('about.founderQuote')}</p>
+              </AnimatedBlock>
             </div>
           </div>
 

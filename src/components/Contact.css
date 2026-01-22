@@ -1,7 +1,9 @@
 .contact {
+  min-height: 100vh;
   padding: 120px 40px;
   background: #e5e5e5;
   color: #0a0a0a;
+  box-sizing: border-box;
 }
 
 .contact-container {

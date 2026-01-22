@@ -83,8 +83,11 @@ function Header() {
     }
   }
 
+  // Hide header logo on homepage until scrolled past hero
+  const showHeaderLogo = !isHomePage || pastHero
+
   return (
-    <header className={`header ${isHomePage && !pastHero ? 'logo-hidden' : ''}`}>
+    <header className={`header ${!showHeaderLogo ? 'logo-hidden' : ''}`}>
       <Link to="/" className="logo" onClick={handleHomeClick}>BELENKO</Link>
       <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
         <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, 'about')}>{t('nav.about')}</a>

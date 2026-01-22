@@ -12,6 +12,28 @@ export const projects = [
     video: '/projects/bella-video.mov'
   },
   {
+    id: 31,
+    title: 'Tenor Masini Apartment',
+    category: 'Residential',
+    location: 'Barcelona, Spain',
+    year: '2025',
+    description: 'A cozy residential apartment in the Sants district of Barcelona featuring warm earthy tones, textured plaster walls, artisanal woven decor, vintage wooden doors, and carefully curated furnishings creating an atmosphere of Mediterranean warmth and artistic sensibility.',
+    services: ['Interior Design', 'Decor', 'Furniture Selection'],
+    image: '/projects/tenormasini-3.jpg',
+    images: [
+      '/projects/tenormasini-1.jpg',
+      '/projects/tenormasini-2.jpg',
+      '/projects/tenormasini-3.jpg',
+      '/projects/tenormasini-4.jpg',
+      '/projects/tenormasini-5.jpg',
+      '/projects/tenormasini-6.jpg',
+      '/projects/tenormasini-7.jpg',
+      '/projects/tenormasini-8.jpg',
+      '/projects/tenormasini-9.jpg'
+    ],
+    video: '/projects/tenormasini-video.mp4'
+  },
+  {
     id: 2,
     title: 'Sereia',
     category: 'Restaurant',
@@ -20,7 +42,8 @@ export const projects = [
     description: 'Summer Restaurant & Club featuring Mediterranean-inspired design with open-air spaces, natural textures, and a relaxed coastal atmosphere perfect for seaside dining and entertainment.',
     services: ['Concept', 'Interior Design', 'Architecture'],
     image: '/projects/sereia-1.jpg',
-    images: ['/projects/sereia-1.jpg', '/projects/sereia-2.jpg', '/projects/sereia-3.jpg', '/projects/sereia-4.jpg', '/projects/sereia-5.jpg', '/projects/sereia-6.jpg', '/projects/sereia-7.jpg', '/projects/sereia-8.jpg', '/projects/sereia-9.jpg', '/projects/sereia-10.jpg', '/projects/sereia-11.jpg']
+    images: ['/projects/sereia-1.jpg', '/projects/sereia-2.jpg', '/projects/sereia-3.jpg', '/projects/sereia-4.jpg', '/projects/sereia-5.jpg', '/projects/sereia-6.jpg', '/projects/sereia-7.jpg', '/projects/sereia-8.jpg', '/projects/sereia-9.jpg', '/projects/sereia-10.jpg', '/projects/sereia-11.jpg'],
+    video: '/projects/sereia-video.mov'
   },
   {
     id: 3,
@@ -204,7 +227,8 @@ export const projects = [
       '/projects/12monkeys-11.jpg',
       '/projects/12monkeys-12.jpg',
       '/projects/12monkeys-13.jpg'
-    ]
+    ],
+    video: '/projects/12monkeys-video.mov'
   },
   {
     id: 13,
@@ -461,7 +485,8 @@ export const projects = [
       '/projects/bruno-6.jpg',
       '/projects/bruno-7.jpg',
       '/projects/bruno-8.jpg'
-    ]
+    ],
+    video: '/projects/bruno-video.mov'
   },
   {
     id: 30,

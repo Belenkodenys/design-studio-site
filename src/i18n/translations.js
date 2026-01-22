@@ -35,9 +35,10 @@ export const translations = {
       atmosphereTitle: 'WE DON\'T DESIGN SPACES — WE CREATE ATMOSPHERE.',
       storiesTitle: 'We create captivating stories.',
       storiesText: 'In these stories, the guest is always the central figure: their interests, sensations, and impressions are organically woven into the concept.',
-      quote: '"If you\'re looking for character, you\'ve come to the right place. I design emotions and stories." — Denis Belenko',
+      quote: '"If you\'re looking for character, you\'ve come to the right place. I design emotions and stories." — Denys Belenko',
       commercialTitle: 'We combine an authorial voice with commercial success.',
       commercialText: 'We don\'t create "beauty for beauty\'s sake." Thoughtful design is always grounded in the project\'s objectives.',
+      founderQuote: 'My name is Denys Belenko, and I believe the most expensive thing in a restaurant is an empty table.',
       stat1Number: '25',
       stat1Label: 'Years of experience',
       stat1Desc: 'In launching successful projects in the HoReCa industry',
@@ -62,7 +63,9 @@ export const translations = {
       service5Title: 'Branding + Graphic Design',
       service5Text: 'Complete branding for restaurants and hospitality businesses',
       service6Title: 'Creative + Visual Content',
-      service6Text: 'Visual content creation for HoReCa marketing'
+      service6Text: 'Visual content creation for HoReCa marketing',
+      service7Title: 'Author Supervision',
+      service7Text: 'Project supervision and quality control during construction and implementation'
     },
     portfolio: {
       title: 'Portfolio',
@@ -173,6 +176,7 @@ export const translations = {
       quote: '«Якщо ви шукаєте характер, ви прийшли в правильне місце. Я проектую емоції та історії.» — Денис Беленко',
       commercialTitle: 'Ми поєднуємо авторський голос з комерційним успіхом.',
       commercialText: 'Ми не створюємо «красу заради краси». Продуманий дизайн завжди ґрунтується на цілях проєкту.',
+      founderQuote: 'Мене звати Денис Беленко, і я вважаю, що найдорожче, що може бути в ресторані, це порожній стіл.',
       stat1Number: '25',
       stat1Label: 'Років досвіду',
       stat1Desc: 'У запуску успішних проєктів в індустрії HoReCa',
@@ -197,7 +201,9 @@ export const translations = {
       service5Title: 'Брендинг + Графічний дизайн',
       service5Text: 'Комплексний брендинг для ресторанів та бізнесів гостинності',
       service6Title: 'Креатив + Візуальний контент',
-      service6Text: 'Створення візуального контенту для маркетингу HoReCa'
+      service6Text: 'Створення візуального контенту для маркетингу HoReCa',
+      service7Title: 'Авторський нагляд',
+      service7Text: 'Супровід проєкту та контроль якості під час будівництва та реалізації'
     },
     portfolio: {
       title: 'Портфоліо',
@@ -308,6 +314,7 @@ export const translations = {
       quote: '«Если вы ищете характер, вы пришли в правильное место. Я проектирую эмоции и истории.» — Денис Беленко',
       commercialTitle: 'Мы сочетаем авторский голос с коммерческим успехом.',
       commercialText: 'Мы не создаём «красоту ради красоты». Продуманный дизайн всегда основан на целях проекта.',
+      founderQuote: 'Меня зовут Денис Беленко, и я считаю, что самое дорогое, что может быть в ресторане, это пустой стол.',
       stat1Number: '25',
       stat1Label: 'Лет опыта',
       stat1Desc: 'В запуске успешных проектов в индустрии HoReCa',
@@ -316,7 +323,7 @@ export const translations = {
       stat2Desc: 'Архитекторы, дизайнеры, бренд-стратеги, креаторы и продюсеры',
       stat3Number: '200+',
       stat3Label: 'Проектов',
-      stat3Desc: 'Завершено в 11 странах, охватывая более 50 000 м² спроектированных пространств'
+      stat3Desc: 'Завершено в 11 странах, охватывая более 50 000 м² спроектированной атмосферы'
     },
     services: {
       title: 'Услуги',
@@ -332,7 +339,9 @@ export const translations = {
       service5Title: 'Брендинг + Графический дизайн',
       service5Text: 'Комплексный брендинг для ресторанов и бизнесов гостеприимства',
       service6Title: 'Креатив + Визуальный контент',
-      service6Text: 'Создание визуального контента для маркетинга HoReCa'
+      service6Text: 'Создание визуального контента для маркетинга HoReCa',
+      service7Title: 'Авторский надзор',
+      service7Text: 'Сопровождение проекта и контроль качества во время строительства и реализации'
     },
     portfolio: {
       title: 'Портфолио',
@@ -440,9 +449,10 @@ export const translations = {
       atmosphereTitle: 'NO DISEÑAMOS ESPACIOS — CREAMOS ATMÓSFERA.',
       storiesTitle: 'Creamos historias cautivadoras.',
       storiesText: 'En estas historias, el huésped siempre es la figura central: sus intereses, sensaciones e impresiones están orgánicamente tejidos en el concepto.',
-      quote: '"Si buscas carácter, has llegado al lugar correcto. Diseño emociones e historias." — Denis Belenko',
+      quote: '"Si buscas carácter, has llegado al lugar correcto. Diseño emociones e historias." — Denys Belenko',
       commercialTitle: 'Combinamos una voz autoral con éxito comercial.',
       commercialText: 'No creamos "belleza por la belleza". El diseño reflexivo siempre está fundamentado en los objetivos del proyecto.',
+      founderQuote: 'Me llamo Denys Belenko, y creo que lo más caro en un restaurante es una mesa vacía.',
       stat1Number: '25',
       stat1Label: 'Años de experiencia',
       stat1Desc: 'En el lanzamiento de proyectos exitosos en la industria HoReCa',
@@ -467,7 +477,9 @@ export const translations = {
       service5Title: 'Branding + Diseño Gráfico',
       service5Text: 'Branding completo para restaurantes y negocios de hostelería',
       service6Title: 'Creativo + Contenido Visual',
-      service6Text: 'Creación de contenido visual para marketing HoReCa'
+      service6Text: 'Creación de contenido visual para marketing HoReCa',
+      service7Title: 'Supervisión de Autor',
+      service7Text: 'Supervisión del proyecto y control de calidad durante la construcción e implementación'
     },
     portfolio: {
       title: 'Portafolio',
