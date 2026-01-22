@@ -9,9 +9,9 @@ export const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: 'We create spaces in which',
-      titleLine2: 'your business acquires form,',
-      titleLine3: 'character, and value.',
+      title: 'Create spaces in which',
+      titleLine2: 'your business acquires form, character, and value',
+      titleLine3: '',
       cta: 'View Projects'
     },
     about: {
@@ -143,9 +143,9 @@ export const translations = {
       contact: 'Контакти'
     },
     hero: {
-      title: 'Ми створюємо простори, в яких',
-      titleLine2: 'ваш бізнес набуває форми,',
-      titleLine3: 'характеру та цінності.',
+      title: 'Створюємо простори, в яких',
+      titleLine2: 'ваш бізнес набуває форми, характеру та цінності',
+      titleLine3: '',
       cta: 'Переглянути проєкти'
     },
     about: {
@@ -277,9 +277,9 @@ export const translations = {
       contact: 'Контакты'
     },
     hero: {
-      title: 'Мы создаём пространства, в которых',
-      titleLine2: 'ваш бизнес обретает форму,',
-      titleLine3: 'характер и ценность.',
+      title: 'Создаем пространства, в которых',
+      titleLine2: 'ваш бизнес обретает форму, характер и ценность',
+      titleLine3: '',
       cta: 'Смотреть проекты'
     },
     about: {
@@ -412,8 +412,8 @@ export const translations = {
     },
     hero: {
       title: 'Creamos espacios en los que',
-      titleLine2: 'tu negocio adquiere forma,',
-      titleLine3: 'carácter y valor.',
+      titleLine2: 'tu negocio adquiere forma, carácter y valor',
+      titleLine3: '',
       cta: 'Ver Proyectos'
     },
     about: {

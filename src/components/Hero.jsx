@@ -183,11 +183,8 @@ function Hero() {
           }}
         >
           <h1 className="hero-title">
-            {t('hero.title')}{' '}
-            <br />
-            {t('hero.titleLine2')}{' '}
-            <br />
-            {t('hero.titleLine3')}
+            <span className="hero-title-line">{t('hero.title')}</span>
+            <span className="hero-title-line">{t('hero.titleLine2')}</span>
           </h1>
         </div>
       </div>

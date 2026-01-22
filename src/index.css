@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 html {
@@ -45,7 +47,13 @@ img {
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.1);
+  background: #facc15;
+  color: #000;
+}
+
+::-moz-selection {
+  background: #facc15;
+  color: #000;
 }
 
 /* Scroll Animations */
