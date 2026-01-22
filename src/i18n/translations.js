@@ -109,6 +109,7 @@ export const translations = {
       sending: 'Sending...',
       phone: 'Phone',
       email: 'Email',
+      location: 'Barcelona, Spain',
       successTitle: 'Thank you!',
       successText: 'We will connect shortly.'
     },
@@ -243,6 +244,7 @@ export const translations = {
       sending: 'Надсилання...',
       phone: 'Телефон',
       email: 'Email',
+      location: 'Барселона, Іспанія',
       successTitle: 'Дякуємо!',
       successText: 'Ми скоро зв\'яжемося з вами.'
     },
@@ -377,6 +379,7 @@ export const translations = {
       sending: 'Отправка...',
       phone: 'Телефон',
       email: 'Email',
+      location: 'Барселона, Испания',
       successTitle: 'Спасибо!',
       successText: 'Мы скоро свяжемся с вами.'
     },
@@ -511,6 +514,7 @@ export const translations = {
       sending: 'Enviando...',
       phone: 'Teléfono',
       email: 'Email',
+      location: 'Barcelona, España',
       successTitle: '¡Gracias!',
       successText: 'Nos pondremos en contacto pronto.'
     },

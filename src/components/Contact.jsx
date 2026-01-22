@@ -106,6 +106,9 @@ function Contact() {
             <p>
               <strong>{t('contact.email')}:</strong> info@belenko.studio
             </p>
+            <p className="contact-location">
+              {t('contact.location')}
+            </p>
           </div>
         </div>
 
