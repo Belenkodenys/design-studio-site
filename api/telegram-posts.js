@@ -23,17 +23,33 @@ export default async function handler(req, res) {
       };
 
       const title = getTagContent('title');
-      const description = getTagContent('description');
+      let description = getTagContent('description');
       const link = getTagContent('link');
       const pubDate = getTagContent('pubDate');
       const guid = getTagContent('guid');
 
-      // Extract images from description
-      const imgRegex = /<img[^>]+src="([^"]+)"/g;
+      // Decode HTML entities first
+      description = description
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&')
+        .replace(/&quot;/g, '"')
+        .replace(/&apos;/g, "'");
+
+      // Extract full-size images from <a href="..."> tags (better quality)
       const images = [];
+      const linkImgRegex = /<a[^>]+href="([^"]+\.(?:jpg|jpeg|png|gif|webp))"[^>]*>/gi;
       let imgMatch;
-      while ((imgMatch = imgRegex.exec(description)) !== null) {
+      while ((imgMatch = linkImgRegex.exec(description)) !== null) {
         images.push(imgMatch[1]);
+      }
+
+      // Fallback: extract from img src if no links found
+      if (images.length === 0) {
+        const imgRegex = /<img[^>]+src="([^"]+)"/gi;
+        while ((imgMatch = imgRegex.exec(description)) !== null) {
+          images.push(imgMatch[1]);
+        }
       }
 
       // Clean description from HTML tags for text content
@@ -42,18 +58,17 @@ export default async function handler(req, res) {
         .replace(/<br\s*\/?>/gi, '\n')
         // Remove images (already extracted)
         .replace(/<img[^>]*>/gi, '')
-        // Convert links to just text
+        // Remove image links (keep text links)
+        .replace(/<a[^>]*href="[^"]*\.(?:jpg|jpeg|png|gif|webp)"[^>]*>.*?<\/a>/gi, '')
+        // Convert text links to just text
         .replace(/<a[^>]*>([^<]*)<\/a>/gi, '$1')
+        // Remove bold/italic tags but keep content
+        .replace(/<\/?(?:b|strong|i|em)>/gi, '')
         // Remove remaining HTML tags
         .replace(/<[^>]+>/g, '')
-        // Decode HTML entities
+        // Decode remaining HTML entities
         .replace(/&nbsp;/g, ' ')
-        .replace(/&amp;/g, '&')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&quot;/g, '"')
         .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(num))
-        .replace(/&apos;/g, "'")
         .replace(/&mdash;/g, '—')
         .replace(/&ndash;/g, '–')
         .replace(/&laquo;/g, '«')
