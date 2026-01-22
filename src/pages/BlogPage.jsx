@@ -33,7 +33,10 @@ function TelegramPost({ post, index }) {
               src={img}
               alt=""
               loading="lazy"
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
               className={post.images.length === 1 ? 'single' : ''}
+              onError={(e) => { e.target.style.display = 'none' }}
             />
           ))}
         </div>
