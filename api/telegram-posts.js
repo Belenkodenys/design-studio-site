@@ -1,34 +1,47 @@
 export default async function handler(req, res) {
-  // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate');
 
   try {
     const response = await fetch('https://tg.i-c-a.su/rss/belenko_studio');
+
+    if (!response.ok) {
+      throw new Error(`RSS fetch failed: ${response.status}`);
+    }
+
     const xml = await response.text();
 
-    // Parse RSS XML
+    // Simple XML parsing
     const posts = [];
-    const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-    let match;
 
-    while ((match = itemRegex.exec(xml)) !== null) {
-      const itemContent = match[1];
+    // Split by <item> tags
+    const items = xml.split('<item>').slice(1);
 
-      const getTagContent = (tag) => {
-        const regex = new RegExp(`<${tag}[^>]*><!\\[CDATA\\[([\\s\\S]*?)\\]\\]><\\/${tag}>|<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`);
-        const match = itemContent.match(regex);
-        return match ? (match[1] || match[2] || '').trim() : '';
+    for (const item of items) {
+      const endIndex = item.indexOf('</item>');
+      if (endIndex === -1) continue;
+
+      const itemContent = item.substring(0, endIndex);
+
+      // Extract tag content
+      const getTag = (tag) => {
+        const startTag = `<${tag}>`;
+        const endTag = `</${tag}>`;
+        const start = itemContent.indexOf(startTag);
+        if (start === -1) return '';
+        const end = itemContent.indexOf(endTag, start);
+        if (end === -1) return '';
+        return itemContent.substring(start + startTag.length, end).trim();
       };
 
-      const title = getTagContent('title');
-      let description = getTagContent('description');
-      const link = getTagContent('link');
-      const pubDate = getTagContent('pubDate');
-      const guid = getTagContent('guid');
+      const title = getTag('title');
+      const link = getTag('link');
+      const pubDate = getTag('pubDate');
+      const guid = getTag('guid');
+      let description = getTag('description');
 
-      // Decode HTML entities first
+      // Decode HTML entities
       description = description
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
@@ -36,45 +49,22 @@ export default async function handler(req, res) {
         .replace(/&quot;/g, '"')
         .replace(/&apos;/g, "'");
 
-      // Extract full-size images from <a href="..."> tags (better quality)
+      // Extract images
       const images = [];
-      const linkImgRegex = /<a[^>]+href="([^"]+\.(?:jpg|jpeg|png|gif|webp))"[^>]*>/gi;
-      let imgMatch;
-      while ((imgMatch = linkImgRegex.exec(description)) !== null) {
-        images.push(imgMatch[1]);
+      const imgMatches = description.matchAll(/<a[^>]+href="([^"]+\.(?:jpg|jpeg|png|gif|webp))"[^>]*>/gi);
+      for (const m of imgMatches) {
+        images.push(m[1]);
       }
 
-      // Fallback: extract from img src if no links found
-      if (images.length === 0) {
-        const imgRegex = /<img[^>]+src="([^"]+)"/gi;
-        while ((imgMatch = imgRegex.exec(description)) !== null) {
-          images.push(imgMatch[1]);
-        }
-      }
-
-      // Clean description from HTML tags for text content
+      // Clean text content
       const textContent = description
-        // Convert line breaks
         .replace(/<br\s*\/?>/gi, '\n')
-        // Remove images (already extracted)
         .replace(/<img[^>]*>/gi, '')
-        // Remove image links (keep text links)
         .replace(/<a[^>]*href="[^"]*\.(?:jpg|jpeg|png|gif|webp)"[^>]*>.*?<\/a>/gi, '')
-        // Convert text links to just text
         .replace(/<a[^>]*>([^<]*)<\/a>/gi, '$1')
-        // Remove bold/italic tags but keep content
-        .replace(/<\/?(?:b|strong|i|em)>/gi, '')
-        // Remove remaining HTML tags
+        .replace(/<\/?(?:b|strong|i|em|u|tg-emoji)[^>]*>/gi, '')
         .replace(/<[^>]+>/g, '')
-        // Decode remaining HTML entities
         .replace(/&nbsp;/g, ' ')
-        .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(num))
-        .replace(/&mdash;/g, '—')
-        .replace(/&ndash;/g, '–')
-        .replace(/&laquo;/g, '«')
-        .replace(/&raquo;/g, '»')
-        .replace(/&hellip;/g, '...')
-        // Clean up extra whitespace
         .replace(/\n{3,}/g, '\n\n')
         .replace(/[ \t]+/g, ' ')
         .trim();
@@ -82,9 +72,8 @@ export default async function handler(req, res) {
       if (textContent || images.length > 0) {
         posts.push({
           id: guid || link,
-          title: title || textContent.substring(0, 50) + (textContent.length > 50 ? '...' : ''),
+          title: title.replace(/\[Photo\]\s*/gi, '').substring(0, 100),
           content: textContent,
-          htmlContent: description,
           link,
           date: pubDate,
           images
@@ -92,9 +81,9 @@ export default async function handler(req, res) {
       }
     }
 
-    res.status(200).json({ posts });
+    res.status(200).json({ posts, count: posts.length });
   } catch (error) {
-    console.error('Error fetching Telegram RSS:', error);
+    console.error('Error:', error);
     res.status(500).json({ error: 'Failed to fetch posts', message: error.message });
   }
 }
