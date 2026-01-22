@@ -38,13 +38,30 @@ export default async function handler(req, res) {
 
       // Clean description from HTML tags for text content
       const textContent = description
+        // Convert line breaks
         .replace(/<br\s*\/?>/gi, '\n')
+        // Remove images (already extracted)
+        .replace(/<img[^>]*>/gi, '')
+        // Convert links to just text
+        .replace(/<a[^>]*>([^<]*)<\/a>/gi, '$1')
+        // Remove remaining HTML tags
         .replace(/<[^>]+>/g, '')
+        // Decode HTML entities
         .replace(/&nbsp;/g, ' ')
         .replace(/&amp;/g, '&')
         .replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&quot;/g, '"')
+        .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(num))
+        .replace(/&apos;/g, "'")
+        .replace(/&mdash;/g, '—')
+        .replace(/&ndash;/g, '–')
+        .replace(/&laquo;/g, '«')
+        .replace(/&raquo;/g, '»')
+        .replace(/&hellip;/g, '...')
+        // Clean up extra whitespace
+        .replace(/\n{3,}/g, '\n\n')
+        .replace(/[ \t]+/g, ' ')
         .trim();
 
       if (textContent || images.length > 0) {
