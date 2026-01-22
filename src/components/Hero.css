@@ -300,3 +300,19 @@
     display: none;
   }
 }
+
+/* Move BELENKO text to top when mobile menu is open */
+@media (max-width: 900px) {
+  .hero-background-text {
+    transition: top 0.3s ease, left 0.3s ease, transform 0.3s ease, font-size 0.3s ease, letter-spacing 0.3s ease, opacity 0.3s ease;
+  }
+
+  body.menu-open .hero-background-text {
+    top: 60px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: 18px !important;
+    letter-spacing: 1px !important;
+    opacity: 0.15 !important;
+  }
+}

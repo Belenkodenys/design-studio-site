@@ -36,6 +36,18 @@ function Header() {
     }
   }, [isHomePage])
 
+  // Toggle body class when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('menu-open')
+    } else {
+      document.body.classList.remove('menu-open')
+    }
+    return () => {
+      document.body.classList.remove('menu-open')
+    }
+  }, [menuOpen])
+
 
   const closeMenu = () => setMenuOpen(false)
 
