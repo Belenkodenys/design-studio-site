@@ -1,0 +1,92 @@
+.breadcrumbs {
+  padding: 20px 0;
+  background: transparent;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs-separator {
+  margin: 0 12px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+}
+
+.breadcrumbs-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs-link:hover {
+  color: #fff;
+}
+
+.breadcrumbs-current {
+  color: #fff;
+}
+
+/* Dark background variant (default) */
+.breadcrumbs--dark .breadcrumbs-separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.breadcrumbs--dark .breadcrumbs-link {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs--dark .breadcrumbs-link:hover {
+  color: #fff;
+}
+
+.breadcrumbs--dark .breadcrumbs-current {
+  color: #fff;
+}
+
+/* Light background variant */
+.breadcrumbs--light .breadcrumbs-separator {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.breadcrumbs--light .breadcrumbs-link {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumbs--light .breadcrumbs-link:hover {
+  color: #000;
+}
+
+.breadcrumbs--light .breadcrumbs-current {
+  color: #000;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding: 15px 0;
+  }
+
+  .breadcrumbs-list {
+    font-size: 11px;
+  }
+
+  .breadcrumbs-separator {
+    margin: 0 8px;
+  }
+}
