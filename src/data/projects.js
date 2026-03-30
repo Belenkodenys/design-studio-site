@@ -31,18 +31,6 @@ export const projects = [
     ]
   },
   {
-    id: 1,
-    title: 'Bella',
-    category: 'Restaurant',
-    location: 'Dnipro, Ukraine',
-    year: '2024',
-    description: 'An elegant Sicilian-inspired restaurant design featuring sophisticated interior elements. The project showcases wooden accents, floral-patterned furnishings, round tables with flower arrangements, and ornate chandelier lighting throughout multiple dining spaces.',
-    services: ['Concept', 'Interior Design', 'Lighting Design'],
-    image: '/bella-1.webp',
-    images: ['/bella-1.webp', '/bella-2.webp', '/bella-3.webp', '/bella-4.webp', '/bella-5.webp', '/bella-6.webp', '/bella-7.webp', '/bella-8.webp', '/bella-9.webp', '/bella-10.webp', '/bella-11.webp', '/bella-12.webp', '/bella-13.webp', '/bella-14.webp', '/bella-15.jpg', '/bella-16.jpg', '/bella-17.jpg', '/bella-18.jpg', '/bella-19.jpg', '/bella-20.jpg', '/bella-21.jpg', '/bella-22.jpg', '/bella-23.jpg', '/bella-24.jpg'],
-    video: '/projects/bella-video.mov'
-  },
-  {
     id: 31,
     title: 'Tenor Masini Apartment',
     category: 'Residential',
@@ -103,6 +91,44 @@ export const projects = [
       '/projects/tenormasini-49.jpg'
     ],
     video: '/projects/tenormasini-video.mp4'
+  },
+  {
+    id: 1,
+    title: 'Bella',
+    category: 'Restaurant',
+    location: 'Dnipro, Ukraine',
+    year: '2024',
+    description: 'An elegant Sicilian-inspired restaurant design featuring sophisticated interior elements. The project showcases wooden accents, floral-patterned furnishings, round tables with flower arrangements, and ornate chandelier lighting throughout multiple dining spaces.',
+    services: ['Concept', 'Interior Design', 'Lighting Design'],
+    image: '/bella-1.webp',
+    images: ['/bella-1.webp', '/bella-2.webp', '/bella-3.webp', '/bella-4.webp', '/bella-5.webp', '/bella-6.webp', '/bella-7.webp', '/bella-8.webp', '/bella-9.webp', '/bella-10.webp', '/bella-11.webp', '/bella-12.webp', '/bella-13.webp', '/bella-14.webp', '/bella-15.jpg', '/bella-16.jpg', '/bella-17.jpg', '/bella-18.jpg', '/bella-19.jpg', '/bella-20.jpg', '/bella-21.jpg', '/bella-22.jpg', '/bella-23.jpg', '/bella-24.jpg'],
+    video: '/projects/bella-video.mov'
+  },
+  {
+    id: 39,
+    title: 'Iva',
+    category: 'Restaurant',
+    location: 'Baku, Azerbaijan',
+    year: '2025',
+    description: 'A refined restaurant blending Eastern heritage with contemporary elegance, featuring antiqued mirrors with arched frames, olive-green velvet banquette seating, ornamental Moroccan-style tile flooring, designer leather chairs, and emerald-tiled wainscoting creating a warm and sophisticated dining atmosphere.',
+    services: ['Concept', 'Interior Design', 'Lighting Design'],
+    image: '/projects/iva-1.jpg',
+    images: [
+      '/projects/iva-1.jpg',
+      '/projects/iva-2.jpg',
+      '/projects/iva-3.jpg',
+      '/projects/iva-4.jpg',
+      '/projects/iva-5.jpg',
+      '/projects/iva-6.jpg',
+      '/projects/iva-7.jpg',
+      '/projects/iva-8.jpg',
+      '/projects/iva-9.jpg',
+      '/projects/iva-10.jpg',
+      '/projects/iva-11.jpg',
+      '/projects/iva-12.jpg',
+      '/projects/iva-13.jpg',
+      '/projects/iva-14.jpg'
+    ]
   },
   {
     id: 2,
@@ -789,32 +815,6 @@ export const projects = [
       '/projects/moderna-30.jpg',
       '/projects/moderna-31.jpg',
       '/projects/moderna-32.jpg'
-    ]
-  },
-  {
-    id: 39,
-    title: 'Iva',
-    category: 'Restaurant',
-    location: 'Baku, Azerbaijan',
-    year: '2025',
-    description: 'A refined restaurant blending Eastern heritage with contemporary elegance, featuring antiqued mirrors with arched frames, olive-green velvet banquette seating, ornamental Moroccan-style tile flooring, designer leather chairs, and emerald-tiled wainscoting creating a warm and sophisticated dining atmosphere.',
-    services: ['Concept', 'Interior Design', 'Lighting Design'],
-    image: '/projects/iva-1.jpg',
-    images: [
-      '/projects/iva-1.jpg',
-      '/projects/iva-2.jpg',
-      '/projects/iva-3.jpg',
-      '/projects/iva-4.jpg',
-      '/projects/iva-5.jpg',
-      '/projects/iva-6.jpg',
-      '/projects/iva-7.jpg',
-      '/projects/iva-8.jpg',
-      '/projects/iva-9.jpg',
-      '/projects/iva-10.jpg',
-      '/projects/iva-11.jpg',
-      '/projects/iva-12.jpg',
-      '/projects/iva-13.jpg',
-      '/projects/iva-14.jpg'
     ]
   },
   {
