@@ -1,26 +1,62 @@
 export const projectTranslations = {
+  39: {
+    en: {
+      title: 'Iva',
+      description: 'Interior design project by Belenko Design Studio (2025). Refined restaurant in Baku, Azerbaijan. Services: concept, interior design, lighting design. Design features: antiqued mirrors with arched frames, olive-green velvet banquettes, ornamental Moroccan-style tile flooring, designer leather chairs, emerald-tiled wainscoting.'
+    },
+    uk: {
+      title: 'Iva',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2025). Вишуканий ресторан у Баку, Азербайджан. Послуги: концепція, дизайн інтер\'єру, світловий дизайн. Особливості: антикварні дзеркала з арковими рамами, оливково-зелені оксамитові банкетки, орнаментальна марокканська плитка, дизайнерські шкіряні крісла, смарагдовий кахель.'
+    },
+    ru: {
+      title: 'Iva',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2025). Изысканный ресторан в Баку, Азербайджан. Услуги: концепция, дизайн интерьера, световой дизайн. Особенности: антикварные зеркала с арочными рамами, оливково-зелёные бархатные банкетки, орнаментальная марокканская плитка, дизайнерские кожаные кресла, изумрудный кафель.'
+    },
+    es: {
+      title: 'Iva',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2025). Restaurante refinado en Bakú, Azerbaiyán. Servicios: concepto, diseño interior, diseño de iluminación. Características: espejos envejecidos con marcos arqueados, banquetas de terciopelo verde oliva, suelos de azulejos ornamentales estilo marroquí, sillas de cuero de diseño, azulejos esmeralda.'
+    }
+  },
+  38: {
+    en: {
+      title: 'Baku Cafe',
+      description: 'Interior design project by Belenko Design Studio (2016). Industrial-style cafe in Baku, Azerbaijan. Services: concept, interior design, lighting design. Design features: raw concrete walls, floor-to-ceiling glass facades, vintage industrial pendant lights, geometric wooden fixtures, warm wooden tables.'
+    },
+    uk: {
+      title: 'Baku Cafe',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2016). Кафе в індустріальному стилі, Баку, Азербайджан. Послуги: концепція, дизайн інтер\'єру, світловий дизайн. Особливості: бетонні стіни, панорамне скління, вінтажні промислові світильники, геометричні дерев\'яні люстри, теплі дерев\'яні столи.'
+    },
+    ru: {
+      title: 'Baku Cafe',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2016). Кафе в индустриальном стиле, Баку, Азербайджан. Услуги: концепция, дизайн интерьера, световой дизайн. Особенности: бетонные стены, панорамное остекление, винтажные промышленные светильники, геометрические деревянные люстры, тёплые деревянные столы.'
+    },
+    es: {
+      title: 'Baku Cafe',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2016). Café de estilo industrial en Bakú, Azerbaiyán. Servicios: concepto, diseño interior, diseño de iluminación. Características: paredes de hormigón visto, fachadas de vidrio, lámparas industriales vintage, luminarias geométricas de madera, mesas de madera cálida.'
+    }
+  },
   1: {
     en: {
       title: 'Bella',
-      description: 'An elegant Sicilian-inspired restaurant design featuring sophisticated interior elements. The project showcases wooden accents, floral-patterned furnishings, round tables with flower arrangements, and ornate chandelier lighting throughout multiple dining spaces.',
+      description: 'Interior design project by Belenko Design Studio (2024). Sicilian-inspired restaurant in Dnipro, Ukraine. Services: concept development, interior design, lighting design. Design features: wooden accents, floral-patterned furnishings, ornate chandelier lighting, round tables with flower arrangements.',
       quote: 'There is a land washed by the sea, lying at the edge of the world, full of vineyards, olives and the sweetest fruits — Sicily.',
       quoteAuthor: 'Homer'
     },
     uk: {
       title: 'Bella',
-      description: 'Елегантний дизайн ресторану в сицилійському стилі з вишуканими елементами інтер\'єру. Проєкт демонструє дерев\'яні акценти, меблі з квітковими візерунками, круглі столи з квітковими композиціями та розкішне освітлення люстрами в усіх обідніх зонах.',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2024). Ресторан у сицилійському стилі, Дніпро, Україна. Послуги: розробка концепції, дизайн інтер\'єру, світловий дизайн. Особливості: дерев\'яні акценти, меблі з квітковими візерунками, люстри, круглі столи з квітковими композиціями.',
       quote: 'Є земля, омивана морем, що лежить на краю світу, повна виноградників, олив і найсолодших плодів — Сицилія.',
       quoteAuthor: 'Гомер'
     },
     ru: {
       title: 'Bella',
-      description: 'Элегантный дизайн ресторана в сицилийском стиле с изысканными элементами интерьера. Проект демонстрирует деревянные акценты, мебель с цветочными узорами, круглые столы с цветочными композициями и роскошное освещение люстрами во всех обеденных зонах.',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2024). Ресторан в сицилийском стиле, Днепр, Украина. Услуги: разработка концепции, дизайн интерьера, световой дизайн. Особенности: деревянные акценты, мебель с цветочными узорами, люстры, круглые столы с цветочными композициями.',
       quote: 'Есть земля, омываемая морем, лежащая на краю света, полная виноградников, олив и сладчайших плодов — Сицилия.',
       quoteAuthor: 'Гомер'
     },
     es: {
       title: 'Bella',
-      description: 'Un elegante diseño de restaurante inspirado en Sicilia con sofisticados elementos interiores. El proyecto presenta acentos de madera, muebles con patrones florales, mesas redondas con arreglos florales e iluminación ornamental con candelabros en múltiples espacios de comedor.',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2024). Restaurante de inspiración siciliana en Dnipro, Ucrania. Servicios: desarrollo de concepto, diseño interior, diseño de iluminación. Características: acentos de madera, muebles con patrones florales, candelabros ornamentados, mesas redondas con arreglos florales.',
       quote: 'Hay una tierra bañada por el mar, situada en el confín del mundo, llena de viñedos, olivos y los frutos más dulces — Sicilia.',
       quoteAuthor: 'Homero'
     }
@@ -28,295 +64,295 @@ export const projectTranslations = {
   2: {
     en: {
       title: 'Sereia',
-      description: 'Summer Restaurant & Club featuring Mediterranean-inspired design with open-air spaces, natural textures, and a relaxed coastal atmosphere perfect for seaside dining and entertainment.'
+      description: 'Interior design project by Belenko Design Studio (2024). Summer restaurant & club in Alachati, Turkey. Services: concept, interior design, architecture. Mediterranean-inspired design with open-air spaces, natural textures, and coastal atmosphere.'
     },
     uk: {
       title: 'Sereia',
-      description: 'Літній ресторан і клуб із середземноморським дизайном, відкритими просторами, натуральними текстурами та розслабленою прибережною атмосферою, ідеальною для відпочинку біля моря.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2024). Літній ресторан і клуб, Алачати, Туреччина. Послуги: концепція, дизайн інтер\'єру, архітектура. Середземноморський дизайн з відкритими просторами та прибережною атмосферою.'
     },
     ru: {
       title: 'Sereia',
-      description: 'Летний ресторан и клуб со средиземноморским дизайном, открытыми пространствами, натуральными текстурами и расслабленной прибрежной атмосферой, идеальной для отдыха у моря.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2024). Летний ресторан и клуб, Алачати, Турция. Услуги: концепция, дизайн интерьера, архитектура. Средиземноморский дизайн с открытыми пространствами и прибрежной атмосферой.'
     },
     es: {
       title: 'Sereia',
-      description: 'Restaurante y club de verano con diseño mediterráneo, espacios al aire libre, texturas naturales y un ambiente costero relajado perfecto para cenar y entretenerse junto al mar.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2024). Restaurante y club de verano en Alachati, Turquía. Servicios: concepto, diseño interior, arquitectura. Diseño mediterráneo con espacios al aire libre y atmósfera costera.'
     }
   },
   3: {
     en: {
       title: 'Mamaliga',
-      description: 'A Bessarabian restaurant featuring 356m² of space with seating capacity for 203 guests. The design showcases ornate chandeliers, woven reed ceilings, pink decor, floral patterned furnishings, and decorative elements reflecting authentic Ukrainian cuisine ambiance.'
+      description: 'Interior design project by Belenko Design Studio (2024). Bessarabian restaurant, 356m², 203 seats, Odesa, Ukraine. Services: concept, interior design, decor. Design features: ornate chandeliers, woven reed ceilings, pink decor, floral-patterned furnishings reflecting Moldovan culinary traditions.'
     },
     uk: {
       title: 'Mamaliga',
-      description: 'Бессарабський ресторан площею 356м² на 203 гості. Дизайн демонструє розкішні люстри, плетені очеретяні стелі, рожевий декор, меблі з квітковими візерунками та декоративні елементи, що відображають автентичну атмосферу української кухні.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2024). Бессарабський ресторан, 356м², 203 місця, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: люстри, плетені очеретяні стелі, рожевий декор, меблі з квітковими візерунками у стилі молдавських традицій.'
     },
     ru: {
       title: 'Mamaliga',
-      description: 'Бессарабский ресторан площадью 356м² на 203 гостя. Дизайн демонстрирует роскошные люстры, плетёные тростниковые потолки, розовый декор, мебель с цветочными узорами и декоративные элементы, отражающие аутентичную атмосферу украинской кухни.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2024). Бессарабский ресторан, 356м², 203 места, Одесса, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: люстры, плетёные тростниковые потолки, розовый декор, мебель с цветочными узорами в стиле молдавских традиций.'
     },
     es: {
       title: 'Mamaliga',
-      description: 'Un restaurante besarabio de 356m² con capacidad para 203 comensales. El diseño presenta candelabros ornamentados, techos de caña tejida, decoración rosa, muebles con patrones florales y elementos decorativos que reflejan la auténtica cocina ucraniana.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2024). Restaurante besarabio, 356m², 203 asientos, Odesa, Ucrania. Servicios: concepto, diseño interior, decoración. Características: candelabros, techos de caña tejida, decoración rosa, muebles con patrones florales reflejando tradiciones moldavas.'
     }
   },
   4: {
     en: {
       title: 'Pixi',
-      description: 'A luxury restaurant and bar space featuring elegant interior design with marble countertops, sophisticated lighting, botanical elements, and upscale furnishings creating an unforgettable dining experience.'
+      description: 'Interior design project by Belenko Design Studio (2024). Luxury restaurant and bar, Istanbul, Turkey. Services: architecture, interior design, 3D rendering. Design features: marble countertops, sophisticated lighting, botanical elements, upscale furnishings.'
     },
     uk: {
       title: 'Pixi',
-      description: 'Розкішний ресторан і бар з елегантним дизайном інтер\'єру, мармуровими стільницями, вишуканим освітленням, ботанічними елементами та першокласними меблями, що створюють незабутній досвід.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2024). Розкішний ресторан і бар, Стамбул, Туреччина. Послуги: архітектура, дизайн інтер\'єру, 3D-візуалізація. Особливості: мармурові стільниці, вишукане освітлення, ботанічні елементи.'
     },
     ru: {
       title: 'Pixi',
-      description: 'Роскошный ресторан и бар с элегантным дизайном интерьера, мраморными столешницами, изысканным освещением, ботаническими элементами и первоклассной мебелью, создающими незабываемый опыт.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2024). Роскошный ресторан и бар, Стамбул, Турция. Услуги: архитектура, дизайн интерьера, 3D-визуализация. Особенности: мраморные столешницы, изысканное освещение, ботанические элементы.'
     },
     es: {
       title: 'Pixi',
-      description: 'Un lujoso restaurante y bar con elegante diseño interior, encimeras de mármol, iluminación sofisticada, elementos botánicos y muebles de alta gama que crean una experiencia gastronómica inolvidable.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2024). Restaurante y bar de lujo, Estambul, Turquía. Servicios: arquitectura, diseño interior, renderizado 3D. Características: encimeras de mármol, iluminación sofisticada, elementos botánicos.'
     }
   },
   5: {
     en: {
       title: 'Good Girl',
-      description: 'Interior and exterior design project for a restaurant featuring modern aesthetic with industrial elements, green tiled counters, decorative dried flowers, black curtains, concrete walls, and an outdoor patio with black and white striped seating.'
+      description: 'Interior design project by Belenko Design Studio (2019). Restaurant interior and exterior, Kyiv, Ukraine. Services: concept, interior design, exterior design. Design features: industrial aesthetic, green tiled counters, decorative dried flowers, concrete walls, outdoor patio.'
     },
     uk: {
       title: 'Good Girl',
-      description: 'Проєкт дизайну інтер\'єру та екстер\'єру ресторану з сучасною естетикою, індустріальними елементами, зеленою плиткою на стійках, декоративними сухоцвітами, чорними шторами, бетонними стінами та терасою з чорно-білими смугастими сидіннями.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2019). Інтер\'єр та екстер\'єр ресторану, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, дизайн екстер\'єру. Особливості: індустріальна естетика, зелена плитка, сухоцвіти, бетонні стіни, тераса.'
     },
     ru: {
       title: 'Good Girl',
-      description: 'Проект дизайна интерьера и экстерьера ресторана с современной эстетикой, индустриальными элементами, зелёной плиткой на стойках, декоративными сухоцветами, чёрными шторами, бетонными стенами и террасой с чёрно-белыми полосатыми сиденьями.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2019). Интерьер и экстерьер ресторана, Киев, Украина. Услуги: концепция, дизайн интерьера, дизайн экстерьера. Особенности: индустриальная эстетика, зелёная плитка, сухоцветы, бетонные стены, терраса.'
     },
     es: {
       title: 'Good Girl',
-      description: 'Proyecto de diseño interior y exterior de un restaurante con estética moderna, elementos industriales, mostradores de azulejos verdes, flores secas decorativas, cortinas negras, paredes de hormigón y un patio con asientos a rayas blancas y negras.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2019). Interior y exterior de restaurante, Kyiv, Ucrania. Servicios: concepto, diseño interior, diseño exterior. Características: estética industrial, azulejos verdes, flores secas, paredes de hormigón, patio.'
     }
   },
   6: {
     en: {
       title: 'Saint Bar',
-      description: 'A luxurious bar interior featuring dark wood paneling, elegant furnishings, decorative chandeliers, and sophisticated lounge areas with velvet seating and refined lighting design.'
+      description: 'Interior design project by Belenko Design Studio (2022). Luxury bar, Kyiv, Ukraine. Services: concept, interior design, lighting design. Design features: dark wood paneling, decorative chandeliers, velvet seating, sophisticated lounge areas.'
     },
     uk: {
       title: 'Saint Bar',
-      description: 'Розкішний інтер\'єр бару з темними дерев\'яними панелями, елегантними меблями, декоративними люстрами та вишуканими лаунж-зонами з оксамитовими сидіннями та витонченим світловим дизайном.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2022). Розкішний бар, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, світловий дизайн. Особливості: темні дерев\'яні панелі, декоративні люстри, оксамитові сидіння, лаунж-зони.'
     },
     ru: {
       title: 'Saint Bar',
-      description: 'Роскошный интерьер бара с тёмными деревянными панелями, элегантной мебелью, декоративными люстрами и изысканными лаунж-зонами с бархатными сиденьями и утончённым световым дизайном.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2022). Роскошный бар, Киев, Украина. Услуги: концепция, дизайн интерьера, световой дизайн. Особенности: тёмные деревянные панели, декоративные люстры, бархатные сиденья, лаунж-зоны.'
     },
     es: {
       title: 'Saint Bar',
-      description: 'Un lujoso interior de bar con paneles de madera oscura, muebles elegantes, candelabros decorativos y sofisticadas áreas lounge con asientos de terciopelo y diseño de iluminación refinado.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2022). Bar de lujo, Kyiv, Ucrania. Servicios: concepto, diseño interior, diseño de iluminación. Características: paneles de madera oscura, candelabros decorativos, asientos de terciopelo, áreas lounge.'
     }
   },
   7: {
     en: {
       title: 'Nikos',
-      description: 'A Greek restaurant interior design project featuring marble counters, wooden elements, stone walls, ornate iron railings, and tropical leaf-patterned ceiling details across multiple dining levels.'
+      description: 'Interior design project by Belenko Design Studio (2022). Greek restaurant, Odesa, Ukraine. Services: concept, interior design, architecture. Multi-level dining with marble counters, stone walls, ornate iron railings, tropical ceiling details.'
     },
     uk: {
       title: 'Nikos',
-      description: 'Проєкт дизайну інтер\'єру грецького ресторану з мармуровими стійками, дерев\'яними елементами, кам\'яними стінами, орнаментальними залізними перилами та деталями стелі з тропічними листками на кількох рівнях.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2022). Грецький ресторан, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру, архітектура. Багаторівнева зала з мармуровими стійками, кам\'яними стінами, залізними перилами.'
     },
     ru: {
       title: 'Nikos',
-      description: 'Проект дизайна интерьера греческого ресторана с мраморными стойками, деревянными элементами, каменными стенами, орнаментальными железными перилами и деталями потолка с тропическими листьями на нескольких уровнях.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2022). Греческий ресторан, Одесса, Украина. Услуги: концепция, дизайн интерьера, архитектура. Многоуровневый зал с мраморными стойками, каменными стенами, железными перилами.'
     },
     es: {
       title: 'Nikos',
-      description: 'Proyecto de diseño interior de restaurante griego con mostradores de mármol, elementos de madera, paredes de piedra, barandillas de hierro ornamentadas y detalles de techo con hojas tropicales en múltiples niveles.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2022). Restaurante griego, Odesa, Ucrania. Servicios: concepto, diseño interior, arquitectura. Comedor multinivel con mostradores de mármol, paredes de piedra, barandillas de hierro.'
     }
   },
   8: {
     en: {
       title: 'Milk Bar TSUM',
-      description: 'A modern restaurant and bar space featuring contemporary interior design with distinctive architectural elements including a sculptural white tree installation, marble bar counters, wooden furnishings, pendant lighting, and decorative potted plants.'
+      description: 'Interior design project by Belenko Design Studio (2020). Restaurant and bar in TSUM department store, Kyiv, Ukraine. Services: concept, interior design, architecture. Design features: sculptural white tree installation, marble bar counters, pendant lighting.'
     },
     uk: {
       title: 'Milk Bar TSUM',
-      description: 'Сучасний ресторан і бар з сучасним дизайном інтер\'єру, що включає скульптурну інсталяцію білого дерева, мармурові барні стійки, дерев\'яні меблі, підвісне освітлення та декоративні рослини в горщиках.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2020). Ресторан і бар у ЦУМі, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, архітектура. Особливості: скульптурна інсталяція білого дерева, мармурові барні стійки, підвісне освітлення.'
     },
     ru: {
       title: 'Milk Bar TSUM',
-      description: 'Современный ресторан и бар с современным дизайном интерьера, включающим скульптурную инсталляцию белого дерева, мраморные барные стойки, деревянную мебель, подвесное освещение и декоративные растения в горшках.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2020). Ресторан и бар в ЦУМе, Киев, Украина. Услуги: концепция, дизайн интерьера, архитектура. Особенности: скульптурная инсталляция белого дерева, мраморные барные стойки, подвесное освещение.'
     },
     es: {
       title: 'Milk Bar TSUM',
-      description: 'Un moderno restaurante y bar con diseño interior contemporáneo que incluye una instalación escultórica de árbol blanco, barras de mármol, muebles de madera, iluminación colgante y plantas decorativas en macetas.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2020). Restaurante y bar en TSUM, Kyiv, Ucrania. Servicios: concepto, diseño interior, arquitectura. Características: instalación escultórica de árbol blanco, barras de mármol, iluminación colgante.'
     }
   },
   9: {
     en: {
       title: 'Monica',
-      description: 'Pinza & Pasta Bar interior design project featuring luxury seating, marble bar counter, chandeliers, and sophisticated aesthetic elements creating an authentic Italian dining atmosphere.'
+      description: 'Interior design project by Belenko Design Studio (2018). Pinza & Pasta Bar, Odessa, Ukraine. Services: concept, interior design, decor. Design features: luxury seating, marble bar counter, chandeliers, Italian dining atmosphere.'
     },
     uk: {
       title: 'Monica',
-      description: 'Проєкт дизайну інтер\'єру Pinza & Pasta Bar з розкішними сидіннями, мармуровою барною стійкою, люстрами та вишуканими естетичними елементами, що створюють автентичну італійську атмосферу.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2018). Pinza & Pasta Bar, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: розкішні сидіння, мармурова барна стійка, люстри, італійська атмосфера.'
     },
     ru: {
       title: 'Monica',
-      description: 'Проект дизайна интерьера Pinza & Pasta Bar с роскошными сиденьями, мраморной барной стойкой, люстрами и изысканными эстетическими элементами, создающими аутентичную итальянскую атмосферу.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2018). Pinza & Pasta Bar, Одесса, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: роскошные сиденья, мраморная барная стойка, люстры, итальянская атмосфера.'
     },
     es: {
       title: 'Monica',
-      description: 'Proyecto de diseño interior de Pinza & Pasta Bar con asientos de lujo, barra de mármol, candelabros y elementos estéticos sofisticados que crean una auténtica atmósfera italiana.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2018). Pinza & Pasta Bar, Odessa, Ucrania. Servicios: concepto, diseño interior, decoración. Características: asientos de lujo, barra de mármol, candelabros, atmósfera italiana.'
     }
   },
   10: {
     en: {
       title: 'Steakhouse',
-      description: 'A fine dining steakhouse featuring modern interior design with contemporary architectural elements, including a geometric glass ceiling, multiple dining levels, wine tasting areas, and upscale hospitality spaces.'
+      description: 'Interior design project by Belenko Design Studio (2019). Fine dining steakhouse, Kyiv, Ukraine. Services: concept, interior design, architecture. Design features: geometric glass ceiling, multi-level dining, wine tasting areas, professional open kitchen.'
     },
     uk: {
       title: 'Steakhouse',
-      description: 'Стейкхаус високої кухні з сучасним дизайном інтер\'єру, що включає геометричну скляну стелю, кілька обідніх рівнів, зони дегустації вин та першокласні простори гостинності.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2019). Стейкхаус високої кухні, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, архітектура. Особливості: геометрична скляна стеля, багаторівнева зала, зони дегустації вин, відкрита кухня.'
     },
     ru: {
       title: 'Steakhouse',
-      description: 'Стейкхаус высокой кухни с современным дизайном интерьера, включающим геометрический стеклянный потолок, несколько обеденных уровней, зоны дегустации вин и первоклассные пространства гостеприимства.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2019). Стейкхаус высокой кухни, Киев, Украина. Услуги: концепция, дизайн интерьера, архитектура. Особенности: геометрический стеклянный потолок, многоуровневый зал, зоны дегустации вин, открытая кухня.'
     },
     es: {
       title: 'Steakhouse',
-      description: 'Un steakhouse de alta cocina con diseño interior moderno que incluye un techo de vidrio geométrico, múltiples niveles de comedor, áreas de cata de vinos y espacios de hospitalidad de alta gama.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2019). Steakhouse de alta cocina, Kyiv, Ucrania. Servicios: concepto, diseño interior, arquitectura. Características: techo de vidrio geométrico, comedor multinivel, áreas de cata de vinos, cocina abierta.'
     }
   },
   11: {
     en: {
       title: 'Fishkultura',
-      description: 'A restaurant design project featuring modern interior spaces with distinctive architectural elements including custom chandeliers, rustic wooden ceilings, and contemporary furnishings.'
+      description: 'Interior design project by Belenko Design Studio (2018). Seafood restaurant, Kyiv, Ukraine. Services: concept, interior design, lighting design. Design features: custom chandeliers, rustic wooden ceilings, contemporary furnishings.'
     },
     uk: {
       title: 'Fishkultura',
-      description: 'Проєкт дизайну ресторану з сучасними інтер\'єрними просторами, що включають індивідуальні люстри, рустикальні дерев\'яні стелі та сучасні меблі.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2018). Ресторан морепродуктів, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, світловий дизайн. Особливості: індивідуальні люстри, рустикальні дерев\'яні стелі, сучасні меблі.'
     },
     ru: {
       title: 'Fishkultura',
-      description: 'Проект дизайна ресторана с современными интерьерными пространствами, включающими индивидуальные люстры, рустикальные деревянные потолки и современную мебель.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2018). Ресторан морепродуктов, Киев, Украина. Услуги: концепция, дизайн интерьера, световой дизайн. Особенности: индивидуальные люстры, рустикальные деревянные потолки, современная мебель.'
     },
     es: {
       title: 'Fishkultura',
-      description: 'Proyecto de diseño de restaurante con espacios interiores modernos que incluyen candelabros personalizados, techos de madera rústica y muebles contemporáneos.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2018). Restaurante de mariscos, Kyiv, Ucrania. Servicios: concepto, diseño interior, diseño de iluminación. Características: candelabros personalizados, techos de madera rústica, muebles contemporáneos.'
     }
   },
   12: {
     en: {
       title: '12 Monkeys',
-      description: 'An upscale bar featuring elegant interior design with distinctive elements including large chandeliers, red velvet seating, wooden bar counters, and vintage-style decor throughout multiple dining and bar areas.'
+      description: 'Interior design project by Belenko Design Studio (2020). Upscale bar, Odessa, Ukraine. Services: concept, interior design, decor. Design features: large chandeliers, red velvet seating, wooden bar counters, vintage-style decor.'
     },
     uk: {
       title: '12 Monkeys',
-      description: 'Елітний бар з елегантним дизайном інтер\'єру, що включає великі люстри, червоні оксамитові сидіння, дерев\'яні барні стійки та декор у вінтажному стилі в усіх обідніх та барних зонах.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2020). Елітний бар, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: великі люстри, червоні оксамитові сидіння, дерев\'яні барні стійки, вінтажний декор.'
     },
     ru: {
       title: '12 Monkeys',
-      description: 'Элитный бар с элегантным дизайном интерьера, включающим большие люстры, красные бархатные сиденья, деревянные барные стойки и декор в винтажном стиле во всех обеденных и барных зонах.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2020). Элитный бар, Одесса, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: большие люстры, красные бархатные сиденья, деревянные барные стойки, винтажный декор.'
     },
     es: {
       title: '12 Monkeys',
-      description: 'Un bar de alta gama con elegante diseño interior que incluye grandes candelabros, asientos de terciopelo rojo, barras de madera y decoración de estilo vintage en múltiples áreas de comedor y bar.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2020). Bar de alta gama, Odessa, Ucrania. Servicios: concepto, diseño interior, decoración. Características: grandes candelabros, asientos de terciopelo rojo, barras de madera, decoración vintage.'
     }
   },
   13: {
     en: {
       title: 'Milk Bar',
-      description: 'A restaurant design project showcasing interior and exterior spaces with rustic-modern aesthetics, featuring wooden elements, decorative signage, and a welcoming cafe atmosphere.'
+      description: 'Interior design project by Belenko Design Studio (2014). Cafe and bar, Kyiv, Ukraine. Services: concept, interior design, branding. Design features: rustic-modern aesthetic, wooden elements, decorative signage, welcoming cafe atmosphere.'
     },
     uk: {
       title: 'Milk Bar',
-      description: 'Проєкт дизайну ресторану з інтер\'єрними та екстер\'єрними просторами в рустикально-сучасній естетиці, що включає дерев\'яні елементи, декоративні вивіски та привітну атмосферу кафе.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2014). Кафе і бар, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, брендинг. Особливості: рустикально-сучасна естетика, дерев\'яні елементи, декоративні вивіски.'
     },
     ru: {
       title: 'Milk Bar',
-      description: 'Проект дизайна ресторана с интерьерными и экстерьерными пространствами в рустикально-современной эстетике, включающей деревянные элементы, декоративные вывески и приветливую атмосферу кафе.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2014). Кафе и бар, Киев, Украина. Услуги: концепция, дизайн интерьера, брендинг. Особенности: рустикально-современная эстетика, деревянные элементы, декоративные вывески.'
     },
     es: {
       title: 'Milk Bar',
-      description: 'Proyecto de diseño de restaurante con espacios interiores y exteriores de estética rústico-moderna, con elementos de madera, señalización decorativa y un ambiente acogedor de café.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2014). Café y bar, Kyiv, Ucrania. Servicios: concepto, diseño interior, branding. Características: estética rústico-moderna, elementos de madera, señalización decorativa.'
     }
   },
   14: {
     en: {
       title: 'Mimosa Burger',
-      description: 'Interior design project for a burger bar establishment featuring vintage-inspired aesthetic with dark wood paneling, decorative lighting, and curated furnishings.'
+      description: 'Interior design project by Belenko Design Studio (2019). Burger bar, Kyiv, Ukraine. Services: concept, interior design. Design features: vintage-inspired aesthetic, dark wood paneling, decorative lighting, curated furnishings.'
     },
     uk: {
       title: 'Mimosa Burger',
-      description: 'Проєкт дизайну інтер\'єру бургер-бару з естетикою у вінтажному стилі, темними дерев\'яними панелями, декоративним освітленням та підібраними меблями.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2019). Бургер-бар, Київ, Україна. Послуги: концепція, дизайн інтер\'єру. Особливості: вінтажна естетика, темні дерев\'яні панелі, декоративне освітлення.'
     },
     ru: {
       title: 'Mimosa Burger',
-      description: 'Проект дизайна интерьера бургер-бара с эстетикой в винтажном стиле, тёмными деревянными панелями, декоративным освещением и подобранной мебелью.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2019). Бургер-бар, Киев, Украина. Услуги: концепция, дизайн интерьера. Особенности: винтажная эстетика, тёмные деревянные панели, декоративное освещение.'
     },
     es: {
       title: 'Mimosa Burger',
-      description: 'Proyecto de diseño interior para un bar de hamburguesas con estética vintage, paneles de madera oscura, iluminación decorativa y muebles seleccionados.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2019). Bar de hamburguesas, Kyiv, Ucrania. Servicios: concepto, diseño interior. Características: estética vintage, paneles de madera oscura, iluminación decorativa.'
     }
   },
   15: {
     en: {
       title: 'Fitz',
-      description: 'A sophisticated bar interior featuring elegant design with refined furnishings and atmospheric lighting creating an inviting social space.'
+      description: 'Interior design project by Belenko Design Studio (2016). Bar, Odesa, Ukraine. Services: concept, interior design. Design features: refined furnishings, atmospheric lighting, sophisticated social space.'
     },
     uk: {
       title: 'Fitz',
-      description: 'Вишуканий інтер\'єр бару з елегантним дизайном, витонченими меблями та атмосферним освітленням, що створює привабливий соціальний простір.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2016). Бар, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру. Особливості: витончені меблі, атмосферне освітлення, вишуканий соціальний простір.'
     },
     ru: {
       title: 'Fitz',
-      description: 'Изысканный интерьер бара с элегантным дизайном, утончённой мебелью и атмосферным освещением, создающим привлекательное социальное пространство.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2016). Бар, Одесса, Украина. Услуги: концепция, дизайн интерьера. Особенности: утончённая мебель, атмосферное освещение, изысканное социальное пространство.'
     },
     es: {
       title: 'Fitz',
-      description: 'Un interior de bar sofisticado con diseño elegante, muebles refinados e iluminación atmosférica que crea un espacio social acogedor.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2016). Bar, Odesa, Ucrania. Servicios: concepto, diseño interior. Características: muebles refinados, iluminación atmosférica, espacio social sofisticado.'
     }
   },
   16: {
     en: {
       title: 'Monica Summer',
-      description: 'Summer restaurant terrace design featuring open-air dining spaces with Mediterranean-inspired elements and relaxed coastal atmosphere.'
+      description: 'Interior design project by Belenko Design Studio (2021). Summer restaurant terrace, Odesa, Ukraine. Services: concept, interior design, exterior design. Open-air dining with Mediterranean-inspired elements and coastal atmosphere.'
     },
     uk: {
       title: 'Monica Summer',
-      description: 'Дизайн літньої тераси ресторану з відкритими обідніми зонами, середземноморськими елементами та розслабленою прибережною атмосферою.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2021). Літня тераса ресторану, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру, дизайн екстер\'єру. Відкрита зона з середземноморськими елементами та прибережною атмосферою.'
     },
     ru: {
       title: 'Monica Summer',
-      description: 'Дизайн летней террасы ресторана с открытыми обеденными зонами, средиземноморскими элементами и расслабленной прибрежной атмосферой.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2021). Летняя терраса ресторана, Одесса, Украина. Услуги: концепция, дизайн интерьера, дизайн экстерьера. Открытая зона со средиземноморскими элементами и прибрежной атмосферой.'
     },
     es: {
       title: 'Monica Summer',
-      description: 'Diseño de terraza de restaurante de verano con espacios de comedor al aire libre, elementos mediterráneos y una atmósfera costera relajada.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2021). Terraza de verano de restaurante, Odesa, Ucrania. Servicios: concepto, diseño interior, diseño exterior. Comedor al aire libre con elementos mediterráneos y atmósfera costera.'
     }
   },
   17: {
     en: {
       title: 'Wine Love',
-      description: 'An elegant fine dining establishment featuring luxurious interior design with signature red velvet seating, ornate chandeliers, and sophisticated ambiance.',
+      description: 'Interior design project by Belenko Design Studio (2019). Fine dining wine restaurant, Kyiv, Ukraine. Services: concept, interior design, branding. Design features: signature red velvet seating, ornate chandeliers, wine bar, sophisticated ambiance.',
       quote: 'Wine is bottled poetry.',
       quoteAuthor: 'Robert Louis Stevenson'
     },
     uk: {
       title: 'Wine Love',
-      description: 'Елегантний ресторан високої кухні з розкішним дизайном інтер\'єру, фірмовими червоними оксамитовими сидіннями, орнаментальними люстрами та вишуканою атмосферою.',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2019). Винний ресторан високої кухні, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, брендинг. Особливості: фірмові червоні оксамитові сидіння, орнаментальні люстри, винний бар.',
       quote: 'Вино — це поезія в пляшці.',
       quoteAuthor: 'Роберт Льюїс Стівенсон'
     },
     ru: {
       title: 'Wine Love',
-      description: 'Элегантный ресторан высокой кухни с роскошным дизайном интерьера, фирменными красными бархатными сиденьями, орнаментальными люстрами и изысканной атмосферой.',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2019). Винный ресторан высокой кухни, Киев, Украина. Услуги: концепция, дизайн интерьера, брендинг. Особенности: фирменные красные бархатные сиденья, орнаментальные люстры, винный бар.',
       quote: 'Вино — это поэзия в бутылке.',
       quoteAuthor: 'Роберт Льюис Стивенсон'
     },
     es: {
       title: 'Wine Love',
-      description: 'Un elegante establecimiento de alta cocina con lujoso diseño interior, asientos de terciopelo rojo característicos, candelabros ornamentados y un ambiente sofisticado.',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2019). Restaurante de vinos de alta cocina, Kyiv, Ucrania. Servicios: concepto, diseño interior, branding. Características: asientos de terciopelo rojo característicos, candelabros ornamentados, bar de vinos.',
       quote: 'El vino es poesía embotellada.',
       quoteAuthor: 'Robert Louis Stevenson'
     }
@@ -324,235 +360,409 @@ export const projectTranslations = {
   18: {
     en: {
       title: 'Bratia Grill',
-      description: 'Interior design project for a modern grilled cuisine restaurant featuring multi-level dining spaces with contemporary and rustic design elements.'
+      description: 'Interior design project by Belenko Design Studio (2016). Grill restaurant, Odesa, Ukraine. Services: concept, interior design. Multi-level dining with contemporary and rustic design elements, open grill kitchen.'
     },
     uk: {
       title: 'Bratia Grill',
-      description: 'Проєкт дизайну інтер\'єру сучасного гриль-ресторану з багаторівневими обідніми зонами та сучасними й рустикальними елементами дизайну.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2016). Гриль-ресторан, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру. Багаторівнева зала з сучасними та рустикальними елементами, відкрита гриль-кухня.'
     },
     ru: {
       title: 'Bratia Grill',
-      description: 'Проект дизайна интерьера современного гриль-ресторана с многоуровневыми обеденными зонами и современными и рустикальными элементами дизайна.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2016). Гриль-ресторан, Одесса, Украина. Услуги: концепция, дизайн интерьера. Многоуровневый зал с современными и рустикальными элементами, открытая гриль-кухня.'
     },
     es: {
       title: 'Bratia Grill',
-      description: 'Proyecto de diseño interior de un restaurante moderno de cocina a la parrilla con espacios de comedor de varios niveles y elementos de diseño contemporáneo y rústico.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2016). Restaurante grill, Odesa, Ucrania. Servicios: concepto, diseño interior. Comedor multinivel con elementos contemporáneos y rústicos, cocina grill abierta.'
     }
   },
   19: {
     en: {
       title: 'Bule',
-      description: 'A whimsical restaurant interior featuring decorative installations with suspended fabric panels, paper butterflies, origami elements, and floral arrangements.'
+      description: 'Interior design project by Belenko Design Studio (2018). Restaurant, Odesa, Ukraine. Services: concept, interior design, decor. Design features: whimsical installations with suspended fabric panels, paper butterflies, origami elements, floral arrangements.'
     },
     uk: {
       title: 'Bule',
-      description: 'Химерний інтер\'єр ресторану з декоративними інсталяціями, підвісними тканинними панелями, паперовими метеликами, елементами орігамі та квітковими композиціями.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2018). Ресторан, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: химерні інсталяції з підвісними тканинними панелями, паперові метелики, елементи орігамі, квіткові композиції.'
     },
     ru: {
       title: 'Bule',
-      description: 'Причудливый интерьер ресторана с декоративными инсталляциями, подвесными тканевыми панелями, бумажными бабочками, элементами оригами и цветочными композициями.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2018). Ресторан, Одесса, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: причудливые инсталляции с подвесными тканевыми панелями, бумажные бабочки, элементы оригами, цветочные композиции.'
     },
     es: {
       title: 'Bule',
-      description: 'Un interior de restaurante caprichoso con instalaciones decorativas, paneles de tela suspendidos, mariposas de papel, elementos de origami y arreglos florales.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2018). Restaurante, Odesa, Ucrania. Servicios: concepto, diseño interior, decoración. Características: instalaciones caprichosas con paneles de tela suspendidos, mariposas de papel, elementos de origami, arreglos florales.'
     }
   },
   20: {
     en: {
       title: 'Gra z Vognem',
-      description: 'A dynamic restaurant design project featuring bold interior elements with industrial touches and contemporary styling.'
+      description: 'Interior design project by Belenko Design Studio (2016). Restaurant, Kyiv, Ukraine. Services: concept, interior design. Design features: bold interior elements, industrial touches, contemporary styling, open flame cooking concept.'
     },
     uk: {
       title: 'Gra z Vognem',
-      description: 'Динамічний проєкт дизайну ресторану зі сміливими інтер\'єрними елементами, індустріальними штрихами та сучасним стилем.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2016). Ресторан, Київ, Україна. Послуги: концепція, дизайн інтер\'єру. Особливості: сміливі інтер\'єрні елементи, індустріальні штрихи, сучасний стиль, концепція приготування на відкритому вогні.'
     },
     ru: {
       title: 'Gra z Vognem',
-      description: 'Динамичный проект дизайна ресторана со смелыми интерьерными элементами, индустриальными штрихами и современным стилем.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2016). Ресторан, Киев, Украина. Услуги: концепция, дизайн интерьера. Особенности: смелые интерьерные элементы, индустриальные штрихи, современный стиль, концепция приготовления на открытом огне.'
     },
     es: {
       title: 'Gra z Vognem',
-      description: 'Un proyecto de diseño de restaurante dinámico con elementos interiores audaces, toques industriales y estilo contemporáneo.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2016). Restaurante, Kyiv, Ucrania. Servicios: concepto, diseño interior. Características: elementos interiores audaces, toques industriales, estilo contemporáneo, concepto de cocina a fuego abierto.'
     }
   },
   21: {
     en: {
       title: 'Steakhouse Odesa',
-      description: 'Premium steakhouse featuring sophisticated interior design with wooden furnishings, natural lighting through large windows, Edison-style lighting fixtures, and professional kitchen setup.'
+      description: 'Interior design project by Belenko Design Studio (2010). Premium steakhouse, Odesa, Ukraine. Services: concept, interior design, branding. Design features: wooden furnishings, natural lighting, Edison-style fixtures, professional open kitchen.'
     },
     uk: {
       title: 'Steakhouse Odesa',
-      description: 'Преміальний стейкхаус із вишуканим дизайном інтер\'єру, дерев\'яними меблями, природним освітленням через великі вікна, світильниками в стилі Едісона та професійною кухнею.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2010). Преміальний стейкхаус, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру, брендинг. Особливості: дерев\'яні меблі, природне освітлення, світильники Едісона, професійна відкрита кухня.'
     },
     ru: {
       title: 'Steakhouse Odesa',
-      description: 'Премиальный стейкхаус с изысканным дизайном интерьера, деревянной мебелью, естественным освещением через большие окна, светильниками в стиле Эдисона и профессиональной кухней.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2010). Премиальный стейкхаус, Одесса, Украина. Услуги: концепция, дизайн интерьера, брендинг. Особенности: деревянная мебель, естественное освещение, светильники Эдисона, профессиональная открытая кухня.'
     },
     es: {
       title: 'Steakhouse Odesa',
-      description: 'Steakhouse premium con sofisticado diseño interior, muebles de madera, iluminación natural a través de grandes ventanas, lámparas estilo Edison y cocina profesional.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2010). Steakhouse premium, Odesa, Ucrania. Servicios: concepto, diseño interior, branding. Características: muebles de madera, iluminación natural, lámparas estilo Edison, cocina abierta profesional.'
     }
   },
   22: {
     en: {
       title: 'Babo Gardens',
-      description: 'A stunning restaurant design featuring lush garden elements, botanical decorations, and nature-inspired interiors creating a unique dining atmosphere.'
+      description: 'Interior design project by Belenko Design Studio (2022). Restaurant, Lviv, Ukraine. Services: concept, interior design, decor. Design features: lush garden elements, botanical decorations, nature-inspired interiors creating unique dining atmosphere.'
     },
     uk: {
       title: 'Babo Gardens',
-      description: 'Приголомшливий дизайн ресторану з пишними садовими елементами, ботанічними прикрасами та інтер\'єрами, натхненними природою, що створюють унікальну атмосферу.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2022). Ресторан, Львів, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: пишні садові елементи, ботанічні прикраси, інтер\'єри, натхненні природою.'
     },
     ru: {
       title: 'Babo Gardens',
-      description: 'Потрясающий дизайн ресторана с пышными садовыми элементами, ботаническими украшениями и интерьерами, вдохновлёнными природой, создающими уникальную атмосферу.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2022). Ресторан, Львов, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: пышные садовые элементы, ботанические украшения, интерьеры, вдохновлённые природой.'
     },
     es: {
       title: 'Babo Gardens',
-      description: 'Un impresionante diseño de restaurante con exuberantes elementos de jardín, decoraciones botánicas e interiores inspirados en la naturaleza que crean una atmósfera única.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2022). Restaurante, Lviv, Ucrania. Servicios: concepto, diseño interior, decoración. Características: elementos de jardín exuberantes, decoraciones botánicas, interiores inspirados en la naturaleza.'
     }
   },
   23: {
     en: {
       title: 'Agatha',
-      description: 'A modern restaurant and bar establishment featuring elegant interior design with contemporary furnishings, marble counters, wine displays, and sophisticated dining spaces.'
+      description: 'Interior design project by Belenko Design Studio (2021). Restaurant and bar, Kyiv, Ukraine. Services: concept, interior design, architecture. Design features: contemporary furnishings, marble counters, wine displays, sophisticated dining spaces.'
     },
     uk: {
       title: 'Agatha',
-      description: 'Сучасний ресторан і бар з елегантним дизайном інтер\'єру, сучасними меблями, мармуровими стійками, винними вітринами та вишуканими обідніми зонами.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2021). Ресторан і бар, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, архітектура. Особливості: сучасні меблі, мармурові стійки, винні вітрини, вишукані обідні зони.'
     },
     ru: {
       title: 'Agatha',
-      description: 'Современный ресторан и бар с элегантным дизайном интерьера, современной мебелью, мраморными стойками, винными витринами и изысканными обеденными зонами.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2021). Ресторан и бар, Киев, Украина. Услуги: концепция, дизайн интерьера, архитектура. Особенности: современная мебель, мраморные стойки, винные витрины, изысканные обеденные зоны.'
     },
     es: {
       title: 'Agatha',
-      description: 'Un moderno restaurante y bar con elegante diseño interior, muebles contemporáneos, mostradores de mármol, exhibiciones de vinos y sofisticados espacios de comedor.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2021). Restaurante y bar, Kyiv, Ucrania. Servicios: concepto, diseño interior, arquitectura. Características: muebles contemporáneos, mostradores de mármol, exhibiciones de vinos, espacios de comedor sofisticados.'
     }
   },
   24: {
     en: {
       title: 'Fish & Pussycat',
-      description: 'A sushi bar interior and exterior design project featuring vintage and modern design elements combined with rustic aesthetics.'
+      description: 'Interior design project by Belenko Design Studio (2018). Sushi bar, Kyiv, Ukraine. Services: concept, interior design, branding. Design features: vintage and modern elements, rustic aesthetic, Japanese-inspired details.'
     },
     uk: {
       title: 'Fish & Pussycat',
-      description: 'Проєкт дизайну інтер\'єру та екстер\'єру суші-бару з вінтажними та сучасними елементами дизайну в поєднанні з рустикальною естетикою.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2018). Суші-бар, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, брендинг. Особливості: вінтажні та сучасні елементи, рустикальна естетика, деталі в японському стилі.'
     },
     ru: {
       title: 'Fish & Pussycat',
-      description: 'Проект дизайна интерьера и экстерьера суши-бара с винтажными и современными элементами дизайна в сочетании с рустикальной эстетикой.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2018). Суши-бар, Киев, Украина. Услуги: концепция, дизайн интерьера, брендинг. Особенности: винтажные и современные элементы, рустикальная эстетика, детали в японском стиле.'
     },
     es: {
       title: 'Fish & Pussycat',
-      description: 'Proyecto de diseño interior y exterior de un bar de sushi con elementos de diseño vintage y moderno combinados con estética rústica.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2018). Bar de sushi, Kyiv, Ucrania. Servicios: concepto, diseño interior, branding. Características: elementos vintage y modernos, estética rústica, detalles de inspiración japonesa.'
     }
   },
   25: {
     en: {
       title: "M'EAT",
-      description: 'Premium steakhouse emphasizing perfection of detail and taste. The design combines natural materials and luxurious fabrics with an open kitchen concept.'
+      description: "Interior design project by Belenko Design Studio (2016). Premium steakhouse, Baku, Azerbaijan. Services: concept, interior design, architecture. Design features: natural materials, luxurious fabrics, open kitchen concept, perfection of detail."
     },
     uk: {
       title: "M'EAT",
-      description: 'Преміальний стейкхаус з акцентом на досконалість деталей та смаку. Дизайн поєднує натуральні матеріали та розкішні тканини з концепцією відкритої кухні.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2016). Преміальний стейкхаус, Баку, Азербайджан. Послуги: концепція, дизайн інтер\'єру, архітектура. Особливості: натуральні матеріали, розкішні тканини, концепція відкритої кухні, досконалість деталей.'
     },
     ru: {
       title: "M'EAT",
-      description: 'Премиальный стейкхаус с акцентом на совершенство деталей и вкуса. Дизайн сочетает натуральные материалы и роскошные ткани с концепцией открытой кухни.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2016). Премиальный стейкхаус, Баку, Азербайджан. Услуги: концепция, дизайн интерьера, архитектура. Особенности: натуральные материалы, роскошные ткани, концепция открытой кухни, совершенство деталей.'
     },
     es: {
       title: "M'EAT",
-      description: 'Steakhouse premium que enfatiza la perfección del detalle y el sabor. El diseño combina materiales naturales y telas lujosas con un concepto de cocina abierta.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2016). Steakhouse premium, Bakú, Azerbaiyán. Servicios: concepto, diseño interior, arquitectura. Características: materiales naturales, telas lujosas, concepto de cocina abierta, perfección del detalle.'
     }
   },
   26: {
     en: {
       title: 'Smorrebrod',
-      description: 'A Danish cuisine-inspired bar establishment featuring Scandinavian design elements with warm wood tones and cozy atmosphere.'
+      description: 'Interior design project by Belenko Design Studio (2016). Danish cuisine bar, Kyiv, Ukraine. Services: concept, interior design. Design features: Scandinavian design elements, warm wood tones, cozy atmosphere.'
     },
     uk: {
       title: 'Smorrebrod',
-      description: 'Бар у стилі данської кухні зі скандинавськими елементами дизайну, теплими деревними тонами та затишною атмосферою.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2016). Бар данської кухні, Київ, Україна. Послуги: концепція, дизайн інтер\'єру. Особливості: скандинавські елементи дизайну, теплі деревні тони, затишна атмосфера.'
     },
     ru: {
       title: 'Smorrebrod',
-      description: 'Бар в стиле датской кухни со скандинавскими элементами дизайна, тёплыми древесными тонами и уютной атмосферой.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2016). Бар датской кухни, Киев, Украина. Услуги: концепция, дизайн интерьера. Особенности: скандинавские элементы дизайна, тёплые древесные тона, уютная атмосфера.'
     },
     es: {
       title: 'Smorrebrod',
-      description: 'Un bar inspirado en la cocina danesa con elementos de diseño escandinavo, tonos cálidos de madera y ambiente acogedor.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2016). Bar de cocina danesa, Kyiv, Ucrania. Servicios: concepto, diseño interior. Características: elementos de diseño escandinavo, tonos cálidos de madera, ambiente acogedor.'
     }
   },
   27: {
     en: {
       title: 'Cent Aura',
-      description: 'A luxurious restaurant interior design featuring vintage-inspired aesthetics with ornate wooden paneling, decorative chandeliers, tapestry-upholstered furniture, and refined dining spaces creating an atmosphere of timeless elegance.'
+      description: 'Interior design project by Belenko Design Studio (2024). Luxury restaurant, Lviv, Ukraine. Services: concept, interior design, architecture. Design features: vintage-inspired aesthetic, ornate wooden paneling, decorative chandeliers, tapestry-upholstered furniture, timeless elegance.'
     },
     uk: {
       title: 'Cent Aura',
-      description: 'Розкішний дизайн інтер\'єру ресторану з естетикою у вінтажному стилі, орнаментальними дерев\'яними панелями, декоративними люстрами, меблями з гобеленовою оббивкою та вишуканими обідніми зонами, що створюють атмосферу позачасової елегантності.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2024). Розкішний ресторан, Львів, Україна. Послуги: концепція, дизайн інтер\'єру, архітектура. Особливості: вінтажна естетика, орнаментальні дерев\'яні панелі, декоративні люстри, меблі з гобеленовою оббивкою, позачасова елегантність.'
     },
     ru: {
       title: 'Cent Aura',
-      description: 'Роскошный дизайн интерьера ресторана с эстетикой в винтажном стиле, орнаментальными деревянными панелями, декоративными люстрами, мебелью с гобеленовой обивкой и изысканными обеденными зонами, создающими атмосферу вневременной элегантности.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2024). Роскошный ресторан, Львов, Украина. Услуги: концепция, дизайн интерьера, архитектура. Особенности: винтажная эстетика, орнаментальные деревянные панели, декоративные люстры, мебель с гобеленовой обивкой, вневременная элегантность.'
     },
     es: {
       title: 'Cent Aura',
-      description: 'Un lujoso diseño interior de restaurante con estética vintage, paneles de madera ornamentados, candelabros decorativos, muebles tapizados con tapicería y espacios de comedor refinados que crean una atmósfera de elegancia atemporal.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2024). Restaurante de lujo, Lviv, Ucrania. Servicios: concepto, diseño interior, arquitectura. Características: estética vintage, paneles de madera ornamentados, candelabros decorativos, muebles tapizados con tapicería, elegancia atemporal.'
     }
   },
   28: {
     en: {
       title: 'Ladies Room',
-      description: 'A hidden bar concept featuring intimate atmosphere with sophisticated design elements, ambient lighting, elegant furnishings, and a mysterious speakeasy vibe creating an exclusive nightlife experience.'
+      description: 'Interior design project by Belenko Design Studio (2024). Hidden speakeasy bar, Istanbul, Turkey. Services: concept, interior design, lighting design. Design features: intimate atmosphere, ambient lighting, elegant furnishings, mysterious speakeasy vibe, exclusive nightlife experience.'
     },
     uk: {
       title: 'Ladies Room',
-      description: 'Концепція прихованого бару з інтимною атмосферою, витонченими елементами дизайну, атмосферним освітленням, елегантними меблями та загадковою атмосферою speakeasy, що створює ексклюзивний нічний досвід.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2024). Прихований speakeasy бар, Стамбул, Туреччина. Послуги: концепція, дизайн інтер\'єру, світловий дизайн. Особливості: інтимна атмосфера, атмосферне освітлення, елегантні меблі, загадкова атмосфера speakeasy, ексклюзивний нічний досвід.'
     },
     ru: {
       title: 'Ladies Room',
-      description: 'Концепция скрытого бара с интимной атмосферой, изысканными элементами дизайна, атмосферным освещением, элегантной мебелью и загадочной атмосферой speakeasy, создающей эксклюзивный ночной опыт.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2024). Скрытый speakeasy бар, Стамбул, Турция. Услуги: концепция, дизайн интерьера, световой дизайн. Особенности: интимная атмосфера, атмосферное освещение, элегантная мебель, загадочная атмосфера speakeasy, эксклюзивный ночной опыт.'
     },
     es: {
       title: 'Ladies Room',
-      description: 'Un concepto de bar oculto con atmósfera íntima, elementos de diseño sofisticados, iluminación ambiental, mobiliario elegante y un misterioso ambiente de speakeasy que crea una experiencia nocturna exclusiva.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2024). Bar speakeasy oculto, Estambul, Turquía. Servicios: concepto, diseño interior, diseño de iluminación. Características: atmósfera íntima, iluminación ambiental, mobiliario elegante, ambiente misterioso de speakeasy, experiencia nocturna exclusiva.'
     }
   },
   29: {
     en: {
       title: 'Bruno',
-      description: 'A contemporary restaurant interior design featuring elegant dining spaces with sophisticated lighting, marble accents, and modern furnishings creating a refined culinary atmosphere.'
+      description: 'Interior design project by Belenko Design Studio (2021). Contemporary restaurant, Odesa, Ukraine. Services: concept, interior design. Design features: elegant dining spaces, sophisticated lighting, marble accents, modern furnishings, refined culinary atmosphere.'
     },
     uk: {
       title: 'Bruno',
-      description: 'Сучасний дизайн інтер\'єру ресторану з елегантними обідніми зонами, витонченим освітленням, мармуровими акцентами та сучасними меблями, що створюють вишукану кулінарну атмосферу.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2021). Сучасний ресторан, Одеса, Україна. Послуги: концепція, дизайн інтер\'єру. Особливості: елегантні обідні зони, витончене освітлення, мармурові акценти, сучасні меблі, вишукана кулінарна атмосфера.'
     },
     ru: {
       title: 'Bruno',
-      description: 'Современный дизайн интерьера ресторана с элегантными обеденными зонами, изысканным освещением, мраморными акцентами и современной мебелью, создающими утончённую кулинарную атмосферу.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2021). Современный ресторан, Одесса, Украина. Услуги: концепция, дизайн интерьера. Особенности: элегантные обеденные зоны, изысканное освещение, мраморные акценты, современная мебель, утончённая кулинарная атмосфера.'
     },
     es: {
       title: 'Bruno',
-      description: 'Un diseño interior de restaurante contemporáneo con elegantes espacios de comedor, iluminación sofisticada, acentos de mármol y mobiliario moderno que crean una atmósfera culinaria refinada.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2021). Restaurante contemporáneo, Odesa, Ucrania. Servicios: concepto, diseño interior. Características: elegantes espacios de comedor, iluminación sofisticada, acentos de mármol, mobiliario moderno, atmósfera culinaria refinada.'
     }
   },
   30: {
     en: {
       title: 'Avangarden',
-      description: 'An art gallery and bar space featuring industrial aesthetics with creative installations, eclectic decor, floral arrangements, and artistic elements creating a unique cultural atmosphere.'
+      description: 'Interior design project by Belenko Design Studio (2021). Art gallery and bar, Kyiv, Ukraine. Services: concept, interior design, art direction. Design features: industrial aesthetics, creative installations, eclectic decor, floral arrangements, unique cultural atmosphere.'
     },
     uk: {
       title: 'Avangarden',
-      description: 'Простір арт-галереї та бару з індустріальною естетикою, креативними інсталяціями, еклектичним декором, квітковими композиціями та художніми елементами, що створюють унікальну культурну атмосферу.'
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2021). Арт-галерея та бар, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, арт-дирекшн. Особливості: індустріальна естетика, креативні інсталяції, еклектичний декор, квіткові композиції, унікальна культурна атмосфера.'
     },
     ru: {
       title: 'Avangarden',
-      description: 'Пространство арт-галереи и бара с индустриальной эстетикой, креативными инсталляциями, эклектичным декором, цветочными композициями и художественными элементами, создающими уникальную культурную атмосферу.'
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2021). Арт-галерея и бар, Киев, Украина. Услуги: концепция, дизайн интерьера, арт-дирекшн. Особенности: индустриальная эстетика, креативные инсталляции, эклектичный декор, цветочные композиции, уникальная культурная атмосфера.'
     },
     es: {
       title: 'Avangarden',
-      description: 'Un espacio de galería de arte y bar con estética industrial, instalaciones creativas, decoración ecléctica, arreglos florales y elementos artísticos que crean una atmósfera cultural única.'
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2021). Galería de arte y bar, Kyiv, Ucrania. Servicios: concepto, diseño interior, dirección de arte. Características: estética industrial, instalaciones creativas, decoración ecléctica, arreglos florales, atmósfera cultural única.'
+    }
+  },
+  31: {
+    en: {
+      title: 'Tenor Masini Apartment',
+      description: 'Interior design project by Belenko Design Studio (2025). Residential apartment in Sants district, Barcelona, Spain. Services: interior design, decor, furniture selection. Design features: warm earthy tones, textured plaster walls, artisanal woven decor, vintage wooden doors, Mediterranean warmth.'
+    },
+    uk: {
+      title: 'Tenor Masini Apartment',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2025). Житлова квартира в районі Сантс, Барселона, Іспанія. Послуги: дизайн інтер\'єру, декор, підбір меблів. Особливості: теплі земляні тони, текстуровані гіпсові стіни, ручний плетений декор, вінтажні дерев\'яні двері, середземноморське тепло.'
+    },
+    ru: {
+      title: 'Tenor Masini Apartment',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2025). Жилая квартира в районе Сантс, Барселона, Испания. Услуги: дизайн интерьера, декор, подбор мебели. Особенности: тёплые земляные тона, текстурированные гипсовые стены, ручной плетёный декор, винтажные деревянные двери, средиземноморское тепло.'
+    },
+    es: {
+      title: 'Tenor Masini Apartment',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2025). Apartamento residencial en el distrito de Sants, Barcelona, España. Servicios: diseño interior, decoración, selección de muebles. Características: tonos tierra cálidos, paredes de yeso texturizadas, decoración tejida artesanal, puertas de madera vintage, calidez mediterránea.'
+    }
+  },
+  32: {
+    en: {
+      title: 'Coco Japanese',
+      description: 'Interior design project by Belenko Design Studio (2021). Luxury Japanese restaurant, Kyiv, Ukraine. Services: concept, interior design, decor. Design features: fusion of Japanese and Art Nouveau aesthetics, traditional umbrellas on ceiling, geisha murals, Chinese lattice screens, red velvet banquettes, crane-patterned furniture, lantern lighting.',
+      quote: 'In the art of Japanese cuisine, the eye eats first.',
+      quoteAuthor: 'Japanese Proverb'
+    },
+    uk: {
+      title: 'Coco Japanese',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2021). Розкішний японський ресторан, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: поєднання японської та ар-нуво естетики, традиційні парасольки на стелі, фрески з гейшами, китайські ґратчасті екрани, червоні оксамитові банкетки, меблі з візерунками журавлів, ліхтарне освітлення.',
+      quote: 'У мистецтві японської кухні очі їдять першими.',
+      quoteAuthor: 'Японське прислів\'я'
+    },
+    ru: {
+      title: 'Coco Japanese',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2021). Роскошный японский ресторан, Киев, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: слияние японской эстетики и ар-нуво, традиционные зонтики на потолке, фрески с гейшами, китайские решётчатые ширмы, красные бархатные банкетки, мебель с узорами журавлей, фонарное освещение.',
+      quote: 'В искусстве японской кухни глаза едят первыми.',
+      quoteAuthor: 'Японская пословица'
+    },
+    es: {
+      title: 'Coco Japanese',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2021). Restaurante japonés de lujo, Kyiv, Ucrania. Servicios: concepto, diseño interior, decoración. Características: fusión de estética japonesa y Art Nouveau, sombrillas tradicionales en el techo, murales de geishas, biombos de celosía china, banquetas de terciopelo rojo, muebles con patrones de grullas, iluminación de linternas.',
+      quote: 'En el arte de la cocina japonesa, los ojos comen primero.',
+      quoteAuthor: 'Proverbio japonés'
+    }
+  },
+  33: {
+    en: {
+      title: 'Adele',
+      description: 'Interior design project by Belenko Design Studio (2017). Charming two-story cafe, Kyiv, Ukraine. Services: concept, interior design, decor. Design features: art nouveau arched windows, iconic oversized wall clock, hexagonal tile flooring, eclectic vintage furniture, abundant greenery, fresh market display, Parisian-inspired atmosphere.',
+      quote: 'A cafe is a place where time stands still while life swirls around you.',
+      quoteAuthor: 'Unknown'
+    },
+    uk: {
+      title: 'Adele',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2017). Чарівне двоповерхове кафе, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: арочні вікна в стилі ар-нуво, культовий великий настінний годинник, шестикутна плитка на підлозі, еклектичні вінтажні меблі, рясна зелень, свіжий ринковий дисплей, атмосфера натхненна Парижем.',
+      quote: 'Кафе — це місце, де час зупиняється, поки життя вирує навколо.',
+      quoteAuthor: 'Невідомий'
+    },
+    ru: {
+      title: 'Adele',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2017). Очаровательное двухэтажное кафе, Киев, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: арочные окна в стиле ар-нуво, культовые большие настенные часы, шестиугольная плитка на полу, эклектичная винтажная мебель, обилие зелени, витрина со свежими продуктами, атмосфера вдохновлённая Парижем.',
+      quote: 'Кафе — это место, где время останавливается, пока жизнь кружится вокруг.',
+      quoteAuthor: 'Неизвестный'
+    },
+    es: {
+      title: 'Adele',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2017). Encantador café de dos pisos, Kyiv, Ucrania. Servicios: concepto, diseño interior, decoración. Características: ventanas arqueadas art nouveau, icónico reloj de pared de gran tamaño, suelo de baldosas hexagonales, muebles vintage eclécticos, abundante vegetación, exhibición de mercado fresco, atmósfera inspirada en París.',
+      quote: 'Un café es un lugar donde el tiempo se detiene mientras la vida gira a tu alrededor.',
+      quoteAuthor: 'Desconocido'
+    }
+  },
+  34: {
+    en: {
+      title: 'Moderna',
+      description: 'Interior design project by Belenko Design Studio (2018). Modern pizzeria, Dnipro, Ukraine. Services: concept, interior design, decor. Design features: contemporary aesthetic, clean lines, stylish lighting, comfortable seating, open kitchen concept, relaxed urban atmosphere for enjoying fresh Italian cuisine.',
+      quote: 'Pizza is a lot like life. It\'s best when it\'s shared.',
+      quoteAuthor: 'Italian proverb'
+    },
+    uk: {
+      title: 'Moderna',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2018). Сучасна піцерія, Дніпро, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: сучасна естетика, чисті лінії, стильне освітлення, комфортні зони відпочинку, концепція відкритої кухні, невимушена міська атмосфера для насолоди свіжою італійською кухнею.',
+      quote: 'Піца дуже схожа на життя. Вона найкраща, коли нею ділишся.',
+      quoteAuthor: 'Італійське прислів\'я'
+    },
+    ru: {
+      title: 'Moderna',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2018). Современная пиццерия, Днепр, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: современная эстетика, чистые линии, стильное освещение, комфортные зоны отдыха, концепция открытой кухни, непринуждённая городская атмосфера для наслаждения свежей итальянской кухней.',
+      quote: 'Пицца очень похожа на жизнь. Она лучше всего, когда ею делишься.',
+      quoteAuthor: 'Итальянская пословица'
+    },
+    es: {
+      title: 'Moderna',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2018). Pizzería moderna, Dnipro, Ucrania. Servicios: concepto, diseño interior, decoración. Características: estética contemporánea, líneas limpias, iluminación elegante, asientos cómodos, concepto de cocina abierta, ambiente urbano relajado para disfrutar de la cocina italiana fresca.',
+      quote: 'La pizza es muy parecida a la vida. Es mejor cuando se comparte.',
+      quoteAuthor: 'Proverbio italiano'
+    }
+  },
+  35: {
+    en: {
+      title: 'Mimosa Brooklyn Pizza',
+      description: 'Interior design project by Belenko Design Studio (2020). Brooklyn-style pizzeria, Kyiv, Ukraine. Services: concept, interior design, decor. Design features: industrial-modern aesthetic, exposed brick elements, warm lighting, authentic New York atmosphere, casual dining comfort with urban aesthetics.',
+      quote: 'Good pizza is like a good story — simple ingredients, perfect timing.',
+      quoteAuthor: 'Brooklyn Wisdom'
+    },
+    uk: {
+      title: 'Mimosa Brooklyn Pizza',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2020). Піцерія в бруклінському стилі, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, декор. Особливості: індустріально-сучасна естетика, елементи відкритої цегли, тепле освітлення, автентична атмосфера Нью-Йорка, комфорт невимушеної їжі з міською естетикою.',
+      quote: 'Хороша піца — як хороша історія — прості інгредієнти, ідеальний час.',
+      quoteAuthor: 'Бруклінська мудрість'
+    },
+    ru: {
+      title: 'Mimosa Brooklyn Pizza',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2020). Пиццерия в бруклинском стиле, Киев, Украина. Услуги: концепция, дизайн интерьера, декор. Особенности: индустриально-современная эстетика, элементы открытой кирпичной кладки, тёплое освещение, аутентичная атмосфера Нью-Йорка, комфорт непринуждённой еды с городской эстетикой.',
+      quote: 'Хорошая пицца — как хорошая история — простые ингредиенты, идеальное время.',
+      quoteAuthor: 'Бруклинская мудрость'
+    },
+    es: {
+      title: 'Mimosa Brooklyn Pizza',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2020). Pizzería estilo Brooklyn, Kyiv, Ucrania. Servicios: concepto, diseño interior, decoración. Características: estética industrial-moderna, elementos de ladrillo visto, iluminación cálida, atmósfera auténtica de Nueva York, comodidad de comedor informal con estética urbana.',
+      quote: 'Una buena pizza es como una buena historia — ingredientes simples, tiempo perfecto.',
+      quoteAuthor: 'Sabiduría de Brooklyn'
+    }
+  },
+  36: {
+    en: {
+      title: 'Under Wonder',
+      description: 'Interior design project by Belenko Design Studio (2008). Theatrical restaurant, Kyiv, Ukraine. Services: concept, interior design, lighting design. Design features: dramatic velvet curtains, ornate chandeliers, intimate dining alcoves, sophisticated color palette of deep reds and golds, atmosphere of mystery and elegance.',
+      quote: 'Every great restaurant tells a story through its design.',
+      quoteAuthor: 'Yuriy Belenko'
+    },
+    uk: {
+      title: 'Under Wonder',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2008). Театральний ресторан, Київ, Україна. Послуги: концепція, дизайн інтер\'єру, світловий дизайн. Особливості: драматичні оксамитові штори, орнаментальні люстри, інтимні обідні ніші, вишукана палітра глибоких червоних та золотих тонів, атмосфера таємничості та елегантності.',
+      quote: 'Кожен чудовий ресторан розповідає історію через свій дизайн.',
+      quoteAuthor: 'Юрій Беленко'
+    },
+    ru: {
+      title: 'Under Wonder',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2008). Театральный ресторан, Киев, Украина. Услуги: концепция, дизайн интерьера, световой дизайн. Особенности: драматичные бархатные шторы, орнаментальные люстры, интимные обеденные ниши, изысканная палитра глубоких красных и золотых тонов, атмосфера таинственности и элегантности.',
+      quote: 'Каждый великий ресторан рассказывает историю через свой дизайн.',
+      quoteAuthor: 'Юрий Беленко'
+    },
+    es: {
+      title: 'Under Wonder',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2008). Restaurante teatral, Kyiv, Ucrania. Servicios: concepto, diseño interior, diseño de iluminación. Características: dramáticas cortinas de terciopelo, candelabros ornamentados, alcobas de comedor íntimas, paleta de colores sofisticada de rojos profundos y dorados, atmósfera de misterio y elegancia.',
+      quote: 'Cada gran restaurante cuenta una historia a través de su diseño.',
+      quoteAuthor: 'Yuriy Belenko'
+    }
+  },
+  37: {
+    en: {
+      title: 'Chou Chou',
+      description: 'Interior design project by Belenko Design Studio (2026). Elegant French-inspired restaurant, Chisinau, Moldova. Services: concept, interior design, lighting design. Design features: rich mahogany woodwork, luxurious red velvet seating, stunning crystal chandeliers, classic mosaic flooring creating a sophisticated Parisian brasserie atmosphere.',
+      quote: 'True elegance is found in the details.',
+      quoteAuthor: 'Denys Belenko'
+    },
+    uk: {
+      title: 'Chou Chou',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2026). Елегантний ресторан у французькому стилі, Кишинів, Молдова. Послуги: концепція, дизайн інтер\'єру, світловий дизайн. Особливості: багате оздоблення з червоного дерева, розкішні сидіння з червоного оксамиту, приголомшливі кришталеві люстри, класична мозаїчна підлога, що створює атмосферу вишуканого паризького брассері.',
+      quote: 'Справжня елегантність криється в деталях.',
+      quoteAuthor: 'Денис Беленко'
+    },
+    ru: {
+      title: 'Chou Chou',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2026). Элегантный ресторан во французском стиле, Кишинёв, Молдова. Услуги: концепция, дизайн интерьера, световой дизайн. Особенности: богатая отделка из красного дерева, роскошные сиденья из красного бархата, потрясающие хрустальные люстры, классический мозаичный пол, создающий атмосферу изысканного парижского брассери.',
+      quote: 'Истинная элегантность кроется в деталях.',
+      quoteAuthor: 'Денис Беленко'
+    },
+    es: {
+      title: 'Chou Chou',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2026). Elegante restaurante de inspiración francesa, Chisinau, Moldavia. Servicios: concepto, diseño interior, diseño de iluminación. Características: rica carpintería de caoba, lujosos asientos de terciopelo rojo, impresionantes lámparas de cristal, suelo de mosaico clásico que crea una sofisticada atmósfera de brasserie parisina.',
+      quote: 'La verdadera elegancia se encuentra en los detalles.',
+      quoteAuthor: 'Denys Belenko'
     }
   }
 }
