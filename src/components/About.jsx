@@ -1,8 +1,12 @@
-import { useMemo } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useParallax } from '../hooks/useParallax'
 import { useLanguage } from '../i18n/LanguageContext'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './About.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const aboutImages = [
   '/about-1.jpg',
@@ -40,10 +44,48 @@ function About() {
   const { t } = useLanguage()
   const [leftRef, leftVisible] = useScrollAnimation({ threshold: 0.1 })
   const [statsRef, statsVisible] = useScrollAnimation({ threshold: 0.1 })
+  const statsContainerRef = useRef(null)
 
-  // Random image on each page load
-  const randomImage = useMemo(() => {
-    return aboutImages[Math.floor(Math.random() * aboutImages.length)]
+  // GSAP animation for stats numbers
+  useEffect(() => {
+    const statsContainer = statsContainerRef.current
+    if (!statsContainer) return
+
+    const statNumbers = statsContainer.querySelectorAll('.stat-number')
+    const statItems = statsContainer.querySelectorAll('.stat-item')
+
+    // Animate stat items sliding up with stagger
+    gsap.fromTo(
+      statItems,
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: statsContainer,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }
+    )
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.trigger === statsContainer) {
+          trigger.kill()
+        }
+      })
+    }
+  }, [])
+
+  // Random image on each page load (client-side only to avoid hydration mismatch)
+  const [randomImage, setRandomImage] = useState(aboutImages[0])
+
+  useEffect(() => {
+    setRandomImage(aboutImages[Math.floor(Math.random() * aboutImages.length)])
   }, [])
 
   return (
@@ -102,32 +144,30 @@ function About() {
           <div className="about-content-grid">
             <div className="about-content-text">
               <AnimatedBlock className="about-block" delay={1}>
-                <p className="about-description large">
-                  {t('about.years')}
-                </p>
+                <h3 className="about-block-title">{t('about.principle1Title')}</h3>
                 <p className="about-description">
-                  {t('about.specialization')} <strong>{t('about.specializationList')}</strong> <strong>{t('about.specializationListEnd')}</strong>
-                </p>
-              </AnimatedBlock>
-
-              <AnimatedBlock className="about-block highlight-block" delay={2}>
-                <h3 className="about-heading accent">{t('about.atmosphereTitle')}</h3>
-              </AnimatedBlock>
-
-              <AnimatedBlock className="about-block" delay={1}>
-                <h3 className="about-heading">{t('about.storiesTitle')}</h3>
-                <p className="about-description">
-                  {t('about.storiesText')}
-                </p>
-                <p className="about-quote">
-                  {t('about.quote')}
+                  {t('about.principle1Text')}
                 </p>
               </AnimatedBlock>
 
               <AnimatedBlock className="about-block" delay={2}>
-                <h3 className="about-heading">{t('about.commercialTitle')}</h3>
+                <h3 className="about-block-title">{t('about.principle2Title')}</h3>
                 <p className="about-description">
-                  {t('about.commercialText')}
+                  {t('about.principle2Text')}
+                </p>
+              </AnimatedBlock>
+
+              <AnimatedBlock className="about-block" delay={1}>
+                <h3 className="about-block-title">{t('about.principle3Title')}</h3>
+                <p className="about-description">
+                  {t('about.principle3Text')}
+                </p>
+              </AnimatedBlock>
+
+              <AnimatedBlock className="about-block" delay={2}>
+                <h3 className="about-block-title">{t('about.principle4Title')}</h3>
+                <p className="about-description">
+                  {t('about.principle4Text')}
                 </p>
               </AnimatedBlock>
             </div>
@@ -142,13 +182,14 @@ function About() {
               </AnimatedBlock>
               <AnimatedBlock className="founder-quote-block" animation="animate-fade-up" delay={4}>
                 <p>{t('about.founderQuote')}</p>
+                <span className="founder-author">{t('about.founderAuthor')}</span>
               </AnimatedBlock>
             </div>
           </div>
 
           <div
-            ref={statsRef}
-            className={`about-stats stagger-children ${statsVisible ? 'visible' : ''}`}
+            ref={statsContainerRef}
+            className="about-stats"
           >
             <div className="stat-item">
               <span className="stat-number">{t('about.stat1Number')}</span>
