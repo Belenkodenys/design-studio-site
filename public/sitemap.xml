@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.belenko.design/</loc>
     <lastmod>2026-03-30</lastmod>
@@ -348,9 +349,119 @@
   </url>
   <url>
     <loc>https://www.belenko.design/project/37/</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-1.webp</image:loc>
+      <image:title>Chou Chou — French restaurant in Chisinau, Moldova</image:title>
+      <image:caption>Interior design of Chou Chou, a French-inspired restaurant in Chisinau by Belenko Design Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-2.webp</image:loc>
+      <image:title>Chou Chou restaurant in Chisinau — dining room</image:title>
+      <image:caption>Mahogany woodwork and red velvet seating at Chou Chou restaurant, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-3.webp</image:loc>
+      <image:title>Chou Chou restaurant interior, Chisinau</image:title>
+      <image:caption>Parisian brasserie atmosphere at Chou Chou, designed by Belenko</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-4.webp</image:loc>
+      <image:title>Chou Chou — restaurant design in Chisinau</image:title>
+      <image:caption>French restaurant interior with crystal chandeliers, Chisinau, Moldova</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-5.webp</image:loc>
+      <image:title>Chou Chou restaurant, Chisinau — bar area</image:title>
+      <image:caption>Sophisticated bar interior at Chou Chou restaurant in Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-6.webp</image:loc>
+      <image:title>Chou Chou — French brasserie in Chisinau</image:title>
+      <image:caption>Classic mosaic flooring and warm lighting at Chou Chou restaurant, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-7.webp</image:loc>
+      <image:title>Chou Chou restaurant in Chisinau, Moldova</image:title>
+      <image:caption>Elegant French-inspired dining at Chou Chou, designed by Belenko Design Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-8.webp</image:loc>
+      <image:title>Chou Chou restaurant — interior detail, Chisinau</image:title>
+      <image:caption>Detail of restaurant interior at Chou Chou, Chisinau, Moldova</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-9.webp</image:loc>
+      <image:title>Chou Chou — restaurant in Chisinau</image:title>
+      <image:caption>Luxurious French brasserie interior at Chou Chou, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-10.webp</image:loc>
+      <image:title>Chou Chou restaurant interior, Chisinau, Moldova</image:title>
+      <image:caption>Restaurant interior design in Chisinau by Belenko Design Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-11.webp</image:loc>
+      <image:title>Chou Chou — Parisian brasserie in Chisinau</image:title>
+      <image:caption>Crystal chandeliers and red velvet at Chou Chou restaurant, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-12.webp</image:loc>
+      <image:title>Chou Chou restaurant in Chisinau</image:title>
+      <image:caption>French restaurant design in Chisinau, Moldova by Belenko</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-13.webp</image:loc>
+      <image:title>Chou Chou — restaurant design, Chisinau</image:title>
+      <image:caption>Refined dining atmosphere at Chou Chou restaurant in Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-14.webp</image:loc>
+      <image:title>Chou Chou restaurant, Chisinau, Moldova</image:title>
+      <image:caption>Interior of Chou Chou French restaurant in Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-15.webp</image:loc>
+      <image:title>Chou Chou — French restaurant in Chisinau</image:title>
+      <image:caption>Mosaic flooring and mahogany details at Chou Chou, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-16.webp</image:loc>
+      <image:title>Chou Chou restaurant — Chisinau interior</image:title>
+      <image:caption>French-inspired restaurant interior in Chisinau by Belenko Design Studio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-17.webp</image:loc>
+      <image:title>Chou Chou restaurant in Chisinau, Moldova</image:title>
+      <image:caption>Sophisticated brasserie atmosphere at Chou Chou, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-18.webp</image:loc>
+      <image:title>Chou Chou — restaurant detail, Chisinau</image:title>
+      <image:caption>Vertical interior detail of Chou Chou restaurant in Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-19.webp</image:loc>
+      <image:title>Chou Chou restaurant interior detail, Chisinau</image:title>
+      <image:caption>Architectural detail at Chou Chou French restaurant, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-20.webp</image:loc>
+      <image:title>Chou Chou — French restaurant, Chisinau</image:title>
+      <image:caption>Interior of Chou Chou restaurant in Chisinau, Moldova</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-21.webp</image:loc>
+      <image:title>Chou Chou restaurant in Chisinau</image:title>
+      <image:caption>French brasserie interior design at Chou Chou, Chisinau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.belenko.design/projects/chou-chou-restaurant-chisinau-22.webp</image:loc>
+      <image:title>Chou Chou — restaurant in Chisinau, Moldova</image:title>
+      <image:caption>French restaurant interior by Belenko Design Studio, Chisinau</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.belenko.design/project/38/</loc>

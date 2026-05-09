@@ -354,7 +354,13 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
       ) : (
         <div className="project-hero">
           <div className="project-hero-image" onClick={() => openLightbox(currentImageIndex)}>
-            <img src={project.images[currentImageIndex]} alt={project.title} />
+            <img
+              src={project.images[currentImageIndex]}
+              alt={`${project.title} — ${project.category} in ${project.location}`}
+              width="2000"
+              height="1338"
+              fetchPriority="high"
+            />
             {project.images.length > 1 && (
               <div className="image-nav" onClick={(e) => e.stopPropagation()}>
                 <button onClick={prevImage} aria-label="Previous image">
@@ -426,7 +432,14 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
             className={`gallery-item ${index === currentImageIndex ? 'active' : ''}`}
             onClick={() => openLightbox(index)}
           >
-            <img src={image} alt={`${project.title} ${index + 1}`} />
+            <img
+              src={image}
+              alt={`${project.title} — ${project.category} in ${project.location} (photo ${index + 1})`}
+              width="2000"
+              height="1338"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         ))}
       </div>
@@ -489,7 +502,11 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
               >
                 <img
                   src={image}
-                  alt={`${project.title} ${index + 1}`}
+                  alt={`${project.title} — ${project.category} in ${project.location} (photo ${index + 1})`}
+                  width="2000"
+                  height="1338"
+                  loading="lazy"
+                  decoding="async"
                   draggable="false"
                 />
               </div>
