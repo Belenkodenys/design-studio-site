@@ -1,4 +1,22 @@
 export const projectTranslations = {
+  40: {
+    en: {
+      title: 'Bar 13',
+      description: 'Interior design project by Belenko Design Studio (2020). Bar in Odesa, Ukraine. Services: concept, interior design, lighting design, decor. Design features: cast iron spiral staircase, wrought iron balcony railings, hand-painted Renaissance ceiling fresco, cascade of crystal pendants, distressed silver-grey walls, antique mirrors, mosaic tile flooring, Louis-style chairs in black velvet.'
+    },
+    uk: {
+      title: 'Bar 13',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2020). Бар в Одесі, Україна. Послуги: концепція, дизайн інтер\'єру, світловий дизайн, декор. Особливості: чавунні гвинтові сходи, ковані балконні поручні, ручний розпис стелі у стилі Ренесансу, каскад кришталевих підвісок, состарені сріблясто-сірі стіни, антикварні дзеркала, мозаїчна підлога, крісла Louis у чорному оксамиті.'
+    },
+    ru: {
+      title: 'Bar 13',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2020). Бар в Одессе, Украина. Услуги: концепция, дизайн интерьера, световой дизайн, декор. Особенности: чугунная винтовая лестница, кованые балконные перила, ручная роспись потолка в стиле Ренессанса, каскад хрустальных подвесок, состаренные серебристо-серые стены, антикварные зеркала, мозаичный пол, кресла Louis в чёрном бархате.'
+    },
+    es: {
+      title: 'Bar 13',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2020). Bar en Odesa, Ucrania. Servicios: concepto, diseño interior, diseño de iluminación, decoración. Características: escalera de caracol de hierro fundido, barandillas de balcón de hierro forjado, fresco renacentista pintado a mano, cascada de colgantes de cristal, paredes envejecidas en gris plata, espejos antiguos, suelo de mosaico, sillas estilo Louis en terciopelo negro.'
+    }
+  },
   39: {
     en: {
       title: 'Iva',
