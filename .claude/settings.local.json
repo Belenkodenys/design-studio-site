@@ -4,7 +4,9 @@
       "WebFetch(domain:turquoise-tuatara-mgac.squarespace.com)",
       "Bash(curl:*)",
       "Bash(ls:*)",
-      "Bash(npx vercel --prod)"
+      "Bash(npx vercel --prod)",
+      "Bash(npm install:*)",
+      "Bash(vercel:*)"
     ]
   }
 }

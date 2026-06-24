@@ -12,20 +12,29 @@
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 40px;
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
 .footer-logo {
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 15px;
-  color: #fff;
+  display: inline-block;
   text-decoration: none;
   transition: opacity 0.3s ease;
+}
+
+.footer-logo img {
+  height: 100px;
+  width: auto;
 }
 
 .footer-logo:hover {
@@ -34,8 +43,11 @@
 
 .footer-tagline {
   font-size: 14px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.3em;
   color: #86868b;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .footer-nav {
@@ -101,6 +113,15 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
+.visitor-counter {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 992px) {
   .footer {
     padding: 60px 20px 30px;
@@ -111,6 +132,12 @@
     gap: 40px;
     align-items: center;
     text-align: center;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 
   .footer-nav {

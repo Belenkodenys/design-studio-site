@@ -1,0 +1,89 @@
+.proposal-footer {
+  border-top: 1px solid #eee;
+  padding: clamp(48px, 6vw, 80px) 24px;
+  background: #fff;
+}
+
+.proposal-footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.proposal-footer.is-visible .proposal-footer-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proposal-footer-mark {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.proposal-footer-address {
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 0.05em;
+}
+
+.proposal-footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.proposal-footer-contact a {
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.proposal-footer-contact a:hover {
+  color: #111;
+  border-bottom-color: #111;
+}
+
+.proposal-footer-divider {
+  color: #ccc;
+}
+
+.proposal-footer-social {
+  display: flex;
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.proposal-footer-social-link {
+  color: #555;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.proposal-footer-social-link:hover {
+  color: #111;
+  transform: translateY(-1px);
+}
+
+.proposal-footer-copyright {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 0.05em;
+}

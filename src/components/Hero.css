@@ -14,55 +14,42 @@
   right: 0;
   bottom: 0;
   z-index: 0;
-  cursor: grab;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow: hidden;
   user-select: none;
-  will-change: transform;
+  background: #000;
 }
 
-.hero-slider:active {
-  cursor: grabbing;
+.hero-tile {
+  position: relative;
+  flex-shrink: 0;
+  height: 100vh;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
 }
 
 .hero-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   opacity: 0;
-  visibility: hidden;
-  will-change: transform, opacity;
+  animation: heroImageFadeIn 1s ease forwards;
 }
 
-/* TikTok-style vertical slide animation */
-.slide-up .hero-image {
-  transform: translateY(100%);
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, visibility 0.6s;
+@keyframes heroImageFadeIn {
+  to { opacity: 1; }
 }
 
-.slide-up .hero-image.active {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.slide-down .hero-image {
-  transform: translateY(-100%);
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, visibility 0.6s;
-}
-
-.slide-down .hero-image.active {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.hero-image img {
+.hero-image img,
+.hero-image video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .hero-background-text {
@@ -80,7 +67,7 @@
   color: #fff;
   pointer-events: none;
   white-space: nowrap;
-  z-index: 101;
+  z-index: 50;
   text-transform: uppercase;
   opacity: 0;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
@@ -92,39 +79,121 @@
   transition: opacity 0.8s ease;
 }
 
+.hero-background-logo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 50;
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.4));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-background-logo img {
+  width: clamp(350px, 50vw, 700px);
+  height: auto;
+  display: block;
+}
+
+.hero-background-logo .hero-title {
+  margin-top: 24px;
+  font-size: clamp(20px, 3vw, 36px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.4;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  text-shadow:
+    0 0 20px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(0, 0, 0, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.hero-background-logo .hero-title-elegant {
+  font-style: normal;
+}
+
+.hero-title-static,
+.hero-title-rotator {
+  display: block;
+}
+
+.hero-title-rotator {
+  margin-top: 0.4em;
+}
+
+.rotator {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.rotator-spacer {
+  visibility: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.rotator-word {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  white-space: nowrap;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.rotator-word.incoming {
+  animation-name: rotatorSlideIn;
+}
+
+.rotator-word.outgoing {
+  animation-name: rotatorSlideOut;
+}
+
+@keyframes rotatorSlideIn {
+  0% {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotatorSlideOut {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+}
+
+.hero-background-logo.visible {
+  /* opacity controlled by JS */
+}
+
 .hero-left,
 .hero-right {
   transition-delay: 0.3s;
 }
 
 .hero-content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 40px 0 15%;
-  position: relative;
-  z-index: 2;
-  user-select: text;
-}
-
-.hero-left {
-  flex: 1;
-  max-width: 500px;
-}
-
-.hero-title {
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 600;
-  color: #fff;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-}
-
-.hero-title-line {
-  display: block;
-  white-space: nowrap;
+  display: none;
 }
 
 .hero-right {
@@ -237,82 +306,47 @@
 }
 
 @media (max-width: 1100px) {
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 0 20px;
-    padding-left: 20px;
+  .hero-background-logo {
+    top: 35%;
   }
 
-  .hero-left,
-  .hero-right {
-    max-width: 100%;
-    text-align: center;
+  .hero-background-logo .hero-title {
+    font-size: clamp(18px, 2.8vw, 28px);
+    margin-top: 20px;
   }
 
-  .hero-right {
-    align-items: center;
-  }
-
-  .hero-description {
-    text-align: center;
-  }
-
-  .hero-title {
-    text-align: center;
-    font-size: clamp(21px, 3.75vw, 30px);
-  }
-
-  .hero-background-text {
-    --start-size: clamp(60px, 14vw, 200px);
-    --start-spacing: clamp(8px, 2vw, 20px);
+  .hero-background-logo img {
+    width: clamp(300px, 60vw, 550px);
   }
 
   .hero {
-    padding-bottom: 150px;
-  }
-
-  .hero-scroll-indicator {
-    display: none;
+    padding-bottom: 120px;
   }
 }
 
 @media (max-width: 600px) {
   .hero {
-    padding-bottom: 100px;
+    padding-bottom: 80px;
   }
 
-  .hero-background-text {
-    --start-size: clamp(50px, 18vw, 120px);
-    --start-spacing: clamp(3px, 1vw, 8px);
+  .hero-background-logo {
+    top: 45%;
   }
 
-  .hero-title {
-    font-size: clamp(16px, 4.5vw, 22px);
+  .hero-background-logo img {
+    width: clamp(260px, 75vw, 400px);
   }
 
-  .hero-title-line {
-    white-space: normal;
-  }
-
-  .hero-scroll-indicator {
-    display: none;
+  .hero-background-logo .hero-title {
+    font-size: clamp(14px, 4.4vw, 22px);
+    margin-top: 16px;
+    letter-spacing: 0.2em;
   }
 }
 
-/* Move BELENKO text to top when mobile menu is open */
+/* Hide hero logo when mobile menu is open */
 @media (max-width: 900px) {
-  .hero-background-text {
-    transition: top 0.3s ease, left 0.3s ease, transform 0.3s ease, font-size 0.3s ease, letter-spacing 0.3s ease, opacity 0.3s ease;
-  }
-
-  body.menu-open .hero-background-text {
-    top: 60px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    font-size: 18px !important;
-    letter-spacing: 1px !important;
-    opacity: 0.15 !important;
+  body.menu-open .hero-background-logo {
+    opacity: 0 !important;
   }
 }

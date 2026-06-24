@@ -90,7 +90,7 @@ function About() {
 
   return (
     <>
-      <section className="about" id="about">
+      <section className="about">
         <div className="about-container">
           <div
             ref={leftRef}

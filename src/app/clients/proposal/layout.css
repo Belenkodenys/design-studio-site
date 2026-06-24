@@ -1,0 +1,12 @@
+html,
+html body,
+html body .app {
+  background: #fff !important;
+  background-color: #fff !important;
+}
+
+html.client-proposal-bg,
+html.client-proposal-bg body {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}

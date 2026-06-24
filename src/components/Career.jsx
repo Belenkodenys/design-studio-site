@@ -12,6 +12,13 @@ function PositionCard({ position, index }) {
   const { t } = useLanguage()
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.1 })
 
+  const handleApply = () => {
+    const positionTitle = t(`career.position${position.id}Title`)
+    const subject = encodeURIComponent(`${t('career.applicationSubject')}: ${positionTitle}`)
+    const body = encodeURIComponent(t('career.applicationBody'))
+    window.location.href = `mailto:office@belenko.design?subject=${subject}&body=${body}`
+  }
+
   return (
     <article
       ref={ref}
@@ -25,7 +32,7 @@ function PositionCard({ position, index }) {
         </div>
       </div>
       <p className="position-description">{t(`career.position${position.id}Desc`)}</p>
-      <button className="position-apply">{t('career.applyNow')}</button>
+      <button className="position-apply" onClick={handleApply}>{t('career.applyNow')}</button>
     </article>
   )
 }
@@ -36,7 +43,7 @@ function Career() {
   const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.1 })
 
   return (
-    <section className="career" id="career">
+    <section className="career">
       <div className="career-container">
         <div className="career-intro">
           <header

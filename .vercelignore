@@ -1,0 +1,10 @@
+# Old Vite build
+dist/
+
+# Local Next.js build output
+out/
+.next/
+
+# Dev files
+*.log
+.DS_Store

@@ -148,9 +148,9 @@ export default function RootLayout({ children }) {
                 "height": 100
               },
               "image": [
-                "https://belenko.design/projects/winelove-1.jpg",
-                "https://belenko.design/projects/agatha-1.jpg",
-                "https://belenko.design/projects/milkbar-1.jpg"
+                "https://belenko.design/projects/wine-love-restaurant-kyiv-1.webp",
+                "https://belenko.design/projects/agatha-restaurant-kyiv-1.webp",
+                "https://belenko.design/projects/milk-bar-cafe-kyiv-1.webp"
               ],
               "telephone": "+34671825489",
               "email": "studiobelenko@gmail.com",

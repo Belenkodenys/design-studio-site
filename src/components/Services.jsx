@@ -1,16 +1,17 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
+import Link from 'next/link'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useLanguage } from '../i18n/LanguageContext'
 import './Services.css'
 
-const serviceImages = [
-  '/service-1.png',
-  '/service-2.png',
-  '/service-3.png',
-  '/service-4.png',
-  '/service-5.png',
-  '/service-6.png',
-  '/service-7.png'
+const services = [
+  { url: '/services/concept-positioning/' },
+  { url: '/services/architecture/' },
+  { url: '/services/interior-design/' },
+  { url: '/services/decor-furniture/' },
+  { url: '/services/branding/' },
+  { url: '/services/creative-content/' },
+  { url: '/services/author-supervision/' }
 ]
 
 function Services() {
@@ -31,7 +32,8 @@ function Services() {
     lastTime: 0,
     isAnimating: false,
     rafId: null,
-    isSnapping: false
+    isSnapping: false,
+    hasDragged: false
   })
 
   // Lenis-style lerp - very smooth
@@ -122,6 +124,7 @@ function Services() {
   const handleMouseDown = useCallback((e) => {
     const s = state.current
     s.isDragging = true
+    s.hasDragged = false
     s.startX = e.clientX
     s.lastX = e.clientX
     s.startScrollLeft = carouselRef.current?.scrollLeft || 0
@@ -142,6 +145,12 @@ function Services() {
     const now = performance.now()
     const dt = now - s.lastTime
     const dx = e.clientX - s.lastX
+
+    // Mark as dragged if moved more than 5px
+    const totalDelta = Math.abs(s.startX - e.clientX)
+    if (totalDelta > 5) {
+      s.hasDragged = true
+    }
 
     // Track velocity with smoothing
     if (dt > 0) {
@@ -174,6 +183,7 @@ function Services() {
     const s = state.current
     const touch = e.touches[0]
     s.isDragging = true
+    s.hasDragged = false
     s.startX = touch.clientX
     s.lastX = touch.clientX
     s.startScrollLeft = carouselRef.current?.scrollLeft || 0
@@ -194,6 +204,12 @@ function Services() {
     const now = performance.now()
     const dt = now - s.lastTime
     const dx = touch.clientX - s.lastX
+
+    // Mark as dragged if moved more than 5px
+    const totalDelta = Math.abs(s.startX - touch.clientX)
+    if (totalDelta > 5) {
+      s.hasDragged = true
+    }
 
     if (dt > 0) {
       const instantVelocity = dx / dt
@@ -235,6 +251,13 @@ function Services() {
     }
   }, [clampScroll, startAnimation])
 
+  // Prevent link navigation if dragged
+  const handleLinkClick = useCallback((e) => {
+    if (state.current.hasDragged) {
+      e.preventDefault()
+    }
+  }, [])
+
   // Initialize and cleanup
   useEffect(() => {
     const carousel = carouselRef.current
@@ -259,7 +282,6 @@ function Services() {
   return (
     <section
       className="services"
-      id="services"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -282,17 +304,21 @@ function Services() {
           ref={carouselRef}
           style={{ '--blur-amount': `${blurAmount}px` }}
         >
-          {serviceImages.map((image, index) => (
-            <article key={image} className="service-slide">
-              <div className="service-slide-image">
-                <img src={image} alt={t(`services.service${index + 1}Title`)} loading="lazy" />
-              </div>
+          {services.map((service, index) => (
+            <Link
+              key={service.url}
+              href={service.url}
+              className="service-slide"
+              onClick={handleLinkClick}
+              draggable={false}
+              onDragStart={(e) => e.preventDefault()}
+            >
               <div className="service-slide-content">
                 <span className="service-number">0{index + 1}</span>
                 <h3 className="service-slide-title">{t(`services.service${index + 1}Title`)}</h3>
                 <p className="service-slide-description">{t(`services.service${index + 1}Text`)}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         <div className="swipe-hint">

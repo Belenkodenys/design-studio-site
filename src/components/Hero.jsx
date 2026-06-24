@@ -1,194 +1,243 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
-import { useMouseParallax } from '../hooks/useParallax'
 import './Hero.css'
 
-const heroImages = [
-  '/hero-bg.jpg',
-  '/hero-1.jpg',
-  '/hero-2.jpg',
-  '/hero-3.jpg',
-  '/hero-4.jpg',
-  '/hero-5.jpg',
+const heroMedia = [
+  { type: 'image', src: '/story_02_people_filled_bright.jpg' },
+  { type: 'image', src: '/new_story_07_people_filled.jpg' },
+  { type: 'image', src: '/story_03_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_04_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_01_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_07_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_05_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_06_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_08_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_10_people_filled_bright.jpg' },
+  { type: 'image', src: '/story_09_people_filled_bright.jpg' },
+  { type: 'video', src: '/chou-chou.mp4' },
+  { type: 'video', src: '/babo-gardens.mp4' },
+  { type: 'video', src: '/monica-1.mp4' },
+  { type: 'video', src: '/monica-2.mp4' },
+  { type: 'video', src: '/take-five.mp4' },
+  { type: 'video', src: '/para-janov.mp4' },
 ]
+
+const TILE_ASPECT = 9 / 16
+
+const rotatingWords = [
+  'Design',
+  'Branding',
+  'Interior Solutions',
+  'Menu',
+  'Furniture',
+  'Atmosphere',
+  'Customer Experience',
+  'Tableware',
+  'Lighting Design',
+  'Ideas for Concepts',
+]
+const longestWord = rotatingWords.reduce(
+  (a, b) => (b.length > a.length ? b : a),
+  ''
+)
+
+function RotatingWord() {
+  const [idx, setIdx] = useState(0)
+  const [prevIdx, setPrevIdx] = useState(null)
+  const idxRef = useRef(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      const current = idxRef.current
+      const next = (current + 1) % rotatingWords.length
+      idxRef.current = next
+      setPrevIdx(current)
+      setIdx(next)
+    }, 2500)
+    return () => clearInterval(id)
+  }, [])
+
+  useEffect(() => {
+    if (prevIdx === null) return
+    const t = setTimeout(() => setPrevIdx(null), 700)
+    return () => clearTimeout(t)
+  }, [prevIdx, idx])
+
+  return (
+    <span className="rotator">
+      <span className="rotator-spacer">{longestWord}</span>
+      {prevIdx !== null && (
+        <span key={`out-${prevIdx}`} className="rotator-word outgoing">
+          {rotatingWords[prevIdx]}
+        </span>
+      )}
+      <span key={`in-${idx}`} className="rotator-word incoming">
+        {rotatingWords[idx]}
+      </span>
+    </span>
+  )
+}
+
+function pickDistinctMedia(count) {
+  const pool = heroMedia.map((_, i) => i)
+  const result = []
+  for (let i = 0; i < count; i++) {
+    if (pool.length === 0) pool.push(...heroMedia.map((_, j) => j))
+    const idx = Math.floor(Math.random() * pool.length)
+    result.push(pool.splice(idx, 1)[0])
+  }
+  return result
+}
+
+function HeroTile({ mediaIdx }) {
+  const [stack, setStack] = useState([{ id: 0, mediaIdx }])
+  const counterRef = useRef(1)
+  const isFirstRender = useRef(true)
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+    const newId = counterRef.current++
+    setStack((prev) => {
+      const last = prev[prev.length - 1]
+      return last ? [last, { id: newId, mediaIdx }] : [{ id: newId, mediaIdx }]
+    })
+    const t = setTimeout(() => {
+      setStack((prev) => prev.filter((s) => s.id === newId))
+    }, 1100)
+    return () => clearTimeout(t)
+  }, [mediaIdx])
+
+  return (
+    <div className="hero-tile">
+      {stack.map((item) => {
+        const media = heroMedia[item.mediaIdx]
+        return (
+          <div key={item.id} className="hero-image">
+            {media.type === 'video' ? (
+              <video
+                src={media.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+              />
+            ) : (
+              <img src={media.src} alt="" draggable="false" />
+            )}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 function Hero() {
   const { t } = useLanguage()
-  const [loaded, setLoaded] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
-  const [mouseParallaxRef, mousePosition] = useMouseParallax(0.02)
-
-  // Random starting index on mount
-  const [currentIndex, setCurrentIndex] = useState(() => Math.floor(Math.random() * heroImages.length))
-
-  const touchStartY = useRef(0)
-  const touchEndY = useRef(0)
-  const rafRef = useRef(null)
-  const [slideDirection, setSlideDirection] = useState('up')
+  const [tiles, setTiles] = useState([])
+  const tilesRef = useRef([])
+  useEffect(() => {
+    tilesRef.current = tiles
+  }, [tiles])
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 100)
-
-    const handleScroll = () => {
-      if (rafRef.current) return
-      rafRef.current = requestAnimationFrame(() => {
-        setScrollY(window.scrollY)
-        rafRef.current = null
+    const recalc = () => {
+      const tileWidth = window.innerHeight * TILE_ASPECT
+      const count = Math.max(1, Math.ceil(window.innerWidth / tileWidth))
+      setTiles((prev) => {
+        if (prev.length === count) return prev
+        if (prev.length < count) {
+          const used = new Set(prev)
+          const available = heroMedia
+            .map((_, i) => i)
+            .filter((i) => !used.has(i))
+          const extras = []
+          for (let i = 0; i < count - prev.length; i++) {
+            if (available.length === 0) {
+              extras.push(Math.floor(Math.random() * heroMedia.length))
+            } else {
+              const pickIdx = Math.floor(Math.random() * available.length)
+              extras.push(available.splice(pickIdx, 1)[0])
+            }
+          }
+          return [...prev, ...extras]
+        }
+        return prev.slice(0, count)
       })
     }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => {
-      clearTimeout(timer)
-      window.removeEventListener('scroll', handleScroll)
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    if (tiles.length === 0) {
+      const tileWidth = window.innerHeight * TILE_ASPECT
+      const count = Math.max(1, Math.ceil(window.innerWidth / tileWidth))
+      setTiles(pickDistinctMedia(count))
     }
+    window.addEventListener('resize', recalc)
+    return () => window.removeEventListener('resize', recalc)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Auto-advance carousel
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSlideDirection('up')
-      setCurrentIndex((prev) => (prev + 1) % heroImages.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
+    if (tiles.length === 0) return
+    const getDelay = (mediaIdx) =>
+      heroMedia[mediaIdx]?.type === 'video' ? 5000 : 1500
+    const timeouts = new Set()
+    let active = true
 
-  const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
+    const scheduleSwap = (tileIdx, delay) => {
+      const t = setTimeout(() => {
+        if (!active) return
+        timeouts.delete(t)
+        const currentTiles = tilesRef.current
+        if (tileIdx >= currentTiles.length) return
+        const current = currentTiles[tileIdx]
+        const candidates = heroMedia
+          .map((_, i) => i)
+          .filter((i) => i !== current)
+        const newMediaIdx =
+          candidates[Math.floor(Math.random() * candidates.length)]
+        setTiles((prev) => {
+          if (tileIdx >= prev.length) return prev
+          const next = [...prev]
+          next[tileIdx] = newMediaIdx
+          return next
+        })
+        scheduleSwap(tileIdx, getDelay(newMediaIdx))
+      }, delay)
+      timeouts.add(t)
+    }
+
+    tiles.forEach((mediaIdx, tileIdx) => {
+      const jitter = Math.random() * 1000
+      scheduleSwap(tileIdx, jitter + getDelay(mediaIdx))
     })
-  }
 
-  const handleTouchStart = (e) => {
-    touchStartY.current = e.touches[0].clientY
-  }
-
-  const handleTouchMove = (e) => {
-    touchEndY.current = e.touches[0].clientY
-  }
-
-  const handleTouchEnd = () => {
-    const diff = touchStartY.current - touchEndY.current
-    const threshold = 50
-
-    if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        // Swipe up - next image
-        setSlideDirection('up')
-        setCurrentIndex((prev) => (prev + 1) % heroImages.length)
-      } else {
-        // Swipe down - previous image
-        setSlideDirection('down')
-        setCurrentIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length)
-      }
-    } else if (Math.abs(diff) < 10) {
-      // Tap - next image
-      setSlideDirection('up')
-      setCurrentIndex((prev) => (prev + 1) % heroImages.length)
+    return () => {
+      active = false
+      timeouts.forEach(clearTimeout)
     }
-  }
-
-  // Mouse drag support for desktop
-  const handleMouseDown = (e) => {
-    touchStartY.current = e.clientY
-  }
-
-  const handleMouseUp = (e) => {
-    touchEndY.current = e.clientY
-    const diff = touchStartY.current - touchEndY.current
-    const threshold = 50
-
-    if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        setSlideDirection('up')
-        setCurrentIndex((prev) => (prev + 1) % heroImages.length)
-      } else {
-        setSlideDirection('down')
-        setCurrentIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length)
-      }
-    }
-  }
+  }, [tiles.length])
 
   return (
-    <section className="hero" ref={mouseParallaxRef}>
-      <div
-        className={`hero-slider slide-${slideDirection}`}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-      >
-        {heroImages.map((src, index) => (
-          <div
-            key={src}
-            className={`hero-image ${index === currentIndex ? 'active' : ''}`}
-            style={{
-              transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0002}) translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px)`,
-            }}
-          >
-            <img src={src} alt={`Interior ${index + 1}`} />
-          </div>
+    <section className="hero">
+      <div className="hero-slider">
+        {tiles.map((activeIdx, tileIdx) => (
+          <HeroTile key={tileIdx} mediaIdx={activeIdx} />
         ))}
       </div>
 
-      <div
-        className={`hero-background-text ${loaded && scrollY < window.innerHeight ? 'visible' : ''}`}
-        style={(() => {
-          const progress = Math.min(1, scrollY / (window.innerHeight * 0.5))
-          const vh = window.innerHeight
-          const vw = window.innerWidth
-
-          // Start position depends on viewport
-          const startTopPercent = vw <= 600 ? 0.45 : vw <= 1100 ? 0.35 : 0.4
-          const startTop = vh * startTopPercent
-          const startLeft = vw * 0.5
-
-          // End position (header logo position)
-          const endTop = vw <= 600 ? 22 : 30
-          const endLeft = vw <= 600 ? 20 : 40
-
-          // Interpolate position
-          const currentTop = startTop + (endTop - startTop) * progress
-          const currentLeft = startLeft + (endLeft - startLeft) * progress
-
-          // Mouse parallax reduces as we scroll
-          const parallaxFactor = 1 - progress
-          const mouseX = mousePosition.x * -0.3 * parallaxFactor
-          const mouseY = mousePosition.y * -0.3 * parallaxFactor
-
-          // Transform eases from centered to top-left aligned
-          const translateX = -50 * (1 - progress)
-          const translateY = -50 * (1 - progress)
-
-          return {
-            '--scroll-progress': progress,
-            top: `${currentTop + mouseY}px`,
-            left: `${currentLeft + mouseX}px`,
-            transform: `translate(${translateX}%, ${translateY}%)`,
-          }
-        })()}
-      >
-        BELENKO
+      <div className="hero-background-logo visible">
+        <img src="/belenko-logo.png" alt="Belenko" />
+        <h1 className="hero-title hero-title-elegant">
+          <span className="hero-title-static">{t('hero.title')}</span>
+          <span className="hero-title-rotator">
+            <RotatingWord />
+          </span>
+        </h1>
       </div>
-
-      <div className="hero-content">
-        <div
-          className={`hero-left animate-fade-left ${loaded ? 'visible' : ''}`}
-          style={{
-            transform: `translateY(${scrollY * -0.1}px) translate(${mousePosition.x * 0.2}px, ${mousePosition.y * 0.2}px)`,
-            opacity: Math.max(0, 1 - scrollY * 0.002),
-          }}
-        >
-          <h1 className="hero-title">
-            <span className="hero-title-line">{t('hero.title')}</span>
-            <span className="hero-title-line">{t('hero.titleLine2')}</span>
-          </h1>
-        </div>
-      </div>
-
     </section>
   )
 }

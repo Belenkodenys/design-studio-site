@@ -1,0 +1,48 @@
+html.presentation-bg,
+html.presentation-bg body,
+html.presentation-bg .app {
+  background: #fff !important;
+  background-color: #fff !important;
+}
+
+/* Content protection: discourage copy / save / drag */
+html.presentation-bg,
+html.presentation-bg body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+html.presentation-bg img,
+html.presentation-bg video {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+}
+
+/* Blank the page out when the user tries to print or save as PDF */
+@media print {
+  html.presentation-bg,
+  html.presentation-bg body {
+    visibility: hidden !important;
+    background: #fff !important;
+  }
+  html.presentation-bg body::before {
+    content: 'Printing of this presentation is disabled.';
+    visibility: visible;
+    display: block;
+    position: fixed;
+    top: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    color: #555;
+  }
+}

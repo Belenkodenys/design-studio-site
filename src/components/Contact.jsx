@@ -60,7 +60,7 @@ function Contact() {
   }
 
   return (
-    <section className="contact" id="contact">
+    <section className="contact">
       <div className="contact-container">
         <div
           ref={infoRef}
@@ -104,7 +104,7 @@ function Contact() {
               <strong>{t('contact.phone')}:</strong> +34 67182 54 89
             </p>
             <p>
-              <strong>{t('contact.email')}:</strong> info@belenko.studio
+              <strong>{t('contact.email')}:</strong> office@belenko.design
             </p>
             <p className="contact-location">
               {t('contact.location')}

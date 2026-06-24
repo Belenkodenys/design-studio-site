@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import { LanguageProvider } from './i18n/LanguageContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -13,11 +14,22 @@ import ProjectDetail from './pages/ProjectDetail'
 import AllProjects from './pages/AllProjects'
 import BlogPage from './pages/BlogPage'
 import CareerPage from './pages/CareerPage'
+import AdminLogin from './admin/AdminLogin'
+import AdminLayout from './admin/AdminLayout'
+import AdminDashboard from './admin/AdminDashboard'
+import PostList from './admin/PostList'
+import PostEditor from './admin/PostEditor'
+import SEO from './components/SEO'
 import './App.css'
 
 function HomePage() {
   return (
     <>
+      <SEO
+        title="Belenko Design Studio — Restaurant & Bar Interior Design"
+        description="Award-winning interior design studio specializing in restaurants, bars, cafes and hospitality spaces. 30+ projects in Ukraine, Turkey, Spain, Azerbaijan. Transform your space with Belenko."
+        url="/"
+      />
       <Header />
       <Hero />
       <div className="section-divider" />
@@ -38,8 +50,9 @@ function HomePage() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <BrowserRouter>
+    <HelmetProvider>
+      <LanguageProvider>
+        <BrowserRouter>
         <div className="app">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -47,11 +60,19 @@ function App() {
             <Route path="/project/:id" element={<ProjectDetail />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/career" element={<CareerPage />} />
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="posts" element={<PostList />} />
+              <Route path="posts/:id" element={<PostEditor />} />
+            </Route>
           </Routes>
           <SocialFloat />
         </div>
-      </BrowserRouter>
-    </LanguageProvider>
+        </BrowserRouter>
+      </LanguageProvider>
+    </HelmetProvider>
   )
 }
 

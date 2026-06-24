@@ -16,28 +16,48 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.15) 0%, rgba(10, 10, 10, 0.05) 50%, transparent 100%);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 100%);
+  height: 180px;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.5) 50%, transparent 100%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
   pointer-events: none;
   z-index: -1;
 }
 
 .logo {
-  font-size: 21px;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: -0.01em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
   transition: opacity 0.3s ease;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
 }
 
-.header.logo-hidden .logo {
-  opacity: 0;
-  pointer-events: none;
+.logo img {
+  width: 120px;
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+
+/* Dark strip on light background */
+.header.on-light-bg::before {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  height: 150px;
+}
+
+/* Solid darkened strip when scrolled (so nav text doesn't bleed into content) */
+.header.scrolled::before {
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.85) 70%, rgba(10, 10, 10, 0.6) 100%);
+  height: 90px;
+  mask-image: none;
+  -webkit-mask-image: none;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+.header.scrolled.on-light-bg::before {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.55) 70%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .nav {
@@ -51,7 +71,7 @@
   font-size: 21px;
   font-weight: 500;
   letter-spacing: -0.01em;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
   position: relative;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
@@ -93,7 +113,7 @@
   width: 100%;
   height: 2px;
   background: #fff;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, background 0.3s ease;
 }
 
 .menu-toggle.open span:nth-child(1) {
@@ -111,6 +131,28 @@
 @media (max-width: 900px) {
   .header {
     padding: 15px 20px;
+  }
+
+  .header::before {
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.2) 50%, transparent 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+  }
+
+  .header.scrolled::before {
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.88) 75%, rgba(10, 10, 10, 0.55) 100%);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .logo img {
+    width: 100px;
   }
 
   .header-actions {
@@ -146,5 +188,11 @@
 
   .menu-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    width: 80px;
   }
 }

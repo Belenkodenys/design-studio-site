@@ -364,7 +364,8 @@ export const projects = [
       '/projects/monica-restaurant-odessa-68.webp',
       '/projects/monica-restaurant-odessa-69.webp',
       '/projects/monica-restaurant-odessa-70.webp'
-    ]
+    ],
+    video: '/projects/monica-video.mp4'
   },
   {
     id: 10,

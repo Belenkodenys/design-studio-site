@@ -1,11 +1,54 @@
-# Robots.txt for Belenko Design Studio
-# https://belenko-studio.vercel.app
+# Belenko Design Studio - Restaurant Interior Design
+# https://www.belenko.design
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
-# Sitemap
-Sitemap: https://belenko-studio.vercel.app/sitemap.xml
+# Google AI
+User-agent: Google-Extended
+Allow: /
 
-# Crawl-delay for polite crawling
-Crawl-delay: 1
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft / Bing AI
+User-agent: Bingbot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# Meta
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Common Crawl (used by many AI systems)
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.belenko.design/sitemap.xml
