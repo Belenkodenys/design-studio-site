@@ -130,7 +130,7 @@ function GlitchButton() {
   )
 }
 
-function StudioGallery({ slides }) {
+function StudioGallery({ slides, bare = false, className = '' }) {
   const [current, setCurrent] = useState(0)
   const [leaving, setLeaving] = useState(null)
   const [direction, setDirection] = useState(null)
@@ -244,11 +244,10 @@ function StudioGallery({ slides }) {
   }
   const handleMouseLeave = () => setCursor(null)
 
-  return (
-    <div className="studio-gallery-pin">
+  const gallery = (
     <div
       ref={galleryRef}
-      className="studio-gallery"
+      className={`studio-gallery${className ? ' ' + className : ''}`}
       onClick={handleClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -294,9 +293,46 @@ function StudioGallery({ slides }) {
         </div>
       )}
     </div>
-    </div>
   )
+
+  return bare ? gallery : <div className="studio-gallery-pin">{gallery}</div>
 }
+
+const BELLA_SLIDES = [
+  '/projects/bella-cover.jpg',
+  '/projects/bella-4.jpg',
+  '/projects/bella-7.jpg',
+  '/projects/bella-8.jpg',
+  '/projects/bella-1.jpg',
+  '/projects/bella-3.jpg',
+  '/projects/bella-5.jpg',
+  '/projects/bella-2.jpg',
+  '/projects/bella-6.jpg',
+  '/projects/bella-restaurant-dnipro-1.webp',
+  '/projects/bella-restaurant-dnipro-2.webp',
+  '/projects/bella-restaurant-dnipro-3.webp',
+  '/projects/bella-restaurant-dnipro-4.webp',
+  '/projects/bella-restaurant-dnipro-5.webp',
+  '/projects/bella-restaurant-dnipro-6.webp',
+  '/projects/bella-restaurant-dnipro-7.webp',
+  '/projects/bella-restaurant-dnipro-8.webp',
+  '/projects/bella-restaurant-dnipro-9.webp',
+  '/projects/bella-restaurant-dnipro-10.webp',
+  '/projects/bella-restaurant-dnipro-11.webp',
+  '/projects/bella-restaurant-dnipro-12.webp',
+  '/projects/bella-restaurant-dnipro-13.webp',
+  '/projects/bella-restaurant-dnipro-14.webp',
+  '/projects/bella-restaurant-dnipro-15.webp',
+  '/projects/bella-restaurant-dnipro-16.webp',
+  '/projects/bella-restaurant-dnipro-17.webp',
+  '/projects/bella-restaurant-dnipro-18.webp',
+  '/projects/bella-restaurant-dnipro-19.webp',
+  '/projects/bella-restaurant-dnipro-20.webp',
+  '/projects/bella-restaurant-dnipro-21.webp',
+  '/projects/bella-restaurant-dnipro-22.webp',
+  '/projects/bella-restaurant-dnipro-23.webp',
+  '/projects/bella-restaurant-dnipro-24.webp',
+]
 
 function MissionScrollReveal({ text }) {
   const ref = useRef(null)
@@ -740,39 +776,47 @@ export default function ClientLanding() {
         </p>
       </section>
 
-      <StudioGallery
-        slides={[
-          '/studio-gallery-00.jpg',
-          '/studio-gallery-01.jpg',
-          '/studio-gallery-02.jpg',
-          '/studio-gallery-03.jpg',
-          '/studio-gallery-04.jpg',
-          '/studio-gallery-05.jpg',
-          '/studio-gallery-06.jpg',
-          '/studio-gallery-07.jpg',
-          '/studio-gallery-08.jpg',
-          '/studio-gallery-09.jpg',
-          '/studio-gallery-11.jpg',
-          '/studio-gallery-12.jpg',
-          '/studio-gallery-13.jpg',
-          '/studio-gallery-14.jpg',
-          '/studio-gallery-15.jpg',
-          '/studio-gallery-16.jpg',
-          '/studio-gallery-17.jpg',
-          '/studio-gallery-18.jpg',
-          '/studio-gallery-19.jpg',
-          '/studio-gallery-20.jpg',
-          '/studio-gallery-21.jpg',
-          '/studio-gallery-22.jpg',
-          '/studio-gallery-23.jpg',
-          '/studio-gallery-24.jpg',
-          '/studio-gallery-25.jpg',
-          '/studio-gallery-26.jpg',
-          '/studio-gallery-27.jpg',
-        ]}
-      />
+      <div className="studio-gallery-pin proposal-galleries-row">
+        <StudioGallery
+          bare
+          slides={[
+            '/studio-gallery-00.jpg',
+            '/studio-gallery-01.jpg',
+            '/studio-gallery-02.jpg',
+            '/studio-gallery-03.jpg',
+            '/studio-gallery-04.jpg',
+            '/studio-gallery-05.jpg',
+            '/studio-gallery-06.jpg',
+            '/studio-gallery-07.jpg',
+            '/studio-gallery-08.jpg',
+            '/studio-gallery-09.jpg',
+            '/studio-gallery-11.jpg',
+            '/studio-gallery-12.jpg',
+            '/studio-gallery-13.jpg',
+            '/studio-gallery-14.jpg',
+            '/studio-gallery-15.jpg',
+            '/studio-gallery-16.jpg',
+            '/studio-gallery-17.jpg',
+            '/studio-gallery-18.jpg',
+            '/studio-gallery-19.jpg',
+            '/studio-gallery-20.jpg',
+            '/studio-gallery-21.jpg',
+            '/studio-gallery-22.jpg',
+            '/studio-gallery-23.jpg',
+            '/studio-gallery-24.jpg',
+            '/studio-gallery-25.jpg',
+            '/studio-gallery-26.jpg',
+            '/studio-gallery-27.jpg',
+          ]}
+        />
+        <StudioGallery bare slides={BELLA_SLIDES} className="proposal-gallery-bella-inline" />
+      </div>
 
       <Sections />
+
+      <section className="proposal-bella-stage">
+        <StudioGallery bare slides={BELLA_SLIDES} />
+      </section>
       </div>
 
       <div className="proposal-glitch-btn-wrap">
