@@ -546,15 +546,19 @@ html.is-glitching .proposal-glitch-btn {
 }
 
 /* Stacked Bella block placed after the services sections, before the Fun
-   button — used on mobile and on desktops too narrow for two side by side. */
+   button — used on mobile and on desktops too narrow for two side by side.
+   Styled as a sticky full-viewport pin, identical to the Studio (Chouchou)
+   gallery pin, so its scroll behaves exactly the same. */
 .proposal-bella-stage {
-  position: relative;
-  z-index: 5;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  min-height: 100svh;
   background: #fff;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(48px, 6vw, 96px) 0;
 }
 
 /* Wide enough for two sliders side by side → show inline Bella next to Studio,
@@ -574,25 +578,6 @@ html.is-glitching .proposal-glitch-btn {
   }
   .proposal-bella-stage {
     display: none;
-  }
-}
-
-@media (max-width: 720px) {
-  .proposal-bella-stage {
-    padding: clamp(32px, 9vw, 64px) 16px;
-  }
-  /* On mobile the stacked Bella is a normal, contained portrait gallery —
-     NOT a full-viewport block. A 100svh slider sitting mid-flow traps touch
-     scrolling (overflow:hidden + overscroll-behavior:contain) and throws off
-     the page height, so the page can't be scrolled to the bottom. */
-  .proposal-bella-stage .studio-gallery {
-    width: 90vw;
-    max-width: none;
-    height: auto;
-    aspect-ratio: 3 / 4;
-    max-height: 80svh;
-    align-self: center;
-    overscroll-behavior: auto;
   }
 }
 

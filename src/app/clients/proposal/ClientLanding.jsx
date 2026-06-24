@@ -323,7 +323,6 @@ const BELLA_SLIDES = [
   '/projects/bella-restaurant-dnipro-13.webp',
   '/projects/bella-restaurant-dnipro-14.webp',
   '/projects/bella-restaurant-dnipro-15.webp',
-  '/projects/bella-restaurant-dnipro-16.webp',
   '/projects/bella-restaurant-dnipro-17.webp',
   '/projects/bella-restaurant-dnipro-18.webp',
   '/projects/bella-restaurant-dnipro-19.webp',
