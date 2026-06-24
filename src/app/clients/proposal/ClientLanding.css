@@ -2,7 +2,6 @@
   background: #fff;
   color: #111;
   min-height: 100vh;
-  overflow-x: clip;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -440,21 +439,6 @@ html.is-glitching .proposal-glitch-btn {
   padding-bottom: clamp(48px, 6vw, 96px);
 }
 
-/* Full-bleed white backing so the services section completely covers the
-   pinned galleries behind it — the section content stays capped at 1100px,
-   but its white background extends the full viewport width. */
-.proposal-stack > .proposal-sections::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  background: #fff;
-  z-index: -1;
-}
-
 .studio-gallery-pin {
   width: 100%;
 }
@@ -577,10 +561,13 @@ html.is-glitching .proposal-glitch-btn {
    shrink both to fit, and drop the stacked copy. */
 @media (min-width: 1300px) {
   .proposal-galleries-row {
-    gap: clamp(20px, 2vw, 48px);
+    gap: clamp(16px, 1.5vw, 32px);
   }
+  /* Keep both galleries within the 1100px white band of the services
+     section so it fully covers them as it scrolls over the pin
+     (520 + 520 + 32 gap = 1072 < 1100). */
   .proposal-galleries-row .studio-gallery {
-    width: min(680px, 44vw);
+    width: min(520px, 40vw);
   }
   .proposal-gallery-bella-inline {
     display: block;
@@ -592,7 +579,20 @@ html.is-glitching .proposal-glitch-btn {
 
 @media (max-width: 720px) {
   .proposal-bella-stage {
-    padding: 0;
+    padding: clamp(32px, 9vw, 64px) 16px;
+  }
+  /* On mobile the stacked Bella is a normal, contained portrait gallery —
+     NOT a full-viewport block. A 100svh slider sitting mid-flow traps touch
+     scrolling (overflow:hidden + overscroll-behavior:contain) and throws off
+     the page height, so the page can't be scrolled to the bottom. */
+  .proposal-bella-stage .studio-gallery {
+    width: 90vw;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-height: 80svh;
+    align-self: center;
+    overscroll-behavior: auto;
   }
 }
 
