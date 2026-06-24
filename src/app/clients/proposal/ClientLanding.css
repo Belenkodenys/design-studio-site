@@ -561,6 +561,30 @@ html.is-glitching .proposal-glitch-btn {
   justify-content: center;
 }
 
+/* Outro (Fun button + footer) sits inside the pinned stack, above the Bella
+   pin, so Bella sticks to the top of the screen and this panel slides up
+   over it — the same overlay-and-pin effect the services texts have over
+   the Studio gallery. */
+.proposal-outro {
+  position: relative;
+  z-index: 6;
+  background: #fff;
+}
+
+/* Only when the stacked Bella pin is active (below the two-side-by-side
+   breakpoint) does the outro need to be a full-viewport panel that slides
+   up over it. On wide screens Bella is hidden, so keep the outro natural
+   height to avoid a screen of empty white before the footer. */
+@media (max-width: 1299.98px) {
+  .proposal-outro {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
 /* Wide enough for two sliders side by side → show inline Bella next to Studio,
    shrink both to fit, and drop the stacked copy. */
 @media (min-width: 1300px) {

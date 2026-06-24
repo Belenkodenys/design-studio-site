@@ -315,7 +315,7 @@ function StudioGallery({ slides, bare = false, className = '' }) {
 }
 
 const BELLA_SLIDES = [
-  '/projects/bella-cover.jpg',
+  '/projects/bella-cover2.jpg',
   '/projects/bella-4.jpg',
   '/projects/bella-8.jpg',
   '/projects/bella-1.jpg',
@@ -825,13 +825,14 @@ export default function ClientLanding() {
       <section className="proposal-bella-stage">
         <StudioGallery bare slides={BELLA_SLIDES} />
       </section>
-      </div>
 
-      <div className="proposal-glitch-btn-wrap">
-        <GlitchButton />
+      <div className="proposal-outro">
+        <div className="proposal-glitch-btn-wrap">
+          <GlitchButton />
+        </div>
+        <ProposalFooter />
       </div>
-
-      <ProposalFooter />
+      </div>
     </main>
   )
 }
