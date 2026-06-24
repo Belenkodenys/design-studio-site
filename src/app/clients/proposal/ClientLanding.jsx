@@ -162,12 +162,19 @@ function StudioGallery({ slides, bare = false, className = '' }) {
     }, 700)
   }, [slides.length])
 
+  // Preload only the current slide and its immediate neighbours. Eagerly
+  // decoding every slide blows up memory on mobile (dozens of ~2000px images
+  // at ~10MB decoded each), which crashes the tab. The window keeps a handful
+  // of images alive — enough for smooth next/prev transitions.
   useEffect(() => {
-    slides.forEach((src) => {
+    const N = slides.length
+    if (!N) return
+    const idxs = [current, (current + 1) % N, (current - 1 + N) % N]
+    idxs.forEach((i) => {
       const img = new window.Image()
-      img.src = src
+      img.src = slides[i]
     })
-  }, [slides])
+  }, [current, slides])
 
 
   // Non-passive touch listeners so we can preventDefault during horizontal drag
@@ -253,6 +260,7 @@ function StudioGallery({ slides, bare = false, className = '' }) {
       onMouseLeave={handleMouseLeave}
     >
       {slides.map((src, i) => {
+        const N = slides.length
         let cls = 'studio-gallery-slide'
         if (src.includes('studio-gallery-00')) cls += ' studio-gallery-slide-cover'
         if (i === current) {
@@ -264,7 +272,15 @@ function StudioGallery({ slides, bare = false, className = '' }) {
         } else {
           cls += ' is-hidden'
         }
-        const inlineStyle = { backgroundImage: `url(${src})` }
+        // Only paint the current slide, the one leaving, and the immediate
+        // neighbours. Slides outside this window carry no background-image so
+        // the browser never decodes them — keeps mobile memory bounded.
+        const inWindow =
+          i === current ||
+          i === leaving ||
+          i === (current + 1) % N ||
+          i === (current - 1 + N) % N
+        const inlineStyle = inWindow ? { backgroundImage: `url(${src})` } : undefined
         return (
           <div
             key={i}
