@@ -317,7 +317,6 @@ function StudioGallery({ slides, bare = false, className = '' }) {
 const BELLA_SLIDES = [
   '/projects/bella-cover.jpg',
   '/projects/bella-4.jpg',
-  '/projects/bella-7.jpg',
   '/projects/bella-8.jpg',
   '/projects/bella-1.jpg',
   '/projects/bella-3.jpg',
@@ -340,12 +339,6 @@ const BELLA_SLIDES = [
   '/projects/bella-restaurant-dnipro-14.webp',
   '/projects/bella-restaurant-dnipro-15.webp',
   '/projects/bella-restaurant-dnipro-17.webp',
-  '/projects/bella-restaurant-dnipro-18.webp',
-  '/projects/bella-restaurant-dnipro-19.webp',
-  '/projects/bella-restaurant-dnipro-20.webp',
-  '/projects/bella-restaurant-dnipro-21.webp',
-  '/projects/bella-restaurant-dnipro-22.webp',
-  '/projects/bella-restaurant-dnipro-23.webp',
   '/projects/bella-restaurant-dnipro-24.webp',
 ]
 
