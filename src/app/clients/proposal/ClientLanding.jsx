@@ -739,6 +739,36 @@ export default function ClientLanding() {
     }
   }, [])
 
+  // Pin the LAST screen of the services-texts section so the stacked Bella
+  // gallery slides up over a held panel — the same overlay effect the texts
+  // have over the Studio gallery. A multi-screen section can't pin at top:0
+  // (that would freeze its first screen and hide the rest), so we offset the
+  // sticky top by the overflow height: the section scrolls through normally,
+  // then its final screen sticks while Bella rides over it. Only below the
+  // side-by-side breakpoint, where the stacked Bella exists.
+  useEffect(() => {
+    const sec = document.querySelector('.proposal-sections')
+    if (!sec) return
+    const apply = () => {
+      if (window.innerWidth >= 1300) {
+        sec.style.top = ''
+        return
+      }
+      const overflow = sec.offsetHeight - window.innerHeight
+      sec.style.top = overflow > 0 ? `${-overflow}px` : '0px'
+    }
+    apply()
+    const settle = setTimeout(apply, 600)
+    window.addEventListener('resize', apply)
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(apply) : null
+    if (ro) ro.observe(sec)
+    return () => {
+      window.removeEventListener('resize', apply)
+      clearTimeout(settle)
+      if (ro) ro.disconnect()
+    }
+  }, [])
+
   return (
     <main className="proposal">
       <div className="proposal-stack">
