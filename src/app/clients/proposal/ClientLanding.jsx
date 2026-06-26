@@ -553,6 +553,50 @@ function shuffleArray(arr) {
   return a
 }
 
+function PixiVideo() {
+  const videoRef = useRef(null)
+  const [started, setStarted] = useState(false)
+
+  const start = () => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = false
+    v.volume = 1
+    const p = v.play()
+    if (p && p.catch) p.catch(() => {})
+    setStarted(true)
+  }
+
+  return (
+    <div className="proposal-pixi-frame">
+      <video
+        ref={videoRef}
+        className="proposal-pixi-video"
+        src="/projects/pixi.mp4"
+        poster="/projects/pixi-poster.jpg"
+        controls={started}
+        playsInline
+        preload="none"
+      />
+      {!started && (
+        <button
+          type="button"
+          className="proposal-pixi-play"
+          onClick={start}
+          aria-label="Начать воспроизведение"
+        >
+          <span className="proposal-pixi-play-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+          Начать воспроизведение
+        </button>
+      )}
+    </div>
+  )
+}
+
 export default function ClientLanding() {
   const heroRef = useRef(null)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
@@ -850,22 +894,14 @@ export default function ClientLanding() {
         <StudioGallery bare slides={BELLA_SLIDES} className="proposal-gallery-bella-inline" />
       </div>
 
+      <section className="proposal-pixi-stage" aria-label="Pixi Istanbul">
+        <PixiVideo />
+      </section>
+
       <Sections />
 
       <section className="proposal-bella-stage">
         <StudioGallery bare slides={BELLA_SLIDES} />
-      </section>
-
-      <section className="proposal-pixi-stage" aria-label="Pixi">
-        <video
-          className="proposal-pixi-video"
-          src="/projects/pixi.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        />
       </section>
 
       <div className="proposal-outro">

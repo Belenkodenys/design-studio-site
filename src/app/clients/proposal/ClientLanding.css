@@ -433,7 +433,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-stack > .proposal-sections {
   position: relative;
-  z-index: 4;
+  z-index: 5;
   background: #fff;
   padding-top: clamp(48px, 6vw, 96px);
   padding-bottom: clamp(48px, 6vw, 96px);
@@ -565,32 +565,74 @@ html.is-glitching .proposal-glitch-btn {
   min-height: 100vh;
   min-height: 100svh;
   background: #fff;
-  z-index: 5;
+  z-index: 6;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Pixi — video project. A sticky full-viewport panel after Bella; it pins
-   to the top and slides up over the held Bella gallery, then the outro
-   slides over it. Same overlay-and-pin effect as the other panels. */
+/* Pixi — video project. Sits right after the two galleries (Studio + Bella),
+   before the services texts, at the combined width of the two sliders. A
+   white full-viewport panel (z-index 4) that scrolls up over the pinned
+   galleries; the texts then scroll over it. Click-to-play with sound. */
 .proposal-pixi-stage {
-  position: sticky;
-  top: 0;
+  position: relative;
+  z-index: 4;
+  background: #fff;
   min-height: 100vh;
   min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 96px) 24px;
+}
+
+/* Match the combined width of the two side-by-side galleries (520 + 520 + gap). */
+.proposal-pixi-frame {
+  position: relative;
+  width: min(1072px, 90vw);
+  aspect-ratio: 16 / 9;
   background: #000;
-  z-index: 6;
   overflow: hidden;
 }
 
 .proposal-pixi-video {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.proposal-pixi-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  font-size: clamp(13px, 1.2vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.proposal-pixi-play:hover {
+  background: #fff;
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.proposal-pixi-play-icon {
+  display: inline-flex;
 }
 
 /* Outro (Fun button + footer) sits inside the pinned stack, above the Pixi
