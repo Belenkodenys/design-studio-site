@@ -559,7 +559,7 @@ function PixiVideo() {
 
   const start = () => {
     const v = videoRef.current
-    if (!v) return
+    if (!v || started) return
     v.muted = false
     v.volume = 1
     const p = v.play()
@@ -568,7 +568,10 @@ function PixiVideo() {
   }
 
   return (
-    <div className="proposal-pixi-frame">
+    <div
+      className={`proposal-pixi-frame${started ? '' : ' is-idle'}`}
+      onClick={start}
+    >
       <video
         ref={videoRef}
         className="proposal-pixi-video"
@@ -579,19 +582,11 @@ function PixiVideo() {
         preload="none"
       />
       {!started && (
-        <button
-          type="button"
-          className="proposal-pixi-play"
-          onClick={start}
-          aria-label="Начать воспроизведение"
-        >
-          <span className="proposal-pixi-play-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </span>
-          Начать воспроизведение
-        </button>
+        <span className="proposal-pixi-play-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </span>
       )}
     </div>
   )
