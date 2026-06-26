@@ -609,6 +609,20 @@ html.is-glitching .proposal-glitch-btn {
   cursor: pointer;
 }
 
+/* Mobile: full-bleed width and lifted higher than centre. Playback goes to
+   native landscape fullscreen on tap, so this styles the cover state. */
+@media (max-width: 720px) {
+  .proposal-pixi-stage {
+    padding-left: 0;
+    padding-right: 0;
+    align-items: flex-start;
+    padding-top: clamp(56px, 16vh, 180px);
+  }
+  .proposal-pixi-frame {
+    width: 100vw;
+  }
+}
+
 /* Outro (Fun button + footer) sits inside the pinned stack, above the Pixi
    pin, so the video sticks to the top of the screen and this panel slides up
    over it — the same overlay-and-pin effect the services texts have over

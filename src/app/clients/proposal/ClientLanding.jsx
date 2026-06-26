@@ -557,26 +557,54 @@ function PixiVideo() {
   const videoRef = useRef(null)
   const [started, setStarted] = useState(false)
 
+  // Return to the cover: drop the controls and reload so the poster shows
+  // again, ready to replay. Fired when the clip ends or fullscreen is closed.
+  const reset = useCallback(() => {
+    const v = videoRef.current
+    setStarted(false)
+    if (v) {
+      v.pause()
+      try { v.currentTime = 0 } catch (_) {}
+      v.load()
+    }
+  }, [])
+
   const start = () => {
     const v = videoRef.current
     if (!v || started) return
     v.muted = false
     v.volume = 1
+    setStarted(true)
     const p = v.play()
     if (p && p.catch) p.catch(() => {})
-    setStarted(true)
-  }
 
-  // When the clip ends, return to the cover: drop the controls and reload so
-  // the poster shows again, ready to replay on the next tap.
-  const handleEnded = () => {
-    const v = videoRef.current
-    setStarted(false)
-    if (v) {
-      v.pause()
-      v.load()
+    // On phones, play in landscape (rotated 90°): iOS native fullscreen auto-
+    // rotates a landscape clip; elsewhere request fullscreen + lock landscape.
+    if (window.matchMedia('(max-width: 720px)').matches) {
+      if (typeof v.webkitEnterFullscreen === 'function') {
+        v.webkitEnterFullscreen()
+      } else if (v.requestFullscreen) {
+        v.requestFullscreen()
+          .then(() => {
+            if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
+              window.screen.orientation.lock('landscape').catch(() => {})
+            }
+          })
+          .catch(() => {})
+      }
     }
   }
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.addEventListener('ended', reset)
+    v.addEventListener('webkitendfullscreen', reset)
+    return () => {
+      v.removeEventListener('ended', reset)
+      v.removeEventListener('webkitendfullscreen', reset)
+    }
+  }, [reset])
 
   return (
     <div
@@ -591,7 +619,6 @@ function PixiVideo() {
         controls={started}
         playsInline
         preload="none"
-        onEnded={handleEnded}
       />
     </div>
   )
