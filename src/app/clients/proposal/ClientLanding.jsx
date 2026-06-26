@@ -600,7 +600,10 @@ function PixiVideo() {
     if (!v) return
     // Desktop: pausing or scrolling returns to the cover. On mobile the video
     // plays inline with native controls, so pausing just pauses.
-    const desktop = () => !window.matchMedia('(max-width: 720px)').matches
+    // Detect a real mouse desktop by pointer type, not viewport width — a
+    // rotated phone becomes >720px wide but must still count as mobile so
+    // playback isn't reset on the scroll/resize that rotation fires.
+    const desktop = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches
     const onPause = () => { if (desktop()) reset() }
     const onScroll = () => { if (desktop()) reset() }
     v.addEventListener('ended', reset)
@@ -677,7 +680,10 @@ function VideoModule({ src, poster, landscape = false }) {
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    const desktop = () => !window.matchMedia('(max-width: 720px)').matches
+    // Detect a real mouse desktop by pointer type, not viewport width — a
+    // rotated phone becomes >720px wide but must still count as mobile so
+    // playback isn't reset on the scroll/resize that rotation fires.
+    const desktop = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches
     const onPause = () => { if (desktop()) reset() }
     const onScroll = () => { if (desktop()) reset() }
     v.addEventListener('ended', reset)
