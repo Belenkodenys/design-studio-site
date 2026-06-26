@@ -939,15 +939,15 @@ export default function ClientLanding() {
         <StudioGallery bare slides={BELLA_SLIDES} className="proposal-gallery-bella-inline" />
       </div>
 
+      <section className="proposal-bella-stage">
+        <StudioGallery bare slides={BELLA_SLIDES} />
+      </section>
+
       <section className="proposal-pixi-stage" aria-label="Pixi Istanbul">
         <PixiVideo />
       </section>
 
       <Sections />
-
-      <section className="proposal-bella-stage">
-        <StudioGallery bare slides={BELLA_SLIDES} />
-      </section>
 
       <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">

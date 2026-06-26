@@ -433,7 +433,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-stack > .proposal-sections {
   position: relative;
-  z-index: 5;
+  z-index: 6;
   background: #fff;
   padding-top: clamp(48px, 6vw, 96px);
   padding-bottom: clamp(48px, 6vw, 96px);
@@ -565,7 +565,7 @@ html.is-glitching .proposal-glitch-btn {
   min-height: 100vh;
   min-height: 100svh;
   background: #fff;
-  z-index: 6;
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -578,7 +578,7 @@ html.is-glitching .proposal-glitch-btn {
 .proposal-pixi-stage {
   position: sticky;
   top: 0;
-  z-index: 4;
+  z-index: 5;
   background: #fff;
   min-height: 100vh;
   min-height: 100svh;
