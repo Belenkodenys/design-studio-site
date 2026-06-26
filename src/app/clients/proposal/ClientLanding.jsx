@@ -1046,8 +1046,8 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-modules-row" aria-label="Projects">
-        <VideoModule src="/projects/video2.mp4" poster="/projects/video2-poster.jpg" />
-        <VideoModule src="/projects/agata.mp4" poster="/projects/agata-poster.jpg" landscape />
+        <VideoModule src="/projects/agata.mp4" poster="/projects/agata-poster.jpg" />
+        <VideoModule src="/projects/video3.mp4" poster="/projects/video3-poster.jpg" />
       </section>
 
       <Sections />
