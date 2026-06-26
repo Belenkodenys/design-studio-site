@@ -555,13 +555,18 @@ function shuffleArray(arr) {
 
 function PixiVideo() {
   const videoRef = useRef(null)
+  const startedRef = useRef(false)
   const [started, setStarted] = useState(false)
 
   // Return to the cover: drop the controls and reload so the poster shows
-  // again, ready to replay. Fired when the clip ends or fullscreen is closed.
+  // again (never a black last frame). Guarded so it's a no-op when already on
+  // the cover — keeps the scroll handler cheap. Triggered on pause, scroll,
+  // video end, and fullscreen exit.
   const reset = useCallback(() => {
-    const v = videoRef.current
+    if (!startedRef.current) return
+    startedRef.current = false
     setStarted(false)
+    const v = videoRef.current
     if (v) {
       v.pause()
       try { v.currentTime = 0 } catch (_) {}
@@ -571,7 +576,8 @@ function PixiVideo() {
 
   const start = () => {
     const v = videoRef.current
-    if (!v || started) return
+    if (!v || startedRef.current) return
+    startedRef.current = true
     v.muted = false
     v.volume = 1
     setStarted(true)
@@ -598,11 +604,23 @@ function PixiVideo() {
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
+    // Don't reset while the native fullscreen player is up (pausing there
+    // shouldn't kick back to the cover); the fullscreen-exit events handle it.
+    const inFullscreen = () =>
+      v.webkitDisplayingFullscreen || document.fullscreenElement === v
+    const onPause = () => { if (!inFullscreen()) reset() }
+    const onFsChange = () => { if (!document.fullscreenElement) reset() }
     v.addEventListener('ended', reset)
+    v.addEventListener('pause', onPause)
     v.addEventListener('webkitendfullscreen', reset)
+    document.addEventListener('fullscreenchange', onFsChange)
+    window.addEventListener('scroll', reset, { passive: true })
     return () => {
       v.removeEventListener('ended', reset)
+      v.removeEventListener('pause', onPause)
       v.removeEventListener('webkitendfullscreen', reset)
+      document.removeEventListener('fullscreenchange', onFsChange)
+      window.removeEventListener('scroll', reset)
     }
   }, [reset])
 
