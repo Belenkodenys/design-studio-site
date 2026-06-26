@@ -696,17 +696,23 @@ html.is-glitching .proposal-glitch-btn {
     width: min(520px, 40vw);
     aspect-ratio: 3 / 4;
   }
+  /* The 12 Monkeys clips are 9:16 — show them more vertical (taller, narrower)
+     so they aren't cropped. */
+  .proposal-monkeys-row .vmod-frame {
+    width: min(400px, 30vw);
+    aspect-ratio: 9 / 16;
+  }
 }
 
 /* Below the breakpoint: each module is its own full-screen sticky panel,
    stacked, with the overlay/pin effect (like the Bella gallery). */
 @media (max-width: 1299.98px) {
+  /* display: contents removes the row's box so each frame's sticky containing
+     block becomes the tall .proposal-stack — otherwise the LAST frame in the
+     row (e.g. Mimosa) can't stay pinned, and the next card (Saint Bar) won't
+     cascade over it. */
   .proposal-modules-row {
-    position: static;
-    min-height: 0;
-    display: block;
-    padding: 0;
-    background: transparent;
+    display: contents;
   }
   .proposal-modules-row .vmod-frame {
     position: sticky;
@@ -740,8 +746,13 @@ html.is-glitching .proposal-glitch-btn {
     border-top: 1px solid #fff;
   }
 
-  /* Saint Bar uses a dedicated portrait cover on mobile (posterMobile), so it
-     fills the vertical frame like the other cards. */
+  /* Pixi and Saint Bar are landscape clips — when playing, show the whole
+     horizontal frame (contain) instead of cropping it to the vertical card.
+     Their covers stay portrait (posterMobile) and keep filling. */
+  .proposal-pixi-video,
+  .proposal-saint-stage .vmod-video {
+    object-fit: contain;
+  }
 }
 
 /* Saint Bar — full-width landscape video, same format as Pixi: a sticky panel
