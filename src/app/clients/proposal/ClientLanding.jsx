@@ -556,16 +556,22 @@ function shuffleArray(arr) {
 function PixiVideo() {
   const videoRef = useRef(null)
   const startedRef = useRef(false)
+  const isMobileRef = useRef(false)
   const [started, setStarted] = useState(false)
 
-  // Return to the cover: drop the controls and reload so the poster shows
-  // again (never a black last frame). Guarded so it's a no-op when already on
-  // the cover — keeps the scroll handler cheap. Triggered on pause, scroll,
-  // video end, and fullscreen exit.
+  const playEl = (v) => {
+    const p = v.play()
+    if (p && p.catch) p.catch(() => {})
+  }
+
+  // Return to the cover: pause, rewind, reload so the poster shows again
+  // (never a black last frame), and release the scroll lock. No-op when
+  // already on the cover, which keeps the scroll handler cheap.
   const reset = useCallback(() => {
     if (!startedRef.current) return
     startedRef.current = false
     setStarted(false)
+    document.body.style.overflow = ''
     const v = videoRef.current
     if (v) {
       v.pause()
@@ -574,11 +580,6 @@ function PixiVideo() {
     }
   }, [])
 
-  const play = (v) => {
-    const p = v.play()
-    if (p && p.catch) p.catch(() => {})
-  }
-
   const start = () => {
     const v = videoRef.current
     if (!v || startedRef.current) return
@@ -586,76 +587,59 @@ function PixiVideo() {
     v.muted = false
     v.volume = 1
     setStarted(true)
-
-    const isMobile = window.matchMedia('(max-width: 720px)').matches
-
-    // On phones the clip opens in fullscreen, rotated to landscape (90°).
-    if (isMobile && typeof v.webkitEnterFullscreen === 'function') {
-      // iOS — native fullscreen player auto-rotates a landscape clip. It needs
-      // metadata first, so enter as soon as it's ready (preload="metadata"
-      // usually has it ready within this tap gesture).
-      const enterFs = () => { try { v.webkitEnterFullscreen() } catch (_) {} }
-      if (v.readyState >= 1) {
-        play(v)
-        enterFs()
-      } else {
-        v.addEventListener('loadedmetadata', () => { play(v); enterFs() }, { once: true })
-        v.load()
-      }
-      return
-    }
-
-    play(v)
-
-    if (isMobile) {
-      // Android & others — request fullscreen and lock to landscape (90°).
-      const req = v.requestFullscreen || v.webkitRequestFullscreen || v.mozRequestFullScreen
-      if (req) {
-        Promise.resolve(req.call(v))
-          .then(() => {
-            if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
-              window.screen.orientation.lock('landscape').catch(() => {})
-            }
-          })
-          .catch(() => {})
-      }
+    playEl(v)
+    // On phones the video becomes a fixed full-screen overlay rotated 90° to
+    // landscape (iOS Safari can't be forced to rotate native fullscreen, so we
+    // rotate with CSS — deterministic on every device). Lock background scroll.
+    if (window.matchMedia('(max-width: 720px)').matches) {
+      document.body.style.overflow = 'hidden'
     }
   }
+
+  // Tap the cover to play; on mobile, tap the rotated video to exit. On desktop
+  // keep native controls usable (don't reset on body clicks while playing).
+  const onFrameClick = () => {
+    if (!startedRef.current) start()
+    else if (window.matchMedia('(max-width: 720px)').matches) reset()
+  }
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 720px)')
+    const update = () => { isMobileRef.current = mq.matches }
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
 
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    // Don't reset while the native fullscreen player is up (pausing there
-    // shouldn't kick back to the cover); the fullscreen-exit events handle it.
-    const inFullscreen = () =>
-      v.webkitDisplayingFullscreen || document.fullscreenElement === v
-    const onPause = () => { if (!inFullscreen()) reset() }
-    const onFsChange = () => { if (!document.fullscreenElement) reset() }
+    // Desktop: pausing or scrolling returns to the cover. (On mobile playback
+    // is a rotated overlay with scroll locked; exit is the tap handler / end.)
+    const onPause = () => { if (!isMobileRef.current) reset() }
+    const onScroll = () => { if (!isMobileRef.current) reset() }
     v.addEventListener('ended', reset)
     v.addEventListener('pause', onPause)
-    v.addEventListener('webkitendfullscreen', reset)
-    document.addEventListener('fullscreenchange', onFsChange)
-    window.addEventListener('scroll', reset, { passive: true })
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => {
       v.removeEventListener('ended', reset)
       v.removeEventListener('pause', onPause)
-      v.removeEventListener('webkitendfullscreen', reset)
-      document.removeEventListener('fullscreenchange', onFsChange)
-      window.removeEventListener('scroll', reset)
+      window.removeEventListener('scroll', onScroll)
+      document.body.style.overflow = ''
     }
   }, [reset])
 
   return (
     <div
-      className={`proposal-pixi-frame${started ? '' : ' is-idle'}`}
-      onClick={start}
+      className={`proposal-pixi-frame${started ? ' is-playing' : ' is-idle'}`}
+      onClick={onFrameClick}
     >
       <video
         ref={videoRef}
         className="proposal-pixi-video"
         src="/projects/pixi.mp4"
         poster="/projects/pixi-poster2.jpg"
-        controls={started}
+        controls={started && !isMobileRef.current}
         playsInline
         preload="metadata"
       />
