@@ -856,6 +856,18 @@ export default function ClientLanding() {
         <StudioGallery bare slides={BELLA_SLIDES} />
       </section>
 
+      <section className="proposal-pixi-stage" aria-label="Pixi">
+        <video
+          className="proposal-pixi-video"
+          src="/projects/pixi.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      </section>
+
       <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
           <GlitchButton />
