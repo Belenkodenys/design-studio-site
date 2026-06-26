@@ -639,28 +639,6 @@ html.is-glitching .proposal-glitch-btn {
     height: 100svh;
     aspect-ratio: auto;
   }
-
-  /* While playing, the video takes over the screen rotated 90° to landscape
-     (iOS Safari won't rotate native fullscreen, so we rotate with CSS). A
-     fixed black backdrop sits behind it. Tap anywhere to exit. */
-  .proposal-pixi-frame.is-playing::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: #000;
-    z-index: 9998;
-  }
-  .proposal-pixi-frame.is-playing .proposal-pixi-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vh;
-    height: 100vw;
-    transform: translate(-50%, -50%) rotate(90deg);
-    object-fit: contain;
-    background: #000;
-    z-index: 9999;
-  }
 }
 
 /* ===== Reusable video modules (project videos below Pixi) ===== */
@@ -736,31 +714,21 @@ html.is-glitching .proposal-glitch-btn {
   .proposal-modules-row .vmod-frame:nth-of-type(3) { z-index: 8; }
 }
 
-/* Phones: tapping a module opens it full-screen. Landscape clips rotate 90°;
-   portrait clips fill upright. A black backdrop sits behind. Tap to exit. */
+/* Mobile separators + Saint Bar cover fit. Cards play inline with native
+   controls (pause / play / fullscreen — fullscreen rotates landscape clips
+   on iOS); no custom overlay. */
 @media (max-width: 720px) {
-  .vmod-frame.is-playing::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: #000;
-    z-index: 9998;
+  /* 1px white divider between the full-screen cards. */
+  .studio-gallery,
+  .proposal-pixi-frame,
+  .vmod-frame {
+    border-top: 1px solid #fff;
   }
-  .vmod-frame.is-playing .vmod-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    background: #000;
-    z-index: 9999;
-  }
-  .vmod-frame.is-playing.is-landscape .vmod-video {
-    width: 100vh;
-    height: 100vw;
-    transform: translate(-50%, -50%) rotate(90deg);
+
+  /* Saint Bar cover is landscape — contain it so the logo fits and isn't
+     cropped (the others use portrait covers that fill). */
+  .proposal-saint-stage .vmod-cover,
+  .proposal-saint-stage .vmod-video {
     object-fit: contain;
   }
 }

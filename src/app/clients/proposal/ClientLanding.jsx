@@ -556,7 +556,6 @@ function shuffleArray(arr) {
 function PixiVideo() {
   const videoRef = useRef(null)
   const startedRef = useRef(false)
-  const isMobileRef = useRef(false)
   const [started, setStarted] = useState(false)
 
   const playEl = (v) => {
@@ -588,36 +587,22 @@ function PixiVideo() {
     v.volume = 1
     setStarted(true)
     playEl(v)
-    // On phones the video becomes a fixed full-screen overlay rotated 90° to
-    // landscape (iOS Safari can't be forced to rotate native fullscreen, so we
-    // rotate with CSS — deterministic on every device). Lock background scroll.
-    if (window.matchMedia('(max-width: 720px)').matches) {
-      document.body.style.overflow = 'hidden'
-    }
   }
 
-  // Tap the cover to play; on mobile, tap the rotated video to exit. On desktop
-  // keep native controls usable (don't reset on body clicks while playing).
+  // Tap the cover to start; once playing, native controls handle everything
+  // (pause / play / native fullscreen, which rotates landscape clips on iOS).
   const onFrameClick = () => {
     if (!startedRef.current) start()
-    else if (window.matchMedia('(max-width: 720px)').matches) reset()
   }
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 720px)')
-    const update = () => { isMobileRef.current = mq.matches }
-    update()
-    mq.addEventListener('change', update)
-    return () => mq.removeEventListener('change', update)
-  }, [])
 
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    // Desktop: pausing or scrolling returns to the cover. (On mobile playback
-    // is a rotated overlay with scroll locked; exit is the tap handler / end.)
-    const onPause = () => { if (!isMobileRef.current) reset() }
-    const onScroll = () => { if (!isMobileRef.current) reset() }
+    // Desktop: pausing or scrolling returns to the cover. On mobile the video
+    // plays inline with native controls, so pausing just pauses.
+    const desktop = () => !window.matchMedia('(max-width: 720px)').matches
+    const onPause = () => { if (desktop()) reset() }
+    const onScroll = () => { if (desktop()) reset() }
     v.addEventListener('ended', reset)
     v.addEventListener('pause', onPause)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -639,7 +624,7 @@ function PixiVideo() {
         className="proposal-pixi-video"
         src="/projects/pixi.mp4"
         poster="/projects/pixi-poster2.jpg"
-        controls={started && !isMobileRef.current}
+        controls={started}
         playsInline
         preload="metadata"
       />
@@ -660,7 +645,6 @@ function VideoModule({ src, poster, landscape = false }) {
   const videoRef = useRef(null)
   const startedRef = useRef(false)
   const [started, setStarted] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
 
   const reset = useCallback(() => {
     if (!startedRef.current) return
@@ -684,23 +668,11 @@ function VideoModule({ src, poster, landscape = false }) {
     setStarted(true)
     const p = v.play()
     if (p && p.catch) p.catch(() => {})
-    if (window.matchMedia('(max-width: 720px)').matches) {
-      document.body.style.overflow = 'hidden'
-    }
   }
 
   const onFrameClick = () => {
     if (!startedRef.current) start()
-    else if (window.matchMedia('(max-width: 720px)').matches) reset()
   }
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 720px)')
-    const upd = () => setIsMobile(mq.matches)
-    upd()
-    mq.addEventListener('change', upd)
-    return () => mq.removeEventListener('change', upd)
-  }, [])
 
   useEffect(() => {
     const v = videoRef.current
@@ -729,7 +701,7 @@ function VideoModule({ src, poster, landscape = false }) {
         className="vmod-video"
         src={src}
         poster={poster}
-        controls={started && !isMobile}
+        controls={started}
         playsInline
         preload="metadata"
       />
