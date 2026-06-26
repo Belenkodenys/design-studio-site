@@ -638,6 +638,14 @@ function PixiVideo() {
         playsInline
         preload="none"
       />
+      {!started && (
+        <img
+          className="proposal-pixi-cover"
+          src="/projects/pixi-poster2.jpg"
+          alt="Pixi Istanbul"
+          draggable={false}
+        />
+      )}
     </div>
   )
 }

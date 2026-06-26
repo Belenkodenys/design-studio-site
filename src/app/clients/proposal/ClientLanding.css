@@ -604,6 +604,19 @@ html.is-glitching .proposal-glitch-btn {
   display: block;
 }
 
+/* Cover image overlay shown whenever the video isn't playing — guarantees the
+   poster is visible instead of a black last frame (the <video> poster attr
+   stops showing once playback has begun, especially after iOS fullscreen). */
+.proposal-pixi-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
 /* No play button or icon — the whole poster frame is the click target. */
 .proposal-pixi-frame.is-idle {
   cursor: pointer;
