@@ -639,12 +639,10 @@ function PixiVideo() {
         preload="none"
       />
       {!started && (
-        <img
-          className="proposal-pixi-cover"
-          src="/projects/pixi-poster2.jpg"
-          alt="Pixi Istanbul"
-          draggable={false}
-        />
+        <picture className="proposal-pixi-cover">
+          <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile.jpg" />
+          <img src="/projects/pixi-poster2.jpg" alt="Pixi Istanbul" draggable={false} />
+        </picture>
       )}
     </div>
   )

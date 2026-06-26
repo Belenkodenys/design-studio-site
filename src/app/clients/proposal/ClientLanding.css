@@ -610,11 +610,15 @@ html.is-glitching .proposal-glitch-btn {
 .proposal-pixi-cover {
   position: absolute;
   inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.proposal-pixi-cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  pointer-events: none;
 }
 
 /* No play button or icon — the whole poster frame is the click target. */
@@ -622,17 +626,18 @@ html.is-glitching .proposal-glitch-btn {
   cursor: pointer;
 }
 
-/* Mobile: full-bleed width and lifted higher than centre. Playback goes to
-   native landscape fullscreen on tap, so this styles the cover state. */
+/* Mobile: full-screen vertical cover, like the Studio and Bella galleries.
+   Playback still goes to native landscape fullscreen on tap. */
 @media (max-width: 720px) {
   .proposal-pixi-stage {
-    padding-left: 0;
-    padding-right: 0;
-    align-items: flex-start;
-    padding-top: clamp(56px, 16vh, 180px);
+    padding: 0;
+    align-items: stretch;
   }
   .proposal-pixi-frame {
     width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    aspect-ratio: auto;
   }
 }
 
