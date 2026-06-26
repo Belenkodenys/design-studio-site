@@ -696,11 +696,11 @@ html.is-glitching .proposal-glitch-btn {
     width: min(520px, 40vw);
     aspect-ratio: 3 / 4;
   }
-  /* The 12 Monkeys clips are 9:16 — show them more vertical (taller, narrower)
-     so they aren't cropped. */
+  /* 12 Monkeys cards: same width as the other cards (520px) but taller. */
   .proposal-monkeys-row .vmod-frame {
-    width: min(400px, 30vw);
+    width: min(520px, 40vw);
     aspect-ratio: 9 / 16;
+    max-height: 80svh;
   }
 }
 
