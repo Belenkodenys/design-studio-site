@@ -87,3 +87,37 @@
   color: #999;
   letter-spacing: 0.05em;
 }
+
+/* Mobile: black footer with light text. */
+@media (max-width: 720px) {
+  .proposal-footer {
+    background: #000;
+    border-top-color: #222;
+  }
+  .proposal-footer-mark {
+    color: #fff;
+  }
+  .proposal-footer-address,
+  .proposal-footer-contact {
+    color: #aaa;
+  }
+  .proposal-footer-contact a {
+    color: #ddd;
+  }
+  .proposal-footer-contact a:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+  .proposal-footer-divider {
+    color: #555;
+  }
+  .proposal-footer-social-link {
+    color: #bbb;
+  }
+  .proposal-footer-social-link:hover {
+    color: #fff;
+  }
+  .proposal-footer-copyright {
+    color: #777;
+  }
+}
