@@ -574,6 +574,11 @@ function PixiVideo() {
     }
   }, [])
 
+  const play = (v) => {
+    const p = v.play()
+    if (p && p.catch) p.catch(() => {})
+  }
+
   const start = () => {
     const v = videoRef.current
     if (!v || startedRef.current) return
@@ -581,16 +586,32 @@ function PixiVideo() {
     v.muted = false
     v.volume = 1
     setStarted(true)
-    const p = v.play()
-    if (p && p.catch) p.catch(() => {})
 
-    // On phones, play in landscape (rotated 90°): iOS native fullscreen auto-
-    // rotates a landscape clip; elsewhere request fullscreen + lock landscape.
-    if (window.matchMedia('(max-width: 720px)').matches) {
-      if (typeof v.webkitEnterFullscreen === 'function') {
-        v.webkitEnterFullscreen()
-      } else if (v.requestFullscreen) {
-        v.requestFullscreen()
+    const isMobile = window.matchMedia('(max-width: 720px)').matches
+
+    // On phones the clip opens in fullscreen, rotated to landscape (90°).
+    if (isMobile && typeof v.webkitEnterFullscreen === 'function') {
+      // iOS — native fullscreen player auto-rotates a landscape clip. It needs
+      // metadata first, so enter as soon as it's ready (preload="metadata"
+      // usually has it ready within this tap gesture).
+      const enterFs = () => { try { v.webkitEnterFullscreen() } catch (_) {} }
+      if (v.readyState >= 1) {
+        play(v)
+        enterFs()
+      } else {
+        v.addEventListener('loadedmetadata', () => { play(v); enterFs() }, { once: true })
+        v.load()
+      }
+      return
+    }
+
+    play(v)
+
+    if (isMobile) {
+      // Android & others — request fullscreen and lock to landscape (90°).
+      const req = v.requestFullscreen || v.webkitRequestFullscreen || v.mozRequestFullScreen
+      if (req) {
+        Promise.resolve(req.call(v))
           .then(() => {
             if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
               window.screen.orientation.lock('landscape').catch(() => {})
@@ -636,7 +657,7 @@ function PixiVideo() {
         poster="/projects/pixi-poster2.jpg"
         controls={started}
         playsInline
-        preload="none"
+        preload="metadata"
       />
       {!started && (
         <picture className="proposal-pixi-cover">
