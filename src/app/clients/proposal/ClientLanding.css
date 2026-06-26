@@ -765,6 +765,41 @@ html.is-glitching .proposal-glitch-btn {
   }
 }
 
+/* Saint Bar — full-width landscape video, same format as Pixi: a sticky panel
+   with a 16:9 frame at the two-sliders width; tap to play (sound), and on
+   phones a full-screen overlay rotated 90° to landscape. Sits below the
+   Agata/Mimosa modules. */
+.proposal-saint-stage {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  background: #fff;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 96px) 24px;
+}
+
+.proposal-saint-stage .vmod-frame {
+  width: min(1072px, 90vw);
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 720px) {
+  .proposal-saint-stage {
+    padding: 0;
+    align-items: stretch;
+  }
+  .proposal-saint-stage .vmod-frame {
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    aspect-ratio: auto;
+  }
+}
+
 /* Outro (Fun button + footer) sits inside the pinned stack, above the Pixi
    pin, so the video sticks to the top of the screen and this panel slides up
    over it — the same overlay-and-pin effect the services texts have over

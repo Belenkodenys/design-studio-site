@@ -1050,6 +1050,10 @@ export default function ClientLanding() {
         <VideoModule src="/projects/video3.mp4" poster="/projects/video3-poster.jpg" />
       </section>
 
+      <section className="proposal-saint-stage" aria-label="Saint Bar">
+        <VideoModule src="/projects/saint.mp4" poster="/projects/saint-poster.jpg" landscape />
+      </section>
+
       <Sections />
 
       <div className="proposal-outro">
