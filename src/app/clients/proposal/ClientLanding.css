@@ -433,7 +433,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-stack > .proposal-sections {
   position: relative;
-  z-index: 9;
+  z-index: 11;
   background: #fff;
   padding-top: clamp(48px, 6vw, 96px);
   padding-bottom: clamp(48px, 6vw, 96px);
@@ -648,8 +648,7 @@ html.is-glitching .proposal-glitch-btn {
   background: #000;
 }
 
-.vmod-video,
-.vmod-cover {
+.vmod-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -660,6 +659,14 @@ html.is-glitching .proposal-glitch-btn {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  display: block;
+}
+
+.vmod-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .vmod-frame.is-idle {
@@ -712,6 +719,14 @@ html.is-glitching .proposal-glitch-btn {
   .proposal-modules-row .vmod-frame:nth-of-type(1) { z-index: 6; }
   .proposal-modules-row .vmod-frame:nth-of-type(2) { z-index: 7; }
   .proposal-modules-row .vmod-frame:nth-of-type(3) { z-index: 8; }
+  /* 12 Monkeys row comes after Saint Bar — stack its panels above it. */
+  .proposal-monkeys-row .vmod-frame:nth-of-type(1) { z-index: 9; }
+  .proposal-monkeys-row .vmod-frame:nth-of-type(2) { z-index: 10; }
+}
+
+/* 12 Monkeys row (desktop sticky panel) sits above the Saint Bar pin. */
+.proposal-monkeys-row {
+  z-index: 9;
 }
 
 /* Mobile separators + Saint Bar cover fit. Cards play inline with native
@@ -725,12 +740,8 @@ html.is-glitching .proposal-glitch-btn {
     border-top: 1px solid #fff;
   }
 
-  /* Saint Bar cover is landscape — contain it so the logo fits and isn't
-     cropped (the others use portrait covers that fill). */
-  .proposal-saint-stage .vmod-cover,
-  .proposal-saint-stage .vmod-video {
-    object-fit: contain;
-  }
+  /* Saint Bar uses a dedicated portrait cover on mobile (posterMobile), so it
+     fills the vertical frame like the other cards. */
 }
 
 /* Saint Bar — full-width landscape video, same format as Pixi: a sticky panel
@@ -774,7 +785,7 @@ html.is-glitching .proposal-glitch-btn {
    the Studio gallery. */
 .proposal-outro {
   position: relative;
-  z-index: 10;
+  z-index: 12;
   background: #fff;
 }
 

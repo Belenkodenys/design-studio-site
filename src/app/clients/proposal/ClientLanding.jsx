@@ -644,7 +644,7 @@ function PixiVideo() {
 // Reusable click-to-play video module (cover + sound + return-to-cover, and a
 // rotated/upright full-screen overlay on phones). `landscape` rotates 90° for
 // landscape clips; portrait clips fill the phone screen as-is.
-function VideoModule({ src, poster, landscape = false }) {
+function VideoModule({ src, poster, posterMobile, landscape = false }) {
   const videoRef = useRef(null)
   const startedRef = useRef(false)
   const [started, setStarted] = useState(false)
@@ -712,7 +712,10 @@ function VideoModule({ src, poster, landscape = false }) {
         preload="metadata"
       />
       {!started && (
-        <img className="vmod-cover" src={poster} alt="" draggable={false} />
+        <picture className="vmod-cover">
+          {posterMobile && <source media="(max-width: 720px)" srcSet={posterMobile} />}
+          <img src={poster} alt="" draggable={false} />
+        </picture>
       )}
     </div>
   )
@@ -1029,7 +1032,12 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-saint-stage" aria-label="Saint Bar">
-        <VideoModule src="/projects/saint.mp4" poster="/projects/saint-poster2.jpg" landscape />
+        <VideoModule src="/projects/saint.mp4" poster="/projects/saint-poster2.jpg" posterMobile="/projects/saint-poster-mobile.jpg" landscape />
+      </section>
+
+      <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
+        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/monkeys1-poster.jpg" />
+        <VideoModule src="/projects/monkeys2.mp4" poster="/projects/monkeys2-poster.jpg" />
       </section>
 
       <Sections />
