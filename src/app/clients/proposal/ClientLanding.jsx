@@ -567,6 +567,17 @@ function PixiVideo() {
     setStarted(true)
   }
 
+  // When the clip ends, return to the cover: drop the controls and reload so
+  // the poster shows again, ready to replay on the next tap.
+  const handleEnded = () => {
+    const v = videoRef.current
+    setStarted(false)
+    if (v) {
+      v.pause()
+      v.load()
+    }
+  }
+
   return (
     <div
       className={`proposal-pixi-frame${started ? '' : ' is-idle'}`}
@@ -576,18 +587,12 @@ function PixiVideo() {
         ref={videoRef}
         className="proposal-pixi-video"
         src="/projects/pixi.mp4"
-        poster="/projects/pixi-poster.jpg"
+        poster="/projects/pixi-poster2.jpg"
         controls={started}
         playsInline
         preload="none"
+        onEnded={handleEnded}
       />
-      {!started && (
-        <span className="proposal-pixi-play-icon" aria-hidden="true">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </span>
-      )}
     </div>
   )
 }
