@@ -653,6 +653,93 @@ function PixiVideo() {
   )
 }
 
+// Reusable click-to-play video module (cover + sound + return-to-cover, and a
+// rotated/upright full-screen overlay on phones). `landscape` rotates 90° for
+// landscape clips; portrait clips fill the phone screen as-is.
+function VideoModule({ src, poster, landscape = false }) {
+  const videoRef = useRef(null)
+  const startedRef = useRef(false)
+  const [started, setStarted] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  const reset = useCallback(() => {
+    if (!startedRef.current) return
+    startedRef.current = false
+    setStarted(false)
+    document.body.style.overflow = ''
+    const v = videoRef.current
+    if (v) {
+      v.pause()
+      try { v.currentTime = 0 } catch (_) {}
+      v.load()
+    }
+  }, [])
+
+  const start = () => {
+    const v = videoRef.current
+    if (!v || startedRef.current) return
+    startedRef.current = true
+    v.muted = false
+    v.volume = 1
+    setStarted(true)
+    const p = v.play()
+    if (p && p.catch) p.catch(() => {})
+    if (window.matchMedia('(max-width: 720px)').matches) {
+      document.body.style.overflow = 'hidden'
+    }
+  }
+
+  const onFrameClick = () => {
+    if (!startedRef.current) start()
+    else if (window.matchMedia('(max-width: 720px)').matches) reset()
+  }
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 720px)')
+    const upd = () => setIsMobile(mq.matches)
+    upd()
+    mq.addEventListener('change', upd)
+    return () => mq.removeEventListener('change', upd)
+  }, [])
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    const desktop = () => !window.matchMedia('(max-width: 720px)').matches
+    const onPause = () => { if (desktop()) reset() }
+    const onScroll = () => { if (desktop()) reset() }
+    v.addEventListener('ended', reset)
+    v.addEventListener('pause', onPause)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      v.removeEventListener('ended', reset)
+      v.removeEventListener('pause', onPause)
+      window.removeEventListener('scroll', onScroll)
+      document.body.style.overflow = ''
+    }
+  }, [reset])
+
+  return (
+    <div
+      className={`vmod-frame${started ? ' is-playing' : ' is-idle'}${landscape ? ' is-landscape' : ''}`}
+      onClick={onFrameClick}
+    >
+      <video
+        ref={videoRef}
+        className="vmod-video"
+        src={src}
+        poster={poster}
+        controls={started && !isMobile}
+        playsInline
+        preload="metadata"
+      />
+      {!started && (
+        <img className="vmod-cover" src={poster} alt="" draggable={false} />
+      )}
+    </div>
+  )
+}
+
 export default function ClientLanding() {
   const heroRef = useRef(null)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
@@ -956,6 +1043,11 @@ export default function ClientLanding() {
 
       <section className="proposal-pixi-stage" aria-label="Pixi Istanbul">
         <PixiVideo />
+      </section>
+
+      <section className="proposal-modules-row" aria-label="Projects">
+        <VideoModule src="/projects/video2.mp4" poster="/projects/video2-poster.jpg" />
+        <VideoModule src="/projects/agata.mp4" poster="/projects/agata-poster.jpg" landscape />
       </section>
 
       <Sections />

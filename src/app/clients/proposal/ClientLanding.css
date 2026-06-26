@@ -433,7 +433,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-stack > .proposal-sections {
   position: relative;
-  z-index: 6;
+  z-index: 8;
   background: #fff;
   padding-top: clamp(48px, 6vw, 96px);
   padding-bottom: clamp(48px, 6vw, 96px);
@@ -663,13 +663,115 @@ html.is-glitching .proposal-glitch-btn {
   }
 }
 
+/* ===== Reusable video modules (project videos below Pixi) ===== */
+.vmod-frame {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.vmod-video,
+.vmod-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vmod-cover {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vmod-frame.is-idle {
+  cursor: pointer;
+}
+
+/* Row of two project videos right below Pixi. Wide screens: a sticky panel
+   with the two side by side (like the Studio + Bella galleries). */
+.proposal-modules-row {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 40px);
+  padding: clamp(40px, 6vw, 96px) 24px;
+}
+
+@media (min-width: 1300px) {
+  .proposal-modules-row .vmod-frame:not(.is-landscape) {
+    width: min(360px, 30vw);
+    aspect-ratio: 1176 / 1760;
+  }
+  .proposal-modules-row .vmod-frame.is-landscape {
+    width: min(620px, 50vw);
+    aspect-ratio: 1080 / 720;
+  }
+}
+
+/* Below the breakpoint: each module is its own full-screen sticky panel,
+   stacked, with the overlay/pin effect (like the Bella gallery). */
+@media (max-width: 1299.98px) {
+  .proposal-modules-row {
+    position: static;
+    min-height: 0;
+    display: block;
+    padding: 0;
+    background: transparent;
+  }
+  .proposal-modules-row .vmod-frame {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    aspect-ratio: auto;
+  }
+  .proposal-modules-row .vmod-frame:nth-of-type(1) { z-index: 6; }
+  .proposal-modules-row .vmod-frame:nth-of-type(2) { z-index: 7; }
+}
+
+/* Phones: tapping a module opens it full-screen. Landscape clips rotate 90°;
+   portrait clips fill upright. A black backdrop sits behind. Tap to exit. */
+@media (max-width: 720px) {
+  .vmod-frame.is-playing::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9998;
+  }
+  .vmod-frame.is-playing .vmod-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    background: #000;
+    z-index: 9999;
+  }
+  .vmod-frame.is-playing.is-landscape .vmod-video {
+    width: 100vh;
+    height: 100vw;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
 /* Outro (Fun button + footer) sits inside the pinned stack, above the Pixi
    pin, so the video sticks to the top of the screen and this panel slides up
    over it — the same overlay-and-pin effect the services texts have over
    the Studio gallery. */
 .proposal-outro {
   position: relative;
-  z-index: 7;
+  z-index: 9;
   background: #fff;
 }
 
