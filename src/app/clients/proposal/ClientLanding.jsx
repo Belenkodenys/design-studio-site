@@ -1042,6 +1042,10 @@ export default function ClientLanding() {
 
       <Sections />
 
+      <section className="proposal-modules-row proposal-final-row" aria-label="Video">
+        <VideoModule src="/projects/final.mp4" poster="/projects/final-poster.jpg" />
+      </section>
+
       <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
           <GlitchButton />

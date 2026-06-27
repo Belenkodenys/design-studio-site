@@ -697,7 +697,8 @@ html.is-glitching .proposal-glitch-btn {
     aspect-ratio: 3 / 4;
   }
   /* 12 Monkeys cards: same width as the other cards (520px) but taller. */
-  .proposal-monkeys-row .vmod-frame {
+  .proposal-monkeys-row .vmod-frame,
+  .proposal-final-row .vmod-frame {
     width: min(520px, 40vw);
     aspect-ratio: 9 / 16;
     max-height: 80svh;
@@ -728,11 +729,18 @@ html.is-glitching .proposal-glitch-btn {
   /* 12 Monkeys row comes after Saint Bar — stack its panels above it. */
   .proposal-monkeys-row .vmod-frame:nth-of-type(1) { z-index: 9; }
   .proposal-monkeys-row .vmod-frame:nth-of-type(2) { z-index: 10; }
+  /* Final video sits after the services texts — stack above them. */
+  .proposal-final-row .vmod-frame:nth-of-type(1) { z-index: 12; }
 }
 
 /* 12 Monkeys row (desktop sticky panel) sits above the Saint Bar pin. */
 .proposal-monkeys-row {
   z-index: 9;
+}
+
+/* Final video (after the texts, before the footer) stacks above the texts. */
+.proposal-final-row {
+  z-index: 12;
 }
 
 /* Mobile separators + Saint Bar cover fit. Cards play inline with native
@@ -796,7 +804,7 @@ html.is-glitching .proposal-glitch-btn {
    the Studio gallery. */
 .proposal-outro {
   position: relative;
-  z-index: 12;
+  z-index: 13;
   background: #fff;
 }
 
