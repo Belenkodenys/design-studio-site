@@ -1043,7 +1043,7 @@ export default function ClientLanding() {
       <Sections />
 
       <section className="proposal-modules-row proposal-final-row" aria-label="Projects">
-        <VideoModule src="/projects/final.mp4" poster="/projects/final-poster.jpg" />
+        <VideoModule src="/projects/final.mp4" poster="/projects/cent-aura-poster.jpg" />
         <VideoModule src="/projects/nikos.mp4" poster="/projects/nikos-poster2.jpg" />
       </section>
 

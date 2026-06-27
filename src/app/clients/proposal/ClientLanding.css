@@ -600,7 +600,7 @@ html.is-glitching .proposal-glitch-btn {
 .proposal-pixi-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -651,7 +651,7 @@ html.is-glitching .proposal-glitch-btn {
 .vmod-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
