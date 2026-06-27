@@ -1,9 +1,9 @@
 export const sections = [
   {
     slug: 'fresh-interior',
-    title: 'Fresh Interior Solutions',
-    body: 'Every interior eventually goes silent. One precise move — and the space starts speaking again.',
-    longDescription: 'Every interior eventually goes silent. Not right away. At first it speaks — loud and confident. Guests notice. They stop. They look. Then they get used to it. Then they stop seeing it altogether. The space exists, but it might as well not. That is worse than a bad interior. That is emptiness in the presence of everything.\n\nThe old fisherman knew: if the fish aren\'t biting, you change the depth. Not the gear, not the boat. The depth. One move — and everything shifts.\n\nWe look for that depth in every space. Where it lost itself. Where light kills instead of bringing life. Where material lies and form weighs down. And when we find it — we don\'t rebuild everything. We make one precise move. Sometimes two. Exactly as many as needed.\n\nAnd the space starts speaking again.',
+    title: 'Customer Experience',
+    body: 'We don\'t design interiors — we design how the guest feels.',
+    longDescription: 'Every venue is a script. Where the guest pauses, what they see first, where the light falls, how they settle in, what they feel as they leave. Customer Experience is the service where we bring every point of contact into a single logic — from booking to aftertaste.\n\nWe don\'t guess. We build the experience to drive return — because guests come back not for the food, but for a feeling they couldn\'t find anywhere else.\n\nThe interior is the stage. The experience is what brings them back to it.',
     bullets: [
       'Ideas driven by positioning, not trends',
       'Every detail works to bring the guest back',
