@@ -706,6 +706,52 @@ html.is-glitching .proposal-glitch-btn {
   cursor: pointer;
 }
 
+/* Big, prominent Full Screen launcher shown on the cover (idle) of every
+   video card, centered at the bottom. Starts playback and enters fullscreen. */
+.vmod-fs-btn {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(18px, 3vw, 32px);
+  transform: translateX(-50%);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vmod-fs-btn svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.vmod-fs-btn:hover {
+  background: rgba(0, 0, 0, 0.82);
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 720px) {
+  .vmod-fs-btn {
+    padding: 13px 24px;
+    font-size: 15px;
+  }
+}
+
 /* Row of two project videos right below Pixi. Wide screens: a sticky panel
    with the two side by side (like the Studio + Bella galleries). */
 .proposal-modules-row {
@@ -909,10 +955,17 @@ html.is-glitching .proposal-glitch-btn {
   }
 
   .proposal-mission {
-    padding: 0 24px;
-    font-size: clamp(20px, 6.2vw, 30px);
-    letter-spacing: 0.02em;
-    line-height: 1.3;
+    padding: 0 20px;
+    font-size: clamp(27px, 8.8vw, 46px);
+    letter-spacing: 0.005em;
+    line-height: 1.2;
+    /* Allow words to break across lines so justify packs tight without big
+       gaps; keep the last line ragged so it isn't stretched across. */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-align-last: left;
   }
 
   .proposal-hero {

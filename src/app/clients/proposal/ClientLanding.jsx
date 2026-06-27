@@ -594,6 +594,26 @@ function PixiVideo() {
     if (!startedRef.current) start()
   }
 
+  const enterFullscreen = () => {
+    const v = videoRef.current
+    if (!v) return
+    const go = () => {
+      try {
+        if (v.webkitEnterFullscreen) v.webkitEnterFullscreen()
+        else if (v.requestFullscreen) v.requestFullscreen()
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen()
+      } catch (_) {}
+    }
+    if (v.readyState >= 1) go()
+    else v.addEventListener('loadedmetadata', go, { once: true })
+  }
+
+  const onFullScreenClick = (e) => {
+    e.stopPropagation()
+    start()
+    enterFullscreen()
+  }
+
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
@@ -638,10 +658,18 @@ function PixiVideo() {
         preload="metadata"
       />
       {!started && (
-        <picture className="proposal-pixi-cover">
-          <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile.jpg" />
-          <img src="/projects/pixi-poster2.jpg" alt="Pixi Istanbul" draggable={false} />
-        </picture>
+        <>
+          <picture className="proposal-pixi-cover">
+            <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile.jpg" />
+            <img src="/projects/pixi-poster2.jpg" alt="Pixi Istanbul" draggable={false} />
+          </picture>
+          <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Full Screen
+          </button>
+        </>
       )}
     </div>
   )
@@ -685,6 +713,26 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
     if (!startedRef.current) start()
   }
 
+  const enterFullscreen = () => {
+    const v = videoRef.current
+    if (!v) return
+    const go = () => {
+      try {
+        if (v.webkitEnterFullscreen) v.webkitEnterFullscreen()
+        else if (v.requestFullscreen) v.requestFullscreen()
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen()
+      } catch (_) {}
+    }
+    if (v.readyState >= 1) go()
+    else v.addEventListener('loadedmetadata', go, { once: true })
+  }
+
+  const onFullScreenClick = (e) => {
+    e.stopPropagation()
+    start()
+    enterFullscreen()
+  }
+
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
@@ -726,10 +774,18 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
         preload="metadata"
       />
       {!started && (
-        <picture className="vmod-cover">
-          {posterMobile && <source media="(max-width: 720px)" srcSet={posterMobile} />}
-          <img src={poster} alt="" draggable={false} />
-        </picture>
+        <>
+          <picture className="vmod-cover">
+            {posterMobile && <source media="(max-width: 720px)" srcSet={posterMobile} />}
+            <img src={poster} alt="" draggable={false} />
+          </picture>
+          <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Full Screen
+          </button>
+        </>
       )}
     </div>
   )
@@ -987,7 +1043,7 @@ export default function ClientLanding() {
       </header>
 
       <section className="proposal-mission-stage">
-        <p className="proposal-mission">
+        <p className="proposal-mission" lang="en">
           Barcelona-based, award-winning international hospitality studio. Through guest journey design, we create venues worldwide where interior, brand, and customer experience come together to make people fall in love — and come back
         </p>
       </section>
