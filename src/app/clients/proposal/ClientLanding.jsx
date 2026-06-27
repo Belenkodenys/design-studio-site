@@ -463,6 +463,26 @@ function Sections() {
           alt="Services"
           draggable={false}
         />
+        <svg
+          className="proposal-services-arrow"
+          viewBox="0 0 64 22"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M4 5 C 20 19, 44 19, 60 5"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M24 13 L32 18 L40 13"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
 
       <div
