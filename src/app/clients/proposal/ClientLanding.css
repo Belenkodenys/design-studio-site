@@ -438,8 +438,8 @@ html.is-glitching .proposal-glitch-btn {
   position: sticky;
   z-index: 11;
   background: #fff;
-  padding-top: clamp(48px, 6vw, 96px);
-  padding-bottom: clamp(48px, 6vw, 96px);
+  padding-top: clamp(120px, 14vw, 240px);
+  padding-bottom: clamp(120px, 14vw, 240px);
 }
 
 /* "Services" master accordion — collapses all 14 service items behind one
