@@ -553,6 +553,12 @@ function shuffleArray(arr) {
   return a
 }
 
+// Only one project video plays at a time: starting one resets the active one.
+let activeVideoReset = null
+// Briefly ignore scroll-to-reset right after a resize so device rotation
+// (which can fire a scroll) doesn't stop playback.
+let suppressScrollResetUntil = 0
+
 function PixiVideo() {
   const videoRef = useRef(null)
   const startedRef = useRef(false)
@@ -564,13 +570,12 @@ function PixiVideo() {
   }
 
   // Return to the cover: pause, rewind, reload so the poster shows again
-  // (never a black last frame), and release the scroll lock. No-op when
-  // already on the cover, which keeps the scroll handler cheap.
+  // (never a black last frame). No-op when already on the cover.
   const reset = useCallback(() => {
     if (!startedRef.current) return
     startedRef.current = false
+    if (activeVideoReset === reset) activeVideoReset = null
     setStarted(false)
-    document.body.style.overflow = ''
     const v = videoRef.current
     if (v) {
       v.pause()
@@ -582,15 +587,15 @@ function PixiVideo() {
   const start = () => {
     const v = videoRef.current
     if (!v || startedRef.current) return
+    if (activeVideoReset && activeVideoReset !== reset) activeVideoReset()
     startedRef.current = true
+    activeVideoReset = reset
     v.muted = false
     v.volume = 1
     setStarted(true)
     playEl(v)
   }
 
-  // Tap the cover to start; once playing, native controls handle everything
-  // (pause / play / native fullscreen, which rotates landscape clips on iOS).
   const onFrameClick = () => {
     if (!startedRef.current) start()
   }
@@ -598,22 +603,29 @@ function PixiVideo() {
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    // Desktop: pausing or scrolling returns to the cover. On mobile the video
-    // plays inline with native controls, so pausing just pauses.
-    // Detect a real mouse desktop by pointer type, not viewport width — a
-    // rotated phone becomes >720px wide but must still count as mobile so
-    // playback isn't reset on the scroll/resize that rotation fires.
-    const desktop = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches
-    const onPause = () => { if (desktop()) reset() }
-    const onScroll = () => { if (desktop()) reset() }
+    // Pause + return to cover on stop, scroll, end, or fullscreen exit. The
+    // pause handler is skipped while the native fullscreen player is up (so
+    // pausing there doesn't kick back); the exit event handles that.
+    const inFs = () => v.webkitDisplayingFullscreen || document.fullscreenElement === v
+    const onPause = () => { if (!inFs()) reset() }
+    const onScroll = () => { if (Date.now() >= suppressScrollResetUntil) reset() }
+    const onResize = () => { suppressScrollResetUntil = Date.now() + 700 }
+    const onFsChange = () => { if (!document.fullscreenElement) reset() }
     v.addEventListener('ended', reset)
     v.addEventListener('pause', onPause)
+    v.addEventListener('webkitendfullscreen', reset)
+    document.addEventListener('fullscreenchange', onFsChange)
     window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onResize)
+    window.addEventListener('orientationchange', onResize)
     return () => {
       v.removeEventListener('ended', reset)
       v.removeEventListener('pause', onPause)
+      v.removeEventListener('webkitendfullscreen', reset)
+      document.removeEventListener('fullscreenchange', onFsChange)
       window.removeEventListener('scroll', onScroll)
-      document.body.style.overflow = ''
+      window.removeEventListener('resize', onResize)
+      window.removeEventListener('orientationchange', onResize)
     }
   }, [reset])
 
@@ -652,8 +664,8 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
   const reset = useCallback(() => {
     if (!startedRef.current) return
     startedRef.current = false
+    if (activeVideoReset === reset) activeVideoReset = null
     setStarted(false)
-    document.body.style.overflow = ''
     const v = videoRef.current
     if (v) {
       v.pause()
@@ -665,7 +677,9 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
   const start = () => {
     const v = videoRef.current
     if (!v || startedRef.current) return
+    if (activeVideoReset && activeVideoReset !== reset) activeVideoReset()
     startedRef.current = true
+    activeVideoReset = reset
     v.muted = false
     v.volume = 1
     setStarted(true)
@@ -680,20 +694,26 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    // Detect a real mouse desktop by pointer type, not viewport width — a
-    // rotated phone becomes >720px wide but must still count as mobile so
-    // playback isn't reset on the scroll/resize that rotation fires.
-    const desktop = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches
-    const onPause = () => { if (desktop()) reset() }
-    const onScroll = () => { if (desktop()) reset() }
+    const inFs = () => v.webkitDisplayingFullscreen || document.fullscreenElement === v
+    const onPause = () => { if (!inFs()) reset() }
+    const onScroll = () => { if (Date.now() >= suppressScrollResetUntil) reset() }
+    const onResize = () => { suppressScrollResetUntil = Date.now() + 700 }
+    const onFsChange = () => { if (!document.fullscreenElement) reset() }
     v.addEventListener('ended', reset)
     v.addEventListener('pause', onPause)
+    v.addEventListener('webkitendfullscreen', reset)
+    document.addEventListener('fullscreenchange', onFsChange)
     window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onResize)
+    window.addEventListener('orientationchange', onResize)
     return () => {
       v.removeEventListener('ended', reset)
       v.removeEventListener('pause', onPause)
+      v.removeEventListener('webkitendfullscreen', reset)
+      document.removeEventListener('fullscreenchange', onFsChange)
       window.removeEventListener('scroll', onScroll)
-      document.body.style.overflow = ''
+      window.removeEventListener('resize', onResize)
+      window.removeEventListener('orientationchange', onResize)
     }
   }, [reset])
 
@@ -907,21 +927,17 @@ export default function ClientLanding() {
     }
   }, [])
 
-  // Pin the LAST screen of the services-texts section so the stacked Bella
-  // gallery slides up over a held panel — the same overlay effect the texts
-  // have over the Studio gallery. A multi-screen section can't pin at top:0
-  // (that would freeze its first screen and hide the rest), so we offset the
-  // sticky top by the overflow height: the section scrolls through normally,
-  // then its final screen sticks while Bella rides over it. Only below the
-  // side-by-side breakpoint, where the stacked Bella exists.
+  // Pin the LAST screen of the services-texts section so the cards after it
+  // (Bella on mobile, and the final Cent Aura / Nikos videos) slide up over a
+  // held panel — the same overlay effect the texts have over the Studio
+  // gallery. A multi-screen section can't pin at top:0 (that would freeze its
+  // first screen and hide the rest), so we offset the sticky top by the
+  // overflow height: the section scrolls through, then its final screen sticks
+  // while the next card rides over it. Applied on every width.
   useEffect(() => {
     const sec = document.querySelector('.proposal-sections')
     if (!sec) return
     const apply = () => {
-      if (window.innerWidth >= 1300) {
-        sec.style.top = ''
-        return
-      }
       const overflow = sec.offsetHeight - window.innerHeight
       sec.style.top = overflow > 0 ? `${-overflow}px` : '0px'
     }

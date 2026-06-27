@@ -431,22 +431,15 @@ html.is-glitching .proposal-glitch-btn {
 .proposal-stack > .proposal-mission-stage { z-index: 2; display: flex; align-items: center; }
 .proposal-stack > .studio-gallery-pin     { z-index: 3; display: flex; align-items: center; justify-content: center; }
 
+/* Sticky so the texts' LAST screen stays put while the next cards (Bella on
+   mobile, the final Cent Aura / Nikos videos) slide up over it. JS sets `top`
+   to the negative overflow so the FINAL screen pins, not the first. */
 .proposal-stack > .proposal-sections {
-  position: relative;
+  position: sticky;
   z-index: 11;
   background: #fff;
   padding-top: clamp(48px, 6vw, 96px);
   padding-bottom: clamp(48px, 6vw, 96px);
-}
-
-/* Below the side-by-side breakpoint the stacked Bella gallery slides up over
-   the texts. Make the texts sticky so their last screen stays put while Bella
-   overlays it (JS sets `top` to the negative overflow so the FINAL screen
-   pins, not the first). */
-@media (max-width: 1299.98px) {
-  .proposal-stack > .proposal-sections {
-    position: sticky;
-  }
 }
 
 .studio-gallery-pin {
