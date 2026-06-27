@@ -729,8 +729,9 @@ html.is-glitching .proposal-glitch-btn {
   /* 12 Monkeys row comes after Saint Bar — stack its panels above it. */
   .proposal-monkeys-row .vmod-frame:nth-of-type(1) { z-index: 9; }
   .proposal-monkeys-row .vmod-frame:nth-of-type(2) { z-index: 10; }
-  /* Final video sits after the services texts — stack above them. */
+  /* Final videos sit after the services texts — stack above them. */
   .proposal-final-row .vmod-frame:nth-of-type(1) { z-index: 12; }
+  .proposal-final-row .vmod-frame:nth-of-type(2) { z-index: 13; }
 }
 
 /* 12 Monkeys row (desktop sticky panel) sits above the Saint Bar pin. */
@@ -804,7 +805,7 @@ html.is-glitching .proposal-glitch-btn {
    the Studio gallery. */
 .proposal-outro {
   position: relative;
-  z-index: 13;
+  z-index: 14;
   background: #fff;
 }
 
