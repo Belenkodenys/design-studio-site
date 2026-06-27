@@ -988,7 +988,7 @@ export default function ClientLanding() {
 
       <section className="proposal-mission-stage">
         <p className="proposal-mission">
-          Barcelona-based, award-winning international hospitality studio creating venues worldwide where interior, brand, and guest experience come together to make people fall in love — and come back
+          Barcelona-based, award-winning international hospitality studio. Through guest journey design, we create venues worldwide where interior, brand, and customer experience come together to make people fall in love — and come back
         </p>
       </section>
 
