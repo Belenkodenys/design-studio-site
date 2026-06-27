@@ -457,10 +457,12 @@ function Sections() {
         aria-controls="proposal-services-list"
         onClick={() => setServicesOpen((v) => !v)}
       >
-        <h2 className="proposal-services-title">Services</h2>
-        <span className="proposal-section-toggle" aria-hidden="true">
-          <ExpandIcon />
-        </span>
+        <img
+          className="proposal-services-title-img"
+          src="/projects/services-title.png"
+          alt="Services"
+          draggable={false}
+        />
       </button>
 
       <div
