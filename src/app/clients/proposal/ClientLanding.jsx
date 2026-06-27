@@ -427,8 +427,7 @@ function ExpandIcon() {
 
 function Sections() {
   const [openSlug, setOpenSlug] = useState(null)
-  const [revealedSlugs, setRevealedSlugs] = useState(() => new Set())
-  const itemRefs = useRef({})
+  const [servicesOpen, setServicesOpen] = useState(false)
   const switchTimerRef = useRef(null)
 
   const handleToggle = useCallback((slug) => {
@@ -449,57 +448,48 @@ function Sections() {
     })
   }, [])
 
-  useEffect(() => {
-    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
-      setRevealedSlugs(new Set(sections.map((s) => s.slug)))
-      return
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const slug = entry.target.dataset.slug
-            setRevealedSlugs((prev) => {
-              if (prev.has(slug)) return prev
-              const next = new Set(prev)
-              next.add(slug)
-              return next
-            })
-            io.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.15 }
-    )
-    Object.values(itemRefs.current).forEach((el) => el && io.observe(el))
-    return () => io.disconnect()
-  }, [])
-
   return (
     <section className="proposal-sections">
-      {sections.map((s, i) => {
-        const isOpen = openSlug === s.slug
-        const isIn = revealedSlugs.has(s.slug)
-        return (
-          <article
-            key={s.slug}
-            ref={(el) => { itemRefs.current[s.slug] = el }}
-            data-slug={s.slug}
-            className={`proposal-section-link${isOpen ? ' is-open' : ''}${isIn ? ' in' : ''}`}
-          >
-            <button
-              type="button"
-              className="proposal-section"
-              aria-expanded={isOpen}
-              aria-controls={`section-panel-${s.slug}`}
-              onClick={() => handleToggle(s.slug)}
-            >
-              <div className="proposal-section-num">
-                {String(i + 1).padStart(2, '0')}
-              </div>
-              <div className="proposal-section-content">
-                <div className="proposal-section-header">
-                  <h2 className="proposal-section-title">{s.title}</h2>
+      <button
+        type="button"
+        className={`proposal-services-head${servicesOpen ? ' is-open' : ''}`}
+        aria-expanded={servicesOpen}
+        aria-controls="proposal-services-list"
+        onClick={() => setServicesOpen((v) => !v)}
+      >
+        <h2 className="proposal-services-title">Services</h2>
+        <span className="proposal-section-toggle" aria-hidden="true">
+          <ExpandIcon />
+        </span>
+      </button>
+
+      <div
+        id="proposal-services-list"
+        className={`proposal-services-list${servicesOpen ? ' is-open' : ''}`}
+        aria-hidden={!servicesOpen}
+      >
+        <div className="proposal-services-list-inner">
+          {sections.map((s, i) => {
+            const isOpen = openSlug === s.slug
+            return (
+              <article
+                key={s.slug}
+                data-slug={s.slug}
+                className={`proposal-section-link in${isOpen ? ' is-open' : ''}`}
+              >
+                <button
+                  type="button"
+                  className="proposal-section"
+                  aria-expanded={isOpen}
+                  aria-controls={`section-panel-${s.slug}`}
+                  onClick={() => handleToggle(s.slug)}
+                >
+                  <div className="proposal-section-num">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <div className="proposal-section-content">
+                    <div className="proposal-section-header">
+                      <h3 className="proposal-section-title">{s.title}</h3>
                   <span
                     className="proposal-section-toggle"
                     aria-hidden="true"
@@ -532,7 +522,9 @@ function Sections() {
             </div>
           </article>
         )
-      })}
+          })}
+        </div>
+      </div>
     </section>
   )
 }
