@@ -436,7 +436,7 @@ html.is-glitching .proposal-glitch-btn {
    to the negative overflow so the FINAL screen pins, not the first. */
 .proposal-stack > .proposal-sections {
   position: sticky;
-  z-index: 11;
+  z-index: 14;
   background: #fff;
   padding-top: clamp(120px, 14vw, 240px);
   padding-bottom: clamp(120px, 14vw, 240px);
@@ -838,7 +838,7 @@ html.is-glitching .proposal-glitch-btn {
    the Studio gallery. */
 .proposal-outro {
   position: relative;
-  z-index: 14;
+  z-index: 15;
   background: #fff;
 }
 
@@ -910,7 +910,7 @@ html.is-glitching .proposal-glitch-btn {
 
   .proposal-mission {
     padding: 0 24px;
-    font-size: clamp(15px, 4.5vw, 24px);
+    font-size: clamp(20px, 6.2vw, 30px);
     letter-spacing: 0.02em;
     line-height: 1.3;
   }

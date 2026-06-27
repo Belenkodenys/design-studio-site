@@ -1050,12 +1050,12 @@ export default function ClientLanding() {
         <VideoModule src="/projects/monkeys2.mp4" poster="/projects/monkeys2-poster3.jpg" />
       </section>
 
-      <Sections />
-
       <section className="proposal-modules-row proposal-final-row" aria-label="Projects">
         <VideoModule src="/projects/final.mp4" poster="/projects/cent-aura-poster.jpg" />
         <VideoModule src="/projects/nikos.mp4" poster="/projects/nikos-poster2.jpg" />
       </section>
+
+      <Sections />
 
       <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
