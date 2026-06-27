@@ -459,6 +459,9 @@ html.is-glitching .proposal-glitch-btn {
   width: min(440px, 72vw);
   height: auto;
   display: block;
+  /* Blend the still's light background into the white section so only the
+     calligraphy shows (no visible box behind the inscription). */
+  mix-blend-mode: multiply;
 }
 
 .proposal-services-list {
