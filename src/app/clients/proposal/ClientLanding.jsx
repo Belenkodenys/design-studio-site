@@ -658,18 +658,18 @@ function PixiVideo() {
         preload="metadata"
       />
       {!started && (
-        <>
-          <picture className="proposal-pixi-cover">
-            <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile.jpg" />
-            <img src="/projects/pixi-poster2.jpg" alt="Pixi Istanbul" draggable={false} />
-          </picture>
-          <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Full Screen
-          </button>
-        </>
+        <picture className="proposal-pixi-cover">
+          <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile.jpg" />
+          <img src="/projects/pixi-poster2.jpg" alt="Pixi Istanbul" draggable={false} />
+        </picture>
+      )}
+      {started && (
+        <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Full Screen
+        </button>
       )}
     </div>
   )
@@ -774,18 +774,18 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
         preload="metadata"
       />
       {!started && (
-        <>
-          <picture className="vmod-cover">
-            {posterMobile && <source media="(max-width: 720px)" srcSet={posterMobile} />}
-            <img src={poster} alt="" draggable={false} />
-          </picture>
-          <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Full Screen
-          </button>
-        </>
+        <picture className="vmod-cover">
+          {posterMobile && <source media="(max-width: 720px)" srcSet={posterMobile} />}
+          <img src={poster} alt="" draggable={false} />
+        </picture>
+      )}
+      {started && (
+        <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Full Screen
+        </button>
       )}
     </div>
   )

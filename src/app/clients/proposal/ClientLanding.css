@@ -706,13 +706,12 @@ html.is-glitching .proposal-glitch-btn {
   cursor: pointer;
 }
 
-/* Big, prominent Full Screen launcher shown on the cover (idle) of every
-   video card, centered at the bottom. Starts playback and enters fullscreen. */
+/* Big, prominent Full Screen launcher overlaid on the playing video (top
+   right, clear of the native control bar at the bottom). Enters fullscreen. */
 .vmod-fs-btn {
   position: absolute;
-  left: 50%;
-  bottom: clamp(18px, 3vw, 32px);
-  transform: translateX(-50%);
+  top: clamp(14px, 2.4vw, 26px);
+  right: clamp(14px, 2.4vw, 26px);
   z-index: 4;
   display: inline-flex;
   align-items: center;
@@ -741,7 +740,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .vmod-fs-btn:hover {
   background: rgba(0, 0, 0, 0.82);
-  transform: translateX(-50%) translateY(-2px);
+  transform: translateY(-2px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
 }
 
