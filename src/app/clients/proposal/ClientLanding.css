@@ -1038,9 +1038,9 @@ html.is-glitching .proposal-glitch-btn {
   overflow: hidden;
   min-height: 0;
   padding: 26px 4px 8px;
-  color: #333;
-  font-size: clamp(15px, 1.15vw, 16.5px);
-  line-height: 1.62;
+  color: #1a1a1a;
+  font-size: clamp(18px, 1.5vw, 21px);
+  line-height: 1.6;
 }
 
 .proposal-mission-details-inner > p {
@@ -1062,7 +1062,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-mission-principle h4 {
   margin: 0 0 5px;
-  font-size: clamp(16px, 1.2vw, 17.5px);
+  font-size: clamp(18px, 1.5vw, 21px);
   font-weight: 600;
   color: #111;
 }
@@ -1142,6 +1142,11 @@ html.is-glitching .proposal-glitch-btn {
     line-height: 1.6;
     text-align: left;
     text-align-last: auto;
+  }
+
+  .proposal-mission-details-inner,
+  .proposal-mission-principle h4 {
+    font-size: 17px;
   }
 
   .proposal-mission-stats {
