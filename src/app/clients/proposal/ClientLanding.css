@@ -431,6 +431,16 @@ html.is-glitching .proposal-glitch-btn {
 .proposal-stack > .proposal-mission-stage { z-index: 2; display: flex; align-items: center; }
 .proposal-stack > .studio-gallery-pin     { z-index: 3; display: flex; align-items: center; justify-content: center; }
 
+/* When the About accordion is open the mission content can exceed one screen.
+   Unpin the panel (drop sticky) and top-align it so the full content scrolls
+   naturally into view instead of being clipped while stuck at the top. */
+.proposal-stack > .proposal-mission-stage:has(.proposal-mission-block.is-open) {
+  position: relative;
+  align-items: flex-start;
+  padding-top: clamp(56px, 10vh, 120px);
+  padding-bottom: clamp(56px, 10vh, 120px);
+}
+
 /* Sticky so the texts' LAST screen stays put while the next cards (Bella on
    mobile, the final Cent Aura / Nikos videos) slide up over it. JS sets `top`
    to the negative overflow so the FINAL screen pins, not the first. */
@@ -1012,22 +1022,21 @@ html.is-glitching .proposal-glitch-btn {
   transform: rotate(180deg);
 }
 
-/* Collapsible detailed About accordion. */
+/* Collapsible detailed About accordion — expands to its full natural height
+   (no inner scrollbar). */
 .proposal-mission-details {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .proposal-mission-details.is-open {
-  max-height: min(58vh, 620px);
-  overflow-y: auto;
-  opacity: 1;
-  overscroll-behavior: contain;
+  grid-template-rows: 1fr;
 }
 
 .proposal-mission-details-inner {
+  overflow: hidden;
+  min-height: 0;
   padding: 26px 4px 8px;
   color: #333;
   font-size: clamp(15px, 1.15vw, 16.5px);
@@ -1133,10 +1142,6 @@ html.is-glitching .proposal-glitch-btn {
     line-height: 1.6;
     text-align: left;
     text-align-last: auto;
-  }
-
-  .proposal-mission-details.is-open {
-    max-height: 64vh;
   }
 
   .proposal-mission-stats {
