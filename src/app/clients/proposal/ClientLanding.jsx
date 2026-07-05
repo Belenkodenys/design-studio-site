@@ -425,6 +425,94 @@ function ExpandIcon() {
   )
 }
 
+// Studio mission statement with a "Read more" toggle that expands a detailed
+// About accordion (studio story, principles and stats from the earlier site).
+function StudioMission() {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className={`proposal-mission-block${open ? ' is-open' : ''}`}>
+      <p className="proposal-mission" lang="en">
+        Barcelona-based, award-winning international hospitality studio. Through guest journey design, we create venues worldwide where interior, brand, and customer experience come together to make people fall in love — and come back
+      </p>
+
+      <button
+        type="button"
+        className="proposal-mission-more"
+        aria-expanded={open}
+        aria-controls="proposal-mission-details"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span>{open ? 'Read less' : 'Read more'}</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      <div
+        id="proposal-mission-details"
+        className={`proposal-mission-details${open ? ' is-open' : ''}`}
+        aria-hidden={!open}
+      >
+        <div className="proposal-mission-details-inner">
+          <p>
+            The design studio has over twenty years of experience in designing commercial and residential interiors, transforming architecture into a storytelling tool.
+          </p>
+          <p>
+            Instead of simply decorating spaces, the team focuses on creating a unique atmosphere and emotional experience for every visitor.
+          </p>
+          <p>
+            At the heart of every concept is the guest and their impressions, allowing the space to become a living story. Founder Denys Belenko emphasizes that their work is aimed at designing feelings, not just external aesthetics.
+          </p>
+          <p>
+            At the same time, creative exploration is always balanced with commercial efficiency, ensuring that design serves specific business goals. This approach allows the team to create expressive and distinctive spaces that stand out from standard solutions.
+          </p>
+
+          <h3 className="proposal-mission-subhead">Studio Principles</h3>
+
+          <div className="proposal-mission-principle">
+            <h4>Scenario as Foundation</h4>
+            <p>We don&rsquo;t start with blueprints — we start with a legend. For us, every interior is a material embodiment of a scenario. We design not just walls, but feelings and states of being within them.</p>
+          </div>
+          <div className="proposal-mission-principle">
+            <h4>Guest at the Center</h4>
+            <p>The core value of any business is the visitor&rsquo;s experience. We create spaces where people feel like the main character. We work to ensure guests immerse themselves in the atmosphere, find interest in details, and want to return again.</p>
+          </div>
+          <div className="proposal-mission-principle">
+            <h4>Living History and Craftsmanship</h4>
+            <p>A good place shouldn&rsquo;t look &ldquo;sterile&rdquo; or new. We value things crafted by hand — they have life and uniqueness that mass production can&rsquo;t replicate. This creates the feeling of a lived-in space with its own history and character.</p>
+          </div>
+          <div className="proposal-mission-principle">
+            <h4>Natural Textures and Warm Light</h4>
+            <p>We favor wood, stone, brick, and metal — materials that age beautifully over time. We avoid imitations and primarily use warm-spectrum lighting. This combination creates tangible comfort and a sense of stability.</p>
+          </div>
+
+          <div className="proposal-mission-stats">
+            <div className="proposal-mission-stat">
+              <span className="num">25</span>
+              <span className="lbl">Years of experience</span>
+              <span className="desc">In launching successful projects in the HoReCa industry</span>
+            </div>
+            <div className="proposal-mission-stat">
+              <span className="num">28</span>
+              <span className="lbl">Team members</span>
+              <span className="desc">Architects, designers, brand strategists, creators, and producers</span>
+            </div>
+            <div className="proposal-mission-stat">
+              <span className="num">200+</span>
+              <span className="lbl">Projects</span>
+              <span className="desc">Completed in 11 countries, covering more than 50,000 m² of designed atmosphere</span>
+            </div>
+          </div>
+
+          <p className="proposal-mission-founder">
+            &ldquo;The most expensive thing in a restaurant is an empty table.&rdquo; — Denys Belenko
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function Sections() {
   const [openSlug, setOpenSlug] = useState(null)
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -1063,9 +1151,7 @@ export default function ClientLanding() {
       </header>
 
       <section className="proposal-mission-stage">
-        <p className="proposal-mission" lang="en">
-          Barcelona-based, award-winning international hospitality studio. Through guest journey design, we create venues worldwide where interior, brand, and customer experience come together to make people fall in love — and come back
-        </p>
+        <StudioMission />
       </section>
 
       <div className="studio-gallery-pin proposal-galleries-row">
