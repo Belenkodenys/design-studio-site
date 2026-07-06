@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { sections } from './sections'
 import ProposalFooter from './ProposalFooter'
+import Portfolio from '../../../components/Portfolio'
 import './ClientLanding.css'
 
 const rotatingWords = ['restaurants', 'hotels', 'cafés', 'shops', 'bars']
@@ -1218,6 +1219,11 @@ export default function ClientLanding() {
       </section>
 
       <Sections />
+
+      <section className="proposal-portfolio-wrap" aria-label="Portfolio">
+        <h2 className="proposal-portfolio-title">Portfolio</h2>
+        <Portfolio />
+      </section>
 
       <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">

@@ -22,6 +22,7 @@ function Portfolio() {
                 className="portfolio-card-img"
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
               />
             )}
             <div className="portfolio-card-info">
