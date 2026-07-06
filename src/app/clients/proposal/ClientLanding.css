@@ -452,9 +452,10 @@ html.is-glitching .proposal-glitch-btn {
   padding-bottom: clamp(120px, 14vw, 240px);
 }
 
-/* "Services" master accordion — collapses all 14 service items behind one
-   header that expands/collapses. */
-.proposal-services-head {
+/* "Services" and "Portfolio" master accordions — one centered text header
+   that expands/collapses its content. Shared head layout + title style. */
+.proposal-services-head,
+.proposal-portfolio-head {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -467,32 +468,41 @@ html.is-glitching .proposal-glitch-btn {
   padding: 0;
 }
 
-.proposal-services-title-img {
-  width: min(440px, 72vw);
-  height: auto;
-  display: block;
-  /* Blend the still's light background into the white section so only the
-     calligraphy shows (no visible box behind the inscription). */
-  mix-blend-mode: multiply;
+.proposal-accordion-title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  color: #1a1a1a;
 }
 
-/* Slim, elegant arrow beneath the title hinting the inscription is tappable.
-   It bobs gently while closed, and flips upward once the list is open. */
-.proposal-services-arrow {
+.proposal-accordion-title.on-dark {
+  color: #fff;
+}
+
+/* Slim, elegant arrow beneath the title hinting it's tappable. It bobs gently
+   while closed, and flips upward once the list is open. */
+.proposal-accordion-arrow {
   width: clamp(44px, 5vw, 62px);
   height: auto;
-  color: #1a1a1a;
   opacity: 0.55;
   transform-origin: 50% 50%;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   animation: services-arrow-bob 2.4s ease-in-out infinite;
 }
 
-.proposal-services-head:hover .proposal-services-arrow {
+.proposal-services-head .proposal-accordion-arrow { color: #1a1a1a; }
+.proposal-portfolio-head .proposal-accordion-arrow { color: #fff; }
+
+.proposal-services-head:hover .proposal-accordion-arrow,
+.proposal-portfolio-head:hover .proposal-accordion-arrow {
   opacity: 0.85;
 }
 
-.proposal-services-head.is-open .proposal-services-arrow {
+.proposal-services-head.is-open .proposal-accordion-arrow,
+.proposal-portfolio-head.is-open .proposal-accordion-arrow {
   transform: rotate(180deg);
   opacity: 0.7;
   animation: none;
@@ -504,19 +514,26 @@ html.is-glitching .proposal-glitch-btn {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .proposal-services-arrow {
+  .proposal-accordion-arrow {
     animation: none;
   }
 }
 
-.proposal-services-list {
+.proposal-services-list,
+.proposal-portfolio-list {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.proposal-services-list.is-open {
+.proposal-services-list.is-open,
+.proposal-portfolio-list.is-open {
   grid-template-rows: 1fr;
+}
+
+.proposal-portfolio-list-inner {
+  overflow: hidden;
+  min-height: 0;
 }
 
 .proposal-services-list-inner {
@@ -926,31 +943,18 @@ html.is-glitching .proposal-glitch-btn {
    pin, so the video sticks to the top of the screen and this panel slides up
    over it — the same overlay-and-pin effect the services texts have over
    the Studio gallery. */
-/* Portfolio grid pulled from the earlier site, attached after Services.
+/* Portfolio accordion pulled from the earlier site, attached after Services.
    Sits above the pinned Services panel and slides over it on scroll. */
 .proposal-stack > .proposal-portfolio-wrap {
   position: relative;
   z-index: 15;
   background: #0a0a0a;
-  padding-top: clamp(48px, 6vw, 90px);
+  padding-top: clamp(120px, 14vw, 240px);
+  padding-bottom: clamp(120px, 14vw, 240px);
 }
 
-.proposal-portfolio-title {
-  margin: 0 auto;
-  max-width: 1400px;
-  padding: 0 40px;
-  color: #fff;
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 600px) {
-  .proposal-portfolio-title {
-    padding: 0 16px;
-    font-size: 26px;
-  }
+.proposal-stack > .proposal-portfolio-wrap.is-open {
+  padding-bottom: clamp(48px, 6vw, 90px);
 }
 
 .proposal-outro {

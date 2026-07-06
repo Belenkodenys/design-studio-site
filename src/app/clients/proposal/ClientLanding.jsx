@@ -514,6 +514,46 @@ function StudioMission() {
   )
 }
 
+// Shared elegant chevron used by the Services and Portfolio accordion heads.
+function AccordionArrow() {
+  return (
+    <svg className="proposal-accordion-arrow" viewBox="0 0 64 22" fill="none" aria-hidden="true">
+      <path d="M4 5 C 20 19, 44 19, 60 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M24 13 L32 18 L40 13" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+// Portfolio grid (from the earlier site) wrapped in a collapsible accordion,
+// styled to match the Services head.
+function PortfolioSection() {
+  const [open, setOpen] = useState(false)
+  return (
+    <section className={`proposal-portfolio-wrap${open ? ' is-open' : ''}`} aria-label="Portfolio">
+      <button
+        type="button"
+        className={`proposal-portfolio-head${open ? ' is-open' : ''}`}
+        aria-expanded={open}
+        aria-controls="proposal-portfolio-list"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span className="proposal-accordion-title on-dark">Portfolio</span>
+        <AccordionArrow />
+      </button>
+
+      <div
+        id="proposal-portfolio-list"
+        className={`proposal-portfolio-list${open ? ' is-open' : ''}`}
+        aria-hidden={!open}
+      >
+        <div className="proposal-portfolio-list-inner">
+          <Portfolio />
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Sections() {
   const [openSlug, setOpenSlug] = useState(null)
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -546,32 +586,8 @@ function Sections() {
         aria-controls="proposal-services-list"
         onClick={() => setServicesOpen((v) => !v)}
       >
-        <img
-          className="proposal-services-title-img"
-          src="/projects/services-title.png"
-          alt="Services"
-          draggable={false}
-        />
-        <svg
-          className="proposal-services-arrow"
-          viewBox="0 0 64 22"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M4 5 C 20 19, 44 19, 60 5"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-          />
-          <path
-            d="M24 13 L32 18 L40 13"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <span className="proposal-accordion-title">Services</span>
+        <AccordionArrow />
       </button>
 
       <div
@@ -1220,10 +1236,7 @@ export default function ClientLanding() {
 
       <Sections />
 
-      <section className="proposal-portfolio-wrap" aria-label="Portfolio">
-        <h2 className="proposal-portfolio-title">Portfolio</h2>
-        <Portfolio />
-      </section>
+      <PortfolioSection />
 
       <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
