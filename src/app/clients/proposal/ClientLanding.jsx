@@ -1167,10 +1167,6 @@ export default function ClientLanding() {
         </div>
       </header>
 
-      <section className="proposal-mission-stage">
-        <StudioMission />
-      </section>
-
       <div className="studio-gallery-pin proposal-galleries-row">
         <StudioGallery
           bare
@@ -1237,6 +1233,10 @@ export default function ClientLanding() {
       <Sections />
 
       <PortfolioSection />
+
+      <section className="proposal-mission-stage">
+        <StudioMission />
+      </section>
 
       <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">

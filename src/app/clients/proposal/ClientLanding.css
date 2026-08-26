@@ -428,7 +428,7 @@ html.is-glitching .proposal-glitch-btn {
 }
 
 .proposal-stack > .proposal-hero          { z-index: 1; }
-.proposal-stack > .proposal-mission-stage { z-index: 2; display: flex; align-items: center; }
+.proposal-stack > .proposal-mission-stage { z-index: 16; display: flex; align-items: center; }
 .proposal-stack > .studio-gallery-pin     { z-index: 3; display: flex; align-items: center; justify-content: center; }
 
 /* When the About accordion is open the mission content can exceed one screen.
@@ -959,7 +959,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-outro {
   position: relative;
-  z-index: 16;
+  z-index: 17;
   background: #fff;
 }
 
