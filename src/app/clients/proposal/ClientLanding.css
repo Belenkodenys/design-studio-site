@@ -939,6 +939,39 @@ html.is-glitching .proposal-glitch-btn {
   }
 }
 
+/* Intro film — full-screen sticky video block right after the hero (before the
+   studio galleries). 4:3 clip shown whole (contain); tap to play with sound. */
+.proposal-stack > .proposal-intro-video-stage {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 96px) 24px;
+}
+
+.proposal-intro-video-stage .vmod-frame {
+  width: min(1072px, 90vw);
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 720px) {
+  .proposal-intro-video-stage {
+    padding: 0;
+    align-items: stretch;
+  }
+  .proposal-intro-video-stage .vmod-frame {
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    aspect-ratio: auto;
+  }
+}
+
 /* Outro (Fun button + footer) sits inside the pinned stack, above the Pixi
    pin, so the video sticks to the top of the screen and this panel slides up
    over it — the same overlay-and-pin effect the services texts have over

@@ -1167,6 +1167,10 @@ export default function ClientLanding() {
         </div>
       </header>
 
+      <section className="proposal-intro-video-stage" aria-label="Intro film">
+        <VideoModule src="/projects/intro.mp4" poster="/projects/intro-poster.jpg" />
+      </section>
+
       <div className="studio-gallery-pin proposal-galleries-row">
         <StudioGallery
           bare
