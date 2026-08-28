@@ -294,6 +294,19 @@ html.is-glitching .proposal-glitch-btn {
   display: none;
 }
 
+/* Calligraphic hero title, centered over the slideshow (white on transparent). */
+.proposal-hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1080px, 80vw);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 20px rgba(0, 0, 0, 0.55));
+}
+
 /* Wordmark wrap — natural width, centered */
 .proposal-wordmark-wrap {
   position: absolute;

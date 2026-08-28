@@ -1188,6 +1188,12 @@ export default function ClientLanding() {
             )
           })}
         </div>
+        <img
+          className="proposal-hero-title"
+          src="/custom-hospitality.png"
+          alt="Custom Hospitality"
+          draggable={false}
+        />
       </header>
 
       <section className="proposal-intro-video-stage" aria-label="Intro film">
