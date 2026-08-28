@@ -503,6 +503,7 @@ function StudioMission() {
 // the hero, gains a translucent dark backdrop once the page is scrolled.
 function TopBar() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     onScroll()
@@ -512,6 +513,7 @@ function TopBar() {
 
   const go = (e, id) => {
     e.preventDefault()
+    setMenuOpen(false)
     if (id === 'top') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
@@ -521,7 +523,9 @@ function TopBar() {
   }
 
   return (
-    <header className={`proposal-topbar${scrolled ? ' is-scrolled' : ''}`}>
+    <header
+      className={`proposal-topbar${scrolled ? ' is-scrolled' : ''}${menuOpen ? ' is-menu-open' : ''}`}
+    >
       <a
         href="#top"
         className="proposal-topbar-logo"
@@ -530,7 +534,20 @@ function TopBar() {
       >
         <img src="/belenko-logo-footer.png" alt="Belenko" />
       </a>
-      <nav className="proposal-topbar-nav">
+
+      <button
+        type="button"
+        className="proposal-topbar-toggle"
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((v) => !v)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav className={`proposal-topbar-nav${menuOpen ? ' is-open' : ''}`}>
         <a href="#services" onClick={(e) => go(e, 'services')}>Services</a>
         <a href="#portfolio" onClick={(e) => go(e, 'portfolio')}>Portfolio</a>
         <a href="#about" onClick={(e) => go(e, 'about')}>About</a>

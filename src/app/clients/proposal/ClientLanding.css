@@ -1620,6 +1620,11 @@ html.is-glitching .proposal-glitch-btn {
   opacity: 1;
 }
 
+/* Hamburger toggle — hidden on desktop, shown on mobile. */
+.proposal-topbar-toggle {
+  display: none;
+}
+
 @media (max-width: 720px) {
   .proposal-topbar {
     padding: 14px 18px;
@@ -1627,11 +1632,74 @@ html.is-glitching .proposal-glitch-btn {
   .proposal-topbar-logo img {
     height: 20px;
   }
+
+  .proposal-topbar-logo,
+  .proposal-topbar-toggle {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Show the hamburger; it morphs into an X when the menu is open. */
+  .proposal-topbar-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .proposal-topbar-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.25s ease;
+  }
+  .proposal-topbar.is-menu-open .proposal-topbar-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .proposal-topbar.is-menu-open .proposal-topbar-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .proposal-topbar.is-menu-open .proposal-topbar-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Nav becomes a full-width panel that slides down from the top. */
   .proposal-topbar-nav {
-    gap: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 66px 22px 22px;
+    background: rgba(12, 12, 12, 0.97);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    transform: translateY(-105%);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+  }
+  .proposal-topbar-nav.is-open {
+    transform: translateY(0);
   }
   .proposal-topbar-nav a {
-    font-size: 11px;
-    letter-spacing: 0.08em;
+    font-size: 15px;
+    letter-spacing: 0.16em;
+    opacity: 1;
+    padding: 16px 4px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .proposal-topbar-nav a:first-child {
+    border-top: 0;
   }
 }
