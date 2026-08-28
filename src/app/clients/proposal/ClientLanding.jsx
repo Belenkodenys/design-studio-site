@@ -1188,10 +1188,6 @@ export default function ClientLanding() {
             )
           })}
         </div>
-        <div className="proposal-wordmark-wrap">
-          <div className="proposal-wordmark-belenko">BELENKO</div>
-          <div className="proposal-wordmark-studio">STUDIO</div>
-        </div>
       </header>
 
       <section className="proposal-intro-video-stage" aria-label="Intro film">
