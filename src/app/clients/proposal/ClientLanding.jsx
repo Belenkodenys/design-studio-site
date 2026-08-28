@@ -501,7 +501,7 @@ function StudioMission() {
 
 // Fixed top menu bar: logo pinned left, section links right. Transparent over
 // the hero, gains a translucent dark backdrop once the page is scrolled.
-function TopBar() {
+function TopBar({ setServicesOpen, setPortfolioOpen }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   useEffect(() => {
@@ -518,6 +518,9 @@ function TopBar() {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
     }
+    // Expand the target accordion so it opens already unfolded.
+    if (id === 'services') setServicesOpen(true)
+    if (id === 'portfolio') setPortfolioOpen(true)
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
@@ -569,8 +572,7 @@ function AccordionArrow() {
 
 // Portfolio grid (from the earlier site) wrapped in a collapsible accordion,
 // styled to match the Services head.
-function PortfolioSection() {
-  const [open, setOpen] = useState(false)
+function PortfolioSection({ open, setOpen }) {
   return (
     <section id="portfolio" className={`proposal-portfolio-wrap${open ? ' is-open' : ''}`} aria-label="Portfolio">
       <button
@@ -597,9 +599,8 @@ function PortfolioSection() {
   )
 }
 
-function Sections() {
+function Sections({ servicesOpen, setServicesOpen }) {
   const [openSlug, setOpenSlug] = useState(null)
-  const [servicesOpen, setServicesOpen] = useState(false)
   const switchTimerRef = useRef(null)
 
   const handleToggle = useCallback((slug) => {
@@ -961,6 +962,8 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
 
 export default function ClientLanding() {
   const heroRef = useRef(null)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [portfolioOpen, setPortfolioOpen] = useState(false)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
   const [shuffledSlides, setShuffledSlides] = useState(null)
   const heroSlides = shuffledSlides
@@ -1173,7 +1176,7 @@ export default function ClientLanding() {
 
   return (
     <main className="proposal">
-      <TopBar />
+      <TopBar setServicesOpen={setServicesOpen} setPortfolioOpen={setPortfolioOpen} />
       <div className="proposal-stack">
       <header
         ref={heroRef}
@@ -1280,9 +1283,9 @@ export default function ClientLanding() {
         <VideoModule src="/projects/nikos.mp4" poster="/projects/nikos-poster2.jpg" />
       </section>
 
-      <Sections />
+      <Sections servicesOpen={servicesOpen} setServicesOpen={setServicesOpen} />
 
-      <PortfolioSection />
+      <PortfolioSection open={portfolioOpen} setOpen={setPortfolioOpen} />
 
       <section id="about" className="proposal-mission-stage">
         <StudioMission />
