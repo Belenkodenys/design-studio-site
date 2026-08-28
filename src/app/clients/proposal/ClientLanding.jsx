@@ -499,6 +499,47 @@ function StudioMission() {
   )
 }
 
+// Fixed top menu bar: logo pinned left, section links right. Transparent over
+// the hero, gains a translucent dark backdrop once the page is scrolled.
+function TopBar() {
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const go = (e, id) => {
+    e.preventDefault()
+    if (id === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <header className={`proposal-topbar${scrolled ? ' is-scrolled' : ''}`}>
+      <a
+        href="#top"
+        className="proposal-topbar-logo"
+        onClick={(e) => go(e, 'top')}
+        aria-label="Belenko Studio — back to top"
+      >
+        <img src="/belenko-logo-footer.png" alt="Belenko" />
+      </a>
+      <nav className="proposal-topbar-nav">
+        <a href="#services" onClick={(e) => go(e, 'services')}>Services</a>
+        <a href="#portfolio" onClick={(e) => go(e, 'portfolio')}>Portfolio</a>
+        <a href="#about" onClick={(e) => go(e, 'about')}>About</a>
+        <a href="#contact" onClick={(e) => go(e, 'contact')}>Contact</a>
+      </nav>
+    </header>
+  )
+}
+
 // Shared elegant chevron used by the Services and Portfolio accordion heads.
 function AccordionArrow() {
   return (
@@ -514,7 +555,7 @@ function AccordionArrow() {
 function PortfolioSection() {
   const [open, setOpen] = useState(false)
   return (
-    <section className={`proposal-portfolio-wrap${open ? ' is-open' : ''}`} aria-label="Portfolio">
+    <section id="portfolio" className={`proposal-portfolio-wrap${open ? ' is-open' : ''}`} aria-label="Portfolio">
       <button
         type="button"
         className={`proposal-portfolio-head${open ? ' is-open' : ''}`}
@@ -563,7 +604,7 @@ function Sections() {
   }, [])
 
   return (
-    <section className="proposal-sections">
+    <section id="services" className="proposal-sections">
       <button
         type="button"
         className={`proposal-services-head${servicesOpen ? ' is-open' : ''}`}
@@ -1115,6 +1156,7 @@ export default function ClientLanding() {
 
   return (
     <main className="proposal">
+      <TopBar />
       <div className="proposal-stack">
       <header
         ref={heroRef}
@@ -1223,11 +1265,11 @@ export default function ClientLanding() {
 
       <PortfolioSection />
 
-      <section className="proposal-mission-stage">
+      <section id="about" className="proposal-mission-stage">
         <StudioMission />
       </section>
 
-      <div className="proposal-outro">
+      <div id="contact" className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
           <GlitchButton />
         </div>

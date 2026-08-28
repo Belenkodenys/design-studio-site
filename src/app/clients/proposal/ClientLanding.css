@@ -1546,3 +1546,79 @@ html.is-glitching .proposal-glitch-btn {
       0 0 28px rgba(255, 255, 255, 0.2);
   }
 }
+
+/* Fixed top menu bar — logo pinned left, section links right. Transparent
+   over the hero, translucent-dark once the page scrolls. */
+.proposal-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px clamp(20px, 4vw, 52px);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proposal-topbar.is-scrolled {
+  background: rgba(12, 12, 12, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.proposal-topbar-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}
+
+.proposal-topbar-logo img {
+  height: clamp(20px, 2.2vw, 26px);
+  width: auto;
+  display: block;
+  /* Footer logo is dark artwork — recolour it to white for the dark bar. */
+  filter: brightness(0) invert(1);
+}
+
+.proposal-topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 40px);
+}
+
+.proposal-topbar-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.proposal-topbar-nav a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .proposal-topbar {
+    padding: 14px 18px;
+  }
+  .proposal-topbar-logo img {
+    height: 20px;
+  }
+  .proposal-topbar-nav {
+    gap: 14px;
+  }
+  .proposal-topbar-nav a {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+}
