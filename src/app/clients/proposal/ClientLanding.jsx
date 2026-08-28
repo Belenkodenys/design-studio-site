@@ -426,33 +426,18 @@ function ExpandIcon() {
   )
 }
 
-// Studio mission statement with a "Read more" toggle that expands a detailed
-// About accordion (studio story, principles and stats from the earlier site).
+// Studio mission statement followed by the full About content (studio story,
+// principles and stats from the earlier site) — always expanded, no toggle.
 function StudioMission() {
-  const [open, setOpen] = useState(false)
   return (
-    <div className={`proposal-mission-block${open ? ' is-open' : ''}`}>
+    <div className="proposal-mission-block is-open">
       <p className="proposal-mission" lang="en">
         Barcelona-based, award-winning international hospitality studio. Through guest journey design, we create venues worldwide where interior, brand, and customer experience come together to make people fall in love — and come back
       </p>
 
-      <button
-        type="button"
-        className="proposal-mission-more"
-        aria-expanded={open}
-        aria-controls="proposal-mission-details"
-        onClick={() => setOpen((v) => !v)}
-      >
-        <span>{open ? 'Read less' : 'Read more'}</span>
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-
       <div
         id="proposal-mission-details"
-        className={`proposal-mission-details${open ? ' is-open' : ''}`}
-        aria-hidden={!open}
+        className="proposal-mission-details is-open"
       >
         <div className="proposal-mission-details-inner">
           <p>
