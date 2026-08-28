@@ -521,8 +521,23 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
     // Expand the target accordion so it opens already unfolded.
     if (id === 'services') setServicesOpen(true)
     if (id === 'portfolio') setPortfolioOpen(true)
+
     const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (!el) return
+    // Scroll to the section's flow start (offsetTop chain — robust for the
+    // sticky-stacked panels), offset by the fixed top bar, so it lands right
+    // at the section's beginning. Defer a frame so any expand has settled.
+    requestAnimationFrame(() => {
+      const bar = document.querySelector('.proposal-topbar')
+      const barH = bar ? bar.offsetHeight : 0
+      let y = 0
+      let node = el
+      while (node) {
+        y += node.offsetTop
+        node = node.offsetParent
+      }
+      window.scrollTo({ top: Math.max(0, y - barH), behavior: 'smooth' })
+    })
   }
 
   return (
