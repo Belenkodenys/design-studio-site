@@ -1050,6 +1050,12 @@ html.is-glitching .proposal-glitch-btn {
   padding: clamp(24px, 4vw, 48px) 24px;
 }
 
+/* "About" heading above the studio text — matches the Services / Portfolio
+   accordion titles. */
+.proposal-about-title {
+  margin: 0 0 clamp(28px, 4vw, 52px);
+}
+
 .proposal-mission {
   margin: 0;
   padding: 0;

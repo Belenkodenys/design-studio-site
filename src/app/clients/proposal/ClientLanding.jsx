@@ -431,6 +431,7 @@ function ExpandIcon() {
 function StudioMission() {
   return (
     <div className="proposal-mission-block is-open">
+      <h2 className="proposal-accordion-title proposal-about-title">About</h2>
       <p className="proposal-mission" lang="en">
         Barcelona-based, award-winning international hospitality studio. Through guest journey design, we create venues worldwide where interior, brand, and customer experience come together to make people fall in love — and come back
       </p>
