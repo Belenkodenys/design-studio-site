@@ -524,19 +524,24 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
 
     const el = document.getElementById(id)
     if (!el) return
-    // Scroll to the section's flow start (offsetTop chain — robust for the
-    // sticky-stacked panels), offset by the fixed top bar, so it lands right
-    // at the section's beginning. Defer a frame so any expand has settled.
+    // Prefer the accordion header so the section's TITLE lands just under the
+    // bar (its true beginning), not the empty top padding above it.
+    const target =
+      el.querySelector('.proposal-services-head, .proposal-portfolio-head') || el
+    // offsetTop chain is robust for the sticky-stacked panels (getBoundingClientRect
+    // would report the sticky-translated position). Defer a frame so any expand
+    // has been committed to the DOM before measuring.
     requestAnimationFrame(() => {
       const bar = document.querySelector('.proposal-topbar')
       const barH = bar ? bar.offsetHeight : 0
+      const gap = 24
       let y = 0
-      let node = el
+      let node = target
       while (node) {
         y += node.offsetTop
         node = node.offsetParent
       }
-      window.scrollTo({ top: Math.max(0, y - barH), behavior: 'smooth' })
+      window.scrollTo({ top: Math.max(0, y - barH - gap), behavior: 'smooth' })
     })
   }
 
