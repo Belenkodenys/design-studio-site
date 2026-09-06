@@ -1809,3 +1809,6 @@ html.is-glitching .proposal-glitch-btn {
     border-top: 0;
   }
 }
+
+.proposal-services-head.is-static,
+.proposal-portfolio-head.is-static { cursor: default; }

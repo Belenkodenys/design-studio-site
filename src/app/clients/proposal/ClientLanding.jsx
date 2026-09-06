@@ -652,27 +652,15 @@ function AccordionArrow() {
   )
 }
 
-// Portfolio grid (from the earlier site) wrapped in a collapsible accordion,
-// styled to match the Services head.
-function PortfolioSection({ open, setOpen }) {
+// Portfolio grid (from the earlier site) — always expanded.
+function PortfolioSection() {
   return (
-    <section id="portfolio" className={`proposal-portfolio-wrap${open ? ' is-open' : ''}`} aria-label="Portfolio">
-      <button
-        type="button"
-        className={`proposal-portfolio-head${open ? ' is-open' : ''}`}
-        aria-expanded={open}
-        aria-controls="proposal-portfolio-list"
-        onClick={() => setOpen((v) => !v)}
-      >
+    <section id="portfolio" className="proposal-portfolio-wrap is-open" aria-label="Portfolio">
+      <div className="proposal-portfolio-head is-static">
         <span className="proposal-accordion-title on-dark">Portfolio</span>
-        <AccordionArrow />
-      </button>
+      </div>
 
-      <div
-        id="proposal-portfolio-list"
-        className={`proposal-portfolio-list${open ? ' is-open' : ''}`}
-        aria-hidden={!open}
-      >
+      <div id="proposal-portfolio-list" className="proposal-portfolio-list is-open">
         <div className="proposal-portfolio-list-inner">
           <Portfolio />
         </div>
@@ -681,7 +669,7 @@ function PortfolioSection({ open, setOpen }) {
   )
 }
 
-function Sections({ servicesOpen, setServicesOpen }) {
+function Sections() {
   const [openSlug, setOpenSlug] = useState(null)
   const switchTimerRef = useRef(null)
 
@@ -705,22 +693,11 @@ function Sections({ servicesOpen, setServicesOpen }) {
 
   return (
     <section id="services" className="proposal-sections">
-      <button
-        type="button"
-        className={`proposal-services-head${servicesOpen ? ' is-open' : ''}`}
-        aria-expanded={servicesOpen}
-        aria-controls="proposal-services-list"
-        onClick={() => setServicesOpen((v) => !v)}
-      >
+      <div className="proposal-services-head is-static">
         <span className="proposal-accordion-title">Services</span>
-        <AccordionArrow />
-      </button>
+      </div>
 
-      <div
-        id="proposal-services-list"
-        className={`proposal-services-list${servicesOpen ? ' is-open' : ''}`}
-        aria-hidden={!servicesOpen}
-      >
+      <div id="proposal-services-list" className="proposal-services-list is-open">
         <div className="proposal-services-list-inner">
           {sections.map((s, i) => {
             const isOpen = openSlug === s.slug
