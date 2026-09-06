@@ -581,6 +581,67 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
   )
 }
 
+// Contact form at the foot of the homepage (submits via Web3Forms to office@).
+function HomeContactForm() {
+  const [data, setData] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const ch = (e) => setData((d) => ({ ...d, [e.target.name]: e.target.value }))
+
+  const submit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'e88480f3-403a-4b70-aa15-80625df1c6db',
+          to: 'office@belenko.design',
+          subject: `New message from ${data.name}`,
+          from_name: data.name,
+          email: data.email,
+          message: data.message
+        })
+      })
+      if (res.ok) {
+        if (typeof window !== 'undefined' && window.fbq) window.fbq('track', 'Lead')
+        setStatus('sent')
+        setData({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch (_) {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <section className="proposal-contact" aria-label="Contact">
+      <div className="proposal-contact-inner">
+        <h2 className="proposal-contact-title">Let&rsquo;s talk</h2>
+        <p className="proposal-contact-sub">Tell us about your project — we reply within one business day.</p>
+        {status === 'sent' ? (
+          <p className="proposal-contact-thanks">Thank you — your message has been sent.</p>
+        ) : (
+          <form className="proposal-contact-form" onSubmit={submit}>
+            <div className="proposal-cf-row">
+              <input name="name" required placeholder="Name" value={data.name} onChange={ch} />
+              <input name="email" type="email" required placeholder="Email" value={data.email} onChange={ch} />
+            </div>
+            <textarea name="message" rows={5} required placeholder="Your message" value={data.message} onChange={ch} />
+            <button type="submit" disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending…' : 'Send message'}
+            </button>
+            {status === 'error' && (
+              <span className="proposal-cf-error">Something went wrong — please email office@belenko.design.</span>
+            )}
+          </form>
+        )}
+      </div>
+    </section>
+  )
+}
+
 // Shared elegant chevron used by the Services and Portfolio accordion heads.
 function AccordionArrow() {
   return (
@@ -1333,6 +1394,8 @@ export default function ClientLanding() {
           </article>
         </div>
       </section>
+
+      <HomeContactForm />
 
       <div id="contact" className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">

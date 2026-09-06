@@ -1046,9 +1046,66 @@ html.is-glitching .proposal-glitch-btn {
   .proposal-who-grid { grid-template-columns: 1fr; }
 }
 
-.proposal-outro {
+/* Contact form at the foot of the homepage. */
+.proposal-stack > .proposal-contact {
   position: relative;
   z-index: 18;
+  background: #0a0a0a;
+  color: #fff;
+  padding: clamp(80px, 9vw, 140px) 24px;
+}
+.proposal-contact-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.proposal-contact-title {
+  margin: 0 0 14px;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.proposal-contact-sub { margin: 0 0 clamp(28px, 4vw, 44px); font-size: clamp(15px, 1.4vw, 18px); color: #bbb; line-height: 1.6; }
+.proposal-contact-form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+.proposal-cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.proposal-contact-form input,
+.proposal-contact-form textarea {
+  width: 100%;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+.proposal-contact-form input:focus,
+.proposal-contact-form textarea:focus { outline: none; border-color: #f0c14b; }
+.proposal-contact-form textarea { resize: vertical; }
+.proposal-contact-form button {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 14px 32px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.proposal-contact-form button:hover { transform: translateY(-2px); background: #f0c14b; }
+.proposal-contact-form button:disabled { opacity: 0.6; cursor: default; transform: none; }
+.proposal-cf-error { font-size: 13px; color: #ff9c9c; }
+.proposal-contact-thanks { font-size: clamp(17px, 1.6vw, 20px); color: #f0c14b; }
+@media (max-width: 520px) {
+  .proposal-cf-row { grid-template-columns: 1fr; }
+}
+
+.proposal-outro {
+  position: relative;
+  z-index: 19;
   background: #fff;
 }
 
