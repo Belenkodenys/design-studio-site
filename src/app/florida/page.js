@@ -1,6 +1,6 @@
 import MiamiLanding from './MiamiLanding'
 
-const URL = 'https://www.belenko.design/miami-hospitality-design'
+const URL = 'https://www.belenko.design/florida'
 
 export const metadata = {
   title: 'Miami Hospitality Interior Design | Restaurants, Bars & Hotels | Belenko',

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { projects } from '../../../../data/projects'
-import WorkDetail from '../../../miami-hospitality-design/work/[id]/WorkDetail'
+import WorkDetail from '../../../florida/work/[id]/WorkDetail'
 
 const BASE = '/california-hospitality-design'
 

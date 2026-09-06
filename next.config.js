@@ -17,7 +17,17 @@ const nextConfig = {
       },
       {
         source: '/miami',
-        destination: '/miami-hospitality-design',
+        destination: '/florida',
+        permanent: true,
+      },
+      {
+        source: '/miami-hospitality-design',
+        destination: '/florida',
+        permanent: true,
+      },
+      {
+        source: '/miami-hospitality-design/:path*',
+        destination: '/florida/:path*',
         permanent: true,
       },
       {

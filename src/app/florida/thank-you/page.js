@@ -1,6 +1,6 @@
 import ThankYou from './ThankYou'
 
-const URL = 'https://www.belenko.design/miami-hospitality-design/thank-you'
+const URL = 'https://www.belenko.design/florida/thank-you'
 
 export const metadata = {
   title: 'Thank you | Belenko Miami',

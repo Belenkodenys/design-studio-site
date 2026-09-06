@@ -124,7 +124,7 @@ export default function MiamiLanding() {
             <li><span>Scope</span><strong>Concept · Interior Design · Décor</strong></li>
             <li><span>Status</span><strong>Built &amp; operating</strong></li>
           </ul>
-          <a className="miami-btn miami-btn-dark" href="/miami-hospitality-design/work/41">View Florida Case Study →</a>
+          <a className="miami-btn miami-btn-dark" href="/florida/work/41">View Florida Case Study →</a>
         </div>
       </section>
 
@@ -161,7 +161,7 @@ export default function MiamiLanding() {
         <h2 className="miami-section-title">Selected work</h2>
         <div className="miami-cases-grid">
           {bigCases.map((p) => (
-            <a className="miami-case" key={p.id} href={`/miami-hospitality-design/work/${p.id}`}>
+            <a className="miami-case" key={p.id} href={`/florida/work/${p.id}`}>
               <div className="miami-case-media"><img src={p.img} alt={`${p.name} — ${p.place}`} loading="lazy" /></div>
               <div className="miami-case-info">
                 <span className="miami-case-tag">{p.tag}</span>
@@ -173,7 +173,7 @@ export default function MiamiLanding() {
         </div>
         <div className="miami-more-grid">
           {moreProjects.map((p) => (
-            <a className="miami-more" key={p.id} href={`/miami-hospitality-design/work/${p.id}`}>
+            <a className="miami-more" key={p.id} href={`/florida/work/${p.id}`}>
               <div className="miami-more-media"><img src={p.img} alt={`${p.name} — ${p.place}`} loading="lazy" /></div>
               <span className="miami-more-name">{p.name}</span>
               <span className="miami-more-place">{p.place}</span>

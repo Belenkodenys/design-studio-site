@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import HeroSlideshow from '../miami-hospitality-design/HeroSlideshow'
-import '../miami-hospitality-design/MiamiLanding.css'
+import HeroSlideshow from '../florida/HeroSlideshow'
+import '../florida/MiamiLanding.css'
 
 const CONTACT_EMAIL = 'office@belenko.design'
 const CONTACT_PHONE = '+34 671 825 489'

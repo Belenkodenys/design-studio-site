@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import '../MiamiLanding.css'
 
-export default function ThankYou({ basePath = '/miami-hospitality-design', marketLabel = 'Miami & South Florida' }) {
+export default function ThankYou({ basePath = '/florida', marketLabel = 'Miami & South Florida' }) {
   useEffect(() => {
     document.documentElement.classList.add('miami-bg')
     const prevLang = document.documentElement.lang

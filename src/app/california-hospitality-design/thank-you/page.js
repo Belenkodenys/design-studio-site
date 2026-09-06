@@ -1,4 +1,4 @@
-import ThankYou from '../../miami-hospitality-design/thank-you/ThankYou'
+import ThankYou from '../../florida/thank-you/ThankYou'
 
 const URL = 'https://www.belenko.design/california-hospitality-design/thank-you'
 
