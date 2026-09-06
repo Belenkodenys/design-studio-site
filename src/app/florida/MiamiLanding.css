@@ -406,3 +406,18 @@ html.miami-bg { scroll-behavior: smooth; }
   opacity: 0; transition: opacity 0.35s ease;
 }
 .miami-case:hover .miami-case-explore { opacity: 1; }
+
+/* Consistent vertical padding for every landing section (top & bottom). */
+.miami-florida-case,
+.miami-proof,
+.miami-why,
+.miami-projects,
+.miami-biz,
+.miami-services,
+.miami-delivery,
+.miami-founder,
+.miami-who,
+.miami-contact {
+  padding-top: clamp(80px, 9vw, 140px);
+  padding-bottom: clamp(80px, 9vw, 140px);
+}
