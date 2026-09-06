@@ -180,6 +180,13 @@ export default function RootLayout({ children }) {
                   "containedInPlace": { "@type": "AdministrativeArea", "name": "Florida" }
                 },
                 { "@type": "AdministrativeArea", "name": "South Florida" },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "California",
+                  "containedInPlace": { "@type": "Country", "name": "United States" }
+                },
+                { "@type": "City", "name": "Los Angeles" },
+                { "@type": "City", "name": "San Francisco" },
                 { "@type": "City", "name": "Madrid" },
                 { "@type": "City", "name": "Valencia" },
                 { "@type": "City", "name": "Marbella" },

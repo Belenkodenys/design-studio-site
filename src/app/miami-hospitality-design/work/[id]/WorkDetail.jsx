@@ -5,7 +5,7 @@ import './WorkDetail.css'
 
 const CONTACT_EMAIL = 'studiobelenko@gmail.com'
 
-export default function WorkDetail({ project }) {
+export default function WorkDetail({ project, basePath = '/miami-hospitality-design', marketLabel = 'Miami' }) {
   useEffect(() => {
     document.documentElement.classList.add('miami-bg')
     const prevLang = document.documentElement.lang
@@ -24,10 +24,10 @@ export default function WorkDetail({ project }) {
     <main className="work">
       {/* Header */}
       <header className="work-header">
-        <a href="/miami-hospitality-design" className="work-back" aria-label="Back to Belenko Miami">
+        <a href={basePath} className="work-back" aria-label={`Back to Belenko ${marketLabel}`}>
           <img src="/belenko-logo-footer.png" alt="Belenko" />
         </a>
-        <a className="work-back-link" href="/miami-hospitality-design#work">← Back to work</a>
+        <a className="work-back-link" href={`${basePath}#work`}>← Back to work</a>
       </header>
 
       {/* Cover */}
@@ -64,10 +64,10 @@ export default function WorkDetail({ project }) {
 
       {/* CTA */}
       <section className="work-cta">
-        <h2>Planning something similar in Miami?</h2>
+        <h2>Planning something similar in {marketLabel}?</h2>
         <p>Tell us about your space and concept — we reply within one business day.</p>
         <div className="work-cta-buttons">
-          <a className="work-btn work-btn-light" href="/miami-hospitality-design#contact">Discuss Your Miami Project</a>
+          <a className="work-btn work-btn-light" href={`${basePath}#contact`}>Discuss Your {marketLabel} Project</a>
           <a className="work-btn work-btn-ghost" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </div>
       </section>

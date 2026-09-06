@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import '../MiamiLanding.css'
 
-export default function ThankYou() {
+export default function ThankYou({ basePath = '/miami-hospitality-design', marketLabel = 'Miami & South Florida' }) {
   useEffect(() => {
     document.documentElement.classList.add('miami-bg')
     const prevLang = document.documentElement.lang
@@ -25,14 +25,14 @@ export default function ThankYou() {
         <div className="miami-hero-bg" aria-hidden="true" />
         <div className="miami-hero-scrim" aria-hidden="true" />
         <div className="miami-hero-inner">
-          <p className="miami-eyebrow">Belenko · Miami &amp; South Florida</p>
+          <p className="miami-eyebrow">Belenko · {marketLabel}</p>
           <h1 className="miami-hero-title">Thank you</h1>
           <p className="miami-hero-sub">
             Your request has been received. We review every inquiry personally and
             respond within one business day.
           </p>
           <div className="miami-hero-cta">
-            <a className="miami-btn miami-btn-light" href="/miami-hospitality-design">Back to the landing</a>
+            <a className="miami-btn miami-btn-light" href={basePath}>Back to the landing</a>
           </div>
         </div>
       </section>

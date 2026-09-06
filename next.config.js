@@ -20,6 +20,11 @@ const nextConfig = {
         destination: '/miami-hospitality-design',
         permanent: true,
       },
+      {
+        source: '/california',
+        destination: '/california-hospitality-design',
+        permanent: true,
+      },
     ]
   },
 }
