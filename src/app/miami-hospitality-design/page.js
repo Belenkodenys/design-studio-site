@@ -5,7 +5,7 @@ const URL = 'https://www.belenko.design/miami-hospitality-design'
 export const metadata = {
   title: 'Miami Hospitality Interior Design | Restaurants, Bars & Hotels | Belenko',
   description:
-    'Miami restaurant, bar and boutique hotel interior design by Belenko — an award-winning European studio. Concept, interior design, branding and FF&E, delivered with Florida-licensed partners.',
+    'Miami restaurant, bar and boutique hotel interior design by Belenko. 25+ years of European hospitality experience with local Florida execution — concept, interior design, branding and FF&E.',
   // Indexable ad/organic landing, but not linked from the main site navigation.
   robots: {
     index: true,

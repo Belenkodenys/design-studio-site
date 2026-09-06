@@ -192,3 +192,119 @@
   .miami-projects-grid, .miami-directions-grid, .miami-form-row, .miami-checks { grid-template-columns: 1fr; }
   .miami-hero-inner { padding: 100px 20px 64px; }
 }
+
+/* ===== Repositioned Miami landing — added sections ===== */
+.miami-btn-dark { background: #111; color: #fff; border-color: #111; }
+.miami-btn-dark:hover { transform: translateY(-2px); background: #f0c14b; color: #111; border-color: #f0c14b; }
+
+.miami-kicker {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b08400;
+}
+.miami-kicker.light { color: #f0c14b; }
+
+/* 2 — Florida case feature */
+.miami-florida-case {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 130px) 24px clamp(32px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+.miami-florida-case-media { border-radius: 8px; overflow: hidden; background: #eee; aspect-ratio: 3/2; }
+.miami-florida-case-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.miami-florida-case-copy h2 { margin: 0 0 20px; font-size: clamp(24px, 2.8vw, 38px); font-weight: 700; line-height: 1.1; }
+.miami-facts { list-style: none; margin: 0 0 26px; padding: 0; }
+.miami-facts li { display: flex; gap: 14px; padding: 9px 0; border-bottom: 1px solid #ededed; font-size: 15px; }
+.miami-facts li span { min-width: 96px; color: #999; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; align-self: center; }
+.miami-facts li strong { font-weight: 600; color: #111; }
+
+/* 4 — Why */
+.miami-why { background: #0a0a0a; color: #fff; padding: clamp(64px, 10vw, 130px) 24px; }
+.miami-why-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.miami-why-head { margin: 0 0 22px; font-size: clamp(30px, 4.4vw, 60px); font-weight: 800; line-height: 1.05; }
+.miami-why-text { margin: 0 auto; max-width: 720px; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.65; color: #cfcfcf; }
+
+/* 5 — Cases */
+.miami-cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(16px, 2.2vw, 28px); }
+.miami-case { text-decoration: none; color: inherit; display: block; }
+.miami-case-media { aspect-ratio: 3/2; overflow: hidden; border-radius: 8px; background: #eee; }
+.miami-case-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.55s ease; }
+.miami-case:hover .miami-case-media img { transform: scale(1.04); }
+.miami-case-info { padding: 16px 2px 0; display: flex; flex-direction: column; }
+.miami-case-tag { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #b08400; font-weight: 700; }
+.miami-case-info h3 { margin: 6px 0 2px; font-size: clamp(20px, 1.8vw, 26px); font-weight: 700; }
+.miami-case-place { font-size: 14px; color: #666; }
+
+.miami-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 24px); margin-top: clamp(24px, 3vw, 40px); }
+.miami-more { text-decoration: none; color: inherit; display: block; }
+.miami-more-media { aspect-ratio: 4/3; overflow: hidden; border-radius: 6px; background: #eee; }
+.miami-more-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.miami-more:hover .miami-more-media img { transform: scale(1.04); }
+.miami-more-name { display: block; margin-top: 11px; font-size: 16px; font-weight: 600; }
+.miami-more-place { display: block; margin-top: 2px; font-size: 13px; color: #777; }
+
+/* 6 — Business */
+.miami-biz { background: #f6f5f2; padding: clamp(64px, 9vw, 120px) 24px; }
+.miami-biz-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.miami-biz .miami-kicker.light { color: #b08400; }
+.miami-biz-head { margin: 0 0 16px; font-size: clamp(28px, 3.6vw, 46px); font-weight: 800; }
+.miami-biz-text { margin: 0 auto 40px; max-width: 640px; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: #444; }
+.miami-biz-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); }
+.miami-biz-metrics .n { display: block; font-size: clamp(20px, 2vw, 26px); font-weight: 800; color: #111; }
+.miami-biz-metrics .l { display: block; margin-top: 8px; font-size: 14px; color: #666; line-height: 1.5; }
+
+/* 7 — Services list */
+.miami-services-list { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #e6e6e6; border: 1px solid #e6e6e6; }
+.miami-services-list .miami-service { background: #fff; padding: clamp(26px, 3vw, 42px); }
+.miami-services-list .miami-service h3 { margin: 0 0 10px; font-size: clamp(17px, 1.4vw, 21px); font-weight: 700; }
+.miami-services-list .miami-service p { margin: 0; font-size: 15px; line-height: 1.6; color: #666; }
+
+/* 8 — Delivery flow */
+.miami-delivery { background: #0a0a0a; color: #fff; padding: clamp(64px, 9vw, 120px) 24px; }
+.miami-delivery-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.miami-delivery-head { margin: 0 0 40px; font-size: clamp(26px, 3.4vw, 44px); font-weight: 800; }
+.miami-flow { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
+.miami-flow-step { border: 1px solid #2a2a2a; border-radius: 10px; padding: 22px 24px; background: #141414; }
+.miami-flow-role { display: block; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #f0c14b; font-weight: 700; margin-bottom: 8px; }
+.miami-flow-step p { margin: 0; color: #cfcfcf; font-size: 15px; }
+.miami-flow-arrow { color: #555; font-size: 22px; line-height: 1; }
+
+/* 9 — Founder */
+.miami-founder { background: #111; color: #fff; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(28px, 5vw, 72px); align-items: center; padding: clamp(56px, 8vw, 110px) clamp(24px, 6vw, 90px); }
+.miami-founder-media { max-width: 360px; margin: 0 auto; }
+.miami-founder-media img { width: 100%; height: auto; display: block; border-radius: 10px; background: #000; }
+.miami-founder-copy h2 { margin: 0 0 18px; font-size: clamp(26px, 3vw, 40px); font-weight: 700; }
+.miami-founder-copy p { margin: 0 0 26px; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.65; color: #cfcfcf; }
+.miami-founder .miami-kicker { color: #f0c14b; }
+
+/* 10 — Who we work with */
+.miami-who { max-width: 1120px; margin: 0 auto; padding: clamp(64px, 9vw, 120px) 24px; }
+.miami-who-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 40px); }
+.miami-who-item h3 { margin: 0 0 10px; font-size: clamp(17px, 1.4vw, 20px); font-weight: 700; }
+.miami-who-item p { margin: 0; font-size: 15px; line-height: 1.6; color: #666; }
+
+/* press label */
+.miami-press-label { margin: clamp(34px, 5vw, 56px) 0 6px; text-align: center; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #666; }
+
+/* contact copyright link */
+.miami-copyright a { color: inherit; text-decoration: none; border-bottom: 1px solid #444; }
+
+@media (max-width: 900px) {
+  .miami-florida-case,
+  .miami-founder { grid-template-columns: 1fr; }
+  .miami-cases-grid { grid-template-columns: 1fr; }
+  .miami-services-list { grid-template-columns: 1fr; }
+  .miami-biz-metrics { grid-template-columns: 1fr; gap: 24px; }
+  .miami-who-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .miami-more-grid { grid-template-columns: 1fr; }
+  .miami-who-grid { grid-template-columns: 1fr; }
+}
