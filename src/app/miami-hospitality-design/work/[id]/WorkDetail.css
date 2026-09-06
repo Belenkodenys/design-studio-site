@@ -52,7 +52,9 @@
 .work-meta-item { display: flex; flex-direction: column; gap: 4px; }
 .work-meta-item span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; }
 .work-meta-item strong { font-size: 16px; font-weight: 600; color: #111; }
-.work-description { margin: 0; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.65; color: #333; }
+.work-description { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.65; color: #333; }
+.work-description p { margin: 0 0 1.1em; }
+.work-description p:last-child { margin-bottom: 0; }
 
 /* Gallery */
 .work-gallery {

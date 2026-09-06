@@ -50,7 +50,11 @@ export default function WorkDetail({ project, basePath = '/miami-hospitality-des
             <div className="work-meta-item"><span>Services</span><strong>{project.services.join(' · ')}</strong></div>
           ) : null}
         </div>
-        <p className="work-description">{project.description}</p>
+        <div className="work-description">
+          {String(project.description || '').split('\n\n').map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
       </section>
 
       {/* Gallery */}
