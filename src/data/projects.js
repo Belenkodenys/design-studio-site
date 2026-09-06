@@ -1,5 +1,18 @@
 export const projects = [
   {
+    id: 41,
+    title: 'Baker & Wife',
+    category: 'Restaurant',
+    location: 'Sarasota, Florida',
+    year: '2024',
+    description: 'A neighborhood restaurant and bakery in Sarasota, Florida with a warm, eclectic character — reclaimed wood, market-style displays, hand-lettered signage and a relaxed, convivial dining room.',
+    services: ['Concept', 'Interior Design', 'Decor'],
+    image: '/projects/baker-and-wife-sarasota-1.jpg',
+    images: [
+      '/projects/baker-and-wife-sarasota-1.jpg'
+    ]
+  },
+  {
     id: 37,
     title: 'Chou Chou',
     category: 'Restaurant',

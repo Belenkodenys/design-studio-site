@@ -15,6 +15,7 @@ const proof = [
 ]
 
 const projects = [
+  { id: 41, name: 'Baker & Wife', place: 'Restaurant · Sarasota, FL', note: 'Eclectic neighborhood dining', img: '/projects/baker-and-wife-sarasota-1.jpg' },
   { id: 2, name: 'Sereia', place: 'Restaurant & Beach Club · Alaçatı', note: 'Open-air, coastal', img: '/projects/sereia-restaurant-alachati-1.webp' },
   { id: 37, name: 'Chou Chou', place: 'Restaurant · Chișinău', note: 'Luxury French dining', img: '/projects/chou-chou-restaurant-chisinau-1.webp' },
   { id: 1, name: 'Bella', place: 'Restaurant · Dnipro', note: 'Rich European character', img: '/projects/bella-restaurant-dnipro-1.webp' },
