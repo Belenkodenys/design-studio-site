@@ -1,7 +1,10 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import HeroSlideshow from './HeroSlideshow'
 import './MiamiLanding.css'
+
+const HERO_SLIDES = [1, 2, 3, 4, 5, 6].map((n) => `/belenko-studio-hero-${n}.jpg`)
 
 const CONTACT_EMAIL = 'studiobelenko@gmail.com'
 const CONTACT_PHONE = '+34 671 825 489'
@@ -109,7 +112,7 @@ export default function MiamiLanding() {
 
       {/* Hero */}
       <section className="miami-hero" id="top">
-        <div className="miami-hero-bg" aria-hidden="true" />
+        <HeroSlideshow slides={HERO_SLIDES} />
         <div className="miami-hero-scrim" aria-hidden="true" />
         <div className="miami-hero-inner">
           <p className="miami-eyebrow">Miami · South Florida · International</p>

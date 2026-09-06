@@ -1,11 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './WorkDetail.css'
 
 const CONTACT_EMAIL = 'studiobelenko@gmail.com'
 
 export default function WorkDetail({ project, basePath = '/miami-hospitality-design', marketLabel = 'Miami' }) {
+  const [lb, setLb] = useState(null) // lightbox index, or null when closed
+
   useEffect(() => {
     document.documentElement.classList.add('miami-bg')
     const prevLang = document.documentElement.lang
@@ -21,6 +23,28 @@ export default function WorkDetail({ project, basePath = '/miami-hospitality-des
   // page opens on an interior, not the same facade used on the card).
   const cover = images.find((src) => src !== project.image) || images[0]
   const rest = images.filter((src) => src !== cover)
+  // Full ordered set for the fullscreen viewer: hero first, then the grid.
+  const gallery = [cover, ...rest]
+
+  const open = (i) => setLb(i)
+  const close = () => setLb(null)
+  const step = (d) => setLb((i) => (i === null ? i : (i + d + gallery.length) % gallery.length))
+
+  useEffect(() => {
+    if (lb === null) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') close()
+      else if (e.key === 'ArrowRight') step(1)
+      else if (e.key === 'ArrowLeft') step(-1)
+    }
+    document.addEventListener('keydown', onKey)
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prevOverflow
+    }
+  }, [lb])
 
   return (
     <main className="work">
@@ -34,7 +58,12 @@ export default function WorkDetail({ project, basePath = '/miami-hospitality-des
 
       {/* Cover */}
       <section className="work-cover">
-        <img src={cover} alt={`${project.title} — ${project.category}, ${project.location}`} />
+        <img
+          src={cover}
+          alt={`${project.title} — ${project.category}, ${project.location}`}
+          className="work-cover-img"
+          onClick={() => open(0)}
+        />
         <div className="work-cover-scrim" aria-hidden="true" />
         <div className="work-cover-inner">
           <p className="work-eyebrow">{project.category} · {project.location}</p>
@@ -62,9 +91,9 @@ export default function WorkDetail({ project, basePath = '/miami-hospitality-des
       {/* Gallery */}
       <section className="work-gallery">
         {rest.map((src, i) => (
-          <div className="work-shot" key={src + i}>
+          <button type="button" className="work-shot" key={src + i} onClick={() => open(i + 1)} aria-label="Open image fullscreen">
             <img src={src} alt={`${project.title} ${i + 2}`} loading="lazy" />
-          </div>
+          </button>
         ))}
       </section>
 
@@ -77,6 +106,26 @@ export default function WorkDetail({ project, basePath = '/miami-hospitality-des
           <a className="work-btn work-btn-ghost" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </div>
       </section>
+
+      {/* Fullscreen lightbox */}
+      {lb !== null && (
+        <div className="work-lightbox" onClick={close} role="dialog" aria-modal="true">
+          <button type="button" className="work-lb-close" onClick={close} aria-label="Close">×</button>
+          {gallery.length > 1 && (
+            <button type="button" className="work-lb-nav work-lb-prev" onClick={(e) => { e.stopPropagation(); step(-1) }} aria-label="Previous">‹</button>
+          )}
+          <img
+            className="work-lb-img"
+            src={gallery[lb]}
+            alt={`${project.title} ${lb + 1}`}
+            onClick={(e) => e.stopPropagation()}
+          />
+          {gallery.length > 1 && (
+            <button type="button" className="work-lb-nav work-lb-next" onClick={(e) => { e.stopPropagation(); step(1) }} aria-label="Next">›</button>
+          )}
+          <span className="work-lb-count">{lb + 1} / {gallery.length}</span>
+        </div>
+      )}
     </main>
   )
 }
