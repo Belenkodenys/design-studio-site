@@ -5,7 +5,7 @@ const URL = 'https://www.belenko.design/california-hospitality-design'
 export const metadata = {
   title: 'California Hospitality Interior Design | Restaurants, Bars & Hotels | Belenko',
   description:
-    'California restaurant, bar and boutique hotel interior design by Belenko — an award-winning European studio. Concept, interior design, branding and FF&E, delivered with California-licensed partners.',
+    'California restaurant, bar and boutique hotel interior design by Belenko. 25+ years of European hospitality experience with local California execution — concept, interior design, branding and FF&E.',
   robots: {
     index: true,
     follow: true,
