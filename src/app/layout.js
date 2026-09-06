@@ -31,7 +31,8 @@ export const metadata = {
     'hotel design Europe',
 
     // Industry terms
-    'HoReCa design',
+    'hospitality design',
+    'food and beverage design',
     'hospitality architecture',
     'restaurant architect',
     'interior designer restaurants',
@@ -257,7 +258,7 @@ export default function RootLayout({ children }) {
                 "Hotel Design",
                 "Hospitality Architecture",
                 "Commercial Interior Design",
-                "HoReCa Design",
+                "Food & Beverage Design",
                 "Brand Identity for Restaurants"
               ],
               "award": [

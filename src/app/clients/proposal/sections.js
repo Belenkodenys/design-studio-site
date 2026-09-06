@@ -194,21 +194,21 @@ export const sections = [
   },
   {
     slug: 'economics',
-    title: 'Project Economics & Supervision',
-    body: 'A realistic budget at the start, specifications, and author supervision. On time and on budget — not luck, but a system.',
-    longDescription: 'We budget realistically, accounting for hidden line items and a risk reserve. We prepare working documentation and specifications, and we run author supervision on site. Quality control of contractors, suppliers, and timelines. Delivering the project on time and on budget is the result of a system, not luck.',
+    title: 'Project Economics & Construction Administration',
+    body: 'A realistic budget at the start, specifications, and construction administration. Budget and schedule coordination — not luck, but a system.',
+    longDescription: 'We budget realistically, accounting for hidden line items and a risk reserve. We prepare working documentation and specifications, and we run construction administration and design oversight on site. Quality control of contractors, suppliers, and timelines. Keeping the project on budget and on schedule is the result of a system, not luck.',
     bullets: [
       'Realistic estimate with a risk reserve',
       'Full set of working documentation',
-      'Author supervision on site'
+      'Construction administration and design oversight on site'
     ],
     gallery: []
   },
   {
     slug: 'turnkey',
-    title: 'Turnkey Delivery',
+    title: 'Integrated Project Delivery',
     body: 'A full cycle from concept to opening: one team, one accountability, one outcome.',
-    longDescription: 'Turnkey is when all responsibility for the result sits with a single team. Concept, architecture, interior, brand, menu, uniform, content, opening. No seams between contractors. One client, one production, one result.',
+    longDescription: 'Integrated project delivery is when all responsibility for the result sits with a single team. Concept, architecture, interior, brand, menu, uniform, content, opening. No seams between contractors. One client, one production, one result.',
     bullets: [
       'A single team from concept to opening',
       'One contract, one plan, one estimate',

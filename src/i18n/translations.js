@@ -51,13 +51,13 @@ export const translations = {
       principle4Text: 'We favor wood, stone, brick, and metal — materials that age beautifully over time. We avoid imitations and primarily use warm-spectrum lighting. This combination creates tangible comfort and a sense of stability.',
       stat1Number: '25',
       stat1Label: 'Years of experience',
-      stat1Desc: 'In launching successful projects in the HoReCa industry',
+      stat1Desc: 'In launching successful hospitality and food & beverage venues',
       stat2Number: '28',
       stat2Label: 'Team members',
       stat2Desc: 'Architects, designers, brand strategists, creators, and producers',
       stat3Number: '200+',
       stat3Label: 'Projects',
-      stat3Desc: 'Completed in 11 countries, covering more than 50,000 m² of designed atmosphere'
+      stat3Desc: 'Completed in 11 countries, covering more than 538,000 sq ft of designed atmosphere'
     },
     services: {
       title: 'Services',

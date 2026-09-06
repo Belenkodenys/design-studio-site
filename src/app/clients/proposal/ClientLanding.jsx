@@ -477,7 +477,7 @@ function StudioMission() {
             <div className="proposal-mission-stat">
               <span className="num">25</span>
               <span className="lbl">Years of experience</span>
-              <span className="desc">In launching successful projects in the HoReCa industry</span>
+              <span className="desc">In launching successful hospitality and food &amp; beverage venues</span>
             </div>
             <div className="proposal-mission-stat">
               <span className="num">28</span>
@@ -487,7 +487,7 @@ function StudioMission() {
             <div className="proposal-mission-stat">
               <span className="num">200+</span>
               <span className="lbl">Projects</span>
-              <span className="desc">Completed in 11 countries, covering more than 50,000 m² of designed atmosphere</span>
+              <span className="desc">Completed in 11 countries, covering more than 538,000 sq ft of designed atmosphere</span>
             </div>
           </div>
 
