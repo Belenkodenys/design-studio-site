@@ -422,10 +422,10 @@ export const projects = [
     services: ['Concept', 'Interior Design', 'Decor'],
     image: '/projects/baker-and-wife-sarasota-07.webp',
     images: [
+      '/projects/baker-and-wife-sarasota-04.webp',
       '/projects/baker-and-wife-sarasota-02.webp',
       '/projects/baker-and-wife-sarasota-01.webp',
       '/projects/baker-and-wife-sarasota-03.webp',
-      '/projects/baker-and-wife-sarasota-04.webp',
       '/projects/baker-and-wife-sarasota-05.webp',
       '/projects/baker-and-wife-sarasota-06.webp',
       '/projects/baker-and-wife-sarasota-07.webp',
