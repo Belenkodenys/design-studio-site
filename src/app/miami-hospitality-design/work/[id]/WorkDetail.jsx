@@ -17,7 +17,9 @@ export default function WorkDetail({ project, basePath = '/miami-hospitality-des
   }, [])
 
   const images = Array.isArray(project.images) && project.images.length ? project.images : [project.image]
-  const cover = project.image || images[0]
+  // Big hero = first gallery shot that isn't the portfolio thumbnail (so the
+  // page opens on an interior, not the same facade used on the card).
+  const cover = images.find((src) => src !== project.image) || images[0]
   const rest = images.filter((src) => src !== cover)
 
   return (
