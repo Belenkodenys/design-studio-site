@@ -1312,6 +1312,28 @@ export default function ClientLanding() {
         <StudioMission />
       </section>
 
+      <section className="proposal-who" aria-label="Who we work with">
+        <h2 className="proposal-who-title">Who we work with</h2>
+        <div className="proposal-who-grid">
+          <article className="proposal-who-item">
+            <h3>Restaurant Groups</h3>
+            <p>New concepts, flagships and rollouts.</p>
+          </article>
+          <article className="proposal-who-item">
+            <h3>Independent Restaurateurs</h3>
+            <p>Chef-driven and destination restaurants.</p>
+          </article>
+          <article className="proposal-who-item">
+            <h3>Hotel &amp; Resort Developers</h3>
+            <p>Boutique hotels, F&amp;B and lifestyle hospitality.</p>
+          </article>
+          <article className="proposal-who-item">
+            <h3>Investors &amp; Developers</h3>
+            <p>Hospitality concepts built around commercial performance.</p>
+          </article>
+        </div>
+      </section>
+
       <div id="contact" className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
           <GlitchButton />
