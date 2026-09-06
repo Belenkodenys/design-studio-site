@@ -1,27 +1,5 @@
 export const projects = [
   {
-    id: 41,
-    title: 'Baker & Wife',
-    category: 'Restaurant',
-    location: 'Sarasota, Florida, USA',
-    year: '2024',
-    description: "Baker & Wife is a neighborhood restaurant and bakery in Sarasota, built around chef-owner Isaac Correa's globally-inspired, locally-crafted cuisine. Belenko Studio developed the full concept, interior design, and décor, translating Correa's culinary story into a warm, eclectic space anchored by reclaimed wood, market-style displays, and hand-lettered signage.\n\nThe result is a relaxed, convivial dining room that reads less like a restaurant and more like a neighborhood gathering place — casual and unpretentious on the surface, but composed to keep guests lingering, returning, and bringing friends.",
-    services: ['Concept', 'Interior Design', 'Decor'],
-    image: '/projects/baker-and-wife-sarasota-02.webp',
-    images: [
-      '/projects/baker-and-wife-sarasota-02.webp',
-      '/projects/baker-and-wife-sarasota-01.webp',
-      '/projects/baker-and-wife-sarasota-03.webp',
-      '/projects/baker-and-wife-sarasota-04.webp',
-      '/projects/baker-and-wife-sarasota-05.webp',
-      '/projects/baker-and-wife-sarasota-06.webp',
-      '/projects/baker-and-wife-sarasota-07.webp',
-      '/projects/baker-and-wife-sarasota-08.webp',
-      '/projects/baker-and-wife-sarasota-10.webp',
-      '/projects/baker-and-wife-sarasota-1.jpg'
-    ]
-  },
-  {
     id: 37,
     title: 'Chou Chou',
     category: 'Restaurant',
@@ -432,6 +410,28 @@ export const projects = [
       '/projects/fishkultura-restaurant-kyiv-9.webp',
       '/projects/fishkultura-restaurant-kyiv-10.webp',
       '/projects/fishkultura-restaurant-kyiv-11.webp'
+    ]
+  },
+  {
+    id: 41,
+    title: 'Baker & Wife',
+    category: 'Restaurant',
+    location: 'Sarasota, Florida, USA',
+    year: '2015',
+    description: "Baker & Wife is a neighborhood restaurant and bakery in Sarasota, built around chef-owner Isaac Correa's globally-inspired, locally-crafted cuisine. Belenko Studio developed the full concept, interior design, and décor, translating Correa's culinary story into a warm, eclectic space anchored by reclaimed wood, market-style displays, and hand-lettered signage.\n\nThe result is a relaxed, convivial dining room that reads less like a restaurant and more like a neighborhood gathering place — casual and unpretentious on the surface, but composed to keep guests lingering, returning, and bringing friends.",
+    services: ['Concept', 'Interior Design', 'Decor'],
+    image: '/projects/baker-and-wife-sarasota-02.webp',
+    images: [
+      '/projects/baker-and-wife-sarasota-02.webp',
+      '/projects/baker-and-wife-sarasota-01.webp',
+      '/projects/baker-and-wife-sarasota-03.webp',
+      '/projects/baker-and-wife-sarasota-04.webp',
+      '/projects/baker-and-wife-sarasota-05.webp',
+      '/projects/baker-and-wife-sarasota-06.webp',
+      '/projects/baker-and-wife-sarasota-07.webp',
+      '/projects/baker-and-wife-sarasota-08.webp',
+      '/projects/baker-and-wife-sarasota-10.webp',
+      '/projects/baker-and-wife-sarasota-1.jpg'
     ]
   },
   {
