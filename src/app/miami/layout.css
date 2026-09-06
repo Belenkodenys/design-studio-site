@@ -1,0 +1,8 @@
+/* Force a clean white base for the Miami landing (overrides the dark body bg
+   inherited from the main site shell). */
+html.miami-bg,
+html.miami-bg body,
+html.miami-bg .app {
+  background: #fff !important;
+  background-color: #fff !important;
+}
