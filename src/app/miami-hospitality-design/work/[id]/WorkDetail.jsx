@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import './WorkDetail.css'
 
-const CONTACT_EMAIL = 'studiobelenko@gmail.com'
+const CONTACT_EMAIL = 'office@belenko.design'
 
 export default function WorkDetail({ project, basePath = '/miami-hospitality-design', marketLabel = 'Miami' }) {
   const [lb, setLb] = useState(null) // lightbox index, or null when closed

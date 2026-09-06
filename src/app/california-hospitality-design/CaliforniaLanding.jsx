@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import HeroSlideshow from '../miami-hospitality-design/HeroSlideshow'
 import '../miami-hospitality-design/MiamiLanding.css'
 
-const CONTACT_EMAIL = 'studio@belenko.design'
+const CONTACT_EMAIL = 'office@belenko.design'
 const CONTACT_PHONE = '+34 671 825 489'
 const BASE = '/california-hospitality-design'
 const HERO_SLIDES = [7, 8, 9, 10, 11, 12].map((n) => `/belenko-studio-hero-${n}.jpg`)

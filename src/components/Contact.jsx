@@ -36,7 +36,7 @@ function Contact() {
         },
         body: JSON.stringify({
           access_key: 'e88480f3-403a-4b70-aa15-80625df1c6db',
-          to: 'studiobelenko@gmail.com',
+          to: 'office@belenko.design',
           subject: `New message from ${formData.name}`,
           from_name: formData.name,
           email: formData.email,
