@@ -144,7 +144,7 @@ export default function MiamiLanding() {
         <h2 className="miami-section-title">Selected work</h2>
         <div className="miami-projects-grid">
           {projects.map((p) => (
-            <a className="miami-project" key={p.name} href={`/project/${p.id}`} target="_blank" rel="noopener noreferrer">
+            <a className="miami-project" key={p.name} href={`/miami-hospitality-design/work/${p.id}`}>
               <div className="miami-project-media">
                 <img src={p.img} alt={`${p.name} — ${p.place}`} loading="lazy" />
               </div>
