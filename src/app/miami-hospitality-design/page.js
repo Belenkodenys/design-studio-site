@@ -1,20 +1,33 @@
 import MiamiLanding from './MiamiLanding'
 
+const URL = 'https://www.belenko.design/miami-hospitality-design'
+
 export const metadata = {
-  title: 'Belenko Design — Hospitality Interiors for Miami',
+  title: 'Miami Hospitality Interior Design | Restaurants, Bars & Hotels | Belenko',
   description:
-    'Award-winning, Barcelona-based hospitality design studio bringing world-class restaurant, bar, and hotel concepts to Miami.',
-  // Hidden landing: keep it out of search engines and unlinked from the site.
+    'Miami restaurant, bar and boutique hotel interior design by Belenko — an award-winning European studio. Concept, interior design, branding and FF&E, delivered with Florida-licensed partners.',
+  // Indexable ad/organic landing, but not linked from the main site navigation.
   robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false
-    }
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true }
   },
   alternates: {
-    canonical: null
+    canonical: URL,
+    languages: {
+      'en-US': URL,
+      'x-default': URL
+      // 'es-US': added together with the Spanish version.
+    }
+  },
+  openGraph: {
+    title: 'Miami Hospitality Interior Design | Belenko',
+    description:
+      'Restaurants, bars and boutique hotels designed to make guests come back. Concept, interiors, branding and FF&E, with Florida-licensed partners.',
+    url: URL,
+    siteName: 'Belenko Design Studio',
+    type: 'website',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Belenko — Miami Hospitality Interior Design' }]
   }
 }
 

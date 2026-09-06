@@ -6,3 +6,9 @@ html.miami-bg .app {
   background: #fff !important;
   background-color: #fff !important;
 }
+
+/* Hide the shared (localized) cookie banner on the US landing to avoid a
+   non-English notice for Miami ad traffic. */
+html.miami-bg .cookie-consent {
+  display: none !important;
+}

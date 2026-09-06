@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './MiamiLanding.css'
 
 const CONTACT_EMAIL = 'studiobelenko@gmail.com'
@@ -36,6 +36,7 @@ const serviceOptions = ['Concept & Brand', 'Interior Design', 'FF&E & Furniture'
 
 export default function MiamiLanding() {
   const [sent, setSent] = useState(false)
+  const formStartedRef = useRef(false)
   const [form, setForm] = useState({
     name: '', company: '', email: '', phone: '', location: '',
     venue: 'Restaurant', stage: 'New venue', area: '', opening: '', budget: '',
@@ -52,16 +53,31 @@ export default function MiamiLanding() {
     }
   }, [])
 
+  // Fire conversion events to Meta Pixel / GA4 when available (no-op otherwise).
+  const track = (event, params = {}) => {
+    try {
+      if (typeof window !== 'undefined' && window.fbq) window.fbq('track', event, params)
+      if (typeof window !== 'undefined' && window.gtag) window.gtag('event', event, params)
+    } catch (_) {}
+  }
+
   const scrollTo = (id) => (e) => {
     if (e) e.preventDefault()
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
+  const update = (k) => (e) => {
+    setForm((f) => ({ ...f, [k]: e.target.value }))
+    if (!formStartedRef.current) {
+      formStartedRef.current = true
+      track('InitiateCheckout', { content_name: 'Miami inquiry form' })
+    }
+  }
   const toggleService = (s) => (e) =>
     setForm((f) => ({ ...f, services: { ...f.services, [s]: e.target.checked } }))
 
   const onSubmit = (e) => {
     e.preventDefault()
+    track('Lead', { content_name: 'Miami project inquiry', venue: form.venue })
     const picked = Object.keys(form.services).filter((k) => form.services[k])
     const subject = `Miami project — ${form.venue}${form.company ? ' · ' + form.company : ''}`
     const body =
@@ -85,7 +101,7 @@ export default function MiamiLanding() {
           <img src="/belenko-logo-footer.png" alt="Belenko" />
         </a>
         <div className="miami-header-right">
-          <a className="miami-header-phone" href={`tel:${CONTACT_PHONE.replace(/\s/g, '')}`}>{CONTACT_PHONE}</a>
+          <a className="miami-header-phone" href={`tel:${CONTACT_PHONE.replace(/\s/g, '')}`} onClick={() => track('Contact', { method: 'phone' })}>{CONTACT_PHONE}</a>
           <a className="miami-btn miami-btn-light miami-btn-sm" href="#contact" onClick={scrollTo('contact')}>Discuss Your Miami Project</a>
         </div>
       </header>
@@ -180,9 +196,9 @@ export default function MiamiLanding() {
               We review every inquiry personally and respond within one business day.
             </p>
             <div className="miami-contact-lines">
-              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              <a href={`mailto:${CONTACT_EMAIL}`} onClick={() => track('Contact', { method: 'email' })}>{CONTACT_EMAIL}</a>
               <span className="miami-dot">·</span>
-              <a href={`tel:${CONTACT_PHONE.replace(/\s/g, '')}`}>{CONTACT_PHONE}</a>
+              <a href={`tel:${CONTACT_PHONE.replace(/\s/g, '')}`} onClick={() => track('Contact', { method: 'phone' })}>{CONTACT_PHONE}</a>
             </div>
           </div>
 

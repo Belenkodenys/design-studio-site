@@ -5,7 +5,7 @@ import '../index.css'
 import '../App.css'
 
 export const metadata = {
-  metadataBase: new URL('https://belenko.design'),
+  metadataBase: new URL('https://www.belenko.design'),
   title: {
     default: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
     template: '%s | Belenko Design'
@@ -154,7 +154,7 @@ export default function RootLayout({ children }) {
                 "https://belenko.design/projects/milk-bar-cafe-kyiv-1.webp"
               ],
               "telephone": "+34671825489",
-              "email": "studiobelenko@gmail.com",
+              "email": "office@belenko.design",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Barcelona",
@@ -174,6 +174,12 @@ export default function RootLayout({ children }) {
                   "name": "Barcelona",
                   "containedInPlace": { "@type": "Country", "name": "Spain" }
                 },
+                {
+                  "@type": "City",
+                  "name": "Miami",
+                  "containedInPlace": { "@type": "AdministrativeArea", "name": "Florida" }
+                },
+                { "@type": "AdministrativeArea", "name": "South Florida" },
                 { "@type": "City", "name": "Madrid" },
                 { "@type": "City", "name": "Valencia" },
                 { "@type": "City", "name": "Marbella" },
@@ -278,14 +284,7 @@ export default function RootLayout({ children }) {
                 "https://instagram.com/belenko",
                 "https://t.me/belenko_studio",
                 "https://www.behance.net/belenko"
-              ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "47",
-                "bestRating": "5",
-                "worstRating": "1"
-              }
+              ]
             })
           }}
         />
@@ -305,131 +304,6 @@ export default function RootLayout({ children }) {
               "publisher": {
                 "@id": "https://belenko.design/#organization"
               }
-            })
-          }}
-        />
-
-        {/* Structured Data - FAQ (Extended for AI) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "How much does restaurant interior design cost in Barcelona?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Restaurant interior design costs in Barcelona vary based on project size and complexity. Belenko Design Studio offers customized quotes for each project. Contact us for a free consultation to discuss your specific requirements and budget."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is the best restaurant interior design studio in Barcelona?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Belenko Design Studio is an award-winning restaurant interior design studio based in Barcelona with 25+ years of experience and 200+ completed hospitality projects worldwide. We specialize in creating unique atmospheres for restaurants, bars, cafes, and hotels."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does restaurant interior design take?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A typical restaurant interior design project takes 3-6 months from concept to completion, depending on the size and complexity. This includes concept development, detailed design, documentation, and construction supervision."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you work with restaurants outside Barcelona?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, while based in Barcelona, Belenko Design Studio works with clients worldwide. We have completed projects across Europe, Middle East, and beyond. Remote collaboration tools allow us to deliver excellent results regardless of location."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Who is Denys Belenko?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Denys Belenko is the founder and creative director of Belenko Design Studio, an award-winning hospitality interior design firm based in Barcelona, Spain. With over 25 years of experience, he has led the design of more than 200 restaurants, bars, cafes, and hotels worldwide."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What services does Belenko Design Studio offer?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Belenko Design Studio offers comprehensive hospitality design services including: concept development and positioning, architecture and space planning, interior design, decor and custom furniture, branding and visual identity, creative content production, and author supervision during construction."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can Belenko Design Studio help with bar and nightclub design?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Belenko Design Studio specializes in bar and nightclub interior design. Our portfolio includes award-winning projects like 12 Monkeys speakeasy bar in Odesa and Fitz cocktail bar. We create unique atmospheres that enhance the guest experience and drive business success."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Does Belenko Design Studio offer free consultations?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Belenko Design Studio offers free initial consultations for potential clients. Contact us via email at studiobelenko@gmail.com or phone at +34 671 825 489 to schedule your consultation and discuss your restaurant or hospitality project."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What languages does Belenko Design Studio support?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Belenko Design Studio's team speaks English, Spanish, Ukrainian, and Russian. Our website is available in all four languages to serve our international clientele across Europe, Middle East, and beyond."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Where can I see Belenko Design Studio's portfolio?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You can view Belenko Design Studio's portfolio of 200+ projects at belenko.design/projects. Our work includes restaurants, bars, cafes, and hotels in Spain, Ukraine, Turkey, Azerbaijan, and other countries. Notable projects include Bella, Wine Love, Coco Japanese, Agatha, and Bruno."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you design restaurants in Europe?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Belenko Design Studio is a leading restaurant interior design firm in Europe. Based in Barcelona, we work throughout Spain, Portugal, France, Italy, Germany, UK, and other European countries. Our European portfolio includes fine dining restaurants, cocktail bars, boutique hotels, and trendy cafes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What types of hospitality venues does Belenko Design Studio design?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We specialize in all types of hospitality venues: fine dining restaurants, casual restaurants, cocktail bars, wine bars, speakeasy bars, nightclubs, cafes, coffee shops, boutique hotels, hotel restaurants, rooftop bars, and beach clubs. Each project is tailored to create a unique atmosphere and memorable guest experience."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can you design a hotel interior in Barcelona?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely! Hotel interior design is one of our core services. We design boutique hotels, hotel lobbies, hotel restaurants and bars, guest rooms, and common areas. Being based in Barcelona, we have deep knowledge of local regulations, suppliers, and the hospitality market in Catalonia and Spain."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What makes Belenko Design Studio different from other design firms in Europe?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Belenko Design Studio stands out through our concept-first approach: we design feelings, not just spaces. With 25+ years of experience and 200+ completed projects, we understand hospitality business deeply. We offer complete service from concept to opening, including branding, architecture, interior design, furniture, and construction supervision."
-                  }
-                }
-              ]
             })
           }}
         />

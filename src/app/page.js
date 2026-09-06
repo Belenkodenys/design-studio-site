@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Belenko Design Studio — Hospitality Interior Design',
   description: 'Barcelona-based hospitality design studio creating venues worldwide where interior, brand, and guest experience come together to make people fall in love and come back.',
   alternates: {
-    canonical: 'https://belenko.design/'
+    canonical: 'https://www.belenko.design/'
   },
   openGraph: {
     title: 'Belenko Design Studio — Hospitality Interior Design',
