@@ -191,9 +191,13 @@ export default function MiamiLanding() {
       <section className="miami-projects reveal" id="work">
         <h2 className="miami-section-title">Selected work</h2>
         <div className="miami-cases-grid">
-          {bigCases.map((p) => (
+          {bigCases.map((p, i) => (
             <a className="miami-case" key={p.id} href={`/florida/work/${p.id}`}>
-              <div className="miami-case-media"><img src={p.img} alt={`${p.name} — ${p.place}`} loading="lazy" /></div>
+              <div className="miami-case-media">
+                <img src={p.img} alt={`${p.name} — ${p.place}`} loading="lazy" />
+                <span className="miami-case-index">{String(i + 1).padStart(2, '0')}</span>
+                <span className="miami-case-explore">Explore →</span>
+              </div>
               <div className="miami-case-info">
                 <span className="miami-case-tag">{p.tag}</span>
                 <h3>{p.name}</h3>

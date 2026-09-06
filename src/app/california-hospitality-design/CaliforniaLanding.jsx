@@ -57,6 +57,26 @@ export default function CaliforniaLanding() {
     }
   }, [])
 
+  // Reveal-on-scroll (nobel.la-style)
+  useEffect(() => {
+    const root = document.querySelector('.miami')
+    if (!root) return
+    root.classList.add('reveal-on')
+    const els = Array.from(root.querySelectorAll('.reveal'))
+    if (typeof IntersectionObserver === 'undefined') {
+      els.forEach((el) => el.classList.add('is-in'))
+      return
+    }
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target) }
+      }),
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.12 }
+    )
+    els.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [])
+
   const track = (event, params = {}) => {
     try {
       if (typeof window !== 'undefined' && window.fbq) window.fbq('track', event, params)
@@ -84,6 +104,13 @@ export default function CaliforniaLanding() {
 
   return (
     <main className="miami">
+      {/* Floating contact (nobel.la-style) */}
+      <div className="miami-fab">
+        <a className="miami-fab-btn" href={`mailto:${CONTACT_EMAIL}`} onClick={() => track('Contact', { method: 'email' })} aria-label="Email" title="Email">✉</a>
+        <a className="miami-fab-btn" href="https://instagram.com/belenko" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">◎</a>
+        <a className="miami-fab-btn miami-fab-cta" href="#contact" onClick={scrollTo('contact')} aria-label="Discuss your project" title="Discuss your project">Talk</a>
+      </div>
+
       {/* Sticky header */}
       <header className="miami-header">
         <a href="#top" className="miami-header-logo" aria-label="Belenko" onClick={scrollTo('top')}>
@@ -107,10 +134,14 @@ export default function CaliforniaLanding() {
           </div>
           <p className="miami-hero-note">European design perspective. Local California execution.</p>
         </div>
+        <a href="#work" className="miami-scroll-cue" onClick={scrollTo('work')} aria-label="Scroll down">
+          <span>Scroll</span>
+          <span className="miami-scroll-line" aria-hidden="true" />
+        </a>
       </section>
 
       {/* 2 — U.S. experience: Baker & Wife */}
-      <section className="miami-florida-case">
+      <section className="miami-florida-case reveal">
         <div className="miami-florida-case-media">
           <img src="/projects/baker-and-wife-sarasota-04.webp" alt="Baker & Wife — Sarasota, Florida" loading="lazy" />
         </div>
@@ -129,7 +160,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 3 — Proof + press */}
-      <section className="miami-proof">
+      <section className="miami-proof reveal">
         <div className="miami-proof-grid">
           {proof.map((p) => (
             <div className="miami-proof-item" key={p.label}>
@@ -143,7 +174,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 4 — Why Belenko */}
-      <section className="miami-why">
+      <section className="miami-why reveal">
         <div className="miami-why-inner">
           <p className="miami-kicker light">Why Belenko</p>
           <h2 className="miami-why-head">We don&rsquo;t start with the interior.</h2>
@@ -157,12 +188,16 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 5 — Major case studies */}
-      <section className="miami-projects" id="work">
+      <section className="miami-projects reveal" id="work">
         <h2 className="miami-section-title">Selected work</h2>
         <div className="miami-cases-grid">
-          {bigCases.map((p) => (
+          {bigCases.map((p, i) => (
             <a className="miami-case" key={p.id} href={`${BASE}/work/${p.id}`}>
-              <div className="miami-case-media"><img src={p.img} alt={`${p.name} — ${p.place}`} loading="lazy" /></div>
+              <div className="miami-case-media">
+                <img src={p.img} alt={`${p.name} — ${p.place}`} loading="lazy" />
+                <span className="miami-case-index">{String(i + 1).padStart(2, '0')}</span>
+                <span className="miami-case-explore">Explore →</span>
+              </div>
               <div className="miami-case-info">
                 <span className="miami-case-tag">{p.tag}</span>
                 <h3>{p.name}</h3>
@@ -183,7 +218,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 6 — Business performance */}
-      <section className="miami-biz">
+      <section className="miami-biz reveal">
         <div className="miami-biz-inner">
           <p className="miami-kicker light">Design that works as a business</p>
           <h2 className="miami-biz-head">Beautiful isn&rsquo;t enough.</h2>
@@ -200,7 +235,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 7 — Services (SEO H2s) */}
-      <section className="miami-services" id="services">
+      <section className="miami-services reveal" id="services">
         <h2 className="miami-section-title">What we do</h2>
         <div className="miami-services-list">
           {services.map((s) => (
@@ -213,7 +248,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 8 — California delivery */}
-      <section className="miami-delivery">
+      <section className="miami-delivery reveal">
         <div className="miami-delivery-inner">
           <p className="miami-kicker light">How California delivery works</p>
           <h2 className="miami-delivery-head">Designed internationally. Delivered locally.</h2>
@@ -237,7 +272,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 9 — Founder */}
-      <section className="miami-founder">
+      <section className="miami-founder reveal">
         <div className="miami-founder-media"><img src="/denis-belenko.jpg" alt="Denys Belenko — Founder & Creative Director" loading="lazy" /></div>
         <div className="miami-founder-copy">
           <p className="miami-kicker">Denys Belenko</p>
@@ -252,7 +287,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 10 — Who we work with */}
-      <section className="miami-who">
+      <section className="miami-who reveal">
         <h2 className="miami-section-title">Who we work with</h2>
         <div className="miami-who-grid">
           {whoWeWork.map((w) => (
@@ -265,7 +300,7 @@ export default function CaliforniaLanding() {
       </section>
 
       {/* 11 — Contact */}
-      <section className="miami-contact" id="contact">
+      <section className="miami-contact reveal" id="contact">
         <div className="miami-contact-inner">
           <div className="miami-contact-copy">
             <h2 className="miami-section-title light">Talk to Denys Belenko</h2>
