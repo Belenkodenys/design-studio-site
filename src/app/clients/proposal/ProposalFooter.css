@@ -121,3 +121,15 @@
     color: #777;
   }
 }
+
+/* Unique-visit counter — tiny, muted, at the very bottom */
+.proposal-footer-count {
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #bbb;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 720px) {
+  .proposal-footer-count { color: #666; }
+}

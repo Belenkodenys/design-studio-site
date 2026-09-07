@@ -6,6 +6,7 @@ import './ProposalFooter.css'
 export default function ProposalFooter() {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
+  const [visits, setVisits] = useState(null)
 
   useEffect(() => {
     if (!ref.current) return
@@ -17,6 +18,25 @@ export default function ProposalFooter() {
     )
     observer.observe(ref.current)
     return () => observer.disconnect()
+  }, [])
+
+  // Unique-visit counter: increment once per browser (localStorage flag),
+  // otherwise just read the current total. Persisted via a free counter API.
+  useEffect(() => {
+    let cancelled = false
+    let counted = false
+    try { counted = !!localStorage.getItem('blnk_visit_counted') } catch (_) {}
+    const base = 'https://abacus.jasoncameron.dev'
+    const url = counted ? `${base}/get/belenko.design/unique` : `${base}/hit/belenko.design/unique`
+    fetch(url)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (cancelled || !d || typeof d.value !== 'number') return
+        setVisits(d.value)
+        if (!counted) { try { localStorage.setItem('blnk_visit_counted', '1') } catch (_) {} }
+      })
+      .catch(() => {})
+    return () => { cancelled = true }
   }, [])
 
   return (
@@ -63,6 +83,11 @@ export default function ProposalFooter() {
         <div className="proposal-footer-copyright">
           © 2026 Belenko Studio. All rights reserved.
         </div>
+        {visits !== null && (
+          <div className="proposal-footer-count" title="Unique visits">
+            {visits.toLocaleString('en-US')}
+          </div>
+        )}
       </div>
     </footer>
   )
