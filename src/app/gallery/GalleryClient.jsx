@@ -3,9 +3,13 @@
 import { useEffect, useRef, useState } from 'react'
 import './Gallery.css'
 
-// Replace this list with the gallery photos (put files in /public and list
-// their paths here). Seeded with studio photos so the page works immediately.
-const PHOTOS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => `/belenko-studio-hero-${n}.jpg`)
+const PHOTOS = [
+  '/gallery/gallery-1.jpg',
+  '/gallery/gallery-2.jpg',
+  '/gallery/gallery-3.jpg',
+  '/gallery/gallery-5.jpg',
+  '/gallery/gallery-4.jpg'
+]
 
 export default function GalleryClient() {
   const [lb, setLb] = useState(null) // fullscreen index or null
