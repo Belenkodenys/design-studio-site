@@ -54,13 +54,11 @@ html.gallery-bg {
   scroll-snap-stop: always;
 }
 .gallery-cell img {
-  max-width: 100%;
-  max-height: 100vh;
-  max-height: 100svh;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   -webkit-user-drag: none;
   user-select: none;
 }
