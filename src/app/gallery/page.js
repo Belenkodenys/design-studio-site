@@ -1,7 +1,7 @@
 import GalleryClient from './GalleryClient'
 
 export const metadata = {
-  title: 'Gallery | Belenko',
+  title: 'Belenko Private Interiors',
   description: 'Private photo gallery.',
   // Hidden: kept out of search engines and unlinked from the site.
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
