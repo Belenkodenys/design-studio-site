@@ -97,9 +97,9 @@ export const metadata = {
       'uk': 'https://www.belenko.design'
     }
   },
-  // verification: {
-  //   google: 'YOUR_REAL_CODE_HERE'
-  // },
+  verification: {
+    google: 'LSOY2QzqjCexbMAi7TQuLwDTbzeNNg-l85zs4wPGCWg'
+  },
   category: 'Interior Design'
 }
 
