@@ -104,6 +104,10 @@
     { "source": "/underwonder", "destination": "/project/36", "statusCode": 301 },
     { "source": "/underwonder/:path*", "destination": "/project/36", "statusCode": 301 },
     { "source": "/under-wonder", "destination": "/project/36", "statusCode": 301 },
+    { "source": "/filosofia", "destination": "/project/40", "statusCode": 301 },
+    { "source": "/filosofia/:path*", "destination": "/project/40", "statusCode": 301 },
+    { "source": "/philosophia", "destination": "/project/40", "statusCode": 301 },
+
     { "source": "/chouchou", "destination": "/project/37", "statusCode": 301 },
     { "source": "/chouchou/:path*", "destination": "/project/37", "statusCode": 301 },
     { "source": "/chou-chou", "destination": "/project/37", "statusCode": 301 },

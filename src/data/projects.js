@@ -1,5 +1,34 @@
 export const projects = [
   {
+    id: 40,
+    title: 'Filosofia',
+    category: 'Restaurant',
+    location: 'Dnipro, Ukraine',
+    year: '2026',
+    description: 'A two-storey Greek restaurant where wood and marble set the tone: a double-height hall under a cloud of hand-formed ceramic pebbles, timber-lattice walls stacked with firewood, fluted stone columns, a wrought-iron spiral stair and sepia portraits of the ancient philosophers watching over a long shared table.',
+    services: ['Concept', 'Interior Design', 'Branding', 'Author Supervision'],
+    image: '/projects/filosofia-restaurant-dnipro-1.webp',
+    images: [
+      '/projects/filosofia-restaurant-dnipro-1.webp',
+      '/projects/filosofia-restaurant-dnipro-2.webp',
+      '/projects/filosofia-restaurant-dnipro-3.webp',
+      '/projects/filosofia-restaurant-dnipro-4.webp',
+      '/projects/filosofia-restaurant-dnipro-5.webp',
+      '/projects/filosofia-restaurant-dnipro-6.webp',
+      '/projects/filosofia-restaurant-dnipro-7.webp',
+      '/projects/filosofia-restaurant-dnipro-8.webp',
+      '/projects/filosofia-restaurant-dnipro-9.webp',
+      '/projects/filosofia-restaurant-dnipro-10.webp',
+      '/projects/filosofia-restaurant-dnipro-11.webp',
+      '/projects/filosofia-restaurant-dnipro-12.webp',
+      '/projects/filosofia-restaurant-dnipro-13.webp',
+      '/projects/filosofia-restaurant-dnipro-14.webp',
+      '/projects/filosofia-restaurant-dnipro-15.webp',
+      '/projects/filosofia-restaurant-dnipro-16.webp',
+      '/projects/filosofia-restaurant-dnipro-17.webp'
+    ]
+  },
+  {
     id: 37,
     title: 'Chou Chou',
     category: 'Restaurant',

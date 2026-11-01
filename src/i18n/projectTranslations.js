@@ -1,6 +1,32 @@
 export const projectTranslations = {
   40: {
     en: {
+      title: 'Filosofia',
+      description: 'Interior design project by Belenko Design Studio (2026). Greek restaurant on two floors, Dnipro, Ukraine. Services: concept, interior design, branding, author supervision. Design features: a double-height hall beneath a cloud of hand-formed ceramic pebbles, timber-lattice walls stacked with firewood, fluted stone columns and twisted marble pillars, a wrought-iron spiral staircase, Calacatta marble floors with pebble-mosaic inlays, reclaimed-wood panelling, blue-and-white table linen, lemon trees and sepia portraits of the ancient philosophers above a long shared table.',
+      quote: 'At a shared table, everyone becomes family.',
+      quoteAuthor: 'Denys Belenko'
+    },
+    uk: {
+      title: 'Filosofia',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2026). Грецький ресторан на двох поверхах, Дніпро, Україна. Послуги: концепція, дизайн інтер\'єру, брендинг, авторський нагляд. Особливості: зала подвійної висоти під хмарою керамічних камінців ручної роботи, стіни-решітки, заповнені дровами, канелюровані кам\'яні колони та кручені мармурові стовпи, кованi гвинтові сходи, підлога з мармуру Calacatta з мозаїчними вставками з гальки, панелі зі старого дерева, синьо-білий текстиль, лимонні дерева та портрети античних філософів у сепії над довгим спільним столом.',
+      quote: 'За спільним столом усі стають рідними.',
+      quoteAuthor: 'Денис Беленко'
+    },
+    ru: {
+      title: 'Filosofia',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2026). Греческий ресторан на двух этажах, Днепр, Украина. Услуги: концепция, дизайн интерьера, брендинг, авторский надзор. Особенности: зал двойной высоты под облаком керамических камешков ручной работы, стены-решётки, заполненные дровами, каннелированные каменные колонны и витые мраморные столбы, кованая винтовая лестница, пол из мрамора Calacatta с мозаичными вставками из гальки, панели из старого дерева, сине-белый текстиль, лимонные деревья и портреты античных философов в сепии над длинным общим столом.',
+      quote: 'За общим столом все становятся родными.',
+      quoteAuthor: 'Денис Беленко'
+    },
+    es: {
+      title: 'Filosofia',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2026). Restaurante griego en dos plantas, Dnipro, Ucrania. Servicios: concepto, diseño interior, branding, supervisión de autor. Características: sala de doble altura bajo una nube de guijarros cerámicos hechos a mano, paredes de celosía de madera rellenas de leña, columnas de piedra acanaladas y pilares de mármol torneados, escalera de caracol de hierro forjado, suelos de mármol Calacatta con incrustaciones de mosaico de canto rodado, paneles de madera recuperada, mantelería azul y blanca, limoneros y retratos en sepia de los filósofos antiguos sobre una larga mesa compartida.',
+      quote: 'En una mesa compartida, todos se vuelven familia.',
+      quoteAuthor: 'Denys Belenko'
+    }
+  },
+  40: {
+    en: {
       title: 'Bar 13',
       description: 'Interior design project by Belenko Design Studio (2020). Bar in Odesa, Ukraine. Services: concept, interior design, lighting design, decor. Design features: cast iron spiral staircase, wrought iron balcony railings, hand-painted Renaissance ceiling fresco, cascade of crystal pendants, distressed silver-grey walls, antique mirrors, mosaic tile flooring, Louis-style chairs in black velvet.'
     },
