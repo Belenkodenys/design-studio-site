@@ -112,8 +112,8 @@
     { "source": "/chouchou/:path*", "destination": "/project/37", "statusCode": 301 },
     { "source": "/chou-chou", "destination": "/project/37", "statusCode": 301 },
 
-    { "source": "/parajanov", "destination": "/projects", "statusCode": 301 },
-    { "source": "/modernade", "destination": "/projects", "statusCode": 301 },
+    { "source": "/parajanov", "destination": "/#portfolio", "statusCode": 301 },
+    { "source": "/modernade", "destination": "/#portfolio", "statusCode": 301 },
 
     { "source": "/blog/restaurant-lighting-design-guide", "destination": "/blog", "statusCode": 301 },
     { "source": "/blog/restaurant-color-psychology", "destination": "/blog", "statusCode": 301 },
@@ -121,6 +121,8 @@
     { "source": "/blog/materials-hospitality-design", "destination": "/blog", "statusCode": 301 },
     { "source": "/blog/bar-design-essentials", "destination": "/blog", "statusCode": 301 },
 
+    { "source": "/projects", "destination": "/#portfolio", "statusCode": 301 },
+    { "source": "/projects/", "destination": "/#portfolio", "statusCode": 301 },
     { "source": "/works", "destination": "/#portfolio", "statusCode": 301 },
     { "source": "/portfolio", "destination": "/#portfolio", "statusCode": 301 },
 

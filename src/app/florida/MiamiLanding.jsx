@@ -17,11 +17,12 @@ const proof = [
 // Four headline case studies — Florida first for a Miami/US audience.
 const bigCases = [
   { id: 41, tag: 'Florida', name: 'Baker & Wife', place: 'Restaurant · Sarasota, FL', img: '/projects/baker-and-wife-sarasota-04.webp' },
-  { id: 37, tag: 'Restaurant', name: 'Chou Chou', place: 'Luxury dining · Chișinău', img: '/projects/chou-chou-restaurant-chisinau-1.webp' },
+  { id: 42, tag: 'Restaurant', name: 'Filosofia', place: 'Greek restaurant · Dnipro', img: '/projects/filosofia-restaurant-dnipro-1.webp' },
   { id: 2, tag: 'Resort / Coastal', name: 'Sereia', place: 'Restaurant & Beach Club · Alaçatı', img: '/projects/sereia-restaurant-alachati-1.webp' },
   { id: 6, tag: 'Bar / Nightlife', name: 'Saint Bar', place: 'Bar & lounge · Kyiv', img: '/projects/saint-bar-kyiv-1.webp' }
 ]
 const moreProjects = [
+  { id: 37, name: 'Chou Chou', place: 'Restaurant · Chișinău', img: '/projects/chou-chou-restaurant-chisinau-1.webp' },
   { id: 1, name: 'Bella', place: 'Restaurant · Dnipro', img: '/projects/bella-restaurant-dnipro-1.webp' },
   { id: 32, name: 'Coco', place: 'Restaurant · Kyiv', img: '/projects/coco-japanese-restaurant-kyiv-7.webp' },
   { id: 3, name: 'Mamaliga', place: 'Restaurant · Odesa', img: '/projects/mamaliga-restaurant-odesa-1.webp' }
