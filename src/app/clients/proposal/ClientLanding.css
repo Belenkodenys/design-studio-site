@@ -967,8 +967,9 @@ html.is-glitching .proposal-glitch-btn {
   padding: clamp(40px, 6vw, 96px) 24px;
 }
 
+/* Same height as the 3:4 project cards (520px wide → 693px tall), kept 4:3. */
 .proposal-intro-video-stage .vmod-frame {
-  width: min(1072px, 90vw);
+  width: min(924px, 53.33vw);
   aspect-ratio: 4 / 3;
 }
 
