@@ -1,5 +1,5 @@
 export const projectTranslations = {
-  40: {
+  42: {
     en: {
       title: 'Filosofia',
       description: 'Interior design project by Belenko Design Studio (2026). Greek restaurant on two floors, Dnipro, Ukraine. Services: concept, interior design, branding, author supervision. Design features: a double-height hall beneath a cloud of hand-formed ceramic pebbles, timber-lattice walls stacked with firewood, fluted stone columns and twisted marble pillars, a wrought-iron spiral staircase, Calacatta marble floors with pebble-mosaic inlays, reclaimed-wood panelling, blue-and-white table linen, lemon trees and sepia portraits of the ancient philosophers above a long shared table.',

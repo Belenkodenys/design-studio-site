@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: 40,
+    id: 42,
     title: 'Filosofia',
     category: 'Restaurant',
     location: 'Dnipro, Ukraine',
