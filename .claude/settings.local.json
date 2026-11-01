@@ -6,7 +6,24 @@
       "Bash(ls:*)",
       "Bash(npx vercel --prod)",
       "Bash(npm install:*)",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "Bash(grep -v '^gallery-[0-9]*\\\\.jpg$')",
+      "Bash(python3 *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh auth *)",
+      "Read(//Users/db/.ssh/**)",
+      "Bash(ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes -T git@github.com)",
+      "Bash(ssh-keygen -t ed25519 -C \"studiobelenko@gmail.com\" -f ~/.ssh/id_ed25519 -N \"\" -q)",
+      "Bash(git remote *)",
+      "Bash(ssh-keyscan -t ed25519 github.com)",
+      "Bash(dig NS *)",
+      "Bash(pbcopy)",
+      "Bash(ssh -o StrictHostKeyChecking=accept-new -T git@github.com)",
+      "Bash(dig TXT belenko.design +short)",
+      "Bash(dig TXT www.belenko.design +short)",
+      "Bash(fc -R ~/.zsh_history)"
     ]
   }
 }

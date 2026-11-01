@@ -134,9 +134,10 @@ export const translations = {
       rights: 'All rights reserved'
     },
     cookies: {
-      message: 'We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.',
+      message: 'We use analytics and advertising cookies to understand site performance and improve our services. You can accept or decline them at any time.',
       accept: 'Accept',
-      decline: 'Decline'
+      decline: 'Decline',
+      manage: 'Cookies'
     },
     project: {
       back: 'Back',
@@ -439,9 +440,10 @@ export const translations = {
       rights: 'Усі права захищені'
     },
     cookies: {
-      message: 'Ми використовуємо cookies для покращення вашого досвіду. Продовжуючи відвідувати цей сайт, ви погоджуєтесь з використанням cookies.',
+      message: 'Ми використовуємо аналітичні та рекламні cookies, щоб розуміти ефективність сайту й покращувати наші послуги. Ви можете прийняти або відхилити їх у будь-який час.',
       accept: 'Прийняти',
-      decline: 'Відхилити'
+      decline: 'Відхилити',
+      manage: 'Cookies'
     },
     project: {
       back: 'Назад',
@@ -744,9 +746,10 @@ export const translations = {
       rights: 'Все права защищены'
     },
     cookies: {
-      message: 'Мы используем cookies для улучшения вашего опыта. Продолжая посещать этот сайт, вы соглашаетесь с использованием cookies.',
+      message: 'Мы используем аналитические и рекламные cookies, чтобы понимать эффективность сайта и улучшать наши услуги. Вы можете принять или отклонить их в любое время.',
       accept: 'Принять',
-      decline: 'Отклонить'
+      decline: 'Отклонить',
+      manage: 'Cookies'
     },
     project: {
       back: 'Назад',
@@ -1049,9 +1052,10 @@ export const translations = {
       rights: 'Todos los derechos reservados'
     },
     cookies: {
-      message: 'Utilizamos cookies para mejorar su experiencia. Al continuar visitando este sitio, acepta el uso de cookies.',
+      message: 'Utilizamos cookies analíticas y publicitarias para entender el rendimiento del sitio y mejorar nuestros servicios. Puede aceptarlas o rechazarlas en cualquier momento.',
       accept: 'Aceptar',
-      decline: 'Rechazar'
+      decline: 'Rechazar',
+      manage: 'Cookies'
     },
     project: {
       back: 'Volver',

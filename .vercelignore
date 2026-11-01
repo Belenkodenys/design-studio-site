@@ -8,3 +8,7 @@ out/
 # Dev files
 *.log
 .DS_Store
+.claude/
+*.backup-*
+.env
+.env*.local
