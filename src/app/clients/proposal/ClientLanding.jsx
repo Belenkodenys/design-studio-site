@@ -1180,7 +1180,11 @@ export default function ClientLanding() {
         const elCenter = rect.top + rect.height / 2
         const dist = Math.abs(elCenter - vCenter)
         const normalized = Math.min(1, dist / vh)
-        const shift = normalized * MAX_SECTION_SHIFT
+        // Never push the row (and its chevron) past the viewport's right edge:
+        // cap the shift by the free space to the right of the unshifted row.
+        const currentShift = parseFloat(el.style.getPropertyValue('--section-shift')) || 0
+        const freeRight = window.innerWidth - (rect.right - currentShift) - 16
+        const shift = Math.max(0, Math.min(normalized * MAX_SECTION_SHIFT, freeRight))
         el.style.setProperty('--section-shift', `${shift}px`)
       })
     }
