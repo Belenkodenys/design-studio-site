@@ -818,8 +818,12 @@ function PixiVideo() {
     playEl(v)
   }
 
+  // Tapping the cover starts playback straight in full screen (the user
+  // gesture is required for fullscreen, so both happen in the click handler).
   const onFrameClick = () => {
-    if (!startedRef.current) start()
+    if (startedRef.current) return
+    start()
+    enterFullscreen()
   }
 
   const enterFullscreen = () => {
@@ -937,8 +941,12 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
     if (p && p.catch) p.catch(() => {})
   }
 
+  // Tapping the cover starts playback straight in full screen (the user
+  // gesture is required for fullscreen, so both happen in the click handler).
   const onFrameClick = () => {
-    if (!startedRef.current) start()
+    if (startedRef.current) return
+    start()
+    enterFullscreen()
   }
 
   const enterFullscreen = () => {
