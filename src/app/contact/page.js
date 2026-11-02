@@ -3,7 +3,7 @@ import { HomeContactForm } from '../clients/proposal/ClientLanding'
 import '../clients/proposal/ClientLanding.css'
 
 export const metadata = {
-  title: 'Contact — Belenko Design Studio, Barcelona',
+  title: 'Contact — Barcelona Hospitality Design Studio',
   description:
     'Contact Belenko Design Studio: office@belenko.design, +34 671 825 489 (WhatsApp), Barcelona, Spain. Hospitality interior design for restaurants, bars and hotels in Europe and the United States.',
   alternates: { canonical: 'https://www.belenko.design/contact' },

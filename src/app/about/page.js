@@ -3,7 +3,7 @@ import { StudioMission } from '../clients/proposal/ClientLanding'
 import '../clients/proposal/ClientLanding.css'
 
 export const metadata = {
-  title: 'About — Belenko Design Studio | Hospitality Interior Design, Barcelona',
+  title: 'About — Hospitality Interior Design Studio, Barcelona',
   description:
     'Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 1999: 25+ years, 200+ restaurants, bars, cafés and hotels in 11 countries, projects in Europe and the U.S.',
   alternates: { canonical: 'https://www.belenko.design/about' },

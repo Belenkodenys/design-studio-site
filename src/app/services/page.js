@@ -3,7 +3,7 @@ import SubpageShell from '../../components/subpage/SubpageShell'
 import { sections } from '../clients/proposal/sections'
 
 export const metadata = {
-  title: 'Services — Hospitality Interior Design Packages | Belenko Design Studio',
+  title: 'Services — Hospitality Interior Design Packages',
   description:
     'Four ways to work with Belenko Design Studio: Concept & Interior, Full-Service (concept → FF&E → opening), Brand & Guest Experience, Consulting / Audit. Restaurant, bar, café and hotel design from Barcelona for Europe and the U.S.',
   alternates: { canonical: 'https://www.belenko.design/services' },

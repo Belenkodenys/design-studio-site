@@ -3,7 +3,7 @@ import Portfolio from '../../components/Portfolio'
 import { projects } from '../../data/projects'
 
 export const metadata = {
-  title: 'Projects — Restaurant, Bar & Hotel Interiors | Belenko Design Studio',
+  title: 'Projects — Restaurant, Bar & Hotel Interiors',
   description:
     'Portfolio of Belenko Design Studio: restaurant, bar, café, hotel and beach club interiors in Spain, the United States, Turkey, Azerbaijan, Moldova and Ukraine. Concept, interior design, branding and FF&E by a Barcelona hospitality studio.',
   alternates: { canonical: 'https://www.belenko.design/projects' },
