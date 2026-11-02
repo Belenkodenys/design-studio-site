@@ -693,20 +693,21 @@ html.is-glitching .proposal-glitch-btn {
   position: sticky;
   top: 0;
   z-index: 5;
-  background: #fff;
+  background: #000;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: clamp(40px, 6vw, 96px) 24px;
+  padding: 0;
 }
 
-/* Match the combined width of the two side-by-side galleries (520 + 520 + gap). */
+/* Every video panel fills the viewport of the device it is viewed on. */
 .proposal-pixi-frame {
   position: relative;
-  width: min(1072px, 90vw);
-  aspect-ratio: 16 / 9;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
   background: #000;
   overflow: hidden;
 }
@@ -742,18 +743,6 @@ html.is-glitching .proposal-glitch-btn {
 
 /* Mobile: full-screen vertical cover, like the Studio and Bella galleries.
    Playback still goes to native landscape fullscreen on tap. */
-@media (max-width: 720px) {
-  .proposal-pixi-stage {
-    padding: 0;
-    align-items: stretch;
-  }
-  .proposal-pixi-frame {
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    aspect-ratio: auto;
-  }
-}
 
 /* ===== Reusable video modules (project videos below Pixi) ===== */
 .vmod-frame {
@@ -838,35 +827,30 @@ html.is-glitching .proposal-glitch-btn {
   position: sticky;
   top: 0;
   z-index: 6;
-  min-height: 100vh;
-  min-height: 100svh;
-  background: #fff;
+  height: 100vh;
+  height: 100svh;
+  background: #000;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: clamp(16px, 2vw, 40px);
-  padding: clamp(40px, 6vw, 96px) 24px;
+  gap: 1px;
+  padding: 0;
 }
 
-@media (min-width: 1300px) {
-  /* Both modules are vertical 3:4 at the same size as the Studio / Bella
-     sliders. Landscape clips are cropped to portrait via object-fit: cover. */
+/* Tablets and desktops: the two videos of a row share the screen 50/50,
+   each at full viewport height. Covers fill (cover), playback is contained. */
+@media (min-width: 721px) {
   .proposal-modules-row .vmod-frame {
-    width: min(520px, 40vw);
-    aspect-ratio: 3 / 4;
-  }
-  /* 12 Monkeys cards: same width as the other cards (520px) but taller. */
-  .proposal-monkeys-row .vmod-frame,
-  .proposal-final-row .vmod-frame {
-    width: min(520px, 40vw);
-    aspect-ratio: 9 / 16;
-    max-height: 80svh;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100vh;
+    height: 100svh;
   }
 }
 
-/* Below the breakpoint: each module is its own full-screen sticky panel,
-   stacked, with the overlay/pin effect (like the Bella gallery). */
-@media (max-width: 1299.98px) {
+/* Phones: each module is its own full-screen sticky panel, stacked, with the
+   overlay/pin effect (like the Bella gallery). */
+@media (max-width: 720px) {
   /* display: contents removes the row's box so each frame's sticky containing
      block becomes the tall .proposal-stack — otherwise the LAST frame in the
      row (e.g. Mimosa) can't stay pinned, and the next card (Saint Bar) won't
@@ -931,31 +915,19 @@ html.is-glitching .proposal-glitch-btn {
   position: sticky;
   top: 0;
   z-index: 8;
-  background: #fff;
+  background: #000;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: clamp(40px, 6vw, 96px) 24px;
+  padding: 0;
 }
 
 .proposal-saint-stage .vmod-frame {
-  width: min(1072px, 90vw);
-  aspect-ratio: 16 / 9;
-}
-
-@media (max-width: 720px) {
-  .proposal-saint-stage {
-    padding: 0;
-    align-items: stretch;
-  }
-  .proposal-saint-stage .vmod-frame {
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    aspect-ratio: auto;
-  }
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
 }
 
 /* Intro film — full-screen sticky video block right after the hero (before the
@@ -964,32 +936,19 @@ html.is-glitching .proposal-glitch-btn {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: #fff;
+  background: #000;
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: clamp(40px, 6vw, 96px) 24px;
+  padding: 0;
 }
 
-/* Same height as the 3:4 project cards (520px wide → 693px tall), kept 4:3. */
 .proposal-intro-video-stage .vmod-frame {
-  width: min(924px, 53.33vw);
-  aspect-ratio: 4 / 3;
-}
-
-@media (max-width: 720px) {
-  .proposal-intro-video-stage {
-    padding: 0;
-    align-items: stretch;
-  }
-  .proposal-intro-video-stage .vmod-frame {
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    aspect-ratio: auto;
-  }
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
 }
 
 /* Outro (Fun button + footer) sits inside the pinned stack, above the Pixi
