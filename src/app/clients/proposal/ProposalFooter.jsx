@@ -45,8 +45,18 @@ export default function ProposalFooter() {
       className={`proposal-footer ${visible ? 'is-visible' : ''}`}
     >
       <div className="proposal-footer-inner">
-        <div className="proposal-footer-mark">Belenko Studio</div>
-        <div className="proposal-footer-address">Barcelona, Spain</div>
+        <div className="proposal-footer-mark">Belenko Design Studio</div>
+        <nav className="proposal-footer-nav" aria-label="Site">
+          <a href="/services">Services</a>
+          <a href="/projects">Projects</a>
+          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
+          <a href="/florida">Florida</a>
+          <a href="/california-hospitality-design">California</a>
+          <a href="/career">Careers</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div className="proposal-footer-address">Hospitality interior design studio · Barcelona, Spain</div>
         <div className="proposal-footer-contact">
           <a href="mailto:office@belenko.design">office@belenko.design</a>
           <span className="proposal-footer-divider">·</span>

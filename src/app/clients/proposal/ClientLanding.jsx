@@ -428,7 +428,7 @@ function ExpandIcon() {
 
 // Studio mission statement followed by the full About content (studio story,
 // principles and stats from the earlier site) — always expanded, no toggle.
-function StudioMission() {
+export function StudioMission() {
   return (
     <div className="proposal-mission-block is-open">
       <h2 className="proposal-accordion-title proposal-about-title">About</h2>
@@ -572,17 +572,17 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
       </button>
 
       <nav className={`proposal-topbar-nav${menuOpen ? ' is-open' : ''}`}>
-        <a href="#services" onClick={(e) => go(e, 'services')}>Services</a>
-        <a href="#portfolio" onClick={(e) => go(e, 'portfolio')}>Portfolio</a>
-        <a href="#about" onClick={(e) => go(e, 'about')}>About</a>
-        <a href="#contact" onClick={(e) => go(e, 'contact')}>Contact</a>
+        <a href="/services" onClick={(e) => go(e, 'services')}>Services</a>
+        <a href="/projects" onClick={(e) => go(e, 'portfolio')}>Projects</a>
+        <a href="/about" onClick={(e) => go(e, 'about')}>About</a>
+        <a href="/contact" onClick={(e) => go(e, 'contact')}>Contact</a>
       </nav>
     </header>
   )
 }
 
 // Contact form at the foot of the homepage (submits via Web3Forms to office@).
-function HomeContactForm() {
+export function HomeContactForm() {
   const [data, setData] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const ch = (e) => setData((d) => ({ ...d, [e.target.name]: e.target.value }))

@@ -21,7 +21,7 @@ export default function NotFound() {
           <Link href="/" className="not-found-btn primary">
             Go to Homepage
           </Link>
-          <Link href="/#portfolio" className="not-found-btn secondary">
+          <Link href="/projects" className="not-found-btn secondary">
             View Projects
           </Link>
         </div>

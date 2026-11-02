@@ -133,3 +133,20 @@
 @media (max-width: 720px) {
   .proposal-footer-count { color: #666; }
 }
+
+.proposal-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  margin: 18px 0 14px;
+}
+.proposal-footer-nav a {
+  color: inherit;
+  opacity: 0.75;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.proposal-footer-nav a:hover { opacity: 1; }
