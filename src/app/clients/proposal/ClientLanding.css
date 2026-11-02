@@ -432,13 +432,7 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-stack > .proposal-hero,
 .proposal-stack > .proposal-mission-stage,
-.proposal-stack > /* The list is always expanded; let the scroll-shifted rows (and their round
-   chevron buttons) extend past the 1100px column instead of being clipped. */
-.proposal-services-list.is-open .proposal-services-list-inner {
-  overflow: visible;
-}
-
-.studio-gallery-pin {
+.proposal-stack > .studio-gallery-pin {
   position: sticky;
   top: 0;
   min-height: 100vh;
@@ -561,6 +555,12 @@ html.is-glitching .proposal-glitch-btn {
   display: flex;
   flex-direction: column;
   gap: clamp(48px, 6vw, 96px);
+}
+
+/* The list is always expanded; let the scroll-shifted rows (and their round
+   chevron buttons) extend past the 1100px column instead of being clipped. */
+.proposal-services-list.is-open .proposal-services-list-inner {
+  overflow: visible;
 }
 
 .studio-gallery-pin {
