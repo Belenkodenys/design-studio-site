@@ -642,6 +642,84 @@ function HomeContactForm() {
   )
 }
 
+// FAQ — visible on the page and mirrored as FAQPage structured data, so search
+// engines and AI assistants (ChatGPT, Claude, Perplexity) can quote direct
+// answers about the studio.
+export const homeFaq = [
+  {
+    q: 'What does Belenko Design Studio do?',
+    a: 'We are a Barcelona-based hospitality interior design studio. We design restaurants, bars, cafés, hotels and beach clubs as complete business products: concept and positioning, architecture and interior, brand identity, menu and guest experience, FF&E procurement and construction administration through to opening. Founded in 1999, 200+ venues completed in 11 countries.'
+  },
+  {
+    q: 'Do you work with clients in the United States?',
+    a: 'Yes. We design hospitality venues across the U.S. (Florida, California, Texas, New York) and already have completed work in Sarasota, FL. For U.S. projects we partner with a local architect of record and general contractor, run the project remotely with site visits at the key stages, and design to ADA requirements.'
+  },
+  {
+    q: 'How much does restaurant interior design cost?',
+    a: 'Design fees depend on the scope, the size of the venue and its location. We offer three engagement models: a concept-and-interior package, a full-service package (design, FF&E procurement and construction administration), and consulting by the day. Every project receives a fixed-fee proposal after a first consultation, so you know the cost before work starts.'
+  },
+  {
+    q: 'How long does a restaurant design project take?',
+    a: 'Typically, concept and positioning take 3–4 weeks and the full design package 10–14 weeks; construction depends on the site and usually takes 4–7 months. From the first meeting to opening, most restaurants take 8–12 months.'
+  },
+  {
+    q: 'What is included in a full-service project?',
+    a: 'One team and one point of accountability from concept to opening: positioning, architecture and layout, interior design, lighting, brand identity, menu structure, uniforms, tableware, FF&E specification and procurement, construction documentation, construction administration and pre-opening support.'
+  },
+  {
+    q: 'Can you audit an existing restaurant or review another studio\'s design?',
+    a: 'Yes. Our Consulting / Audit service covers a location assessment before signing a lease, an audit of an operating venue that is losing guests, and a second opinion on a concept or design produced by another studio — on site or as a remote review.'
+  },
+  {
+    q: 'Where is the studio based and which regions do you serve?',
+    a: 'The studio is based in Barcelona, Spain, and works internationally — 200+ venues in 11 countries, including Spain, Turkey, Azerbaijan, Moldova, Ukraine and the United States.'
+  }
+]
+
+function HomeFaq() {
+  const [open, setOpen] = useState(null)
+  return (
+    <section className="proposal-faq" aria-label="Frequently asked questions" id="faq">
+      <h2 className="proposal-faq-title">Questions we get asked</h2>
+      <div className="proposal-faq-list">
+        {homeFaq.map((item, i) => {
+          const isOpen = open === i
+          return (
+            <article key={item.q} className={`proposal-faq-item${isOpen ? ' is-open' : ''}`}>
+              <button
+                type="button"
+                className="proposal-faq-q"
+                aria-expanded={isOpen}
+                onClick={() => setOpen(isOpen ? null : i)}
+              >
+                <span>{item.q}</span>
+                <span className="proposal-faq-icon" aria-hidden="true">{isOpen ? '−' : '+'}</span>
+              </button>
+              <div className="proposal-faq-a" hidden={!isOpen}>
+                <p>{item.a}</p>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: homeFaq.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a }
+            }))
+          })
+        }}
+      />
+    </section>
+  )
+}
+
 // Shared elegant chevron used by the Services and Portfolio accordion heads.
 function AccordionArrow() {
   return (
@@ -1433,6 +1511,8 @@ export default function ClientLanding() {
           </article>
         </div>
       </section>
+
+      <HomeFaq />
 
       <HomeContactForm />
 

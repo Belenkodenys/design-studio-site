@@ -119,14 +119,14 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              "@id": "https://belenko.design/#organization",
+              "@id": "https://www.belenko.design/#organization",
               "name": "Belenko Design Studio",
               "alternateName": ["Belenko Studio", "Студія Беленко", "Estudio Belenko"],
               "description": "Award-winning restaurant interior design studio based in Barcelona, Spain. Specializing in restaurant, bar, cafe, and hotel interior design with 25+ years of experience and 200+ completed projects worldwide.",
-              "url": "https://belenko.design",
+              "url": "https://www.belenko.design",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://belenko.design/belenko-logo.png",
+                "url": "https://www.belenko.design/belenko-logo.png",
                 "width": 300,
                 "height": 100
               },
@@ -271,6 +271,7 @@ export default function RootLayout({ children }) {
               },
               "sameAs": [
                 "https://instagram.com/belenko",
+                "https://www.linkedin.com/in/denisbelenko/",
                 "https://t.me/belenko_studio",
                 "https://www.behance.net/belenko"
               ]
@@ -287,11 +288,11 @@ export default function RootLayout({ children }) {
               "@type": "WebSite",
               "name": "Belenko Design Studio",
               "alternateName": "Belenko",
-              "url": "https://belenko.design",
+              "url": "https://www.belenko.design",
               "description": "Restaurant interior design studio in Barcelona",
               "inLanguage": ["en", "es", "ru", "uk"],
               "publisher": {
-                "@id": "https://belenko.design/#organization"
+                "@id": "https://www.belenko.design/#organization"
               }
             })
           }}
@@ -304,15 +305,15 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "@id": "https://belenko.design/#founder",
+              "@id": "https://www.belenko.design/#founder",
               "name": "Denys Belenko",
               "alternateName": ["Denis Belenko", "Денис Беленко"],
               "jobTitle": "Founder & Creative Director",
               "description": "Award-winning interior designer and founder of Belenko Design Studio, specializing in restaurant and hospitality design with 25+ years of experience.",
-              "url": "https://belenko.design",
+              "url": "https://www.belenko.design",
               "image": "https://belenko.design/about-founder.jpg",
               "worksFor": {
-                "@id": "https://belenko.design/#organization"
+                "@id": "https://www.belenko.design/#organization"
               },
               "knowsAbout": [
                 "Restaurant Interior Design",
@@ -324,6 +325,7 @@ export default function RootLayout({ children }) {
               ],
               "sameAs": [
                 "https://instagram.com/belenko",
+                "https://www.linkedin.com/in/denisbelenko/",
                 "https://www.behance.net/belenko"
               ]
             })
@@ -339,10 +341,10 @@ export default function RootLayout({ children }) {
               "@type": "ImageGallery",
               "name": "Belenko Design Studio Portfolio",
               "description": "Portfolio of 200+ restaurant, bar, cafe and hotel interior design projects by Belenko Design Studio",
-              "url": "https://belenko.design/projects",
+              "url": "https://www.belenko.design/#portfolio",
               "numberOfItems": 200,
               "author": {
-                "@id": "https://belenko.design/#organization"
+                "@id": "https://www.belenko.design/#organization"
               }
             })
           }}

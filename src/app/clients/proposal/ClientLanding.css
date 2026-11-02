@@ -1831,3 +1831,67 @@ html.is-glitching .proposal-glitch-btn {
 
 .proposal-services-head.is-static,
 .proposal-portfolio-head.is-static { cursor: default; }
+
+/* FAQ — plain, readable Q&A block before the contact form. */
+.proposal-stack > .proposal-faq {
+  position: relative;
+  z-index: 17;
+  background: #fff;
+  padding: clamp(60px, 7vw, 110px) 24px;
+  border-top: 1px solid #eee;
+}
+.proposal-faq-title {
+  margin: 0 0 clamp(32px, 4vw, 56px);
+  text-align: center;
+  font-size: clamp(26px, 3.4vw, 44px);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: #111;
+}
+.proposal-faq-list {
+  max-width: 860px;
+  margin: 0 auto;
+  border-top: 1px solid #e5e5e5;
+}
+.proposal-faq-item { border-bottom: 1px solid #e5e5e5; }
+.proposal-faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  font-size: clamp(17px, 1.5vw, 21px);
+  font-weight: 600;
+  color: #111;
+  cursor: pointer;
+}
+.proposal-faq-icon {
+  flex: 0 0 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 400;
+  color: #111;
+}
+.proposal-faq-item.is-open .proposal-faq-icon { background: #111; color: #fff; border-color: #111; }
+.proposal-faq-a { padding: 0 60px 24px 0; }
+.proposal-faq-a p {
+  margin: 0;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.65;
+  color: #444;
+}
+@media (max-width: 720px) {
+  .proposal-faq-a { padding-right: 0; }
+}
