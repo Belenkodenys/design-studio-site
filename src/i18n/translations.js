@@ -17,7 +17,7 @@ export const translations = {
     },
     about: {
       title: 'About us',
-      intro: 'The design studio has over twenty years of experience',
+      intro: 'Hospitality interior design studio, Barcelona — 25+ years, 200+ venues in 11 countries',
       introText: ' in designing commercial and residential interiors, transforming architecture into a storytelling tool.',
       paragraph2: 'Instead of simply decorating spaces, the team focuses on creating a unique atmosphere',
       paragraph2Muted: ' and emotional experience',
@@ -323,7 +323,7 @@ export const translations = {
     },
     about: {
       title: 'Про нас',
-      intro: 'Дизайн-студія має більш ніж двадцятирічний досвід',
+      intro: 'Студія дизайну ресторанів і готелів, Барселона — 25+ років, 200+ проєктів в 11 країнах',
       introText: ' у проєктуванні громадських та житлових інтер\'єрів, перетворюючи архітектуру на інструмент оповідання.',
       paragraph2: 'Замість звичайного декорування приміщень команда фокусується на створенні унікальної атмосфери',
       paragraph2Muted: ' та емоційного досвіду',
@@ -629,7 +629,7 @@ export const translations = {
     },
     about: {
       title: 'О нас',
-      intro: 'Дизайн-студия обладает более чем двадцатилетним опытом',
+      intro: 'Студия дизайна ресторанов и отелей, Барселона — 25+ лет, 200+ проектов в 11 странах',
       introText: ' в проектировании общественных и жилых интерьеров, превращая архитектуру в инструмент повествования.',
       paragraph2: 'Вместо обычного декорирования помещений команда фокусируется на создании уникальной атмосферы',
       paragraph2Muted: ' и эмоционального опыта',
@@ -935,7 +935,7 @@ export const translations = {
     },
     about: {
       title: 'Nosotros',
-      intro: 'El estudio de diseño cuenta con más de veinte años de experiencia',
+      intro: 'Estudio de interiorismo para hostelería, Barcelona — más de 25 años, 200+ locales en 11 países',
       introText: ' en el diseño de interiores comerciales y residenciales, transformando la arquitectura en una herramienta narrativa.',
       paragraph2: 'En lugar de simplemente decorar espacios, el equipo se enfoca en crear una atmósfera única',
       paragraph2Muted: ' y una experiencia emocional',

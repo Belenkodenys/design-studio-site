@@ -442,7 +442,7 @@ function StudioMission() {
       >
         <div className="proposal-mission-details-inner">
           <p>
-            The design studio has over twenty years of experience in designing commercial and residential interiors, transforming architecture into a storytelling tool.
+            Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 1999. In 25+ years the studio has designed more than 200 restaurants, bars, cafés, hotels and beach clubs in 11 countries across Europe, the Caucasus and the United States — over 538,000 sq ft of venues, from concept and interior to brand, FF&amp;E and opening.
           </p>
           <p>
             Instead of simply decorating spaces, the team focuses on creating a unique atmosphere and emotional experience for every visitor.
