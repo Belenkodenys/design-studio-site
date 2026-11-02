@@ -846,6 +846,16 @@ function PixiVideo() {
     enterFullscreen()
   }
 
+  // Close: leave fullscreen if we are in it, stop and return to the cover.
+  const onCloseClick = (e) => {
+    e.stopPropagation()
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen()
+      else if (document.webkitFullscreenElement && document.webkitExitFullscreen) document.webkitExitFullscreen()
+    } catch (_) {}
+    reset()
+  }
+
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
@@ -896,12 +906,19 @@ function PixiVideo() {
         </picture>
       )}
       {started && (
-        <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Full Screen
-        </button>
+        <div className="vmod-controls">
+          <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Full Screen
+          </button>
+          <button type="button" className="vmod-close-btn" aria-label="Close video" onClick={onCloseClick}>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
       )}
     </div>
   )
@@ -969,6 +986,16 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
     enterFullscreen()
   }
 
+  // Close: leave fullscreen if we are in it, stop and return to the cover.
+  const onCloseClick = (e) => {
+    e.stopPropagation()
+    try {
+      if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen()
+      else if (document.webkitFullscreenElement && document.webkitExitFullscreen) document.webkitExitFullscreen()
+    } catch (_) {}
+    reset()
+  }
+
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
@@ -1016,12 +1043,19 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
         </picture>
       )}
       {started && (
-        <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Full Screen
-        </button>
+        <div className="vmod-controls">
+          <button type="button" className="vmod-fs-btn" onClick={onFullScreenClick}>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Full Screen
+          </button>
+          <button type="button" className="vmod-close-btn" aria-label="Close video" onClick={onCloseClick}>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
       )}
     </div>
   )

@@ -778,10 +778,44 @@ html.is-glitching .proposal-glitch-btn {
 
 /* Big, prominent Full Screen launcher overlaid on the playing video (top
    right, clear of the native control bar at the bottom). Enters fullscreen. */
-.vmod-fs-btn {
+/* Controls overlaid on a playing video: Full Screen pill + round close (×),
+   top-right corner, clear of the native control bar at the bottom. */
+.vmod-controls {
   position: absolute;
   top: clamp(14px, 2.4vw, 26px);
   right: clamp(14px, 2.4vw, 26px);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vmod-close-btn {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.vmod-close-btn svg { width: 24px; height: 24px; }
+.vmod-close-btn:hover { background: rgba(0, 0, 0, 0.85); transform: scale(1.05); }
+@media (max-width: 720px) {
+  .vmod-close-btn { width: 44px; height: 44px; }
+  .vmod-close-btn svg { width: 20px; height: 20px; }
+}
+
+.vmod-fs-btn {
+  position: static;
   z-index: 4;
   display: inline-flex;
   align-items: center;
