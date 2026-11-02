@@ -902,15 +902,15 @@ function PixiVideo() {
         ref={videoRef}
         className="proposal-pixi-video"
         src="/projects/pixi.mp4"
-        poster="/projects/pixi-poster2.jpg"
+        poster="/projects/pixi-poster2-2x.webp"
         controls={started}
         playsInline
         preload="metadata"
       />
       {!started && (
         <picture className="proposal-pixi-cover">
-          <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile.jpg" />
-          <img src="/projects/pixi-poster2.jpg" alt="Pixi Istanbul" draggable={false} />
+          <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile-2x.webp" />
+          <img src="/projects/pixi-poster2-2x.webp" alt="Pixi Istanbul" draggable={false} />
         </picture>
       )}
       {started && (
@@ -1338,7 +1338,7 @@ export default function ClientLanding() {
       </header>
 
       <section className="proposal-intro-video-stage" aria-label="Intro film">
-        <VideoModule src="/projects/intro.mp4" poster="/projects/intro-poster.jpg" />
+        <VideoModule src="/projects/intro.mp4" poster="/projects/intro-poster-2x.webp" />
       </section>
 
       <div className="studio-gallery-pin proposal-galleries-row">
@@ -1386,22 +1386,22 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-modules-row" aria-label="Projects">
-        <VideoModule src="/projects/agata.mp4" poster="/projects/agata-poster2.jpg" />
-        <VideoModule src="/projects/video3.mp4" poster="/projects/video3-poster.jpg" />
+        <VideoModule src="/projects/agata.mp4" poster="/projects/agata-poster2-2x.webp" />
+        <VideoModule src="/projects/video3.mp4" poster="/projects/video3-poster-2x.webp" />
       </section>
 
       <section className="proposal-saint-stage" aria-label="Saint Bar">
-        <VideoModule src="/projects/saint.mp4" poster="/projects/saint-poster2.jpg" posterMobile="/projects/saint-poster-mobile.jpg" landscape />
+        <VideoModule src="/projects/saint.mp4" poster="/projects/saint-poster2-2x.webp" posterMobile="/projects/saint-poster-mobile-2x.webp" landscape />
       </section>
 
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
-        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/monkeys1-poster5.jpg" />
-        <VideoModule src="/projects/monkeys2.mp4" poster="/projects/monkeys2-poster3.jpg" />
+        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/monkeys1-poster5-2x.webp" />
+        <VideoModule src="/projects/monkeys2.mp4" poster="/projects/monkeys2-poster3-2x.webp" />
       </section>
 
       <section className="proposal-modules-row proposal-final-row" aria-label="Projects">
-        <VideoModule src="/projects/final.mp4" poster="/projects/cent-aura-poster.jpg" />
-        <VideoModule src="/projects/nikos.mp4" poster="/projects/nikos-poster2.jpg" />
+        <VideoModule src="/projects/final.mp4" poster="/projects/cent-aura-poster-2x.webp" />
+        <VideoModule src="/projects/nikos.mp4" poster="/projects/nikos-poster2-2x.webp" />
       </section>
 
       <Sections servicesOpen={servicesOpen} setServicesOpen={setServicesOpen} />
