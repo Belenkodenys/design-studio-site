@@ -783,6 +783,7 @@ let suppressScrollResetUntil = 0
 
 function PixiVideo() {
   const videoRef = useRef(null)
+  const frameRef = useRef(null)
   const startedRef = useRef(false)
   const [started, setStarted] = useState(false)
 
@@ -826,14 +827,20 @@ function PixiVideo() {
     enterFullscreen()
   }
 
+  // Fullscreen the whole frame (not the <video>) so our own controls — the
+  // close (×) and Full Screen buttons — stay visible on top of the player.
+  // iPhone Safari has no element fullscreen: fall back to the native player.
   const enterFullscreen = () => {
     const v = videoRef.current
+    const f = frameRef.current
     if (!v) return
+    try {
+      if (f && f.requestFullscreen) { f.requestFullscreen().catch(() => {}); return }
+      if (f && f.webkitRequestFullscreen) { f.webkitRequestFullscreen(); return }
+    } catch (_) {}
     const go = () => {
       try {
         if (v.webkitEnterFullscreen) v.webkitEnterFullscreen()
-        else if (v.requestFullscreen) v.requestFullscreen()
-        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen()
       } catch (_) {}
     }
     if (v.readyState >= 1) go()
@@ -862,7 +869,7 @@ function PixiVideo() {
     // Pause + return to cover on stop, scroll, end, or fullscreen exit. The
     // pause handler is skipped while the native fullscreen player is up (so
     // pausing there doesn't kick back); the exit event handles that.
-    const inFs = () => v.webkitDisplayingFullscreen || document.fullscreenElement === v
+    const inFs = () => v.webkitDisplayingFullscreen || (document.fullscreenElement && (document.fullscreenElement === v || document.fullscreenElement.contains(v)))
     const onPause = () => { if (!inFs()) reset() }
     const onScroll = () => { if (Date.now() >= suppressScrollResetUntil) reset() }
     const onResize = () => { suppressScrollResetUntil = Date.now() + 700 }
@@ -887,6 +894,7 @@ function PixiVideo() {
 
   return (
     <div
+      ref={frameRef}
       className={`proposal-pixi-frame${started ? ' is-playing' : ' is-idle'}`}
       onClick={onFrameClick}
     >
@@ -929,6 +937,7 @@ function PixiVideo() {
 // landscape clips; portrait clips fill the phone screen as-is.
 function VideoModule({ src, poster, posterMobile, landscape = false }) {
   const videoRef = useRef(null)
+  const frameRef = useRef(null)
   const startedRef = useRef(false)
   const [started, setStarted] = useState(false)
 
@@ -966,14 +975,20 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
     enterFullscreen()
   }
 
+  // Fullscreen the whole frame (not the <video>) so our own controls — the
+  // close (×) and Full Screen buttons — stay visible on top of the player.
+  // iPhone Safari has no element fullscreen: fall back to the native player.
   const enterFullscreen = () => {
     const v = videoRef.current
+    const f = frameRef.current
     if (!v) return
+    try {
+      if (f && f.requestFullscreen) { f.requestFullscreen().catch(() => {}); return }
+      if (f && f.webkitRequestFullscreen) { f.webkitRequestFullscreen(); return }
+    } catch (_) {}
     const go = () => {
       try {
         if (v.webkitEnterFullscreen) v.webkitEnterFullscreen()
-        else if (v.requestFullscreen) v.requestFullscreen()
-        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen()
       } catch (_) {}
     }
     if (v.readyState >= 1) go()
@@ -999,7 +1014,7 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    const inFs = () => v.webkitDisplayingFullscreen || document.fullscreenElement === v
+    const inFs = () => v.webkitDisplayingFullscreen || (document.fullscreenElement && (document.fullscreenElement === v || document.fullscreenElement.contains(v)))
     const onPause = () => { if (!inFs()) reset() }
     const onScroll = () => { if (Date.now() >= suppressScrollResetUntil) reset() }
     const onResize = () => { suppressScrollResetUntil = Date.now() + 700 }
@@ -1024,6 +1039,7 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
 
   return (
     <div
+      ref={frameRef}
       className={`vmod-frame${started ? ' is-playing' : ' is-idle'}${landscape ? ' is-landscape' : ''}`}
       onClick={onFrameClick}
     >

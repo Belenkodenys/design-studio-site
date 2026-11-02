@@ -778,6 +778,25 @@ html.is-glitching .proposal-glitch-btn {
 
 /* Big, prominent Full Screen launcher overlaid on the playing video (top
    right, clear of the native control bar at the bottom). Enters fullscreen. */
+/* Our frame is the fullscreen element, so the video fills the screen and the
+   overlay controls (×, Full Screen) remain usable in fullscreen. */
+.vmod-frame:fullscreen,
+.proposal-pixi-frame:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+.vmod-frame:fullscreen .vmod-video,
+.proposal-pixi-frame:fullscreen .proposal-pixi-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.vmod-frame:fullscreen .vmod-fs-btn,
+.proposal-pixi-frame:fullscreen .vmod-fs-btn {
+  display: none;
+}
+
 /* Controls overlaid on a playing video: Full Screen pill + round close (×),
    top-right corner, clear of the native control bar at the bottom. */
 .vmod-controls {
