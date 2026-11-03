@@ -1423,7 +1423,7 @@ export default function ClientLanding() {
         <p className="proposal-statement-text">
           We have designed
           <br />
-          <span className="proposal-statement-num">250</span> restaurants
+          <span className="proposal-statement-num">250</span> restaurants, bars &amp; hotels
           <br />
           over the last <span className="proposal-statement-num">27</span> years
         </p>
