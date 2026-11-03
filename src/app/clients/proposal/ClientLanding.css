@@ -472,6 +472,30 @@ html.is-glitching .proposal-glitch-btn {
   text-transform: uppercase;
 }
 .proposal-stack > .proposal-statement--concept { z-index: 6; }
+.proposal-stack > .proposal-statement--branding { z-index: 9; }
+
+/* Full-screen image panel (sticky, like the video stages); the picture is
+   shown whole on white so nothing of the artwork is cropped. */
+.proposal-stack > .proposal-image-stage {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(32px, 5vw, 80px) clamp(16px, 4vw, 64px);
+}
+.proposal-image-stage img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100svh - 2 * clamp(32px, 5vw, 80px));
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
 .proposal-statement-num {
   font-variant-numeric: tabular-nums;
 }

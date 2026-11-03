@@ -1492,6 +1492,23 @@ export default function ClientLanding() {
         <VideoModule src="/projects/saint.mp4" poster="/projects/saint-poster2-2x.webp" posterMobile="/projects/saint-poster-mobile-2x.webp" landscape />
       </section>
 
+      <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
+        <p className="proposal-statement-text">
+          Branding that
+          <br />
+          reinforces the concept
+        </p>
+      </section>
+
+      <section className="proposal-image-stage proposal-image-stage--branding" aria-label="Roya restaurant menu design">
+        <img
+          src="/projects/roya-menu-branding.webp"
+          alt="Roya restaurant — menu covers: gold and black floral still-life design"
+          loading="lazy"
+          draggable={false}
+        />
+      </section>
+
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
         <VideoModule src="/projects/monkeys1.mp4" poster="/projects/monkeys1-poster5-2x.webp" />
         <VideoModule src="/projects/monkeys2.mp4" poster="/projects/monkeys2-poster3-2x.webp" />
