@@ -6,8 +6,6 @@ import '../../app/clients/proposal/layout.css'
 import './SubpageShell.css'
 
 const NAV = [
-  { href: '/services/architecture', label: 'Hospitality Architecture' },
-  { href: '/services/interior-design', label: 'Interior Design for Hospitality' },
   { href: '/projects', label: 'Our Works' },
   { href: '/career', label: 'Career' },
   { href: '/about', label: 'About Us' },

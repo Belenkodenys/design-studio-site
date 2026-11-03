@@ -1760,8 +1760,8 @@ html.is-glitching .proposal-glitch-btn {
   }
 }
 
-/* Six nav items need the hamburger well before phone widths. */
-@media (max-width: 1100px) {
+/* Hamburger on tablets and phones. */
+@media (max-width: 820px) {
   .proposal-topbar-logo,
   .proposal-topbar-toggle {
     position: relative;
