@@ -380,3 +380,63 @@ html .service-hero-cta {
   letter-spacing: var(--track-ui);
   text-transform: uppercase;
 }
+
+/* ---------- Vertical rhythm: more air between blocks and after headings ---------- */
+:root {
+  --sp-para: 1.4em;                    /* between paragraphs */
+  --sp-head: clamp(18px, 1.6vw, 28px); /* heading → its text */
+  --sp-block: clamp(40px, 4.5vw, 72px); /* between blocks */
+  --sp-section: clamp(56px, 6vw, 96px); /* before a section heading */
+}
+
+/* Paragraph spacing everywhere text runs in blocks */
+html .proposal-mission-details-inner p,
+html .proposal-mission-principle p,
+html .proposal-section-long,
+html .proposal-faq-a p,
+html .project-description p,
+html .svc-package p,
+html .about-wrap p,
+html .service-content p,
+html .blog-post-content p {
+  margin-bottom: var(--sp-para);
+}
+
+/* Heading → text */
+html .proposal-mission-principle h4,
+html .proposal-who-item h3,
+html .proposal-section-title,
+html .svc-package h2,
+html .svc-types h2,
+html .position-title,
+html .project-nav-title,
+html .project-cta h2 {
+  margin-bottom: var(--sp-head);
+}
+html .proposal-section-header { margin-bottom: var(--sp-head); }
+html .proposal-mission-subhead { margin-bottom: var(--sp-head); }
+
+/* Big section titles → their content */
+html .proposal-about-title,
+html .proposal-who-title,
+html .proposal-faq-title,
+html .proposal-contact-title,
+html .subpage-title {
+  margin-bottom: var(--sp-block);
+}
+html .subpage-head { margin-bottom: var(--sp-section); }
+
+/* Between blocks */
+html .proposal-mission-principle { margin-bottom: var(--sp-block); }
+html .proposal-mission-principle:last-child { margin-bottom: 0; }
+html .proposal-mission-subhead { margin-top: var(--sp-section); }
+html .proposal-mission { margin-bottom: var(--sp-section); }
+html .proposal-who-item { padding-top: var(--sp-head); padding-bottom: var(--sp-head); }
+html .proposal-faq-q { padding-top: 30px; padding-bottom: 30px; }
+html .proposal-faq-a { padding-bottom: 36px; }
+html .position-card { margin-bottom: var(--sp-block); }
+html .svc-package { padding: clamp(32px, 3.4vw, 48px); }
+html .svc-types { margin-top: var(--sp-section); }
+html .contact-details dl { gap: 22px 28px; }
+html .proposal-section-link > .proposal-section { padding-bottom: var(--sp-block); }
+html .proposal-section-panel-inner { padding-top: var(--sp-head); padding-bottom: var(--sp-block); }
