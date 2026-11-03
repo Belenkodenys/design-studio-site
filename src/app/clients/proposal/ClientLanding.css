@@ -1733,9 +1733,10 @@ html.is-glitching .proposal-glitch-btn {
 .proposal-topbar-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
   text-transform: uppercase;
   opacity: 0.85;
   transition: opacity 0.2s ease;
@@ -1757,7 +1758,10 @@ html.is-glitching .proposal-glitch-btn {
   .proposal-topbar-logo img {
     height: 20px;
   }
+}
 
+/* Six nav items need the hamburger well before phone widths. */
+@media (max-width: 1100px) {
   .proposal-topbar-logo,
   .proposal-topbar-toggle {
     position: relative;

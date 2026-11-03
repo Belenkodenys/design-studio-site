@@ -572,10 +572,12 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
       </button>
 
       <nav className={`proposal-topbar-nav${menuOpen ? ' is-open' : ''}`}>
-        <a href="/services" onClick={(e) => go(e, 'services')}>Services</a>
-        <a href="/projects" onClick={(e) => go(e, 'portfolio')}>Projects</a>
-        <a href="/about" onClick={(e) => go(e, 'about')}>About</a>
-        <a href="/contact" onClick={(e) => go(e, 'contact')}>Contact</a>
+        <a href="/services/architecture">Hospitality Architecture</a>
+        <a href="/services/interior-design">Interior Design for Hospitality</a>
+        <a href="/projects" onClick={(e) => go(e, 'portfolio')}>Our Works</a>
+        <a href="/career">Career</a>
+        <a href="/about" onClick={(e) => go(e, 'about')}>About Us</a>
+        <a href="/contact" onClick={(e) => go(e, 'contact')}>Contacts</a>
       </nav>
     </header>
   )

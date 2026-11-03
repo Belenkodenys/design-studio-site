@@ -2,7 +2,7 @@ import { projects } from '../../../data/projects'
 import ServicePageClient from '../ServicePageClient'
 
 export const metadata = {
-  title: 'Interior Design for Hospitality | Restaurants & Hotels | Belenko',
+  title: 'Interior Design for Hospitality',
   description: 'Award-winning interior design for restaurants, bars, cafes, and hotels. We create immersive environments that elevate guest experiences and drive business success.',
   keywords: 'hospitality interior design, restaurant interior design, hotel interior design, commercial interior design',
   openGraph: {

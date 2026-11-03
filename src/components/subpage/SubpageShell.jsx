@@ -6,11 +6,12 @@ import '../../app/clients/proposal/layout.css'
 import './SubpageShell.css'
 
 const NAV = [
-  { href: '/services', label: 'Services' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/about', label: 'About' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' }
+  { href: '/services/architecture', label: 'Hospitality Architecture' },
+  { href: '/services/interior-design', label: 'Interior Design for Hospitality' },
+  { href: '/projects', label: 'Our Works' },
+  { href: '/career', label: 'Career' },
+  { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contacts' }
 ]
 
 // Shared frame for the standalone pages (/services, /projects, /about,

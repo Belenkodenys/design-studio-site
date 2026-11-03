@@ -139,16 +139,16 @@ export default function RootLayout({ children }) {
               "email": "office@belenko.design",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Barcelona",
+                "streetAddress": "Pl. de Lesseps, 6-7",
                 "addressLocality": "Barcelona",
                 "addressRegion": "Catalonia",
-                "postalCode": "08001",
+                "postalCode": "08023",
                 "addressCountry": "ES"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 41.3851,
-                "longitude": 2.1734
+                "latitude": 41.4063,
+                "longitude": 2.1507
               },
               "areaServed": [
                 {
@@ -266,8 +266,8 @@ export default function RootLayout({ children }) {
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
+                "opens": "11:00",
+                "closes": "19:00"
               },
               "sameAs": [
                 "https://instagram.com/belenko",

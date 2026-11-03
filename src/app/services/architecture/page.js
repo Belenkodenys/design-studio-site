@@ -2,7 +2,7 @@ import { projects } from '../../../data/projects'
 import ServicePageClient from '../ServicePageClient'
 
 export const metadata = {
-  title: 'Hospitality Architecture | Restaurant & Hotel Design | Belenko',
+  title: 'Hospitality Architecture',
   description: 'Architectural design for restaurants, bars, hotels, and hospitality venues. From space planning to facade design, we create buildings that inspire.',
   keywords: 'hospitality architecture, restaurant architecture, hotel architecture, commercial architecture, space planning',
   openGraph: {

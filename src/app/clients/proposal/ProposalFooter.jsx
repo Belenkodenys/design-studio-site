@@ -47,14 +47,16 @@ export default function ProposalFooter() {
       <div className="proposal-footer-inner">
         <div className="proposal-footer-mark">Belenko Design Studio</div>
         <nav className="proposal-footer-nav" aria-label="Site">
-          <a href="/services">Services</a>
-          <a href="/projects">Projects</a>
-          <a href="/about">About</a>
+          <a href="/services/architecture">Hospitality Architecture</a>
+          <a href="/services/interior-design">Interior Design for Hospitality</a>
+          <a href="/projects">Our Works</a>
+          <a href="/career">Career</a>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contacts</a>
+          <a href="/services">All Services</a>
           <a href="/blog">Blog</a>
           <a href="/florida">Florida</a>
           <a href="/california-hospitality-design">California</a>
-          <a href="/career">Careers</a>
-          <a href="/contact">Contact</a>
         </nav>
         <div className="proposal-footer-address">Hospitality interior design studio · Barcelona, Spain</div>
         <div className="proposal-footer-contact">

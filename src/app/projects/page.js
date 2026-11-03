@@ -3,12 +3,12 @@ import Portfolio from '../../components/Portfolio'
 import { projects } from '../../data/projects'
 
 export const metadata = {
-  title: 'Projects — Restaurant, Bar & Hotel Interiors',
+  title: 'Our Works',
   description:
     'Portfolio of Belenko Design Studio: restaurant, bar, café, hotel and beach club interiors in Spain, the United States, Turkey, Azerbaijan, Moldova and Ukraine. Concept, interior design, branding and FF&E by a Barcelona hospitality studio.',
   alternates: { canonical: 'https://www.belenko.design/projects' },
   openGraph: {
-    title: 'Projects — Belenko Design Studio',
+    title: 'Our Works — Belenko Design Studio',
     description: 'Restaurant, bar, café and hotel interiors by a Barcelona hospitality design studio.',
     url: 'https://www.belenko.design/projects',
     type: 'website'
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
     <SubpageShell
       current="/projects"
       wide
-      title="Projects"
+      title="Our Works"
       lead={`${projects.length} selected venues — restaurants, bars, cafés, hotels and beach clubs in ${countries.join(', ')}. Each project page shows the concept, the scope of work and the finished interior.`}
     >
       <script
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
-            name: 'Projects — Belenko Design Studio',
+            name: 'Our Works — Belenko Design Studio',
             url: 'https://www.belenko.design/projects',
             hasPart: projects.map((p) => ({
               '@type': 'CreativeWork',
