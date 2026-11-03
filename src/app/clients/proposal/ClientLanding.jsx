@@ -1419,6 +1419,14 @@ export default function ClientLanding() {
         <VideoModule src="/projects/intro.mp4" poster="/projects/intro-poster-2x.webp" />
       </section>
 
+      <section className="proposal-statement" aria-label="Studio in numbers">
+        <p className="proposal-statement-text">
+          We have designed <span className="proposal-statement-num">250</span> restaurants
+          <br />
+          over the last <span className="proposal-statement-num">27</span> years
+        </p>
+      </section>
+
       <div className="studio-gallery-pin proposal-galleries-row">
         <StudioGallery
           bare
