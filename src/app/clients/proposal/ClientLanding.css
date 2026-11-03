@@ -464,9 +464,10 @@ html.is-glitching .proposal-glitch-btn {
   max-width: 1400px;
   text-align: center;
   font-family: var(--font-display);
-  font-size: clamp(40px, 7.4vw, 124px);
+  font-size: clamp(40px, 7vw, 118px);
   font-weight: 700;
   line-height: 0.92;
+  text-wrap: balance;
   letter-spacing: -0.045em;
   text-transform: uppercase;
 }

@@ -1421,7 +1421,9 @@ export default function ClientLanding() {
 
       <section className="proposal-statement" aria-label="Studio in numbers">
         <p className="proposal-statement-text">
-          We have designed <span className="proposal-statement-num">250</span> restaurants
+          We have designed
+          <br />
+          <span className="proposal-statement-num">250</span> restaurants
           <br />
           over the last <span className="proposal-statement-num">27</span> years
         </p>
