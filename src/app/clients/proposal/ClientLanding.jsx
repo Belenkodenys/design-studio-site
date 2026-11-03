@@ -1516,7 +1516,7 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
-        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/monkeys1-poster-nologo-2x.webp" />
+        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/monkeys1-poster-faces-2x.webp" />
         <VideoModule src="/projects/monkeys2.mp4" poster="/projects/monkeys2-poster3-2x.webp" />
       </section>
 
