@@ -12,3 +12,5 @@ out/
 *.backup-*
 .env
 .env*.local
+
+# Deploys: every push to main is deployed by Vercel automatically (GitHub integration).
