@@ -1473,6 +1473,16 @@ export default function ClientLanding() {
         <PixiVideo />
       </section>
 
+      <section className="proposal-statement proposal-statement--concept" aria-label="Our approach">
+        <p className="proposal-statement-text">
+          We create the concept:
+          <br />
+          from the first idea on a napkin
+          <br />
+          to the first guests
+        </p>
+      </section>
+
       <section className="proposal-modules-row" aria-label="Projects">
         <VideoModule src="/projects/agata.mp4" poster="/projects/agata-poster2-2x.webp" />
         <VideoModule src="/projects/video3.mp4" poster="/projects/video3-poster-2x.webp" />

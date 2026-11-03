@@ -471,6 +471,7 @@ html.is-glitching .proposal-glitch-btn {
   letter-spacing: -0.045em;
   text-transform: uppercase;
 }
+.proposal-stack > .proposal-statement--concept { z-index: 6; }
 .proposal-statement-num {
   font-variant-numeric: tabular-nums;
 }
