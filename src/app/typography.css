@@ -1,0 +1,382 @@
+/* ============================================================================
+   Typography system — modelled on yodezeen.com
+   ----------------------------------------------------------------------------
+   Reference: Neue Haas Display Pro (display) + Helvetica Neue (text).
+   Open equivalents with the same grotesk skeleton: Inter Tight (display,
+   tight tracking) + Inter (text). Loaded in layout.js.
+
+   The system, as measured on the reference:
+   - Giant statements   : 600–700, UPPERCASE, 90–270px, tracking −0.04em, lh 0.9
+   - Display headings   : 600, UPPERCASE, 64–72px, tracking −0.03em, lh 0.95
+   - Statement lines    : 400, UPPERCASE, 44px, tracking 0, lh 1.1, centered
+   - Section lists      : 600, UPPERCASE, 36–44px, tracking −0.03em
+   - Intro paragraphs   : 500, UPPERCASE, 27px, tracking 0, lh 1.25
+   - UI / nav / captions: 500–600, UPPERCASE, 18px, tracking 0 (never spaced)
+   - Body               : 500, 18px, lh 1.4
+   - Eyebrow / meta     : 500, UPPERCASE, 14px, tracking +0.02em
+   Only type changes here — copy, colours and layout stay as they are.
+   ========================================================================== */
+
+:root {
+  --font-display: 'Inter Tight', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-text: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --t-giant: clamp(56px, 8.3vw, 133px);     /* WE HAVE DONE PROJECTS… */
+  --t-display: clamp(40px, 4.4vw, 71px);    /* STILLSTONE / section heads */
+  --t-statement: clamp(26px, 2.75vw, 44px); /* WE DESIGN BESPOKE SOLUTIONS */
+  --t-list: clamp(26px, 2.75vw, 44px);      /* RESIDENTIAL / cities */
+  --t-intro: clamp(20px, 1.7vw, 27px);      /* intro paragraph */
+  --t-ui: clamp(15px, 1.125vw, 18px);       /* nav, captions, buttons */
+  --t-body: clamp(16px, 1.125vw, 18px);
+  --t-meta: 14px;
+
+  --track-giant: -0.045em;
+  --track-display: -0.03em;
+  --track-list: -0.03em;
+  --track-ui: -0.01em;
+  --track-meta: 0.02em;
+}
+
+html body,
+html body .app,
+html body .subpage {
+  font-family: var(--font-text);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Top bar / navigation (home + subpages + footer) ---------- */
+html .proposal-topbar-nav a,
+html .subpage-nav a,
+html .proposal-footer-nav a,
+html .proposal-topbar-cta,
+html .vmod-fs-btn {
+  font-family: var(--font-text);
+  font-size: var(--t-ui);
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
+  text-transform: uppercase;
+}
+html .proposal-topbar-nav a { opacity: 0.9; }
+@media (max-width: 1100px) {
+  html .proposal-topbar-nav a { font-size: 22px; letter-spacing: var(--track-ui); }
+}
+
+/* ---------- Homepage ---------- */
+
+/* Mission statement → centered uppercase statement line (44px/400) */
+html .proposal-mission {
+  font-family: var(--font-display);
+  font-size: var(--t-statement);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 24ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Master section titles (Services / Portfolio / About / Who we work with /
+   FAQ / Let's talk) → display heading, tight, uppercase */
+html .proposal-accordion-title,
+html .proposal-about-title,
+html .proposal-who-title,
+html .proposal-faq-title,
+html .proposal-contact-title {
+  font-family: var(--font-display);
+  font-size: var(--t-display);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+}
+
+/* About body: intro paragraph in the reference is 27px/500 — the first
+   paragraph gets that treatment, the rest is body text. */
+html .proposal-mission-details-inner > p:first-of-type {
+  font-family: var(--font-text);
+  font-size: var(--t-intro);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+html .proposal-mission-details-inner p {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.45;
+}
+html .proposal-mission-subhead {
+  font-family: var(--font-text);
+  font-size: var(--t-meta);
+  font-weight: 500;
+  letter-spacing: var(--track-meta);
+  text-transform: uppercase;
+}
+html .proposal-mission-principle h4 {
+  font-family: var(--font-display);
+  font-size: var(--t-list);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--track-list);
+  text-transform: uppercase;
+}
+html .proposal-mission-principle p {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Services accordion rows: index number as small meta, title as list item */
+html .proposal-section-num {
+  font-family: var(--font-text);
+  font-size: var(--t-ui);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: var(--track-ui);
+  padding-top: 0.55em;
+}
+html .proposal-section-title {
+  font-family: var(--font-display);
+  font-size: var(--t-list);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--track-list);
+  text-transform: uppercase;
+}
+html .proposal-section-body {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.4;
+}
+html .proposal-section-long,
+html .proposal-section-bullets li {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Who we work with */
+html .proposal-who-item h3 {
+  font-family: var(--font-display);
+  font-size: var(--t-list);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--track-list);
+  text-transform: uppercase;
+}
+html .proposal-who-item p {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* FAQ */
+html .proposal-faq-q {
+  font-family: var(--font-text);
+  font-size: clamp(18px, 1.4vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+html .proposal-faq-a p {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Contact block */
+html .proposal-contact-sub {
+  font-size: var(--t-intro);
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+html .proposal-contact-form input,
+html .proposal-contact-form textarea,
+html .proposal-contact-form button {
+  font-family: var(--font-text);
+  font-size: var(--t-ui);
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
+}
+html .proposal-contact-form button { text-transform: uppercase; }
+
+/* Footer */
+html .proposal-footer-mark {
+  font-family: var(--font-display);
+  font-size: var(--t-display);
+  font-weight: 600;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+html .proposal-footer-address,
+html .proposal-footer-contact,
+html .proposal-footer-contact a {
+  font-size: var(--t-ui);
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
+  text-transform: uppercase;
+}
+
+/* Portfolio cards: caption 18px/500 uppercase, meta 14px */
+html .portfolio-card-info h3 {
+  font-family: var(--font-text);
+  font-size: var(--t-ui);
+  font-weight: 600;
+  letter-spacing: var(--track-ui);
+  text-transform: uppercase;
+}
+html .portfolio-card-info span {
+  font-size: var(--t-meta);
+  font-weight: 500;
+  letter-spacing: var(--track-meta);
+  text-transform: uppercase;
+}
+
+/* ---------- Standalone pages (Services / Our Works / About Us / Contacts) ---------- */
+html .subpage-title {
+  font-family: var(--font-display);
+  font-size: var(--t-giant);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: var(--track-giant);
+  text-transform: uppercase;
+}
+html .subpage-lead {
+  font-family: var(--font-text);
+  font-size: var(--t-intro);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  max-width: 44ch;
+}
+html .svc-package-num {
+  font-size: var(--t-meta);
+  font-weight: 500;
+  letter-spacing: var(--track-meta);
+  text-transform: uppercase;
+}
+html .svc-package h2,
+html .svc-types h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-list);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--track-list);
+  text-transform: uppercase;
+}
+html .svc-package p,
+html .svc-package li,
+html .svc-types-grid a,
+html .contact-details dd {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.4;
+}
+html .svc-types-grid a { text-transform: uppercase; letter-spacing: var(--track-ui); }
+html .contact-details dt {
+  font-size: var(--t-meta);
+  font-weight: 500;
+  letter-spacing: var(--track-meta);
+  text-transform: uppercase;
+}
+
+/* ---------- Project pages ---------- */
+html .project-category,
+html .meta-label,
+html .project-nav-label,
+html .breadcrumbs,
+html .breadcrumbs a {
+  font-family: var(--font-text);
+  font-size: var(--t-meta);
+  font-weight: 500;
+  letter-spacing: var(--track-meta);
+  text-transform: uppercase;
+}
+html .project-title {
+  font-family: var(--font-display);
+  font-size: var(--t-giant);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: var(--track-giant);
+  text-transform: uppercase;
+}
+html .meta-value {
+  font-size: var(--t-ui);
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
+  text-transform: uppercase;
+}
+html .project-description p,
+html .project-quote {
+  font-size: var(--t-intro);
+  font-weight: 500;
+  line-height: 1.3;
+}
+html .project-quote {
+  font-family: var(--font-display);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+html .project-nav-title,
+html .project-cta h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-list);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--track-list);
+  text-transform: uppercase;
+}
+html .back-button,
+html .header-contact-btn,
+html .cta-button {
+  font-family: var(--font-text);
+  font-size: var(--t-ui);
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
+  text-transform: uppercase;
+}
+
+/* ---------- Service pages / Career / Blog ---------- */
+html .service-hero h1,
+html .career-page-title,
+html .blog-title,
+html .blog-post-title {
+  font-family: var(--font-display);
+  font-size: var(--t-giant);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: var(--track-giant);
+  text-transform: uppercase;
+}
+html .service-hero-subtitle,
+html .career-subtitle {
+  font-size: var(--t-intro);
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+html .position-title {
+  font-family: var(--font-display);
+  font-size: var(--t-list);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--track-list);
+  text-transform: uppercase;
+}
+html .position-type,
+html .position-location,
+html .position-apply,
+html .service-hero-cta {
+  font-size: var(--t-ui);
+  font-weight: 500;
+  letter-spacing: var(--track-ui);
+  text-transform: uppercase;
+}
