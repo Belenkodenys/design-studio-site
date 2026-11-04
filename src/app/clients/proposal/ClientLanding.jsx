@@ -1501,18 +1501,9 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-image-stage proposal-image-stage--branding" aria-label="Roya restaurant menu design">
-        {/* Desktop / tablet: both covers side by side. Phones: one above the other. */}
-        <img
-          className="proposal-image-wide"
-          src="/projects/roya-menu-branding.webp"
-          alt="Roya restaurant — menu covers: gold and black floral still-life design"
-          loading="lazy"
-          draggable={false}
-        />
-        <div className="proposal-image-stack">
-          <img src="/projects/roya-menu-branding-1.webp" alt="Roya restaurant — gold menu cover" loading="lazy" draggable={false} />
-          <img src="/projects/roya-menu-branding-2.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" draggable={false} />
-        </div>
+        {/* Two covers edge to edge; they stack vertically when the screen is too narrow for a pair. */}
+        <img src="/projects/roya-menu-gold.webp" alt="Roya restaurant — gold menu cover with floral still life" loading="lazy" draggable={false} />
+        <img src="/projects/roya-menu-black.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" draggable={false} />
       </section>
 
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
