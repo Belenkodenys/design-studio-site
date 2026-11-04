@@ -499,7 +499,10 @@ html.is-glitching .proposal-glitch-btn {
   object-fit: contain;
 }
 @media (max-width: 720px), (orientation: portrait) and (max-width: 1024px) {
+  /* Taller than the screen when stacked, so it must scroll normally rather
+     than pin at the top (a pinned panel would hide the second cover). */
   .proposal-stack > .proposal-image-stage {
+    position: relative;
     flex-direction: column;
     min-height: 0;
     padding: 40px 20px;
