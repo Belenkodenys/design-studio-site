@@ -1532,6 +1532,7 @@ export default function ClientLanding() {
           <br />
           reinforces the concept
         </p>
+        <a href="/branding" className="proposal-statement-link">See our branding work →</a>
       </section>
 
       <section className="proposal-image-stage proposal-image-stage--branding" aria-label="Roya restaurant menu design">

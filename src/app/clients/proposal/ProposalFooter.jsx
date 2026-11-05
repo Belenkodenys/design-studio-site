@@ -53,6 +53,7 @@ export default function ProposalFooter() {
           <a href="/career">Career</a>
           <a href="/about">About Us</a>
           <a href="/contact">Contacts</a>
+          <a href="/branding">Branding</a>
           <a href="/services">All Services</a>
           <a href="/blog">Blog</a>
           <a href="/florida">Florida</a>

@@ -472,7 +472,17 @@ html.is-glitching .proposal-glitch-btn {
   text-transform: uppercase;
 }
 .proposal-stack > .proposal-statement--concept { z-index: 6; }
-.proposal-stack > .proposal-statement--branding { z-index: 9; }
+.proposal-stack > .proposal-statement--branding { z-index: 9; flex-direction: column; gap: clamp(20px, 3vw, 40px); }
+.proposal-statement-link {
+  color: #2d2a2a;
+  font-size: var(--t-ui, 18px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+}
 
 /* Full-screen image panel (sticky, like the video stages): two pictures side
    by side, as wide as the screen allows; stacked when the screen is narrow. */
