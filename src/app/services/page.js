@@ -60,16 +60,21 @@ export default function ServicesPage() {
       />
       <div className="svc-packages">
         {sections.map((s, i) => (
-          <Link key={s.slug} href={`/clients/proposal/${s.slug}`} className="svc-package">
-            <div className="svc-package-num">{String(i + 1).padStart(2, '0')}</div>
-            <h2>{s.title}</h2>
-            <p>{s.body}</p>
-            <ul>
-              {s.bullets.map((b) => (
-                <li key={b}>{b}</li>
-              ))}
-            </ul>
-          </Link>
+          <div key={s.slug} className="svc-package">
+            <Link href={`/clients/proposal/${s.slug}`} className="svc-package-main">
+              <div className="svc-package-num">{String(i + 1).padStart(2, '0')}</div>
+              <h2>{s.title}</h2>
+              <p>{s.body}</p>
+              <ul>
+                {s.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </Link>
+            {s.link && (
+              <Link href={s.link.href} className="svc-package-link">{s.link.label} →</Link>
+            )}
+          </div>
         ))}
       </div>
 

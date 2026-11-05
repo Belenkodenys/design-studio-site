@@ -258,3 +258,25 @@
   .subpage-nav a:last-child { border-bottom: 0; }
   .subpage-nav a.is-current { font-weight: 600; }
 }
+
+/* Package card: the whole body links to the package page; an optional extra
+   link (e.g. the branding portfolio) sits under it inside the same card. */
+.svc-package-main {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.svc-package-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--font-text, inherit);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  padding-bottom: 2px;
+}
+.svc-package-link:hover { opacity: 0.6; }

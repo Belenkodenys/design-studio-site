@@ -2030,3 +2030,18 @@ html.is-glitching .proposal-glitch-btn {
 @media (prefers-reduced-motion: reduce) {
   .proposal-map-stage img { transition: none; opacity: 1; transform: none; filter: none; }
 }
+
+/* Optional link under a package's bullets (e.g. the branding portfolio). */
+.proposal-section-link {
+  display: inline-block;
+  margin-top: clamp(16px, 2vw, 24px);
+  font-size: var(--t-ui, 18px);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+.proposal-section-link:hover { opacity: 0.6; }

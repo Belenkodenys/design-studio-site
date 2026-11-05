@@ -859,6 +859,9 @@ function Sections() {
                       ))}
                     </ul>
                   )}
+                  {s.link && (
+                    <a href={s.link.href} className="proposal-section-link">{s.link.label} →</a>
+                  )}
                 </div>
               </div>
             </div>

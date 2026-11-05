@@ -52,6 +52,7 @@ export const sections = [
       'Tableware, uniforms and service behaviour as part of the set',
       'Launch strategy, content and digital presence'
     ],
+    link: { href: '/branding', label: 'See our branding work' },
     gallery: []
   },
   {

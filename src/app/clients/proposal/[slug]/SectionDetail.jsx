@@ -350,6 +350,9 @@ export default function SectionDetail({ section }) {
             ))}
           </ul>
         )}
+        {section.link && (
+          <Link href={section.link.href} className="section-detail-link">{section.link.label} →</Link>
+        )}
       </section>
 
       {section.slug === 'cases' ? (
