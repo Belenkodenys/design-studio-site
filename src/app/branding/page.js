@@ -18,7 +18,8 @@ export const metadata = {
 
 // Gallery: add images here (transparent-background cutouts, no backdrop).
 // Motion and placement are assigned automatically in sequence, so a new
-// picture only needs src and alt.
+// picture only needs src and alt. Options: size: 'small' (shown at about
+// half width), gap: true (extra space above it).
 // Five kinds of motion and three horizontal positions, cycled so neighbours
 // never move the same way or sit on the same side.
 const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
@@ -27,6 +28,7 @@ const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
 const gallery = [
   { src: '/projects/roya-menu-gold-v2-cut.webp', alt: 'Roya restaurant — gold menu cover' },
   { src: '/projects/roya-menu-black-v2-cut.webp', alt: 'Roya restaurant — black floral menu cover' },
+  { src: '/projects/branding-chou-chou-logo-cut.webp', alt: 'Chou Chou — gold foil logo with two hearts' },
   { src: '/projects/filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals' },
   { src: '/projects/filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board' },
   { src: '/projects/filosofia-restaurant-dnipro-16-cut.webp', alt: 'Filosofia — postcard and printed menu' },
@@ -34,10 +36,10 @@ const gallery = [
   { src: '/projects/branding-12monkeys-logo-cut.webp', alt: '12 Monkeys — logotype' },
   { src: '/projects/branding-atelier-coffee-illustration-cut.webp', alt: 'Atelier Design & Coffee — illustrated coffee characters' },
   { src: '/projects/branding-food-couture-lettering-cut.webp', alt: 'Food Couture — hand lettering' },
-  { src: '/projects/branding-3-legs-pub-logo-cut.webp', alt: '3 Legs Pub — emblem, English and Ukrainian versions' },
-  { src: '/projects/branding-buddka-bar-logo-cut.webp', alt: 'Buddka Bar — logotype' },
-  { src: '/projects/branding-khryak-ribbon-logo-cut.webp', alt: 'Khryak — house of beer and meat, ribbon logo' },
-  { src: '/projects/branding-khryak-pig-emblem-cut.webp', alt: 'Khryak — pig emblem' },
+  { src: '/projects/branding-3-legs-pub-logo-cut.webp', alt: '3 Legs Pub — emblem, English and Ukrainian versions', gap: true },
+  { src: '/projects/branding-buddka-bar-logo-cut.webp', alt: 'Buddka Bar — logotype', gap: true },
+  { src: '/projects/branding-khryak-ribbon-logo-cut.webp', alt: 'Khryak — house of beer and meat, ribbon logo', gap: true },
+  { src: '/projects/branding-khryak-pig-emblem-cut.webp', alt: 'Khryak — pig emblem', gap: true },
   { src: '/projects/branding-mimosa-pizza-box-green-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, green edition' },
   { src: '/projects/branding-mimosa-pizza-box-red-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, red edition' },
   { src: '/projects/branding-smorrebrod-tshirt-cut.webp', alt: 'Smørrebrød — staff T-shirt' },
@@ -50,6 +52,7 @@ const gallery = [
   { src: '/projects/branding-pixi-sketch-man-cut.webp', alt: 'Pixi — sketch of a man with a cocktail' },
   { src: '/projects/branding-kinoshniki-logo-cut.webp', alt: 'Kinoshniki — logo and wordmark' },
   { src: '/projects/branding-pixi-sketch-girl-cut.webp', alt: 'Pixi — sketch of a running girl with fork and spoon' },
+  { src: '/projects/branding-steakhouse-logo-cut.webp', alt: 'Steakhouse — wordmark', size: 'small' },
   { src: '/projects/branding-kinoshniki-plates-cut.webp', alt: 'Kinoshniki — branded plates, front and back' }
 ]
 
@@ -80,7 +83,7 @@ export default function BrandingPage() {
 
       <div className="br-gallery">
         {gallery.map((g, i) => (
-          <ScrollDrift key={g.src} fx={FX[i % FX.length]} className={`br-slot br-slot--${POS[i % POS.length]}`}>
+          <ScrollDrift key={g.src} fx={FX[i % FX.length]} className={`br-slot br-slot--${POS[i % POS.length]}${g.size === 'small' ? ' br-slot--small' : ''}${g.gap ? ' br-slot--gap' : ''}`}>
             <img
               src={g.src}
               srcSet={`${g.src.replace('-cut.webp', '-cut-m.webp')} 1000w, ${g.src} 2200w`}

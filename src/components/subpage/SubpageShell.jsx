@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import ProposalFooter from '../../app/clients/proposal/ProposalFooter'
 import '../../app/clients/proposal/layout.css'
 import './SubpageShell.css'
@@ -15,15 +16,36 @@ const NAV = [
 // Shared frame for the standalone pages (/services, /projects, /about,
 // /contact): light header with real links, page title, content, footer.
 export default function SubpageShell({ title, lead, current, children, wide = false }) {
+  // Phones: the menu folds into a square button at the right; tapping it
+  // drops the links down under the header.
+  const [open, setOpen] = useState(false)
+  useEffect(() => {
+    if (!open) return
+    const close = () => setOpen(false)
+    window.addEventListener('resize', close)
+    return () => window.removeEventListener('resize', close)
+  }, [open])
   return (
     <div className="subpage">
       <header className="subpage-header">
         <Link href="/" className="subpage-logo" aria-label="Belenko Design Studio — home">
           <img src="/belenko-logo-footer.png" alt="Belenko" />
         </Link>
-        <nav className="subpage-nav" aria-label="Site">
+        <button
+          type="button"
+          className={`subpage-menu-btn${open ? ' is-open' : ''}`}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="subpage-nav"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav id="subpage-nav" className={`subpage-nav${open ? ' is-open' : ''}`} aria-label="Site">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className={current === n.href ? 'is-current' : ''}>
+            <Link key={n.href} href={n.href} className={current === n.href ? 'is-current' : ''} onClick={() => setOpen(false)}>
               {n.label}
             </Link>
           ))}

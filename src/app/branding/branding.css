@@ -30,6 +30,9 @@
 .br-slot--left   { justify-content: flex-start; padding-left: var(--side); }
 .br-slot--center { justify-content: center; }
 .br-slot--right  { justify-content: flex-end; padding-right: var(--side); }
+/* Wide, short pieces in a row (logotypes) need some air between them. */
+.br-slot--gap { margin-top: 10vh; }
+.br-slot--small img { max-width: 38vw; }
 
 .br-gallery img {
   display: block;
@@ -71,6 +74,8 @@
     max-height: var(--slot);
     object-fit: contain;
   }
+  .br-slot--gap { margin-top: 4vh; }
+  .br-slot--small img { width: 70vw; max-width: 70vw; }
 }
 
 /* Scroll-driven motion: transform/opacity are set per frame from the scroll

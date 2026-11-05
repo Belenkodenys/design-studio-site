@@ -204,7 +204,57 @@
 }
 
 @media (max-width: 560px) {
-  .subpage-nav { gap: 12px; }
-  .subpage-nav a { font-size: 11px; letter-spacing: 0.12em; }
   .svc-types-grid { grid-template-columns: 1fr; }
+}
+
+/* Menu button: a square at the right with three lines, hidden on desktop. */
+.subpage-menu-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: -6px 0;
+  border: 1px solid #111;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.subpage-menu-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #111;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.subpage-menu-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.subpage-menu-btn.is-open span:nth-child(2) { opacity: 0; }
+.subpage-menu-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 760px) {
+  .subpage-menu-btn { display: flex; }
+  .subpage-header { flex-wrap: wrap; }
+  /* The links drop down under the header, full width, one per line. */
+  .subpage-nav {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0 4px;
+    border-top: 1px solid #eee;
+    margin-top: 14px;
+  }
+  .subpage-nav.is-open { display: flex; }
+  .subpage-nav a {
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    opacity: 1;
+  }
+  .subpage-nav a:last-child { border-bottom: 0; }
+  .subpage-nav a.is-current { font-weight: 600; }
 }
