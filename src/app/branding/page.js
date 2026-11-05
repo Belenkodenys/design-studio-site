@@ -16,37 +16,41 @@ export const metadata = {
   }
 }
 
-// Gallery: add images here (transparent-background cutouts, no backdrop) —
-// src, alt, direction of travel while scrolling down ('ltr' = left → right,
-// 'rtl' = right → left) and depth (1 = normal). Each picture crosses the
-// screen horizontally with the scroll, in both directions.
+// Gallery: add images here (transparent-background cutouts, no backdrop).
+// Motion and placement are assigned automatically in sequence, so a new
+// picture only needs src and alt.
+// Five kinds of motion and three horizontal positions, cycled so neighbours
+// never move the same way or sit on the same side.
+const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
+const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
+
 const gallery = [
-  { src: '/projects/roya-menu-gold-v2-cut.webp', alt: 'Roya restaurant — gold menu cover', axis: 'ltr', depth: 1 },
-  { src: '/projects/roya-menu-black-v2-cut.webp', alt: 'Roya restaurant — black floral menu cover', axis: 'rtl', depth: 1.3 },
-  { src: '/projects/filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals', axis: 'ltr', depth: 1.2 },
-  { src: '/projects/filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board', axis: 'rtl', depth: 0.9 },
-  { src: '/projects/filosofia-restaurant-dnipro-16-cut.webp', alt: 'Filosofia — postcard and printed menu', axis: 'ltr', depth: 1.4 },
-  { src: '/projects/filosofia-restaurant-dnipro-17-cut.webp', alt: 'Filosofia — staff T-shirt with the logo', axis: 'rtl', depth: 1.1 },
-  { src: '/projects/branding-12monkeys-logo-cut.webp', alt: '12 Monkeys — logotype', axis: 'ltr', depth: 1 },
-  { src: '/projects/branding-atelier-coffee-illustration-cut.webp', alt: 'Atelier Design & Coffee — illustrated coffee characters', axis: 'rtl', depth: 1.2 },
-  { src: '/projects/branding-food-couture-lettering-cut.webp', alt: 'Food Couture — hand lettering', axis: 'ltr', depth: 0.9 },
-  { src: '/projects/branding-3-legs-pub-logo-cut.webp', alt: '3 Legs Pub — emblem, English and Ukrainian versions', axis: 'rtl', depth: 1.3 },
-  { src: '/projects/branding-buddka-bar-logo-cut.webp', alt: 'Buddka Bar — logotype', axis: 'ltr', depth: 1 },
-  { src: '/projects/branding-khryak-ribbon-logo-cut.webp', alt: 'Khryak — house of beer and meat, ribbon logo', axis: 'rtl', depth: 1.2 },
-  { src: '/projects/branding-khryak-pig-emblem-cut.webp', alt: 'Khryak — pig emblem', axis: 'ltr', depth: 1.1 },
-  { src: '/projects/branding-mimosa-pizza-box-green-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, green edition', axis: 'rtl', depth: 1 },
-  { src: '/projects/branding-mimosa-pizza-box-red-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, red edition', axis: 'ltr', depth: 1.3 },
-  { src: '/projects/branding-smorrebrod-tshirt-cut.webp', alt: 'Smørrebrød — staff T-shirt', axis: 'rtl', depth: 0.9 },
-  { src: '/projects/branding-smorrebrod-deer-illustration-cut.webp', alt: 'Smørrebrød — tattooed deer illustration', axis: 'ltr', depth: 1.2 },
-  { src: '/projects/branding-smorrebrod-beer-bottle-cut.webp', alt: 'Smørrebrød — beer bottle label', axis: 'rtl', depth: 1 },
-  { src: '/projects/branding-smorrebrod-box-cut.webp', alt: 'Smørrebrød — takeaway box', axis: 'ltr', depth: 1.3 },
-  { src: '/projects/branding-smorrebrod-cups-cut.webp', alt: 'Smørrebrød — coffee cups', axis: 'rtl', depth: 1.1 },
-  { src: '/projects/branding-ladies-room-lettering-cut.webp', alt: 'Ladies Room — brush lettering sign', axis: 'ltr', depth: 1 },
-  { src: '/projects/branding-pixi-logo-cut.webp', alt: 'Pixi — logotype', axis: 'rtl', depth: 1.2 },
-  { src: '/projects/branding-pixi-sketch-man-cut.webp', alt: 'Pixi — sketch of a man with a cocktail', axis: 'ltr', depth: 0.9 },
-  { src: '/projects/branding-kinoshniki-logo-cut.webp', alt: 'Kinoshniki — logo and wordmark', axis: 'rtl', depth: 1.3 },
-  { src: '/projects/branding-pixi-sketch-girl-cut.webp', alt: 'Pixi — sketch of a running girl with fork and spoon', axis: 'ltr', depth: 1 },
-  { src: '/projects/branding-kinoshniki-plates-cut.webp', alt: 'Kinoshniki — branded plates, front and back', axis: 'rtl', depth: 1.2 }
+  { src: '/projects/roya-menu-gold-v2-cut.webp', alt: 'Roya restaurant — gold menu cover' },
+  { src: '/projects/roya-menu-black-v2-cut.webp', alt: 'Roya restaurant — black floral menu cover' },
+  { src: '/projects/filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals' },
+  { src: '/projects/filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board' },
+  { src: '/projects/filosofia-restaurant-dnipro-16-cut.webp', alt: 'Filosofia — postcard and printed menu' },
+  { src: '/projects/filosofia-restaurant-dnipro-17-cut.webp', alt: 'Filosofia — staff T-shirt with the logo' },
+  { src: '/projects/branding-12monkeys-logo-cut.webp', alt: '12 Monkeys — logotype' },
+  { src: '/projects/branding-atelier-coffee-illustration-cut.webp', alt: 'Atelier Design & Coffee — illustrated coffee characters' },
+  { src: '/projects/branding-food-couture-lettering-cut.webp', alt: 'Food Couture — hand lettering' },
+  { src: '/projects/branding-3-legs-pub-logo-cut.webp', alt: '3 Legs Pub — emblem, English and Ukrainian versions' },
+  { src: '/projects/branding-buddka-bar-logo-cut.webp', alt: 'Buddka Bar — logotype' },
+  { src: '/projects/branding-khryak-ribbon-logo-cut.webp', alt: 'Khryak — house of beer and meat, ribbon logo' },
+  { src: '/projects/branding-khryak-pig-emblem-cut.webp', alt: 'Khryak — pig emblem' },
+  { src: '/projects/branding-mimosa-pizza-box-green-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, green edition' },
+  { src: '/projects/branding-mimosa-pizza-box-red-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, red edition' },
+  { src: '/projects/branding-smorrebrod-tshirt-cut.webp', alt: 'Smørrebrød — staff T-shirt' },
+  { src: '/projects/branding-smorrebrod-deer-illustration-cut.webp', alt: 'Smørrebrød — tattooed deer illustration' },
+  { src: '/projects/branding-smorrebrod-beer-bottle-cut.webp', alt: 'Smørrebrød — beer bottle label' },
+  { src: '/projects/branding-smorrebrod-box-cut.webp', alt: 'Smørrebrød — takeaway box' },
+  { src: '/projects/branding-smorrebrod-cups-cut.webp', alt: 'Smørrebrød — coffee cups' },
+  { src: '/projects/branding-ladies-room-lettering-cut.webp', alt: 'Ladies Room — brush lettering sign' },
+  { src: '/projects/branding-pixi-logo-cut.webp', alt: 'Pixi — logotype' },
+  { src: '/projects/branding-pixi-sketch-man-cut.webp', alt: 'Pixi — sketch of a man with a cocktail' },
+  { src: '/projects/branding-kinoshniki-logo-cut.webp', alt: 'Kinoshniki — logo and wordmark' },
+  { src: '/projects/branding-pixi-sketch-girl-cut.webp', alt: 'Pixi — sketch of a running girl with fork and spoon' },
+  { src: '/projects/branding-kinoshniki-plates-cut.webp', alt: 'Kinoshniki — branded plates, front and back' }
 ]
 
 export default function BrandingPage() {
@@ -75,8 +79,8 @@ export default function BrandingPage() {
       />
 
       <div className="br-gallery">
-        {gallery.map((g) => (
-          <ScrollDrift key={g.src} axis={g.axis} depth={g.depth || 1}>
+        {gallery.map((g, i) => (
+          <ScrollDrift key={g.src} fx={FX[i % FX.length]} className={`br-slot br-slot--${POS[i % POS.length]}`}>
             <img src={g.src} alt={g.alt} loading="lazy" draggable={false} />
           </ScrollDrift>
         ))}
