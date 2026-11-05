@@ -1550,6 +1550,15 @@ export default function ClientLanding() {
 
       <HomeContactForm />
 
+      <section className="proposal-map-stage" aria-label="Where we have worked">
+        <img
+          src="/projects/world-map-projects.webp"
+          alt="World map with Belenko Design Studio project locations: United States, Spain, Portugal, Ukraine, Moldova, Turkey, Azerbaijan, Central Asia"
+          loading="lazy"
+          draggable={false}
+        />
+      </section>
+
       <div id="contact" className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
           <GlitchButton />
