@@ -102,10 +102,11 @@
     width: 100%;
     margin-top: 20px;
     padding: 18px 24px;
-    background: #111;
-    color: #fff;
+    background: #fff;
+    color: #0a0a0a;
     border: 0;
     border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     font-family: inherit;
     font-size: 16px;
     font-weight: 500;
@@ -114,6 +115,9 @@
     cursor: pointer;
   }
   .portfolio-more-count {
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+  .portfolio-more-btn:active {
+    transform: scale(0.98);
   }
 }

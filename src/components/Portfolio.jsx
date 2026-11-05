@@ -46,7 +46,7 @@ function Portfolio() {
       </div>
       {!open && rest.length > 0 && (
         <button type="button" className="portfolio-more-btn" onClick={() => setOpen(true)}>
-          More <span className="portfolio-more-count">+{rest.length}</span>
+          More Projects <span className="portfolio-more-count">+{rest.length}</span>
         </button>
       )}
     </section>
