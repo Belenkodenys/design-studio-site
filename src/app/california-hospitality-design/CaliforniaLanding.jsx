@@ -16,16 +16,16 @@ const proof = [
 ]
 
 const bigCases = [
-  { id: 41, tag: 'U.S. project', name: 'Baker & Wife', place: 'Restaurant · Sarasota, FL', img: '/projects/baker-and-wife-sarasota-04.webp' },
-  { id: 42, tag: 'Restaurant', name: 'Filosofia', place: 'Greek restaurant · Dnipro', img: '/projects/filosofia-restaurant-dnipro-1.webp' },
-  { id: 2, tag: 'Resort / Coastal', name: 'Sereia', place: 'Restaurant & Beach Club · Alaçatı', img: '/projects/sereia-restaurant-alachati-1.webp' },
-  { id: 6, tag: 'Bar / Nightlife', name: 'Saint Bar', place: 'Bar & lounge · Kyiv', img: '/projects/saint-bar-kyiv-1.webp' }
+  { id: 41, tag: 'U.S. project', name: 'Baker & Wife', place: 'Restaurant · Sarasota, FL', img: '/projects/belenko-interior-design-baker-and-wife-sarasota-04.webp' },
+  { id: 42, tag: 'Restaurant', name: 'Filosofia', place: 'Greek restaurant · Dnipro', img: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-1.webp' },
+  { id: 2, tag: 'Resort / Coastal', name: 'Sereia', place: 'Restaurant & Beach Club · Alaçatı', img: '/projects/belenko-interior-design-sereia-restaurant-alachati-1.webp' },
+  { id: 6, tag: 'Bar / Nightlife', name: 'Saint Bar', place: 'Bar & lounge · Kyiv', img: '/projects/belenko-interior-design-saint-bar-kyiv-1.webp' }
 ]
 const moreProjects = [
-  { id: 37, name: 'Chou Chou', place: 'Restaurant · Chișinău', img: '/projects/chou-chou-restaurant-chisinau-1.webp' },
-  { id: 1, name: 'Bella', place: 'Restaurant · Dnipro', img: '/projects/bella-restaurant-dnipro-1.webp' },
-  { id: 32, name: 'Coco', place: 'Restaurant · Kyiv', img: '/projects/coco-japanese-restaurant-kyiv-7.webp' },
-  { id: 3, name: 'Mamaliga', place: 'Restaurant · Odesa', img: '/projects/mamaliga-restaurant-odesa-1.webp' }
+  { id: 37, name: 'Chou Chou', place: 'Restaurant · Chișinău', img: '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-1.webp' },
+  { id: 1, name: 'Bella', place: 'Restaurant · Dnipro', img: '/projects/belenko-interior-design-bella-restaurant-dnipro-1.webp' },
+  { id: 32, name: 'Coco', place: 'Restaurant · Kyiv', img: '/projects/belenko-interior-design-coco-japanese-restaurant-kyiv-7.webp' },
+  { id: 3, name: 'Mamaliga', place: 'Restaurant · Odesa', img: '/projects/belenko-interior-design-mamaliga-restaurant-odesa-1.webp' }
 ]
 
 const services = [
@@ -144,7 +144,7 @@ export default function CaliforniaLanding() {
       {/* 2 — U.S. experience: Baker & Wife */}
       <section className="miami-florida-case reveal">
         <div className="miami-florida-case-media">
-          <img src="/projects/baker-and-wife-sarasota-04.webp" alt="Baker & Wife — Sarasota, Florida" loading="lazy" />
+          <img src="/projects/belenko-interior-design-baker-and-wife-sarasota-04.webp" alt="Baker & Wife — Sarasota, Florida" loading="lazy" />
         </div>
         <div className="miami-florida-case-copy">
           <p className="miami-kicker">Experience in the U.S.</p>

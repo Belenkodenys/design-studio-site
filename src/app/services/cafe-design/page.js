@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: 'Cafe Interior Design | Belenko Design Studio',
     description: 'Design a cafe that becomes your neighborhood\'s favorite spot. Expert interior design for coffee shops, bakeries, and concept cafes.',
-    images: [{ url: 'https://belenko.design/projects/milk-bar-cafe-kyiv-1.webp', width: 1200, height: 630 }],
+    images: [{ url: 'https://belenko.design/projects/belenko-interior-design-milk-bar-cafe-kyiv-1.webp', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -54,7 +54,7 @@ export default function CafeDesignPage() {
     <ServicePageClient slug="cafe-design"
       title="Cafe Interior Design"
       subtitle="Creating coffee shops and cafes that become beloved neighborhood destinations and powerful brand expressions"
-      heroImage="/projects/milk-bar-cafe-kyiv-1.webp"
+      heroImage="/projects/belenko-interior-design-milk-bar-cafe-kyiv-1.webp"
       stats={[
         { number: '50+', label: 'Cafes Designed' },
         { number: '25+', label: 'Years Experience' },

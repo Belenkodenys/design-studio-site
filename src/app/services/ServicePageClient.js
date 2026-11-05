@@ -283,7 +283,7 @@ export default function ServicePageClient({
           <div className="service-projects-grid">
             {projects.map((project) => (
               <Link key={project.id} href={`/project/${project.id}/`} className="service-project-card">
-                {project.image && <img src={project.image} alt={project.title} />}
+                {project.image && <img src={project.image} alt={`${project.title} — ${(project.category || "restaurant").toLowerCase()} interior design, ${project.location} — Belenko Design Studio`} />}
                 <div className="service-project-overlay">
                   <div className="service-project-title">{project.title}</div>
                   <div className="service-project-location">{project.location}</div>

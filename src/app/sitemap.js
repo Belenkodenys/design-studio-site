@@ -41,11 +41,14 @@ export default async function sitemap() {
     priority: 0.7
   }))
 
+  // Every project page lists its photos (Google Image sitemap extension), so
+  // the pictures are indexed with the page context — venue type, city, studio.
   const projectPages = projects.map((p) => ({
     url: `${BASE}/project/${p.id}`,
     lastModified: p.year ? new Date(`${p.year}-01-01`) : undefined,
     changeFrequency: 'yearly',
-    priority: 0.8
+    priority: 0.8,
+    images: (p.images || [p.image]).filter(Boolean).map((i) => `${BASE}${i}`)
   }))
 
   let adminPosts = []

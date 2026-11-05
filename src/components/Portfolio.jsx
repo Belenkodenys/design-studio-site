@@ -12,7 +12,7 @@ function Card({ project }) {
   return (
     <Link href={`/project/${project.id}`} className="portfolio-card">
       {project.image && (
-        <img className="portfolio-card-img" src={project.image} alt={project.title} loading="lazy" />
+        <img className="portfolio-card-img" src={project.image} alt={`${project.title} — ${project.category.toLowerCase()} interior design in ${project.location} by Belenko Design Studio`} loading="lazy" />
       )}
       <div className="portfolio-card-info">
         <h3>{project.title}</h3>

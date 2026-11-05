@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: 'Hotel Interior Design | Belenko Design Studio',
     description: 'Create unforgettable hotel experiences with award-winning interior design. Lobbies, rooms, restaurants, and public spaces that wow guests.',
-    images: [{ url: 'https://belenko.design/projects/agatha-restaurant-kyiv-1.webp', width: 1200, height: 630 }],
+    images: [{ url: 'https://belenko.design/projects/belenko-interior-design-agatha-restaurant-kyiv-1.webp', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -54,7 +54,7 @@ export default function HotelDesignPage() {
     <ServicePageClient slug="hotel-design"
       title="Hotel Interior Design"
       subtitle="Designing boutique hotels and hospitality spaces that turn stays into unforgettable stories"
-      heroImage="/projects/agatha-restaurant-kyiv-1.webp"
+      heroImage="/projects/belenko-interior-design-agatha-restaurant-kyiv-1.webp"
       stats={[
         { number: '30+', label: 'Hotels Designed' },
         { number: '25+', label: 'Years Experience' },

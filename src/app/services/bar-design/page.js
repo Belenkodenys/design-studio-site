@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: 'Bar Interior Design | Belenko Design Studio',
     description: 'Create an unforgettable bar experience with expert interior design. Cocktail bars, wine bars, lounges — we design spaces that become destinations.',
-    images: [{ url: 'https://belenko.design/projects/saint-bar-kyiv-1.webp', width: 1200, height: 630 }],
+    images: [{ url: 'https://belenko.design/projects/belenko-interior-design-saint-bar-kyiv-1.webp', width: 1200, height: 630 }],
     type: 'website',
   },
   twitter: {
@@ -53,7 +53,7 @@ export default function BarDesignPage() {
     <ServicePageClient slug="bar-design"
       title="Bar Interior Design"
       subtitle="Designing cocktail bars, wine bars, and lounges that become the city's most talked-about destinations"
-      heroImage="/projects/saint-bar-kyiv-1.webp"
+      heroImage="/projects/belenko-interior-design-saint-bar-kyiv-1.webp"
       stats={[
         { number: '80+', label: 'Bars Designed' },
         { number: '25+', label: 'Years Experience' },

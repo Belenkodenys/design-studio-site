@@ -356,7 +356,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
           <div className="project-hero-image" onClick={() => openLightbox(currentImageIndex)}>
             <img
               src={project.images[currentImageIndex]}
-              alt={`${project.title} — ${project.category} in ${project.location}`}
+              alt={`${project.title} — ${project.category.toLowerCase()} interior design in ${project.location} by Belenko Design Studio`}
               width="2000"
               height="1338"
               fetchPriority="high"
@@ -434,7 +434,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
           >
             <img
               src={image}
-              alt={`${project.title} — ${project.category} in ${project.location} (photo ${index + 1})`}
+              alt={`${project.title} — ${project.category.toLowerCase()} interior design, ${project.location}, Belenko Design Studio (photo ${index + 1})`}
               width="2000"
               height="1338"
               loading="lazy"
@@ -502,7 +502,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
               >
                 <img
                   src={image}
-                  alt={`${project.title} — ${project.category} in ${project.location} (photo ${index + 1})`}
+                  alt={`${project.title} — ${project.category.toLowerCase()} interior design, ${project.location}, Belenko Design Studio (photo ${index + 1})`}
                   width="2000"
                   height="1338"
                   loading="lazy"

@@ -316,31 +316,31 @@ function StudioGallery({ slides, bare = false, className = '' }) {
 }
 
 const BELLA_SLIDES = [
-  '/projects/bella-cover2.jpg',
-  '/projects/bella-4.jpg',
-  '/projects/bella-8.jpg',
-  '/projects/bella-1.jpg',
-  '/projects/bella-3.jpg',
-  '/projects/bella-5.jpg',
-  '/projects/bella-2.jpg',
-  '/projects/bella-6.jpg',
-  '/projects/bella-restaurant-dnipro-1.webp',
-  '/projects/bella-restaurant-dnipro-2.webp',
-  '/projects/bella-restaurant-dnipro-3.webp',
-  '/projects/bella-restaurant-dnipro-4.webp',
-  '/projects/bella-restaurant-dnipro-5.webp',
-  '/projects/bella-restaurant-dnipro-6.webp',
-  '/projects/bella-restaurant-dnipro-7.webp',
-  '/projects/bella-restaurant-dnipro-8.webp',
-  '/projects/bella-restaurant-dnipro-9.webp',
-  '/projects/bella-restaurant-dnipro-10.webp',
-  '/projects/bella-restaurant-dnipro-11.webp',
-  '/projects/bella-restaurant-dnipro-12.webp',
-  '/projects/bella-restaurant-dnipro-13.webp',
-  '/projects/bella-restaurant-dnipro-14.webp',
-  '/projects/bella-restaurant-dnipro-15.webp',
-  '/projects/bella-restaurant-dnipro-17.webp',
-  '/projects/bella-restaurant-dnipro-24.webp',
+  '/projects/belenko-interior-design-bella-cover2.jpg',
+  '/projects/belenko-interior-design-bella-4.jpg',
+  '/projects/belenko-interior-design-bella-8.jpg',
+  '/projects/belenko-interior-design-bella-1.jpg',
+  '/projects/belenko-interior-design-bella-3.jpg',
+  '/projects/belenko-interior-design-bella-5.jpg',
+  '/projects/belenko-interior-design-bella-2.jpg',
+  '/projects/belenko-interior-design-bella-6.jpg',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-1.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-2.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-3.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-4.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-5.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-6.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-7.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-8.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-9.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-10.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-11.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-12.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-13.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-14.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-15.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-17.webp',
+  '/projects/belenko-interior-design-bella-restaurant-dnipro-24.webp',
 ]
 
 function MissionScrollReveal({ text }) {
@@ -745,7 +745,7 @@ function WorldMapReveal() {
   return (
     <section ref={ref} className={`proposal-map-stage${shown ? ' is-shown' : ''}`} aria-label="Where we have worked">
       <img
-        src="/projects/world-map-projects-v3.webp"
+        src="/projects/belenko-interior-design-world-map-projects-v3.webp"
         alt="World map with Belenko Design Studio project locations: United States, Spain, Portugal, Ukraine, Moldova, Turkey, Azerbaijan, Central Asia"
         loading="lazy"
         draggable={false}
@@ -1014,15 +1014,15 @@ function PixiVideo() {
         ref={videoRef}
         className="proposal-pixi-video"
         src="/projects/pixi.mp4"
-        poster="/projects/pixi-poster2-2x.webp"
+        poster="/projects/belenko-interior-design-pixi-poster2-2x.webp"
         controls={started}
         playsInline
         preload="metadata"
       />
       {!started && (
         <picture className="proposal-pixi-cover">
-          <source media="(max-width: 720px)" srcSet="/projects/pixi-poster-mobile-2x.webp" />
-          <img src="/projects/pixi-poster2-2x.webp" alt="Pixi Istanbul" draggable={false} />
+          <source media="(max-width: 720px)" srcSet="/projects/belenko-interior-design-pixi-poster-mobile-2x.webp" />
+          <img src="/projects/belenko-interior-design-pixi-poster2-2x.webp" alt="Pixi Istanbul" draggable={false} />
         </picture>
       )}
       {started && (
@@ -1450,7 +1450,7 @@ export default function ClientLanding() {
       </header>
 
       <section className="proposal-intro-video-stage" aria-label="Intro film">
-        <VideoModule src="/projects/intro.mp4" poster="/projects/intro-poster-2x.webp" />
+        <VideoModule src="/projects/intro.mp4" poster="/projects/belenko-interior-design-intro-poster-2x.webp" />
       </section>
 
       <section className="proposal-statement" aria-label="Studio in numbers">
@@ -1518,12 +1518,12 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-modules-row" aria-label="Projects">
-        <VideoModule src="/projects/agata.mp4" poster="/projects/agata-poster2-2x.webp" />
-        <VideoModule src="/projects/video3.mp4" poster="/projects/video3-poster-2x.webp" />
+        <VideoModule src="/projects/agata.mp4" poster="/projects/belenko-interior-design-agata-poster2-2x.webp" />
+        <VideoModule src="/projects/video3.mp4" poster="/projects/belenko-interior-design-video3-poster-2x.webp" />
       </section>
 
       <section className="proposal-saint-stage" aria-label="Saint Bar">
-        <VideoModule src="/projects/saint.mp4" poster="/projects/saint-poster2-2x.webp" posterMobile="/projects/saint-poster-mobile-2x.webp" landscape />
+        <VideoModule src="/projects/saint.mp4" poster="/projects/belenko-interior-design-saint-poster2-2x.webp" posterMobile="/projects/belenko-interior-design-saint-poster-mobile-2x.webp" landscape />
       </section>
 
       <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
@@ -1537,18 +1537,18 @@ export default function ClientLanding() {
 
       <section className="proposal-image-stage proposal-image-stage--branding" aria-label="Roya restaurant menu design">
         {/* Two covers edge to edge; they stack vertically when the screen is too narrow for a pair. */}
-        <img src="/projects/roya-menu-gold-v2.webp" alt="Roya restaurant — gold menu cover with floral still life" loading="lazy" draggable={false} />
-        <img src="/projects/roya-menu-black-v2.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" draggable={false} />
+        <img src="/projects/belenko-interior-design-roya-menu-gold-v2.webp" alt="Roya restaurant — gold menu cover with floral still life" loading="lazy" draggable={false} />
+        <img src="/projects/belenko-interior-design-roya-menu-black-v2.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" draggable={false} />
       </section>
 
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
-        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/monkeys1-poster-faces-2x.webp" />
-        <VideoModule src="/projects/monkeys2.mp4" poster="/projects/monkeys2-poster3-2x.webp" />
+        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/belenko-interior-design-monkeys1-poster-faces-2x.webp" />
+        <VideoModule src="/projects/monkeys2.mp4" poster="/projects/belenko-interior-design-monkeys2-poster3-2x.webp" />
       </section>
 
       <section className="proposal-modules-row proposal-final-row" aria-label="Projects">
-        <VideoModule src="/projects/final.mp4" poster="/projects/cent-aura-poster-2x.webp" />
-        <VideoModule src="/projects/nikos.mp4" poster="/projects/nikos-poster2-2x.webp" />
+        <VideoModule src="/projects/final.mp4" poster="/projects/belenko-interior-design-cent-aura-poster-2x.webp" />
+        <VideoModule src="/projects/nikos.mp4" poster="/projects/belenko-interior-design-nikos-poster2-2x.webp" />
       </section>
 
       <Sections servicesOpen={servicesOpen} setServicesOpen={setServicesOpen} />
