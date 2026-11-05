@@ -41,8 +41,9 @@
     max-width: none;
     margin: 0;
   }
-  .br-gallery .drift:nth-child(2n + 1) { margin-left: -40vw; }
-  .br-gallery .drift:nth-child(2n)     { margin-left: -10vw; }
+  /* Centred at rest (the drift is zero at the middle of the screen), so each
+     picture sweeps in from a side and passes through the centre. */
+  .br-gallery .drift { margin-left: -25vw; }
 }
 
 /* Scroll-driven drift: transform/opacity are set per frame from the scroll
