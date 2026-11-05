@@ -42,6 +42,7 @@ const gallery = [
   { src: '/projects/belenko-branding-design-khryak-pig-emblem-cut.webp', alt: 'Khryak — pig emblem', gap: true },
   { src: '/projects/belenko-branding-design-mimosa-pizza-box-green-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, green edition' },
   { src: '/projects/belenko-branding-design-beerbasa-identity-cut.webp', alt: 'Beerbasa — beer & grill identity: logo on cards, glass and brewery wall' },
+  { src: '/projects/belenko-branding-design-iva-business-cards-cut.webp', alt: 'Iva restaurant, Baku — green and orange business cards' },
   { src: '/projects/belenko-branding-design-mimosa-pizza-box-red-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, red edition' },
   { src: '/projects/belenko-branding-design-smorrebrod-tshirt-cut.webp', alt: 'Smørrebrød — staff T-shirt' },
   { src: '/projects/belenko-branding-design-smorrebrod-deer-illustration-cut.webp', alt: 'Smørrebrød — tattooed deer illustration' },
