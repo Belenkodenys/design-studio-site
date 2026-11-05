@@ -40,7 +40,13 @@ const gallery = [
   { src: '/projects/branding-smorrebrod-deer-illustration-cut.webp', alt: 'Smørrebrød — tattooed deer illustration', axis: 'ltr', depth: 1.2 },
   { src: '/projects/branding-smorrebrod-beer-bottle-cut.webp', alt: 'Smørrebrød — beer bottle label', axis: 'rtl', depth: 1 },
   { src: '/projects/branding-smorrebrod-box-cut.webp', alt: 'Smørrebrød — takeaway box', axis: 'ltr', depth: 1.3 },
-  { src: '/projects/branding-smorrebrod-cups-cut.webp', alt: 'Smørrebrød — coffee cups', axis: 'rtl', depth: 1.1 }
+  { src: '/projects/branding-smorrebrod-cups-cut.webp', alt: 'Smørrebrød — coffee cups', axis: 'rtl', depth: 1.1 },
+  { src: '/projects/branding-ladies-room-lettering-cut.webp', alt: 'Ladies Room — brush lettering sign', axis: 'ltr', depth: 1 },
+  { src: '/projects/branding-pixi-logo-cut.webp', alt: 'Pixi — logotype', axis: 'rtl', depth: 1.2 },
+  { src: '/projects/branding-pixi-sketch-man-cut.webp', alt: 'Pixi — sketch of a man with a cocktail', axis: 'ltr', depth: 0.9 },
+  { src: '/projects/branding-kinoshniki-logo-cut.webp', alt: 'Kinoshniki — logo and wordmark', axis: 'rtl', depth: 1.3 },
+  { src: '/projects/branding-pixi-sketch-girl-cut.webp', alt: 'Pixi — sketch of a running girl with fork and spoon', axis: 'ltr', depth: 1 },
+  { src: '/projects/branding-kinoshniki-plates-cut.webp', alt: 'Kinoshniki — branded plates, front and back', axis: 'rtl', depth: 1.2 }
 ]
 
 export default function BrandingPage() {
