@@ -4,8 +4,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(16px, 2vw, 32px);
-  align-items: start;
+  align-items: center;
 }
+
+/* Oversized: every picture is larger than its column and is allowed to run
+   past the edge of the screen (the page clips horizontal overflow). */
+.br-gallery .drift {
+  width: 135%;
+}
+.br-gallery .drift:nth-child(2n) {
+  justify-self: end;
+  margin-right: -22%;
+}
+.br-gallery .drift:nth-child(2n + 1) {
+  margin-left: -22%;
+}
+.br-gallery .drift:nth-child(4n + 1) { margin-top: 6vh; }
+.br-gallery .drift:nth-child(4n)     { margin-top: -8vh; }
 
 .br-gallery img {
   display: block;
@@ -16,7 +31,18 @@
 }
 
 @media (max-width: 600px) {
-  .br-gallery { grid-template-columns: 1fr; }
+  .br-gallery {
+    grid-template-columns: 1fr;
+    row-gap: 10vh;
+  }
+  /* Phones: each picture wider than the screen, alternating overhang. */
+  .br-gallery .drift {
+    width: 150vw;
+    max-width: none;
+    margin: 0;
+  }
+  .br-gallery .drift:nth-child(2n + 1) { margin-left: -40vw; }
+  .br-gallery .drift:nth-child(2n)     { margin-left: -10vw; }
 }
 
 /* Scroll-driven drift: transform/opacity are set per frame from the scroll
@@ -27,8 +53,8 @@
   transform-origin: center;
 }
 .br-gallery {
-  padding: 10vh 0 20vh;
-  row-gap: clamp(48px, 10vh, 140px);
+  padding: 6vh 0 24vh;
+  row-gap: clamp(32px, 8vh, 120px);
 }
 @media (prefers-reduced-motion: reduce) {
   .drift { transition: none; transform: none !important; opacity: 1 !important; }
