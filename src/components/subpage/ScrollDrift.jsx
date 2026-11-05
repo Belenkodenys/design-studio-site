@@ -59,7 +59,7 @@ export default function ScrollDrift({ fx = 'slide-l', axis, depth = 1, className
           break
         }
         case 'zoom': {
-          sc = p > 0 ? 1 - ea * 0.4 : 1 + ea * 0.9
+          sc = p > 0 ? 1 - ea * 0.4 : 1 + ea * (phone ? 0.35 : 0.9)
           ty = p * vh * 0.08
           op = 1.25 - ea * 1.1
           break
@@ -77,7 +77,7 @@ export default function ScrollDrift({ fx = 'slide-l', axis, depth = 1, className
       }
       // Phones: the picture is 100% of the screen width at the centre and is
       // allowed to grow before and after.
-      if (phone) sc *= 1 + ea * 0.35
+      if (phone) sc *= 1 + ea * 0.3
       // neighbours stay visible (no empty white around the centre picture)
       op = Math.max(0.35, Math.min(1, op))
       el.style.transform = `translate3d(${tx.toFixed(1)}px, ${ty.toFixed(1)}px, 0) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(3)})`
