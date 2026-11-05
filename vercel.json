@@ -854,15 +854,6 @@
           "value": "1; mode=block"
         }
       ]
-    },
-    {
-      "source": "/pinterest/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
     }
   ]
 }
