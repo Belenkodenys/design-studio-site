@@ -2045,3 +2045,20 @@ html.is-glitching .proposal-glitch-btn {
   padding-bottom: 2px;
 }
 .proposal-section-link:hover { opacity: 0.6; }
+
+/* "See our branding work →" inside the Brand & Guest Experience panel. */
+.proposal-section-cta {
+  display: inline-block;
+  margin-top: var(--sp-para, 20px);
+  font-family: var(--font-text, inherit);
+  font-size: var(--t-ui, 18px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+.proposal-section-cta:hover { opacity: 0.6; }
