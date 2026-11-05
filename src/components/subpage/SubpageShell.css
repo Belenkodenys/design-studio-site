@@ -2,15 +2,18 @@
   background: #fff;
   color: #111;
   min-height: 100vh;
+  padding-top: var(--subpage-header-h, 64px);
   display: flex;
   flex-direction: column;
   overflow-x: clip;
 }
 
 .subpage-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 20;
+  left: 0;
+  right: 0;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -236,16 +239,21 @@
 
 @media (max-width: 760px) {
   .subpage-menu-btn { display: flex; }
-  .subpage-header { flex-wrap: wrap; }
-  /* The links drop down under the header, full width, one per line. */
+  /* The links drop down under the fixed header as a panel, one per line;
+     the header itself keeps its height so the page does not jump. */
   .subpage-nav {
     display: none;
-    flex-basis: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
     gap: 0;
-    padding: 8px 0 4px;
-    border-top: 1px solid #eee;
-    margin-top: 14px;
+    padding: 4px clamp(20px, 4vw, 48px) 8px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
   }
   .subpage-nav.is-open { display: flex; }
   .subpage-nav a {

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ProposalFooter from '../../app/clients/proposal/ProposalFooter'
 import '../../app/clients/proposal/layout.css'
 import './SubpageShell.css'
@@ -19,6 +19,18 @@ export default function SubpageShell({ title, lead, current, children, wide = fa
   // Phones: the menu folds into a square button at the right; tapping it
   // drops the links down under the header.
   const [open, setOpen] = useState(false)
+  // The header is fixed to the top of the screen; reserve its height above
+  // the page content (measured, so it follows the logo size and the open menu).
+  const headerRef = useRef(null)
+  useEffect(() => {
+    const h = headerRef.current
+    if (!h) return
+    const apply = () => document.documentElement.style.setProperty('--subpage-header-h', `${h.offsetHeight}px`)
+    apply()
+    const ro = new ResizeObserver(apply)
+    ro.observe(h)
+    return () => ro.disconnect()
+  }, [])
   useEffect(() => {
     if (!open) return
     const close = () => setOpen(false)
@@ -27,7 +39,7 @@ export default function SubpageShell({ title, lead, current, children, wide = fa
   }, [open])
   return (
     <div className="subpage">
-      <header className="subpage-header">
+      <header className="subpage-header" ref={headerRef}>
         <Link href="/" className="subpage-logo" aria-label="Belenko Design Studio — home">
           <img src="/belenko-logo-footer.png" alt="Belenko" />
         </Link>
