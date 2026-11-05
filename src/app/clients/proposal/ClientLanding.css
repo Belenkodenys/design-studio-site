@@ -1208,10 +1208,11 @@ html.is-glitching .proposal-glitch-btn {
    breakpoint) does the outro need to be a full-viewport panel that slides
    up over it. On wide screens Bella is hidden, so keep the outro natural
    height to avoid a screen of empty white before the footer. */
+/* The world map (position: relative) now sits between the sticky stack and
+   the outro, so the outro no longer needs a full-viewport height anywhere. */
 @media (max-width: 1299.98px) {
   .proposal-outro {
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
