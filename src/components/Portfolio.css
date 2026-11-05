@@ -71,3 +71,49 @@
     aspect-ratio: 16/10;
   }
 }
+
+/* Desktop / tablet: the "rest" wrapper is transparent to the grid, button hidden. */
+.portfolio-more-wrap { display: contents; }
+.portfolio-more-inner { display: contents; }
+.portfolio-more-btn { display: none; }
+
+/* Phones: first three cards, then an accordion with the rest. */
+@media (max-width: 600px) {
+  .portfolio-more-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .portfolio-more-wrap.is-open {
+    grid-template-rows: 1fr;
+  }
+  .portfolio-more-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .portfolio-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 18px 24px;
+    background: #111;
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .portfolio-more-count {
+    opacity: 0.6;
+  }
+}
