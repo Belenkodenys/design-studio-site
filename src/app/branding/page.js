@@ -81,7 +81,16 @@ export default function BrandingPage() {
       <div className="br-gallery">
         {gallery.map((g, i) => (
           <ScrollDrift key={g.src} fx={FX[i % FX.length]} className={`br-slot br-slot--${POS[i % POS.length]}`}>
-            <img src={g.src} alt={g.alt} loading="eager" decoding="async" fetchPriority={i < 4 ? 'high' : 'low'} draggable={false} />
+            <img
+              src={g.src}
+              srcSet={`${g.src.replace('-cut.webp', '-cut-m.webp')} 1000w, ${g.src} 2200w`}
+              sizes="(max-width: 600px) 100vw, 80vw"
+              alt={g.alt}
+              loading="eager"
+              decoding="async"
+              fetchPriority={i < 4 ? 'high' : 'low'}
+              draggable={false}
+            />
           </ScrollDrift>
         ))}
       </div>

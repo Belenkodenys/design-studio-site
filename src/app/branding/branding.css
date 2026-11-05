@@ -76,7 +76,6 @@
 /* Scroll-driven motion: transform/opacity are set per frame from the scroll
    position (ScrollDrift.jsx); a short transition smooths the frames. */
 .drift {
-  will-change: transform, opacity;
   transition: transform 0.12s linear, opacity 0.12s linear;
   transform-origin: center;
 }
