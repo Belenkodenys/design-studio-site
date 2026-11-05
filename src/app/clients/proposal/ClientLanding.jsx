@@ -720,6 +720,51 @@ function HomeFaq() {
   )
 }
 
+// World map before the footer: fades/scales in while the user scrolls down
+// into it, and fades out again as soon as they scroll back up.
+function WorldMapReveal() {
+  const ref = useRef(null)
+  const [shown, setShown] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    let lastY = window.scrollY
+    let ticking = false
+    const update = () => {
+      ticking = false
+      const y = window.scrollY
+      const goingDown = y > lastY
+      lastY = y
+      const r = el.getBoundingClientRect()
+      const vh = window.innerHeight
+      const inView = r.top < vh * 0.8 && r.bottom > vh * 0.2
+      if (goingDown && inView) setShown(true)
+      else if (!goingDown) setShown(false)
+    }
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(update)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    update()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <section ref={ref} className={`proposal-map-stage${shown ? ' is-shown' : ''}`} aria-label="Where we have worked">
+      <img
+        src="/projects/world-map-projects.webp"
+        alt="World map with Belenko Design Studio project locations: United States, Spain, Portugal, Ukraine, Moldova, Turkey, Azerbaijan, Central Asia"
+        loading="lazy"
+        draggable={false}
+      />
+    </section>
+  )
+}
+
 // Shared elegant chevron used by the Services and Portfolio accordion heads.
 function AccordionArrow() {
   return (
@@ -1550,14 +1595,7 @@ export default function ClientLanding() {
 
       <HomeContactForm />
 
-      <section className="proposal-map-stage" aria-label="Where we have worked">
-        <img
-          src="/projects/world-map-projects.webp"
-          alt="World map with Belenko Design Studio project locations: United States, Spain, Portugal, Ukraine, Moldova, Turkey, Azerbaijan, Central Asia"
-          loading="lazy"
-          draggable={false}
-        />
-      </section>
+      <WorldMapReveal />
 
       <div id="contact" className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
