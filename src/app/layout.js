@@ -99,7 +99,9 @@ export const metadata = {
     }
   },
   verification: {
-    google: 'LSOY2QzqjCexbMAi7TQuLwDTbzeNNg-l85zs4wPGCWg'
+    google: 'LSOY2QzqjCexbMAi7TQuLwDTbzeNNg-l85zs4wPGCWg',
+    // Pinterest website claim (Settings → Link to Pinterest → Websites)
+    other: { 'p:domain_verify': '759c6e295c4575e52145f48d394f73fc' }
   },
   category: 'Interior Design'
 }
