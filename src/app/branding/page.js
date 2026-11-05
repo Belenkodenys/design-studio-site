@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import SubpageShell from '../../components/subpage/SubpageShell'
 import FlyIn from '../../components/subpage/FlyIn'
 import './branding.css'
@@ -17,20 +16,16 @@ export const metadata = {
   }
 }
 
-const deliverables = [
-  ['Naming & positioning', 'The name, the one-line idea and the story the guest will retell.'],
-  ['Logo & visual identity', 'Mark, lettering, colour, typography and the rules that keep them consistent.'],
-  ['Menus & printed matter', 'Menu structure and design, cards, postcards, packaging, stationery.'],
-  ['Signage & wayfinding', 'Facade sign, interior signage, room and table numbering, toilets.'],
-  ['Tableware & uniforms', 'Plates, glassware, linen and staff uniforms as part of the same set.'],
-  ['Digital & launch', 'Social media language, website, launch materials and the opening event.']
-]
-
-const steps = [
-  ['01', 'Concept', 'We start from the interior concept and the guest journey — the brand is the same idea told through other objects.'],
-  ['02', 'Identity', 'Name, mark, type and colour are developed together with materials and lighting, so they look right in the room.'],
-  ['03', 'Touchpoints', 'Every object the guest touches is designed: menu, bill folder, coaster, uniform, sign, Instagram post.'],
-  ['04', 'Production', 'Print, embroidery, signage and tableware are specified, sourced and checked at the factory and on site.']
+// Gallery: add images here — src, alt, the side they fly in from
+// (left | right | top | bottom) and an optional delay in ms. Two per row on
+// desktop, one per row on phones.
+const gallery = [
+  { src: '/projects/roya-menu-gold-v2.webp', alt: 'Roya restaurant — gold menu cover', from: 'left' },
+  { src: '/projects/roya-menu-black-v2.webp', alt: 'Roya restaurant — black floral menu cover', from: 'right', delay: 120 },
+  { src: '/projects/filosofia-restaurant-dnipro-14.webp', alt: 'Filosofia — logo in Greek capitals', from: 'left' },
+  { src: '/projects/filosofia-restaurant-dnipro-15.webp', alt: 'Filosofia — coaster and menu board', from: 'right', delay: 100 },
+  { src: '/projects/filosofia-restaurant-dnipro-16.webp', alt: 'Filosofia — postcard and printed menu', from: 'bottom' },
+  { src: '/projects/filosofia-restaurant-dnipro-17.webp', alt: 'Filosofia — staff T-shirt with the logo', from: 'top', delay: 140 }
 ]
 
 export default function BrandingPage() {
@@ -58,89 +53,13 @@ export default function BrandingPage() {
         }}
       />
 
-      {/* Case: Roya */}
-      <section className="br-case">
-        <div className="br-case-head">
-          <span className="br-eyebrow">Case · Restaurant</span>
-          <h2>Roya</h2>
-          <p>
-            A fine-dining restaurant by chef Mauro Colagreco. Dutch still-life flowers on black, a brushed-gold signature and
-            a menu that is the first object the guest holds — the brand sets the tone before the first dish arrives.
-          </p>
-        </div>
-        <div className="br-pair">
-          <FlyIn from="left">
-            <img src="/projects/roya-menu-gold-v2.webp" alt="Roya restaurant — gold menu cover with floral still life" loading="lazy" />
+      <div className="br-gallery">
+        {gallery.map((g) => (
+          <FlyIn key={g.src} from={g.from} delay={g.delay || 0}>
+            <img src={g.src} alt={g.alt} loading="lazy" draggable={false} />
           </FlyIn>
-          <FlyIn from="right" delay={120}>
-            <img src="/projects/roya-menu-black-v2.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" />
-          </FlyIn>
-        </div>
-      </section>
-
-      {/* What is included */}
-      <section className="br-block">
-        <h2 className="br-title">What the brand package includes</h2>
-        <div className="br-grid">
-          {deliverables.map(([t, d], i) => (
-            <FlyIn key={t} from={i % 2 ? "right" : "left"} delay={i * 60} className="br-item">
-              <h3>{t}</h3>
-              <p>{d}</p>
-            </FlyIn>
-          ))}
-        </div>
-      </section>
-
-      {/* Case: Filosofia */}
-      <section className="br-case">
-        <div className="br-case-head">
-          <span className="br-eyebrow">Case · Greek restaurant, Dnipro</span>
-          <h2>Filosofia</h2>
-          <p>
-            Greek capitals in cobalt blue, a line-drawn philosopher on the coaster, a tagline printed on the staff T-shirt —
-            “At a shared table, everyone becomes family.” Identity, menu, postcards and merchandise designed with the
-            interior of marble, timber and lemon trees.
-          </p>
-        </div>
-        <div className="br-quad">
-          <FlyIn from="left">
-            <img src="/projects/filosofia-restaurant-dnipro-14.webp" alt="Filosofia — logo in Greek capitals on a white wall" loading="lazy" />
-          </FlyIn>
-          <FlyIn from="right" delay={100}>
-            <img src="/projects/filosofia-restaurant-dnipro-15.webp" alt="Filosofia — coaster with the philosopher drawing and menu board" loading="lazy" />
-          </FlyIn>
-          <FlyIn from="bottom" delay={60}>
-            <img src="/projects/filosofia-restaurant-dnipro-16.webp" alt="Filosofia — postcard and printed summer menu" loading="lazy" />
-          </FlyIn>
-          <FlyIn from="top" delay={160}>
-            <img src="/projects/filosofia-restaurant-dnipro-17.webp" alt="Filosofia — staff T-shirt with the logo and tagline" loading="lazy" />
-          </FlyIn>
-        </div>
-        <Link href="/project/42" className="br-link">See the full Filosofia project →</Link>
-      </section>
-
-      {/* Process */}
-      <section className="br-block">
-        <h2 className="br-title">How we work</h2>
-        <div className="br-steps">
-          {steps.map(([n, t, d], i) => (
-            <FlyIn key={n} from="bottom" delay={i * 90} className="br-step">
-              <span className="br-step-num">{n}</span>
-              <h3>{t}</h3>
-              <p>{d}</p>
-            </FlyIn>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="br-cta">
-        <p className="br-cta-text">A brand is what the guest carries home. Let’s design yours together with the room.</p>
-        <div className="br-cta-actions">
-          <Link href="/contact" className="br-btn">Start a project</Link>
-          <Link href="/clients/proposal/brand-experience" className="br-btn br-btn--ghost">Brand &amp; Guest Experience package</Link>
-        </div>
-      </section>
+        ))}
+      </div>
     </SubpageShell>
   )
 }
