@@ -22,12 +22,12 @@
   }
   /* Every row after the first overlaps the previous one by a third of the
      screen; the pictures themselves overlap horizontally too. */
-  .br-gallery .drift { margin-top: -34vh; width: 150%; }
+  .br-gallery .drift { margin-top: -50vh; width: 150%; }
   .br-gallery .drift:nth-child(-n + 2) { margin-top: 0; }
   .br-gallery .drift:nth-child(2n + 1) { margin-left: -30%; }
   .br-gallery .drift:nth-child(2n)     { margin-right: -30%; }
-  .br-gallery .drift:nth-child(4n + 1) { margin-top: -30vh; }
-  .br-gallery .drift:nth-child(4n)     { margin-top: -40vh; }
+  .br-gallery .drift:nth-child(4n + 1) { margin-top: -46vh; }
+  .br-gallery .drift:nth-child(4n)     { margin-top: -56vh; }
 }
 /* Less white above the gallery on desktop: tighter page head and padding. */
 @media (min-width: 601px) {
@@ -46,7 +46,7 @@
 @media (max-width: 600px) {
   .br-gallery {
     grid-template-columns: 1fr;
-    row-gap: 10vh;
+    row-gap: 2vh;
   }
   /* Phones: at rest (middle of the screen) the picture fits the screen and is
      fully visible; the scroll-driven scale enlarges it before and after, and
@@ -73,7 +73,7 @@
 }
 @media (max-width: 600px) {
   .br-gallery {
-    padding: 6vh 0 24vh;
+    padding: 4vh 0 16vh;
   }
 }
 @media (prefers-reduced-motion: reduce) {
