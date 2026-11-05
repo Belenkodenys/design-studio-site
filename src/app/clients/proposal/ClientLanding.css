@@ -19,7 +19,7 @@ html.client-proposal-bg .app {
 .proposal-glitch-btn-wrap {
   display: flex;
   justify-content: flex-end;
-  padding: clamp(12px, 1.5vw, 24px) 100px clamp(20px, 2.5vw, 36px) 0;
+  padding: 8px 100px 12px 0;
   width: 100%;
   background: #fff;
 }
