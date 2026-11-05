@@ -9,27 +9,30 @@
 
 /* Oversized: every picture is larger than its column and is allowed to run
    past the edge of the screen (the page clips horizontal overflow). */
-.br-gallery .drift {
-  width: 135%;
-}
 .br-gallery .drift:nth-child(2n) {
   justify-self: end;
-  margin-right: -22%;
-}
-.br-gallery .drift:nth-child(2n + 1) {
-  margin-left: -22%;
 }
 /* Desktop: rows pulled tight together (slight overlap) so there are no empty
    white screens between pictures. */
 @media (min-width: 601px) {
   .br-gallery {
     row-gap: 0;
-    padding: 2vh 0 10vh;
+    column-gap: 0;
+    padding: 0 0 4vh;
   }
-  .br-gallery .drift { margin-top: -6vh; }
+  /* Every row after the first overlaps the previous one by a third of the
+     screen; the pictures themselves overlap horizontally too. */
+  .br-gallery .drift { margin-top: -34vh; width: 150%; }
   .br-gallery .drift:nth-child(-n + 2) { margin-top: 0; }
-  .br-gallery .drift:nth-child(4n + 1) { margin-top: -2vh; }
-  .br-gallery .drift:nth-child(4n)     { margin-top: -12vh; }
+  .br-gallery .drift:nth-child(2n + 1) { margin-left: -30%; }
+  .br-gallery .drift:nth-child(2n)     { margin-right: -30%; }
+  .br-gallery .drift:nth-child(4n + 1) { margin-top: -30vh; }
+  .br-gallery .drift:nth-child(4n)     { margin-top: -40vh; }
+}
+/* Less white above the gallery on desktop: tighter page head and padding. */
+@media (min-width: 601px) {
+  .subpage-main:has(.br-gallery) { padding-top: clamp(32px, 4vw, 56px); }
+  .subpage-main:has(.br-gallery) .subpage-head { margin-bottom: clamp(16px, 2vw, 28px); }
 }
 
 .br-gallery img {

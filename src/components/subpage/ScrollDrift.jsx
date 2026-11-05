@@ -34,7 +34,7 @@ export default function ScrollDrift({ axis = 'left', depth = 1, className = '', 
       const ty = p * vh * 0.04
       const rot = dir * p * 4
       const sc = phone ? 1 + Math.min(0.5, a * 0.45) : 1 - Math.min(0.1, a * 0.08)
-      const op = Math.max(0, Math.min(1, 1.5 - a * 0.7))
+      const op = Math.max(0, Math.min(1, phone ? 1.5 - a * 0.7 : 1.6 - a * 0.5))
       el.style.transform = `translate3d(${tx.toFixed(1)}px, ${ty.toFixed(1)}px, 0) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(3)})`
       el.style.opacity = op.toFixed(3)
     }
