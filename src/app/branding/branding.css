@@ -35,15 +35,20 @@
     grid-template-columns: 1fr;
     row-gap: 10vh;
   }
-  /* Phones: each picture wider than the screen, alternating overhang. */
+  /* Phones: at rest (middle of the screen) the picture fits the screen and is
+     fully visible; the scroll-driven scale enlarges it before and after, and
+     the horizontal drift sweeps it in from a side through the centre. */
+  .br-gallery {
+    justify-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
   .br-gallery .drift {
-    width: 150vw;
+    width: 92vw;
     max-width: none;
     margin: 0;
   }
-  /* Centred at rest (the drift is zero at the middle of the screen), so each
-     picture sweeps in from a side and passes through the centre. */
-  .br-gallery .drift { margin-left: -25vw; }
+  .br-gallery .drift:nth-child(n) { margin-top: 0; }
 }
 
 /* Scroll-driven drift: transform/opacity are set per frame from the scroll
