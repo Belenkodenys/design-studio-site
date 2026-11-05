@@ -19,7 +19,7 @@ export default function SubpageShell({ title, lead, current, children, wide = fa
     <div className="subpage">
       <header className="subpage-header">
         <Link href="/" className="subpage-logo" aria-label="Belenko Design Studio — home">
-          <img src="/belenko-logo.png" alt="Belenko" />
+          <img src="/belenko-logo-footer.png" alt="Belenko" />
         </Link>
         <nav className="subpage-nav" aria-label="Site">
           {NAV.map((n) => (

@@ -1,5 +1,5 @@
 import SubpageShell from '../../components/subpage/SubpageShell'
-import FlyIn from '../../components/subpage/FlyIn'
+import ScrollDrift from '../../components/subpage/ScrollDrift'
 import './branding.css'
 
 export const metadata = {
@@ -16,16 +16,17 @@ export const metadata = {
   }
 }
 
-// Gallery: add images here — src, alt, the side they fly in from
-// (left | right | top | bottom) and an optional delay in ms. Two per row on
+// Gallery: add images here — src, alt, the dominant drift axis
+// (left | right | top | bottom) and depth (1 = normal, 1.5 = more movement).
+// The pictures move with the scroll in both directions. Two per row on
 // desktop, one per row on phones.
 const gallery = [
-  { src: '/projects/roya-menu-gold-v2.webp', alt: 'Roya restaurant — gold menu cover', from: 'left' },
-  { src: '/projects/roya-menu-black-v2.webp', alt: 'Roya restaurant — black floral menu cover', from: 'right', delay: 120 },
-  { src: '/projects/filosofia-restaurant-dnipro-14.webp', alt: 'Filosofia — logo in Greek capitals', from: 'left' },
-  { src: '/projects/filosofia-restaurant-dnipro-15.webp', alt: 'Filosofia — coaster and menu board', from: 'right', delay: 100 },
-  { src: '/projects/filosofia-restaurant-dnipro-16.webp', alt: 'Filosofia — postcard and printed menu', from: 'bottom' },
-  { src: '/projects/filosofia-restaurant-dnipro-17.webp', alt: 'Filosofia — staff T-shirt with the logo', from: 'top', delay: 140 }
+  { src: '/projects/roya-menu-gold-v2.webp', alt: 'Roya restaurant — gold menu cover', axis: 'left', depth: 1 },
+  { src: '/projects/roya-menu-black-v2.webp', alt: 'Roya restaurant — black floral menu cover', axis: 'right', depth: 1.3 },
+  { src: '/projects/filosofia-restaurant-dnipro-14.webp', alt: 'Filosofia — logo in Greek capitals', axis: 'bottom', depth: 1.2 },
+  { src: '/projects/filosofia-restaurant-dnipro-15.webp', alt: 'Filosofia — coaster and menu board', axis: 'right', depth: 0.9 },
+  { src: '/projects/filosofia-restaurant-dnipro-16.webp', alt: 'Filosofia — postcard and printed menu', axis: 'left', depth: 1.4 },
+  { src: '/projects/filosofia-restaurant-dnipro-17.webp', alt: 'Filosofia — staff T-shirt with the logo', axis: 'top', depth: 1.1 }
 ]
 
 export default function BrandingPage() {
@@ -55,9 +56,9 @@ export default function BrandingPage() {
 
       <div className="br-gallery">
         {gallery.map((g) => (
-          <FlyIn key={g.src} from={g.from} delay={g.delay || 0}>
+          <ScrollDrift key={g.src} axis={g.axis} depth={g.depth || 1}>
             <img src={g.src} alt={g.alt} loading="lazy" draggable={false} />
-          </FlyIn>
+          </ScrollDrift>
         ))}
       </div>
     </SubpageShell>
