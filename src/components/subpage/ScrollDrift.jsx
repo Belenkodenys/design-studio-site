@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from 'react'
 
-// Scroll-driven motion: the element's position follows the scroll in both
-// directions. `axis` sets the dominant drift (left | right | top | bottom),
-// `depth` scales the amount. Centre of the viewport = resting position.
+// Scroll-driven motion: the element crosses the screen horizontally as the
+// page scrolls — in from one side, centred mid-screen, out the other side —
+// and back again when scrolling up. `axis`: 'ltr' | 'rtl'. `depth` scales it.
 export default function ScrollDrift({ axis = 'left', depth = 1, className = '', children }) {
   const ref = useRef(null)
 
@@ -15,26 +15,26 @@ export default function ScrollDrift({ axis = 'left', depth = 1, className = '', 
     if (reduce) return
 
     let ticking = false
-    const dirX = axis === 'left' ? -1 : axis === 'right' ? 1 : 0
-    const dirY = axis === 'top' ? -1 : axis === 'bottom' ? 1 : 0
+    // 'ltr': travels left → right while scrolling down; 'rtl': right → left.
+    const dir = axis === 'rtl' || axis === 'right' ? -1 : 1
 
     const update = () => {
       ticking = false
       const r = el.getBoundingClientRect()
       const vh = window.innerHeight
-      // -1 … 0 … +1 : below the fold → centred → above the fold
-      const p = Math.max(-1.3, Math.min(1.3, ((r.top + r.height / 2) - vh / 2) / (vh / 2)))
-      const a = Math.abs(p)
       const vw = window.innerWidth
+      // -1 … 0 … +1 : below the fold → centred → above the fold
+      const p = Math.max(-1.4, Math.min(1.4, ((r.top + r.height / 2) - vh / 2) / (vh / 2)))
+      const a = Math.abs(p)
       const phone = vw <= 600
-      // Continuous motion in both directions. At the centre (p = 0) every
-      // term is zero, so the picture sits exactly at full width, untouched;
-      // on phones it grows as it leaves the centre, on desktop it shrinks a bit.
-      const tx = dirX ? dirX * p * vw * 0.16 * depth : p * vw * 0.03 * depth
-      const ty = dirY ? dirY * p * vh * 0.22 * depth : p * vh * 0.06 * depth
-      const rot = (dirX ? dirX * p * 6 : p * 2) * depth
-      const sc = phone ? 1 + Math.min(0.6, a * 0.55) : 1 - Math.min(0.14, a * 0.12)
-      const op = Math.max(0, Math.min(1, phone ? 1.4 - a * 0.8 : 1.25 - a * 0.9))
+      // Full crossing: off-screen on one side at the bottom of the viewport,
+      // centred in the middle, off-screen on the other side at the top.
+      const travel = (vw + r.width) / 2 / 1.1
+      const tx = dir * p * travel * depth
+      const ty = p * vh * 0.04
+      const rot = dir * p * 4
+      const sc = phone ? 1 + Math.min(0.5, a * 0.45) : 1 - Math.min(0.1, a * 0.08)
+      const op = Math.max(0, Math.min(1, 1.5 - a * 0.7))
       el.style.transform = `translate3d(${tx.toFixed(1)}px, ${ty.toFixed(1)}px, 0) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(3)})`
       el.style.opacity = op.toFixed(3)
     }

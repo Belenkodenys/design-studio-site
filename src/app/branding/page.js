@@ -17,17 +17,16 @@ export const metadata = {
 }
 
 // Gallery: add images here (transparent-background cutouts, no backdrop) —
-// src, alt, the dominant drift axis
-// (left | right | top | bottom) and depth (1 = normal, 1.5 = more movement).
-// The pictures move with the scroll in both directions. Two per row on
-// desktop, one per row on phones.
+// src, alt, direction of travel while scrolling down ('ltr' = left → right,
+// 'rtl' = right → left) and depth (1 = normal). Each picture crosses the
+// screen horizontally with the scroll, in both directions.
 const gallery = [
-  { src: '/projects/roya-menu-gold-v2-cut.webp', alt: 'Roya restaurant — gold menu cover', axis: 'left', depth: 1 },
-  { src: '/projects/roya-menu-black-v2-cut.webp', alt: 'Roya restaurant — black floral menu cover', axis: 'right', depth: 1.3 },
-  { src: '/projects/filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals', axis: 'bottom', depth: 1.2 },
-  { src: '/projects/filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board', axis: 'right', depth: 0.9 },
-  { src: '/projects/filosofia-restaurant-dnipro-16-cut.webp', alt: 'Filosofia — postcard and printed menu', axis: 'left', depth: 1.4 },
-  { src: '/projects/filosofia-restaurant-dnipro-17-cut.webp', alt: 'Filosofia — staff T-shirt with the logo', axis: 'top', depth: 1.1 }
+  { src: '/projects/roya-menu-gold-v2-cut.webp', alt: 'Roya restaurant — gold menu cover', axis: 'ltr', depth: 1 },
+  { src: '/projects/roya-menu-black-v2-cut.webp', alt: 'Roya restaurant — black floral menu cover', axis: 'rtl', depth: 1.3 },
+  { src: '/projects/filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals', axis: 'ltr', depth: 1.2 },
+  { src: '/projects/filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board', axis: 'rtl', depth: 0.9 },
+  { src: '/projects/filosofia-restaurant-dnipro-16-cut.webp', alt: 'Filosofia — postcard and printed menu', axis: 'ltr', depth: 1.4 },
+  { src: '/projects/filosofia-restaurant-dnipro-17-cut.webp', alt: 'Filosofia — staff T-shirt with the logo', axis: 'rtl', depth: 1.1 }
 ]
 
 export default function BrandingPage() {
