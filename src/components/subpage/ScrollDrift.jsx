@@ -37,7 +37,7 @@ export default function ScrollDrift({ fx = 'slide-l', axis, depth = 1, className
       // -1 … 0 … +1 : below the fold → centred → above the fold
       const p = Math.max(-1.3, Math.min(1.3, ((r.top + r.height / 2) - vh / 2) / (vh / 2)))
       const a = Math.abs(p)
-      const e = ease(p)            // signed, cubic
+      const e = ease(Math.max(-1, Math.min(1, p)))  // signed, cubic, clamped
       const ea = easeAbs(Math.min(1, a))
 
       let tx = 0, ty = 0, rot = 0, sc = 1, op = 1
@@ -53,8 +53,8 @@ export default function ScrollDrift({ fx = 'slide-l', axis, depth = 1, className
           break
         }
         case 'rise': {
-          ty = e * vh * 0.9 * depth
-          sc = 1 - ea * 0.35
+          ty = e * vh * 0.22 * depth
+          sc = 1 - ea * 0.3
           op = 1.3 - ea * 0.9
           break
         }
