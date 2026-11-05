@@ -78,7 +78,8 @@ export default function ScrollDrift({ fx = 'slide-l', axis, depth = 1, className
       // Phones: the picture is 100% of the screen width at the centre and is
       // allowed to grow before and after.
       if (phone) sc *= 1 + ea * 0.35
-      op = Math.max(0, Math.min(1, op))
+      // neighbours stay visible (no empty white around the centre picture)
+      op = Math.max(0.35, Math.min(1, op))
       el.style.transform = `translate3d(${tx.toFixed(1)}px, ${ty.toFixed(1)}px, 0) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(3)})`
       el.style.opacity = op.toFixed(3)
     }

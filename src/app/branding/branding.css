@@ -19,7 +19,9 @@
 }
 
 .br-slot {
-  height: var(--slot);
+  /* as tall as the picture, never taller than --slot: wide logotypes make
+     short slots, so the next picture follows right behind them */
+  max-height: var(--slot);
   display: flex;
   align-items: center;
   margin-top: var(--step);
