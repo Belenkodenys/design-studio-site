@@ -176,3 +176,29 @@
   .br-grid { grid-template-columns: 1fr; }
   .br-steps { grid-template-columns: 1fr; }
 }
+
+/* Fly-in reveal: elements enter from different sides as the page scrolls. */
+.fly {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    transform 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.9s ease;
+}
+.fly--left   { transform: translate3d(-18vw, 0, 0) rotate(-2deg); }
+.fly--right  { transform: translate3d(18vw, 0, 0) rotate(2deg); }
+.fly--top    { transform: translate3d(0, -14vh, 0) scale(0.96); }
+.fly--bottom { transform: translate3d(0, 14vh, 0) scale(0.96); }
+.fly.is-in {
+  opacity: 1;
+  transform: none;
+}
+.br-grid .fly--left   { transform: translate3d(-40px, 0, 0); }
+.br-grid .fly--right  { transform: translate3d(40px, 0, 0); }
+.br-steps .fly--bottom { transform: translate3d(0, 40px, 0); }
+.br-grid .fly.is-in,
+.br-steps .fly.is-in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fly { transition: none; opacity: 1; transform: none; }
+}

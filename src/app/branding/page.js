@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import SubpageShell from '../../components/subpage/SubpageShell'
+import FlyIn from '../../components/subpage/FlyIn'
 import './branding.css'
 
 export const metadata = {
@@ -68,8 +69,12 @@ export default function BrandingPage() {
           </p>
         </div>
         <div className="br-pair">
-          <img src="/projects/roya-menu-gold-v2.webp" alt="Roya restaurant — gold menu cover with floral still life" loading="lazy" />
-          <img src="/projects/roya-menu-black-v2.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" />
+          <FlyIn from="left">
+            <img src="/projects/roya-menu-gold-v2.webp" alt="Roya restaurant — gold menu cover with floral still life" loading="lazy" />
+          </FlyIn>
+          <FlyIn from="right" delay={120}>
+            <img src="/projects/roya-menu-black-v2.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" />
+          </FlyIn>
         </div>
       </section>
 
@@ -77,11 +82,11 @@ export default function BrandingPage() {
       <section className="br-block">
         <h2 className="br-title">What the brand package includes</h2>
         <div className="br-grid">
-          {deliverables.map(([t, d]) => (
-            <div key={t} className="br-item">
+          {deliverables.map(([t, d], i) => (
+            <FlyIn key={t} from={i % 2 ? "right" : "left"} delay={i * 60} className="br-item">
               <h3>{t}</h3>
               <p>{d}</p>
-            </div>
+            </FlyIn>
           ))}
         </div>
       </section>
@@ -98,10 +103,18 @@ export default function BrandingPage() {
           </p>
         </div>
         <div className="br-quad">
-          <img src="/projects/filosofia-restaurant-dnipro-14.webp" alt="Filosofia — logo in Greek capitals on a white wall" loading="lazy" />
-          <img src="/projects/filosofia-restaurant-dnipro-15.webp" alt="Filosofia — coaster with the philosopher drawing and menu board" loading="lazy" />
-          <img src="/projects/filosofia-restaurant-dnipro-16.webp" alt="Filosofia — postcard and printed summer menu" loading="lazy" />
-          <img src="/projects/filosofia-restaurant-dnipro-17.webp" alt="Filosofia — staff T-shirt with the logo and tagline" loading="lazy" />
+          <FlyIn from="left">
+            <img src="/projects/filosofia-restaurant-dnipro-14.webp" alt="Filosofia — logo in Greek capitals on a white wall" loading="lazy" />
+          </FlyIn>
+          <FlyIn from="right" delay={100}>
+            <img src="/projects/filosofia-restaurant-dnipro-15.webp" alt="Filosofia — coaster with the philosopher drawing and menu board" loading="lazy" />
+          </FlyIn>
+          <FlyIn from="bottom" delay={60}>
+            <img src="/projects/filosofia-restaurant-dnipro-16.webp" alt="Filosofia — postcard and printed summer menu" loading="lazy" />
+          </FlyIn>
+          <FlyIn from="top" delay={160}>
+            <img src="/projects/filosofia-restaurant-dnipro-17.webp" alt="Filosofia — staff T-shirt with the logo and tagline" loading="lazy" />
+          </FlyIn>
         </div>
         <Link href="/project/42" className="br-link">See the full Filosofia project →</Link>
       </section>
@@ -110,12 +123,12 @@ export default function BrandingPage() {
       <section className="br-block">
         <h2 className="br-title">How we work</h2>
         <div className="br-steps">
-          {steps.map(([n, t, d]) => (
-            <div key={n} className="br-step">
+          {steps.map(([n, t, d], i) => (
+            <FlyIn key={n} from="bottom" delay={i * 90} className="br-step">
               <span className="br-step-num">{n}</span>
               <h3>{t}</h3>
               <p>{d}</p>
-            </div>
+            </FlyIn>
           ))}
         </div>
       </section>
