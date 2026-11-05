@@ -720,8 +720,8 @@ function HomeFaq() {
   )
 }
 
-// World map before the footer: fades/scales in while the user scrolls down
-// into it, and fades out again as soon as they scroll back up.
+// World map before the footer: fades/scales in once it scrolls into view and
+// then stays visible for good.
 function WorldMapReveal() {
   const ref = useRef(null)
   const [shown, setShown] = useState(false)
@@ -729,28 +729,17 @@ function WorldMapReveal() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    let lastY = window.scrollY
-    let ticking = false
-    const update = () => {
-      ticking = false
-      const y = window.scrollY
-      const goingDown = y > lastY
-      lastY = y
-      const r = el.getBoundingClientRect()
-      const vh = window.innerHeight
-      const inView = r.top < vh * 0.8 && r.bottom > vh * 0.2
-      if (goingDown && inView) setShown(true)
-      else if (!goingDown) setShown(false)
-    }
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true
-        requestAnimationFrame(update)
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    update()
-    return () => window.removeEventListener('scroll', onScroll)
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShown(true)
+          io.disconnect()
+        }
+      },
+      { threshold: 0.25 }
+    )
+    io.observe(el)
+    return () => io.disconnect()
   }, [])
 
   return (
