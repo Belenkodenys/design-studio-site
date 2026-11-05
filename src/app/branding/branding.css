@@ -11,6 +11,8 @@
   display: block;
   width: 100%;
   height: auto;
+  background: transparent;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.12));
 }
 
 @media (max-width: 600px) {

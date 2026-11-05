@@ -12,21 +12,22 @@ export const metadata = {
     description: 'Identity, menus, signage and every guest touchpoint — designed together with the interior so the venue reads as one idea.',
     url: 'https://www.belenko.design/branding',
     type: 'website',
-    images: [{ url: 'https://www.belenko.design/projects/roya-menu-gold-v2.webp', width: 1536, height: 1024 }]
+    images: [{ url: 'https://www.belenko.design/projects/roya-menu-gold-v2-cut.webp', width: 1536, height: 1024 }]
   }
 }
 
-// Gallery: add images here — src, alt, the dominant drift axis
+// Gallery: add images here (transparent-background cutouts, no backdrop) —
+// src, alt, the dominant drift axis
 // (left | right | top | bottom) and depth (1 = normal, 1.5 = more movement).
 // The pictures move with the scroll in both directions. Two per row on
 // desktop, one per row on phones.
 const gallery = [
-  { src: '/projects/roya-menu-gold-v2.webp', alt: 'Roya restaurant — gold menu cover', axis: 'left', depth: 1 },
-  { src: '/projects/roya-menu-black-v2.webp', alt: 'Roya restaurant — black floral menu cover', axis: 'right', depth: 1.3 },
-  { src: '/projects/filosofia-restaurant-dnipro-14.webp', alt: 'Filosofia — logo in Greek capitals', axis: 'bottom', depth: 1.2 },
-  { src: '/projects/filosofia-restaurant-dnipro-15.webp', alt: 'Filosofia — coaster and menu board', axis: 'right', depth: 0.9 },
-  { src: '/projects/filosofia-restaurant-dnipro-16.webp', alt: 'Filosofia — postcard and printed menu', axis: 'left', depth: 1.4 },
-  { src: '/projects/filosofia-restaurant-dnipro-17.webp', alt: 'Filosofia — staff T-shirt with the logo', axis: 'top', depth: 1.1 }
+  { src: '/projects/roya-menu-gold-v2-cut.webp', alt: 'Roya restaurant — gold menu cover', axis: 'left', depth: 1 },
+  { src: '/projects/roya-menu-black-v2-cut.webp', alt: 'Roya restaurant — black floral menu cover', axis: 'right', depth: 1.3 },
+  { src: '/projects/filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals', axis: 'bottom', depth: 1.2 },
+  { src: '/projects/filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board', axis: 'right', depth: 0.9 },
+  { src: '/projects/filosofia-restaurant-dnipro-16-cut.webp', alt: 'Filosofia — postcard and printed menu', axis: 'left', depth: 1.4 },
+  { src: '/projects/filosofia-restaurant-dnipro-17-cut.webp', alt: 'Filosofia — staff T-shirt with the logo', axis: 'top', depth: 1.1 }
 ]
 
 export default function BrandingPage() {
