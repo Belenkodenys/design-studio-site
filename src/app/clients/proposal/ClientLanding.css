@@ -1999,13 +1999,18 @@ html.is-glitching .proposal-glitch-btn {
   height: auto;
   object-fit: contain;
   opacity: 0;
-  transform: scale(0.94) translateY(24px);
-  transition: opacity 0.9s ease, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  transform: scale(0.96) translateY(32px);
+  filter: blur(6px);
+  transition:
+    opacity 2.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 2.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 2.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: opacity, transform, filter;
 }
 .proposal-map-stage.is-shown img {
   opacity: 1;
   transform: none;
+  filter: blur(0);
 }
 @media (max-width: 720px), (orientation: portrait) {
   .proposal-stack > .proposal-map-stage {
@@ -2015,5 +2020,5 @@ html.is-glitching .proposal-glitch-btn {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .proposal-map-stage img { transition: none; opacity: 1; transform: none; }
+  .proposal-map-stage img { transition: none; opacity: 1; transform: none; filter: none; }
 }

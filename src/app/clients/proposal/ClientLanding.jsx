@@ -745,7 +745,7 @@ function WorldMapReveal() {
   return (
     <section ref={ref} className={`proposal-map-stage${shown ? ' is-shown' : ''}`} aria-label="Where we have worked">
       <img
-        src="/projects/world-map-projects.webp"
+        src="/projects/world-map-projects-v2.webp"
         alt="World map with Belenko Design Studio project locations: United States, Spain, Portugal, Ukraine, Moldova, Turkey, Azerbaijan, Central Asia"
         loading="lazy"
         draggable={false}
