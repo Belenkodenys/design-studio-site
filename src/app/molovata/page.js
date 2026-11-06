@@ -78,7 +78,9 @@ export default function MolovataPage() {
         {/* Chapters — filled with material as it comes in. */}
         {MENU.map((m) => (
           <section key={m.id} id={m.id} className="mol-section mol-chapter">
-            <h2>{m.label}</h2>
+            <h2 className="mol-chapter-title">
+              <img src={`/molovata/heading-${m.id}.png`} alt={m.label} />
+            </h2>
           </section>
         ))}
       </div>

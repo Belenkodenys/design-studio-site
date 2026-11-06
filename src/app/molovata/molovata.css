@@ -131,3 +131,8 @@
    jumped to from the menu. */
 .mol-chapter { scroll-margin-top: calc(var(--subpage-header-h, 64px) + 24px); min-height: 30vh; }
 html { scroll-behavior: smooth; }
+
+/* Chapter titles: the hand-lettered olive headings with the flower mark.
+   All five share one cap height, so they line up as a set. */
+.mol-chapter-title { margin: 0 0 var(--sp-head, 28px); line-height: 0; }
+.mol-chapter-title img { display: block; height: clamp(44px, 5.2vw, 84px); width: auto; max-width: 100%; }
