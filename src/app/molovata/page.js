@@ -109,6 +109,30 @@ const BRANDING = [
   { src: '/molovata/molovata-branding-robe-orig.webp', srcSet: '/molovata/molovata-branding-robe-orig-m.webp 1000w, /molovata/molovata-branding-robe-orig.webp 1024w', alt: 'Molovata Wellness — полосатый банный халат с логотипом на кармане' },
   { src: '/molovata/molovata-branding-robe-editorial.webp', srcSet: '/molovata/molovata-branding-robe-editorial-m.webp 1000w, /molovata/molovata-branding-robe-editorial.webp 1024w', alt: 'Molovata Wellness — образ в полосатом халате с сумкой у полосатой консоли' }
 ]
+// Interiors gallery — same swipe gallery as Architecture.
+const INTERIORS = [
+  {
+    src: '/molovata/molovata-interior-travertine-basin.webp',
+    srcSet: '/molovata/molovata-interior-travertine-basin-m.webp 1400w, /molovata/molovata-interior-travertine-basin.webp 1800w',
+    alt: 'Molovata — интерьер: умывальник из травертина с латунным смесителем'
+  },
+  {
+    src: '/molovata/molovata-interior-lattice-lounge.webp',
+    srcSet: '/molovata/molovata-interior-lattice-lounge-m.webp 1400w, /molovata/molovata-interior-lattice-lounge.webp 1800w',
+    alt: 'Molovata — интерьер: зона отдыха под деревянной решёткой и спальня в тёплой штукатурке'
+  },
+  {
+    src: '/molovata/molovata-interior-bathroom-terracotta.webp',
+    srcSet: '/molovata/molovata-interior-bathroom-terracotta-m.webp 1400w, /molovata/molovata-interior-bathroom-terracotta.webp 1800w',
+    alt: 'Molovata — интерьер: ванная в терракотовой штукатурке: душ, умывальник из камня'
+  },
+  {
+    src: '/molovata/molovata-interior-bedroom-shower.webp',
+    srcSet: '/molovata/molovata-interior-bedroom-shower-m.webp 1400w, /molovata/molovata-interior-bedroom-shower.webp 1800w',
+    alt: 'Molovata — интерьер: спальня с открытым душем и ванная с травертином и перфорированной стеной'
+  }
+]
+
 const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
 const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
 
@@ -280,6 +304,7 @@ export default function MolovataPage() {
               <img src={`/molovata/heading-${m.id}.png`} alt={m.label} />
             </h2>
             {m.id === 'architecture' && <SwipeGallery images={ARCHITECTURE} />}
+            {m.id === 'interiors' && <SwipeGallery images={INTERIORS} />}
             {m.id === 'branding' && <BrandingDrift />}
             {m.id === 'interiors' && <Interiors />}
             {m.id === 'kitchen' && <Kitchen />}
