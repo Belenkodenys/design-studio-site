@@ -1,5 +1,6 @@
 import SubpageShell from '../../components/subpage/SubpageShell'
 import HeroFade from './HeroFade'
+import { RITUALS, DAY_LOGIC } from './rituals'
 import './molovata.css'
 
 // Hidden working page: not linked from the site, not in the sitemap,
@@ -18,6 +19,41 @@ const MENU = [
   { id: 'kitchen', label: 'Кухня' },
   { id: 'rituals', label: 'Ритуалы' }
 ]
+
+function Rituals() {
+  return (
+    <div className="mol-rituals">
+      {RITUALS.map((r, i) =>
+        r.divider ? (
+          <h3 key={`d${i}`} className="mol-rituals-divider">{r.divider}</h3>
+        ) : (
+          <article key={r.n} className={`mol-ritual${r.image ? ' has-image' : ''}${i % 2 ? ' is-flipped' : ''}`}>
+            <div className="mol-ritual-text">
+              <div className="mol-ritual-num">{String(r.n).padStart(2, '0')}</div>
+              <h3 className="mol-ritual-title">
+                {r.title} <span className="mol-ritual-sub">— {r.sub}</span>
+              </h3>
+              <p className="mol-ritual-meta">{r.meta}</p>
+              <p className="mol-ritual-body">{r.body}</p>
+              <p className="mol-ritual-why"><span>Зачем:</span> {r.why}</p>
+            </div>
+            {r.image && (
+              <figure className="mol-ritual-figure">
+                <img src={r.image} alt={r.title} loading="lazy" />
+              </figure>
+            )}
+          </article>
+        )
+      )}
+      <div className="mol-daylogic">
+        <h3 className="mol-rituals-divider">{DAY_LOGIC.title}</h3>
+        {DAY_LOGIC.paragraphs.map((t, i) => (
+          <p key={i}>{t}</p>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function MolovataPage() {
   return (
@@ -81,6 +117,7 @@ export default function MolovataPage() {
             <h2 className="mol-chapter-title">
               <img src={`/molovata/heading-${m.id}.png`} alt={m.label} />
             </h2>
+            {m.id === 'rituals' && <Rituals />}
           </section>
         ))}
       </div>
