@@ -75,3 +75,5 @@
 .mol-gallery .wide { grid-column: 1 / -1; }
 @media (max-width: 600px) { .mol-gallery { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .mol-hero-steam, .mol-hero-mist { transition: none; } }
+/* The footer must paint above the fixed hero as well. */
+.subpage:has(.mol-hero) .proposal-footer { position: relative; z-index: 1; }
