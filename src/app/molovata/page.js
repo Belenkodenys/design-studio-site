@@ -56,6 +56,11 @@ const ARCHITECTURE = [
     src: '/molovata/molovata-architecture-spa-pool.webp',
     srcSet: '/molovata/molovata-architecture-spa-pool-m.webp 1400w, /molovata/molovata-architecture-spa-pool.webp 2600w',
     alt: 'Molovata — вид сверху: каменный спа-комплекс с бассейном, горкой и зелёными кровлями'
+  },
+  {
+    src: '/molovata/molovata-architecture-aerial-river.webp',
+    srcSet: '/molovata/molovata-architecture-aerial-river-m.webp 1400w, /molovata/molovata-architecture-aerial-river.webp 1719w',
+    alt: 'Molovata — вид сверху на комплекс у Днестра: бассейн, арочные гроты, терраса и плавучие сауны на реке'
   }
 ]
 
