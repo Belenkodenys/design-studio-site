@@ -16,6 +16,7 @@ export default function MolovataPage() {
       {/* Full-screen hero: the pool terrace, edge to edge, under the fixed header. */}
       <section className="mol-hero">
         <img
+          className="mol-hero-bg"
           src="/molovata/molovata-hero-pool.webp"
           srcSet="/molovata/molovata-hero-pool-m.webp 1400w, /molovata/molovata-hero-pool.webp 3586w"
           sizes="100vw"
