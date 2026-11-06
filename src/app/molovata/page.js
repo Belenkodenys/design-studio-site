@@ -157,7 +157,7 @@ function Rituals() {
             </div>
             {r.image && (
               <figure className="mol-ritual-figure">
-                <img src={r.image} alt={r.title} loading="lazy" />
+                <img src={r.image} srcSet={`${r.image.replace(".webp", "-m.webp")} 1000w, ${r.image} 1536w`} sizes="(max-width: 820px) 100vw, 45vw" alt={r.title} loading="lazy" />
               </figure>
             )}
           </article>
