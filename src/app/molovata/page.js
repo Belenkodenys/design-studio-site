@@ -93,8 +93,8 @@ const ARCHITECTURE = [
     alt: 'Molovata — зима: бассейн с горкой и джакузи, пар над водой'
   },
   {
-    src: '/molovata/molovata-architecture-floating-saunas-sunset.webp',
-    srcSet: '/molovata/molovata-architecture-floating-saunas-sunset-m.webp 1400w, /molovata/molovata-architecture-floating-saunas-sunset.webp 1800w',
+    src: '/molovata/molovata-architecture-floating-saunas-sunset-v2.webp',
+    srcSet: '/molovata/molovata-architecture-floating-saunas-sunset-v2-m.webp 1400w, /molovata/molovata-architecture-floating-saunas-sunset-v2.webp 1800w',
     alt: 'Molovata — плавучие сауны на Днестре на закате, дым из труб и ресторан на берегу'
   }
 ]
