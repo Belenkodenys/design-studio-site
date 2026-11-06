@@ -33,6 +33,7 @@ export default function MolovataPage() {
       </HeroFade>
       <div className="mol-page">
         <section className="mol-section mol-intro">
+          <div className="mol-intro-text">
           <p>
             В основе концепции — мировой сдвиг в велнес-индустрии: сауна выходит из подвала фитнес-клуба и
             превращается в самостоятельную экосистему гостеприимства, построенную вокруг тепла, холода, ритуала и
@@ -51,6 +52,10 @@ export default function MolovataPage() {
             браслет, предбронирование, управление водой и теплом — остаются невидимыми: сложная система внутри, простой
             и телесный опыт снаружи.
           </p>
+          </div>
+          <figure className="mol-intro-figure">
+            <img src="/molovata/molovata-dniester-view.webp" alt="Днестр у Моловаты — вид с высокого берега" loading="lazy" />
+          </figure>
         </section>
         {/* Further sections are added here as the material comes in. */}
       </div>
