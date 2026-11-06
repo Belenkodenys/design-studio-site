@@ -1,6 +1,7 @@
 import SubpageShell from '../../components/subpage/SubpageShell'
 import HeroFade from './HeroFade'
 import SwipeGallery from './SwipeGallery'
+import StickyMenu from './StickyMenu'
 import ScrollDrift from '../../components/subpage/ScrollDrift'
 import '../branding/branding.css'
 import { RITUALS, DAY_LOGIC } from './rituals'
@@ -236,14 +237,7 @@ export default function MolovataPage() {
           </figure>
         </section>
         {/* In-page menu: a horizontal strip of the landing's chapters. */}
-        <nav className="mol-menu" aria-label="Разделы">
-          {MENU.map((m, i) => (
-            <a key={m.id} href={`#${m.id}`} className="mol-menu-item">
-              <span className="mol-menu-num">{String(i + 1).padStart(2, '0')}</span>
-              <span className="mol-menu-label">{m.label}</span>
-            </a>
-          ))}
-        </nav>
+        <StickyMenu items={MENU} />
 
         {/* Chapters — filled with material as it comes in. */}
         {MENU.map((m) => (

@@ -129,7 +129,7 @@
 
 /* Chapters: room above so the fixed header doesn't cover the heading when
    jumped to from the menu. */
-.mol-chapter { scroll-margin-top: calc(var(--subpage-header-h, 64px) + 24px); min-height: 30vh; }
+.mol-chapter { scroll-margin-top: calc(var(--subpage-header-h, 64px) + 72px); min-height: 30vh; }
 html { scroll-behavior: smooth; }
 
 /* Chapter titles: the hand-lettered olive headings with the flower mark.
@@ -262,3 +262,13 @@ html { scroll-behavior: smooth; }
   .mol-rituals-divider { font-size: 28px; line-height: 32px; }
   .mol-menu-item, .mol-menu-num { font-size: 15px; }
 }
+
+/* Pinned chapter menu */
+.mol-menu-wrap { margin: 0 0 var(--sp-section, 96px); }
+.mol-menu-wrap .mol-menu { margin: 0; background: #fff; }
+.mol-menu.is-pinned {
+  position: fixed; left: 0; right: 0; top: var(--subpage-header-h, 64px); z-index: 20;
+  padding-left: max(24px, calc((100vw - 1400px) / 2 + 24px)); padding-right: max(24px, calc((100vw - 1400px) / 2 + 24px));
+  border-top: 0; box-shadow: 0 1px 0 var(--ap-rule, #d2d2d7);
+}
+.mol-menu-item.is-active { border-bottom-color: var(--ap-ink, #111); }
