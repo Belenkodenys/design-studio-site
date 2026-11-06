@@ -1,4 +1,8 @@
 import SubpageShell from '../../components/subpage/SubpageShell'
+// Type system for this page (editorial serif in caps for statements,
+// monospace caps for everything else — labels, body, meta). Loaded from
+// Google Fonts at runtime; the CSS vars are set in molovata.css.
+const FONTS_HREF = 'https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap'
 import HeroFade from './HeroFade'
 import SwipeGallery from './SwipeGallery'
 import ScrollDrift from '../../components/subpage/ScrollDrift'
@@ -59,12 +63,12 @@ const BRANDING = [
   { src: '/molovata/molovata-branding-tuk-tuk-cut.webp', srcSet: '/molovata/molovata-branding-tuk-tuk-cut-m.webp 1000w, /molovata/molovata-branding-tuk-tuk-cut.webp 1441w', alt: 'Molovata Wellness — трёхколёсный фургончик с полосатым тентом, полотенцами и корзинами' },
   { src: '/molovata/molovata-branding-flower-mark-cut.webp', srcSet: '/molovata/molovata-branding-flower-mark-cut-m.webp 1000w, /molovata/molovata-branding-flower-mark-cut.webp 1048w', alt: 'Molovata — знак-цветок, оливковый орнамент', size: 'small' },
   { src: '/molovata/molovata-branding-robe-look-cut.webp', srcSet: '/molovata/molovata-branding-robe-look-cut-m.webp 1000w, /molovata/molovata-branding-robe-look-cut.webp 606w', alt: 'Molovata Wellness — полосатый халат с тюрбаном, сумкой и шлёпанцами' },
-  { src: '/molovata/molovata-branding-umbrella-cut.webp', srcSet: '/molovata/molovata-branding-umbrella-cut-m.webp 1000w, /molovata/molovata-branding-umbrella-cut.webp 1283w', alt: 'Molovata Wellness — полосатый зонт с деревянной ручкой и знаком' },
+  { src: '/molovata/molovata-branding-umbrella-orig.webp', srcSet: '/molovata/molovata-branding-umbrella-orig-m.webp 1000w, /molovata/molovata-branding-umbrella-orig.webp 1536w', alt: 'Molovata Wellness — полосатый зонт с деревянной ручкой и знаком' },
   { src: '/molovata/molovata-branding-towels-cut.webp', srcSet: '/molovata/molovata-branding-towels-cut-m.webp 1000w, /molovata/molovata-branding-towels-cut.webp 1285w', alt: 'Molovata Wellness — стопка полосатых полотенец с нашивкой' },
   { src: '/molovata/molovata-branding-slippers-cut.webp', srcSet: '/molovata/molovata-branding-slippers-cut-m.webp 1000w, /molovata/molovata-branding-slippers-cut.webp 1146w', alt: 'Molovata Wellness — махровые шлёпанцы с логотипом' },
   { src: '/molovata/molovata-branding-tote-bag-cut.webp', srcSet: '/molovata/molovata-branding-tote-bag-cut-m.webp 1000w, /molovata/molovata-branding-tote-bag-cut.webp 853w', alt: 'Molovata Wellness — махровая полосатая сумка с нашивкой' },
   { src: '/molovata/molovata-branding-tableware-cut.webp', srcSet: '/molovata/molovata-branding-tableware-cut-m.webp 1000w, /molovata/molovata-branding-tableware-cut.webp 1456w', alt: 'Molovata Wellness — набор керамики в полоску: тарелки, чашки, миска' },
-  { src: '/molovata/molovata-branding-robe-cut.webp', srcSet: '/molovata/molovata-branding-robe-cut-m.webp 1000w, /molovata/molovata-branding-robe-cut.webp 802w', alt: 'Molovata Wellness — полосатый банный халат с логотипом на кармане' }
+  { src: '/molovata/molovata-branding-robe-orig.webp', srcSet: '/molovata/molovata-branding-robe-orig-m.webp 1000w, /molovata/molovata-branding-robe-orig.webp 1024w', alt: 'Molovata Wellness — полосатый банный халат с логотипом на кармане' }
 ]
 const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
 const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
@@ -99,13 +103,11 @@ function Rituals() {
         ) : (
           <article key={r.n} className={`mol-ritual${r.image ? ' has-image' : ''}${i % 2 ? ' is-flipped' : ''}`}>
             <div className="mol-ritual-text">
-              <div className="mol-ritual-num">{String(r.n).padStart(2, '0')}</div>
-              <h3 className="mol-ritual-title">
-                {r.title} <span className="mol-ritual-sub">— {r.sub}</span>
-              </h3>
-              <p className="mol-ritual-meta">{r.meta}</p>
+              <div className="mol-ritual-num">[{String(r.n).padStart(2, '0')}] <span>//</span> {r.sub}</div>
+              <h3 className="mol-ritual-title">{r.title}</h3>
+              <p className="mol-ritual-meta">{r.meta.split(' · ').map((x, k) => <span key={k}>{k ? <i>//</i> : null}{x}</span>)}</p>
               <p className="mol-ritual-body">{r.body}</p>
-              <p className="mol-ritual-why"><span>Зачем:</span> {r.why}</p>
+              <p className="mol-ritual-why"><span>// Зачем:</span> {r.why}</p>
             </div>
             {r.image && (
               <figure className="mol-ritual-figure">
@@ -128,6 +130,8 @@ function Rituals() {
 export default function MolovataPage() {
   return (
     <SubpageShell current="/molovata" wide>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="stylesheet" href={FONTS_HREF} />
       {/* Full-screen hero: the pool terrace, edge to edge, under the fixed
           header. On scroll the photo evaporates like steam; the logo stays. */}
       <HeroFade>
@@ -148,10 +152,14 @@ export default function MolovataPage() {
       <div className="mol-page">
         <section className="mol-section mol-intro">
           <div className="mol-intro-text">
-          <p>
+          <p className="mol-statement">
             В основе концепции — мировой сдвиг в велнес-индустрии: сауна выходит из подвала фитнес-клуба и
             превращается в самостоятельную экосистему гостеприимства, построенную вокруг тепла, холода, ритуала и
-            общения. Molovata переносит эту логику на берег реки. Гостевой маршрут собран как драматургия: парение с
+            общения.
+          </p>
+          <div className="mol-label">О проекте</div>
+          <p>
+            Molovata переносит эту логику на берег реки. Гостевой маршрут собран как драматургия: парение с
             мастером, охлаждение в Днестре, отдых у огня, чай из местных трав, общая трапеза. Плавучие сауны и понтоны
             выводят баню прямо на воду; тропы, гребля и зимние купания продолжают опыт за пределами стен.
           </p>
@@ -175,7 +183,7 @@ export default function MolovataPage() {
         <nav className="mol-menu" aria-label="Разделы">
           {MENU.map((m, i) => (
             <a key={m.id} href={`#${m.id}`} className="mol-menu-item">
-              <span className="mol-menu-num">{String(i + 1).padStart(2, '0')}</span>
+              <span className="mol-menu-num">[{String(i + 1).padStart(2, '0')}]</span>
               <span className="mol-menu-label">{m.label}</span>
             </a>
           ))}
