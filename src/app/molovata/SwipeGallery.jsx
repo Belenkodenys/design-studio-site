@@ -5,6 +5,19 @@ import { useEffect, useRef, useState } from 'react'
 export default function SwipeGallery({ images, className = '' }) {
   const ref = useRef(null)
   const [i, setI] = useState(0)
+  const [open, setOpen] = useState(false)
+  const [li, setLi] = useState(0)
+
+  // Lightbox: Escape closes, body scroll locked while open.
+  useEffect(() => {
+    if (!open) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false); if (e.key === 'ArrowRight') setLi((k) => (k + 1) % images.length); if (e.key === 'ArrowLeft') setLi((k) => (k - 1 + images.length) % images.length) }
+    window.addEventListener('keydown', onKey)
+    return () => { document.body.style.overflow = prev; window.removeEventListener('keydown', onKey) }
+  }, [open, images.length])
+  const lbTouch = useRef(null)
 
   useEffect(() => {
     const el = ref.current
@@ -35,6 +48,7 @@ export default function SwipeGallery({ images, className = '' }) {
     const d = drag.current
     if (!d) return
     drag.current = null
+    if (!d.moved) { ref.current.style.cursor = ''; ref.current.style.scrollSnapType = ''; return }
     const el = ref.current
     el.style.cursor = ''
     const w = el.clientWidth
@@ -73,7 +87,7 @@ export default function SwipeGallery({ images, className = '' }) {
         onDragStart={(e) => e.preventDefault()}
       >
         {images.map((im, k) => (
-          <figure className="mol-swipe-slide" key={im.src}>
+          <figure className="mol-swipe-slide" key={im.src} onClick={() => { setLi(k); setOpen(true) }}>
             <img
               src={im.src}
               srcSet={im.srcSet}
@@ -85,6 +99,24 @@ export default function SwipeGallery({ images, className = '' }) {
           </figure>
         ))}
       </div>
+      {open && (
+        <div
+          className="mol-lightbox"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setOpen(false)}
+          onTouchStart={(e) => { lbTouch.current = e.touches[0].clientX }}
+          onTouchEnd={(e) => {
+            const dx = e.changedTouches[0].clientX - (lbTouch.current ?? e.changedTouches[0].clientX)
+            if (dx < -40) setLi((k) => (k + 1) % images.length)
+            else if (dx > 40) setLi((k) => (k - 1 + images.length) % images.length)
+          }}
+        >
+          <img src={images[li].src} srcSet={images[li].srcSet} sizes="100vw" alt={images[li].alt || ''} onClick={(e) => e.stopPropagation()} />
+          <button type="button" className="mol-lightbox-close" aria-label="Закрыть" onClick={() => setOpen(false)}>×</button>
+          {images.length > 1 && <div className="mol-lightbox-count">{li + 1} / {images.length}</div>}
+        </div>
+      )}
       {images.length > 1 && (
         <>
           <button type="button" className="mol-swipe-btn prev" aria-label="Предыдущее" onClick={() => go(i - 1)}>←</button>
