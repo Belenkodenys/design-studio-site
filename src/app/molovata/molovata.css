@@ -288,3 +288,8 @@ html { scroll-behavior: smooth; }
 /* General plan under the architecture gallery */
 .mol-plan { margin: clamp(32px, 4vw, 64px) 0 0; }
 .mol-plan img { display: block; width: 100%; height: auto; }
+
+/* Drawings gallery: 16:9 frames, drawings fit inside without cropping */
+.mol-swipe--plans { margin-top: clamp(32px, 4vw, 64px); }
+.mol-swipe--plans .mol-swipe-slide img { aspect-ratio: 16 / 9; object-fit: contain; background: #fff; }
+.mol-swipe--plans .mol-swipe-btn { background: rgba(17,17,17,0.08); }

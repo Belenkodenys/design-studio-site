@@ -148,6 +148,40 @@ const INTERIORS = [
   }
 ]
 
+// Drawings: general plan and room / restaurant layouts (16:9, never cropped).
+const PLANS = [
+  {
+    src: '/molovata/molovata-general-plan.webp',
+    srcSet: '/molovata/molovata-general-plan-m.webp 1280w, /molovata/molovata-general-plan.webp 2560w',
+    alt: 'Molovata — генеральный план комплекса, М 1:500'
+  },
+  {
+    src: '/molovata/molovata-plan-rooms-plan.webp',
+    srcSet: '/molovata/molovata-plan-rooms-plan-m.webp 1508w, /molovata/molovata-plan-rooms-plan.webp 3016w',
+    alt: 'Molovata — план расстановки мебели номеров — общий, 7 номеров'
+  },
+  {
+    src: '/molovata/molovata-plan-room-type-1.webp',
+    srcSet: '/molovata/molovata-plan-room-type-1-m.webp 1516w, /molovata/molovata-plan-room-type-1.webp 3032w',
+    alt: 'Molovata — номер тип 1 — план и аксонометрия, 37,05 м²'
+  },
+  {
+    src: '/molovata/molovata-plan-room-type-2.webp',
+    srcSet: '/molovata/molovata-plan-room-type-2-m.webp 1522w, /molovata/molovata-plan-room-type-2.webp 3044w',
+    alt: 'Molovata — номер тип 2 — план и аксонометрия, 78,68 м²'
+  },
+  {
+    src: '/molovata/molovata-plan-room-type-3.webp',
+    srcSet: '/molovata/molovata-plan-room-type-3-m.webp 1513w, /molovata/molovata-plan-room-type-3.webp 3026w',
+    alt: 'Molovata — номер тип 3 — план и аксонометрия'
+  },
+  {
+    src: '/molovata/molovata-plan-restaurant-plan.webp',
+    srcSet: '/molovata/molovata-plan-restaurant-plan-m.webp 1280w, /molovata/molovata-plan-restaurant-plan.webp 2560w',
+    alt: 'Molovata — план расстановки мебели ресторана и лаунж-зоны, 508 м²'
+  }
+]
+
 const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
 const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
 
@@ -303,15 +337,7 @@ export default function MolovataPage() {
             {m.id === 'architecture' && (
               <>
                 <SwipeGallery images={ARCHITECTURE} />
-                <figure className="mol-plan">
-                  <img
-                    src="/molovata/molovata-general-plan.webp"
-                    srcSet="/molovata/molovata-general-plan-m.webp 1280w, /molovata/molovata-general-plan.webp 2560w"
-                    sizes="100vw"
-                    alt="Molovata — генеральный план комплекса, М 1:500"
-                    loading="lazy"
-                  />
-                </figure>
+                <SwipeGallery images={PLANS} className="mol-swipe--plans" />
               </>
             )}
             {m.id === 'interiors' && <SwipeGallery images={INTERIORS} />}
