@@ -5,6 +5,7 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /molovata
 
 # Google AI
 User-agent: Google-Extended
