@@ -854,6 +854,15 @@
           "value": "1; mode=block"
         }
       ]
+    },
+    {
+      "source": "/molovata",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, nosnippet"
+        }
+      ]
     }
   ]
 }
