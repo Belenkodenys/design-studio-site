@@ -1,6 +1,8 @@
 import SubpageShell from '../../components/subpage/SubpageShell'
 import HeroFade from './HeroFade'
 import SwipeGallery from './SwipeGallery'
+import ScrollDrift from '../../components/subpage/ScrollDrift'
+import '../branding/branding.css'
 import { RITUALS, DAY_LOGIC } from './rituals'
 import './molovata.css'
 
@@ -49,6 +51,33 @@ const ARCHITECTURE = [
     alt: 'Molovata — длинный бассейн с шезлонгами вдоль остеклённых фасадов'
   }
 ]
+
+// Branding chapter — same scroll-driven drift as /branding. Add cut-outs
+// (transparent background) here: { src, alt, size: 'small', gap: true }.
+const BRANDING = []
+const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
+const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
+
+function BrandingDrift() {
+  if (!BRANDING.length) return null
+  return (
+    <div className="br-gallery mol-branding">
+      {BRANDING.map((g, i) => (
+        <ScrollDrift key={g.src} fx={FX[i % FX.length]} className={`br-slot br-slot--${POS[i % POS.length]}${g.size === 'small' ? ' br-slot--small' : ''}${g.gap ? ' br-slot--gap' : ''}`}>
+          <img
+            src={g.src}
+            srcSet={g.srcSet}
+            sizes="(max-width: 600px) 100vw, 80vw"
+            alt={g.alt}
+            loading="eager"
+            decoding="async"
+            draggable={false}
+          />
+        </ScrollDrift>
+      ))}
+    </div>
+  )
+}
 
 function Rituals() {
   return (
@@ -148,6 +177,7 @@ export default function MolovataPage() {
               <img src={`/molovata/heading-${m.id}.png`} alt={m.label} />
             </h2>
             {m.id === 'architecture' && <SwipeGallery images={ARCHITECTURE} />}
+            {m.id === 'branding' && <BrandingDrift />}
             {m.id === 'rituals' && <Rituals />}
           </section>
         ))}
