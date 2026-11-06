@@ -14,6 +14,39 @@ export default function SwipeGallery({ images, className = '' }) {
     return () => el.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Mouse drag on desktop (touch already swipes natively via scroll-snap).
+  const drag = useRef(null)
+  const onPointerDown = (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return
+    const el = ref.current
+    drag.current = { x: e.clientX, left: el.scrollLeft, moved: false }
+    el.style.scrollSnapType = 'none'
+    el.style.cursor = 'grabbing'
+    el.setPointerCapture?.(e.pointerId)
+  }
+  const onPointerMove = (e) => {
+    const d = drag.current
+    if (!d) return
+    const dx = e.clientX - d.x
+    if (Math.abs(dx) > 4) d.moved = true
+    ref.current.scrollLeft = d.left - dx
+  }
+  const onPointerUp = (e) => {
+    const d = drag.current
+    if (!d) return
+    drag.current = null
+    const el = ref.current
+    el.style.cursor = ''
+    const w = el.clientWidth
+    const dx = e.clientX - d.x
+    let k = Math.round(d.left / w)
+    if (dx < -w * 0.12) k += 1
+    else if (dx > w * 0.12) k -= 1
+    k = Math.max(0, Math.min(images.length - 1, k))
+    el.scrollTo({ left: k * w, behavior: 'smooth' })
+    setTimeout(() => { el.style.scrollSnapType = '' }, 450)
+  }
+
   const go = (n) => {
     const el = ref.current
     if (!el) return
@@ -30,7 +63,15 @@ export default function SwipeGallery({ images, className = '' }) {
         if (e.key === 'ArrowLeft') go(i - 1)
       }}
     >
-      <div className="mol-swipe-track" ref={ref}>
+      <div
+        className="mol-swipe-track"
+        ref={ref}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        onDragStart={(e) => e.preventDefault()}
+      >
         {images.map((im, k) => (
           <figure className="mol-swipe-slide" key={im.src}>
             <img
