@@ -27,6 +27,16 @@
   line-height: 0.95;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
 }
+.mol-hero-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(220px, 30vw, 520px);
+  height: auto;
+  filter: drop-shadow(0 2px 18px rgba(0, 0, 0, 0.35));
+}
+.mol-hero-title.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .mol-page { padding-top: clamp(48px, 7vw, 110px); }
 .mol-page { min-height: 40vh; }
 .mol-section { margin: 0 0 var(--sp-section, 96px); }

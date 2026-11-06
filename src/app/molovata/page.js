@@ -22,7 +22,8 @@ export default function MolovataPage() {
           alt="Molovata — pool terrace with stone gabion walls, loungers and hot tubs"
           fetchPriority="high"
         />
-        <h1 className="mol-hero-title">Molovata</h1>
+        <img className="mol-hero-logo" src="/molovata/molovata-logo-white.png" alt="" aria-hidden="true" />
+        <h1 className="mol-hero-title visually-hidden">Molovata Wellness</h1>
       </section>
       <div className="mol-page">
         {/* Sections are added here as the material comes in. */}
