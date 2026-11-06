@@ -140,6 +140,11 @@ const INTERIORS = [
     src: '/molovata/molovata-interior-bedroom-shower.webp',
     srcSet: '/molovata/molovata-interior-bedroom-shower-m.webp 1400w, /molovata/molovata-interior-bedroom-shower.webp 1800w',
     alt: 'Molovata — интерьер: спальня с открытым душем и ванная с травертином и перфорированной стеной'
+  },
+  {
+    src: '/molovata/molovata-interior-light-water.webp',
+    srcSet: '/molovata/molovata-interior-light-water-m.webp 1400w, /molovata/molovata-interior-light-water.webp 1800w',
+    alt: 'Molovata — свет и вода: прозрачные занавеси и блики на полу, референс атмосферы'
   }
 ]
 
