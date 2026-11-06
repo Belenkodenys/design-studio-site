@@ -295,7 +295,20 @@ export default function MolovataPage() {
             <h2 className="mol-chapter-title">
               <img src={`/molovata/heading-${m.id}.png`} alt={m.label} />
             </h2>
-            {m.id === 'architecture' && <SwipeGallery images={ARCHITECTURE} />}
+            {m.id === 'architecture' && (
+              <>
+                <SwipeGallery images={ARCHITECTURE} />
+                <figure className="mol-plan">
+                  <img
+                    src="/molovata/molovata-general-plan.webp"
+                    srcSet="/molovata/molovata-general-plan-m.webp 1280w, /molovata/molovata-general-plan.webp 2560w"
+                    sizes="100vw"
+                    alt="Molovata — генеральный план комплекса, М 1:500"
+                    loading="lazy"
+                  />
+                </figure>
+              </>
+            )}
             {m.id === 'interiors' && <SwipeGallery images={INTERIORS} />}
             {m.id === 'branding' && <BrandingDrift />}
             {m.id === 'kitchen' && <Kitchen />}

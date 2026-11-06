@@ -284,3 +284,7 @@ html { scroll-behavior: smooth; }
 /* Page end: the flower mark, centred */
 .mol-end { display: flex; justify-content: center; padding: clamp(24px, 4vw, 64px) 0 clamp(16px, 2vw, 32px); }
 .mol-end img { width: clamp(56px, 6vw, 88px); height: auto; }
+
+/* General plan under the architecture gallery */
+.mol-plan { margin: clamp(32px, 4vw, 64px) 0 0; }
+.mol-plan img { display: block; width: 100%; height: auto; }
