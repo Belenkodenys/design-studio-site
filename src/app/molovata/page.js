@@ -55,6 +55,7 @@ const ARCHITECTURE = [
 // Branding chapter — same scroll-driven drift as /branding. Add cut-outs
 // (transparent background) here: { src, alt, size: 'small', gap: true }.
 const BRANDING = [
+  { src: '/molovata/molovata-branding-logo-cut.webp', srcSet: '/molovata/molovata-branding-logo-cut-m.webp 1000w, /molovata/molovata-branding-logo-cut.webp 2640w', alt: 'Molovata Wellness — логотип со знаком-цветком', size: 'small' },
   { src: '/molovata/molovata-branding-tuk-tuk-cut.webp', srcSet: '/molovata/molovata-branding-tuk-tuk-cut-m.webp 1000w, /molovata/molovata-branding-tuk-tuk-cut.webp 1441w', alt: 'Molovata Wellness — трёхколёсный фургончик с полосатым тентом, полотенцами и корзинами' },
   { src: '/molovata/molovata-branding-flower-mark-cut.webp', srcSet: '/molovata/molovata-branding-flower-mark-cut-m.webp 1000w, /molovata/molovata-branding-flower-mark-cut.webp 1048w', alt: 'Molovata — знак-цветок, оливковый орнамент', size: 'small' },
   { src: '/molovata/molovata-branding-robe-look-cut.webp', srcSet: '/molovata/molovata-branding-robe-look-cut-m.webp 1000w, /molovata/molovata-branding-robe-look-cut.webp 606w', alt: 'Molovata Wellness — полосатый халат с тюрбаном, сумкой и шлёпанцами' },
