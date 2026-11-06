@@ -151,9 +151,9 @@ const INTERIORS = [
 // Drawings: general plan and room / restaurant layouts (16:9, never cropped).
 const PLANS = [
   {
-    src: '/molovata/molovata-general-plan.webp',
-    srcSet: '/molovata/molovata-general-plan-m.webp 1280w, /molovata/molovata-general-plan.webp 2560w',
-    alt: 'Molovata — генеральный план комплекса, М 1:500'
+    src: '/molovata/molovata-plan-master.webp',
+    srcSet: '/molovata/molovata-plan-master-m.webp 1673w, /molovata/molovata-plan-master.webp 3346w',
+    alt: 'Molovata — мастер-план комплекса, М 1:500'
   },
   {
     src: '/molovata/molovata-plan-rooms-plan.webp',
