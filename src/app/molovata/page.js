@@ -12,7 +12,18 @@ export const metadata = {
 
 export default function MolovataPage() {
   return (
-    <SubpageShell current="/molovata" wide title="Molovata" lead="">
+    <SubpageShell current="/molovata" wide>
+      {/* Full-screen hero: the pool terrace, edge to edge, under the fixed header. */}
+      <section className="mol-hero">
+        <img
+          src="/molovata/molovata-hero-pool.webp"
+          srcSet="/molovata/molovata-hero-pool-m.webp 1400w, /molovata/molovata-hero-pool.webp 3586w"
+          sizes="100vw"
+          alt="Molovata — pool terrace with stone gabion walls, loungers and hot tubs"
+          fetchPriority="high"
+        />
+        <h1 className="mol-hero-title">Molovata</h1>
+      </section>
       <div className="mol-page">
         {/* Sections are added here as the material comes in. */}
       </div>
