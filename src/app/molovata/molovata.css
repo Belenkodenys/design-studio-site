@@ -219,3 +219,46 @@ html { scroll-behavior: smooth; }
   .mol-kitchen-table th, .mol-kitchen-table td { display: block; border: 0; padding: 0 0 6px; width: auto !important; white-space: normal; }
   .mol-kitchen-table td:last-child { opacity: 0.6; font-size: 0.92em; }
 }
+
+/* ---- Type: Apple-style system sans (SF Pro / Helvetica Neue), #1d1d1f,
+   17/25 body, semibold headings, gray secondary lines, hairline rules. ---- */
+.mol-page {
+  --ap-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+  --ap-ink: #1d1d1f; --ap-gray: #6e6e73; --ap-rule: #d2d2d7;
+  font-family: var(--ap-font); color: var(--ap-ink);
+}
+.mol-page p, .mol-page li, .mol-page td, .mol-page th, .mol-page h3, .mol-page a { font-family: var(--ap-font); }
+/* intro */
+.mol-intro p { font-weight: 400; font-size: 19px; line-height: 27px; letter-spacing: 0.012em; color: var(--ap-ink); margin-bottom: 19px; }
+/* chapter menu */
+.mol-menu { border-top-color: var(--ap-rule); border-bottom-color: var(--ap-rule); }
+.mol-menu-item { font-family: var(--ap-font); font-weight: 400; text-transform: none; letter-spacing: -0.022em; font-size: 17px; color: var(--ap-ink); }
+.mol-menu-item:hover { border-bottom-color: var(--ap-ink); }
+.mol-menu-num { font-weight: 400; font-size: 17px; letter-spacing: -0.022em; color: var(--ap-gray); opacity: 1; }
+/* rituals */
+.mol-ritual { border-top-color: var(--ap-rule); }
+.mol-ritual-num { font-family: var(--ap-font); font-weight: 400; font-size: 17px; line-height: 21px; letter-spacing: -0.022em; color: var(--ap-gray); opacity: 1; text-transform: none; margin-bottom: 8px; }
+.mol-ritual-title { font-family: var(--ap-font); font-weight: 600; font-size: 24px; line-height: 28px; letter-spacing: 0.009em; color: var(--ap-ink); margin: 0 0 6px; }
+.mol-ritual-sub { font-weight: 400; color: var(--ap-gray); opacity: 1; }
+.mol-ritual-meta { font-family: var(--ap-font); font-weight: 400; font-size: 17px; line-height: 21px; letter-spacing: -0.022em; text-transform: none; color: var(--ap-gray); opacity: 1; margin: 0 0 19px; }
+.mol-ritual-body { font-weight: 400; font-size: 17px; line-height: 25px; letter-spacing: -0.022em; color: var(--ap-ink); margin: 0 0 12px; max-width: 640px; }
+.mol-ritual-why { font-family: var(--ap-font); font-style: normal; font-weight: 400; font-size: 17px; line-height: 25px; letter-spacing: -0.022em; color: var(--ap-ink); opacity: 1; }
+.mol-ritual-why span { font-family: var(--ap-font); font-weight: 600; font-size: 17px; letter-spacing: -0.022em; text-transform: none; opacity: 1; margin-right: 4px; }
+.mol-rituals-divider { font-family: var(--ap-font); font-weight: 600; font-size: 32px; line-height: 36px; letter-spacing: 0.004em; color: var(--ap-ink); margin: clamp(48px, 6vw, 96px) 0 14px; }
+.mol-daylogic { border-top-color: var(--ap-rule); }
+.mol-daylogic p { font-weight: 400; font-size: 17px; line-height: 25px; letter-spacing: -0.022em; color: var(--ap-ink); max-width: 720px; }
+/* kitchen */
+.mol-kitchen-text { font-weight: 400; font-size: 17px; line-height: 25px; letter-spacing: -0.022em; color: var(--ap-ink); }
+.mol-kitchen-h { font-family: var(--ap-font); font-weight: 600; font-size: 21px; line-height: 25px; letter-spacing: 0.011em; color: var(--ap-ink); margin: 0 0 9px; }
+.mol-kitchen-list li { margin: 0 0 5px; }
+.mol-kitchen-list b { font-weight: 600; }
+.mol-kitchen-table { font-weight: 400; font-size: 17px; line-height: 25px; letter-spacing: -0.022em; color: var(--ap-ink); }
+.mol-kitchen-table th, .mol-kitchen-table td { border-top-color: var(--ap-rule); }
+.mol-kitchen-table thead th { font-weight: 600; font-size: 17px; letter-spacing: -0.022em; text-transform: none; opacity: 1; color: var(--ap-gray); }
+.mol-kitchen-table tbody th { font-weight: 600; }
+@media (max-width: 700px) { .mol-kitchen-table tr { border-top-color: var(--ap-rule); } }
+@media (max-width: 600px) {
+  .mol-intro p { font-size: 17px; line-height: 25px; letter-spacing: -0.022em; }
+  .mol-rituals-divider { font-size: 28px; line-height: 32px; }
+  .mol-menu-item, .mol-menu-num { font-size: 15px; }
+}

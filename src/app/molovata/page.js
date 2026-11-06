@@ -192,8 +192,6 @@ function Rituals() {
 export default function MolovataPage() {
   return (
     <SubpageShell current="/molovata" wide>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300&display=swap" />
       {/* Full-screen hero: the pool terrace, edge to edge, under the fixed
           header. On scroll the photo evaporates like steam; the logo stays. */}
       <HeroFade>
