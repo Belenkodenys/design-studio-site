@@ -49,6 +49,11 @@ const ARCHITECTURE = [
     src: '/molovata/molovata-architecture-pool-lane.webp',
     srcSet: '/molovata/molovata-architecture-pool-lane-m.webp 1400w, /molovata/molovata-architecture-pool-lane.webp 1792w',
     alt: 'Molovata — длинный бассейн с шезлонгами вдоль остеклённых фасадов'
+  },
+  {
+    src: '/molovata/molovata-architecture-spa-pool.webp',
+    srcSet: '/molovata/molovata-architecture-spa-pool-m.webp 1400w, /molovata/molovata-architecture-spa-pool.webp 2600w',
+    alt: 'Molovata — каменный спа-комплекс с бассейном'
   }
 ]
 
@@ -56,9 +61,9 @@ const ARCHITECTURE = [
 // (transparent background) here: { src, alt, size: 'small', gap: true }.
 const BRANDING = [
   { src: '/molovata/molovata-branding-logo-cut.webp', srcSet: '/molovata/molovata-branding-logo-cut-m.webp 1000w, /molovata/molovata-branding-logo-cut.webp 2640w', alt: 'Molovata Wellness — логотип со знаком-цветком', size: 'small' },
+  { src: '/molovata/molovata-branding-map-mark.webp', srcSet: '/molovata/molovata-branding-map-mark-m.webp 1000w, /molovata/molovata-branding-map-mark.webp 1736w', alt: 'Molovata — знак-цветок повторяет излучину Днестра у Моловаты на спутниковой карте' },
   { src: '/molovata/molovata-branding-tuk-tuk-cut.webp', srcSet: '/molovata/molovata-branding-tuk-tuk-cut-m.webp 1000w, /molovata/molovata-branding-tuk-tuk-cut.webp 1441w', alt: 'Molovata Wellness — трёхколёсный фургончик с полосатым тентом, полотенцами и корзинами' },
   { src: '/molovata/molovata-branding-flower-mark-cut.webp', srcSet: '/molovata/molovata-branding-flower-mark-cut-m.webp 1000w, /molovata/molovata-branding-flower-mark-cut.webp 1048w', alt: 'Molovata — знак-цветок, оливковый орнамент', size: 'small' },
-  { src: '/molovata/molovata-branding-map-mark.webp', srcSet: '/molovata/molovata-branding-map-mark-m.webp 1000w, /molovata/molovata-branding-map-mark.webp 1736w', alt: 'Molovata — знак-цветок повторяет излучину Днестра у Моловаты на спутниковой карте' },
   { src: '/molovata/molovata-branding-robe-look-cut.webp', srcSet: '/molovata/molovata-branding-robe-look-cut-m.webp 1000w, /molovata/molovata-branding-robe-look-cut.webp 606w', alt: 'Molovata Wellness — полосатый халат с тюрбаном, сумкой и шлёпанцами' },
   { src: '/molovata/molovata-branding-umbrella-orig.webp', srcSet: '/molovata/molovata-branding-umbrella-orig-m.webp 1000w, /molovata/molovata-branding-umbrella-orig.webp 1536w', alt: 'Molovata Wellness — полосатый зонт с деревянной ручкой и знаком' },
   { src: '/molovata/molovata-branding-towels-cut.webp', srcSet: '/molovata/molovata-branding-towels-cut-m.webp 1000w, /molovata/molovata-branding-towels-cut.webp 1285w', alt: 'Molovata Wellness — стопка полосатых полотенец с нашивкой' },
