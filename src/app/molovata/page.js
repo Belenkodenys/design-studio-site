@@ -112,6 +112,11 @@ const BRANDING = [
 // Interiors gallery — same swipe gallery as Architecture.
 const INTERIORS = [
   {
+    src: '/molovata/molovata-interior-stone-table-2x1.webp',
+    srcSet: '/molovata/molovata-interior-stone-table-2x1-m.webp 1400w, /molovata/molovata-interior-stone-table-2x1.webp 1800w',
+    alt: 'Molovata — общий стол из рыжего камня под парящим светильником-диском, терракотовые стены'
+  },
+  {
     src: '/molovata/molovata-interior-travertine-basin.webp',
     srcSet: '/molovata/molovata-interior-travertine-basin-m.webp 1400w, /molovata/molovata-interior-travertine-basin.webp 1800w',
     alt: 'Molovata — интерьер: умывальник из травертина с латунным смесителем'
@@ -161,24 +166,6 @@ function BrandingDrift() {
 const KITCHEN = [
   { src: '/molovata/molovata-kitchen-breakfast.webp', alt: 'Molovata — завтрак на террасе: полосатая керамика, бурата с томатами, авокадо-тост, оливки' }
 ]
-
-// Interiors chapter — same grid as the kitchen; add { src, alt, wide: true }.
-const INTERIORS = [
-  { src: '/molovata/molovata-interior-stone-table.webp', alt: 'Molovata — общий стол из рыжего камня под парящим светильником-диском, терракотовые стены', wide: true }
-]
-
-function Interiors() {
-  if (!INTERIORS.length) return null
-  return (
-    <div className="mol-kitchen">
-      {INTERIORS.map((g) => (
-        <figure key={g.src} className={`mol-kitchen-item${g.wide ? ' wide' : ''}`}>
-          <img src={g.src} alt={g.alt} loading="lazy" />
-        </figure>
-      ))}
-    </div>
-  )
-}
 
 function Kitchen() {
   return (
@@ -306,7 +293,6 @@ export default function MolovataPage() {
             {m.id === 'architecture' && <SwipeGallery images={ARCHITECTURE} />}
             {m.id === 'interiors' && <SwipeGallery images={INTERIORS} />}
             {m.id === 'branding' && <BrandingDrift />}
-            {m.id === 'interiors' && <Interiors />}
             {m.id === 'kitchen' && <Kitchen />}
             {m.id === 'rituals' && <Rituals />}
           </section>
