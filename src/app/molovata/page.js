@@ -54,7 +54,17 @@ const ARCHITECTURE = [
 
 // Branding chapter — same scroll-driven drift as /branding. Add cut-outs
 // (transparent background) here: { src, alt, size: 'small', gap: true }.
-const BRANDING = []
+const BRANDING = [
+  { src: '/molovata/molovata-branding-tuk-tuk-cut.webp', srcSet: '/molovata/molovata-branding-tuk-tuk-cut-m.webp 1000w, /molovata/molovata-branding-tuk-tuk-cut.webp 1441w', alt: 'Molovata Wellness — трёхколёсный фургончик с полосатым тентом, полотенцами и корзинами' },
+  { src: '/molovata/molovata-branding-flower-mark-cut.webp', srcSet: '/molovata/molovata-branding-flower-mark-cut-m.webp 1000w, /molovata/molovata-branding-flower-mark-cut.webp 1048w', alt: 'Molovata — знак-цветок, оливковый орнамент', size: 'small' },
+  { src: '/molovata/molovata-branding-robe-look-cut.webp', srcSet: '/molovata/molovata-branding-robe-look-cut-m.webp 1000w, /molovata/molovata-branding-robe-look-cut.webp 606w', alt: 'Molovata Wellness — полосатый халат с тюрбаном, сумкой и шлёпанцами' },
+  { src: '/molovata/molovata-branding-umbrella-cut.webp', srcSet: '/molovata/molovata-branding-umbrella-cut-m.webp 1000w, /molovata/molovata-branding-umbrella-cut.webp 1285w', alt: 'Molovata Wellness — полосатый зонт с деревянной ручкой и знаком' },
+  { src: '/molovata/molovata-branding-towels-cut.webp', srcSet: '/molovata/molovata-branding-towels-cut-m.webp 1000w, /molovata/molovata-branding-towels-cut.webp 1285w', alt: 'Molovata Wellness — стопка полосатых полотенец с нашивкой' },
+  { src: '/molovata/molovata-branding-slippers-cut.webp', srcSet: '/molovata/molovata-branding-slippers-cut-m.webp 1000w, /molovata/molovata-branding-slippers-cut.webp 1146w', alt: 'Molovata Wellness — махровые шлёпанцы с логотипом' },
+  { src: '/molovata/molovata-branding-tote-bag-cut.webp', srcSet: '/molovata/molovata-branding-tote-bag-cut-m.webp 1000w, /molovata/molovata-branding-tote-bag-cut.webp 853w', alt: 'Molovata Wellness — махровая полосатая сумка с нашивкой' },
+  { src: '/molovata/molovata-branding-tableware-cut.webp', srcSet: '/molovata/molovata-branding-tableware-cut-m.webp 1000w, /molovata/molovata-branding-tableware-cut.webp 1456w', alt: 'Molovata Wellness — набор керамики в полоску: тарелки, чашки, миска' },
+  { src: '/molovata/molovata-branding-robe-cut.webp', srcSet: '/molovata/molovata-branding-robe-cut-m.webp 1000w, /molovata/molovata-branding-robe-cut.webp 802w', alt: 'Molovata Wellness — полосатый банный халат с логотипом на кармане' }
+]
 const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
 const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
 
