@@ -27,6 +27,26 @@ const ARCHITECTURE = [
     src: '/molovata/molovata-architecture-facade.webp',
     srcSet: '/molovata/molovata-architecture-facade-m.webp 1400w, /molovata/molovata-architecture-facade.webp 1746w',
     alt: 'Molovata — фасад из каменных пилонов с остеклением и зелёной кровлей на закате'
+  },
+  {
+    src: '/molovata/molovata-architecture-pool-slide.webp',
+    srcSet: '/molovata/molovata-architecture-pool-slide-m.webp 1400w, /molovata/molovata-architecture-pool-slide.webp 1793w',
+    alt: 'Molovata — бассейн с горкой, джакузи и шезлонгами под зонтами'
+  },
+  {
+    src: '/molovata/molovata-architecture-pool-terrace.webp',
+    srcSet: '/molovata/molovata-architecture-pool-terrace-m.webp 1400w, /molovata/molovata-architecture-pool-terrace.webp 1792w',
+    alt: 'Molovata — терраса у бассейна среди валунов и габионных стен'
+  },
+  {
+    src: '/molovata/molovata-architecture-pool-arches.webp',
+    srcSet: '/molovata/molovata-architecture-pool-arches-m.webp 1400w, /molovata/molovata-architecture-pool-arches.webp 1793w',
+    alt: 'Molovata — бассейн, детская площадка и арочные гроты в зелёном склоне'
+  },
+  {
+    src: '/molovata/molovata-architecture-pool-lane.webp',
+    srcSet: '/molovata/molovata-architecture-pool-lane-m.webp 1400w, /molovata/molovata-architecture-pool-lane.webp 1792w',
+    alt: 'Molovata — длинный бассейн с шезлонгами вдоль остеклённых фасадов'
   }
 ]
 

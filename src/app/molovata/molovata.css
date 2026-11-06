@@ -175,7 +175,7 @@ html { scroll-behavior: smooth; }
 }
 .mol-swipe-track::-webkit-scrollbar { display: none; }
 .mol-swipe-slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; scroll-snap-stop: always; }
-.mol-swipe-slide img { display: block; width: 100%; aspect-ratio: 1746 / 901; height: auto; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+.mol-swipe-slide img { display: block; width: 100%; aspect-ratio: 2 / 1; height: auto; object-fit: cover; user-select: none; -webkit-user-drag: none; }
 .mol-swipe-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 44px; height: 44px; border: 0; border-radius: 50%;
