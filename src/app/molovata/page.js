@@ -70,7 +70,8 @@ const BRANDING = [
   { src: '/molovata/molovata-branding-slippers-cut.webp', srcSet: '/molovata/molovata-branding-slippers-cut-m.webp 1000w, /molovata/molovata-branding-slippers-cut.webp 1146w', alt: 'Molovata Wellness — махровые шлёпанцы с логотипом' },
   { src: '/molovata/molovata-branding-tote-bag-cut.webp', srcSet: '/molovata/molovata-branding-tote-bag-cut-m.webp 1000w, /molovata/molovata-branding-tote-bag-cut.webp 853w', alt: 'Molovata Wellness — махровая полосатая сумка с нашивкой' },
   { src: '/molovata/molovata-branding-tableware-cut.webp', srcSet: '/molovata/molovata-branding-tableware-cut-m.webp 1000w, /molovata/molovata-branding-tableware-cut.webp 1456w', alt: 'Molovata Wellness — набор керамики в полоску: тарелки, чашки, миска' },
-  { src: '/molovata/molovata-branding-robe-orig.webp', srcSet: '/molovata/molovata-branding-robe-orig-m.webp 1000w, /molovata/molovata-branding-robe-orig.webp 1024w', alt: 'Molovata Wellness — полосатый банный халат с логотипом на кармане' }
+  { src: '/molovata/molovata-branding-robe-orig.webp', srcSet: '/molovata/molovata-branding-robe-orig-m.webp 1000w, /molovata/molovata-branding-robe-orig.webp 1024w', alt: 'Molovata Wellness — полосатый банный халат с логотипом на кармане' },
+  { src: '/molovata/molovata-branding-robe-editorial.webp', srcSet: '/molovata/molovata-branding-robe-editorial-m.webp 1000w, /molovata/molovata-branding-robe-editorial.webp 1024w', alt: 'Molovata Wellness — образ в полосатом халате с сумкой у полосатой консоли' }
 ]
 const FX = ['slide-l', 'rise', 'slide-r', 'zoom', 'tilt', 'slide-r', 'rise', 'slide-l', 'zoom', 'tilt']
 const POS = ['left', 'center', 'right', 'center', 'right', 'left', 'center']
@@ -100,6 +101,24 @@ function BrandingDrift() {
 const KITCHEN = [
   { src: '/molovata/molovata-kitchen-breakfast.webp', alt: 'Molovata — завтрак на террасе: полосатая керамика, бурата с томатами, авокадо-тост, оливки' }
 ]
+
+// Interiors chapter — same grid as the kitchen; add { src, alt, wide: true }.
+const INTERIORS = [
+  { src: '/molovata/molovata-interior-stone-table.webp', alt: 'Molovata — общий стол из рыжего камня под парящим светильником-диском, терракотовые стены', wide: true }
+]
+
+function Interiors() {
+  if (!INTERIORS.length) return null
+  return (
+    <div className="mol-kitchen">
+      {INTERIORS.map((g) => (
+        <figure key={g.src} className={`mol-kitchen-item${g.wide ? ' wide' : ''}`}>
+          <img src={g.src} alt={g.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  )
+}
 
 function Kitchen() {
   if (!KITCHEN.length) return null
@@ -215,6 +234,7 @@ export default function MolovataPage() {
             </h2>
             {m.id === 'architecture' && <SwipeGallery images={ARCHITECTURE} />}
             {m.id === 'branding' && <BrandingDrift />}
+            {m.id === 'interiors' && <Interiors />}
             {m.id === 'kitchen' && <Kitchen />}
             {m.id === 'rituals' && <Rituals />}
           </section>

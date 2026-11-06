@@ -198,3 +198,4 @@ html { scroll-behavior: smooth; }
 .mol-kitchen-item { margin: 0; }
 .mol-kitchen-item img { display: block; width: 100%; height: auto; }
 @media (max-width: 600px) { .mol-kitchen { grid-template-columns: 1fr; } }
+.mol-kitchen-item.wide { grid-column: 1 / -1; }
