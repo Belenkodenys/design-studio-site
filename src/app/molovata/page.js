@@ -117,6 +117,17 @@ export default function MolovataPage() {
             <h2 className="mol-chapter-title">
               <img src={`/molovata/heading-${m.id}.png`} alt={m.label} />
             </h2>
+            {m.id === 'architecture' && (
+              <figure className="mol-chapter-figure">
+                <img
+                  src="/molovata/molovata-architecture-facade.webp"
+                  srcSet="/molovata/molovata-architecture-facade-m.webp 1400w, /molovata/molovata-architecture-facade.webp 1746w"
+                  sizes="100vw"
+                  alt="Molovata — фасад из каменных пилонов с остеклением и зелёной кровлей на закате"
+                  loading="lazy"
+                />
+              </figure>
+            )}
             {m.id === 'rituals' && <Rituals />}
           </section>
         ))}

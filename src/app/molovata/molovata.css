@@ -166,3 +166,6 @@ html { scroll-behavior: smooth; }
   .mol-ritual.has-image.is-flipped .mol-ritual-text { order: 0; }
   .mol-ritual-figure { min-height: 0; aspect-ratio: 4 / 3; }
 }
+
+.mol-chapter-figure { margin: clamp(20px, 2.5vw, 40px) 0 0; }
+.mol-chapter-figure img { display: block; width: 100%; height: auto; }
