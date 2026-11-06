@@ -50,23 +50,22 @@
   pointer-events: none;
 }
 
-/* The logo stays put while the photo evaporates. */
+/* The logo lifts off and fades as the photo evaporates. */
 .mol-hero-logo {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
   width: clamp(220px, 30vw, 520px);
   height: auto;
-  filter: drop-shadow(0 2px 18px rgba(0, 0, 0, 0.35));
-  /* once the photo is gone the background is white: shift the shadow so the
-     white logo still reads */
-  filter: drop-shadow(0 2px 18px rgba(0, 0, 0, calc(0.35 + var(--steam) * 0.35)));
+  will-change: transform, opacity;
+  transform: translate(-50%, calc(-50% - var(--steam) * 55vh)) scale(calc(1 + var(--steam) * 0.15));
+  opacity: calc(1 - var(--steam) * 1.25);
+  filter: drop-shadow(0 2px 18px rgba(0, 0, 0, 0.35)) blur(calc(var(--steam) * 6px));
 }
 .mol-hero-title.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Content scrolls over the pinned hero. */
-.mol-page { position: relative; z-index: 1; background: #fff; min-height: 60vh; padding-top: clamp(48px, 7vw, 110px); }
+.mol-page { position: relative; z-index: 1; min-height: 60vh; padding-top: clamp(48px, 7vw, 110px); }
 .mol-section { margin: 0 0 var(--sp-section, 96px); }
 .mol-section h2 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; font-size: var(--t-statement, clamp(28px, 3.6vw, 56px)); line-height: 1.05; margin: 0 0 var(--sp-head, 28px); }
 .mol-section p { font-family: var(--font-text); font-size: var(--t-body, 18px); line-height: 1.6; max-width: 760px; margin: 0 0 var(--sp-para, 20px); }
