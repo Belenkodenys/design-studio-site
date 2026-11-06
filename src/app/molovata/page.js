@@ -54,11 +54,6 @@ const ARCHITECTURE = [
     src: '/molovata/molovata-architecture-spa-pool.webp',
     srcSet: '/molovata/molovata-architecture-spa-pool-m.webp 1400w, /molovata/molovata-architecture-spa-pool.webp 2600w',
     alt: 'Molovata — вид сверху: каменный спа-комплекс с бассейном, горкой и зелёными кровлями'
-  },
-  {
-    src: '/molovata/molovata-architecture-stone-spa-pool.webp',
-    srcSet: '/molovata/molovata-architecture-stone-spa-pool-m.webp 1400w, /molovata/molovata-architecture-stone-spa-pool.webp 3000w',
-    alt: 'Molovata — вид сверху: каменный спа-комплекс с бассейном, горкой и зелёными кровлями'
   }
 ]
 
