@@ -25,9 +25,15 @@ export default function HeroFade({ children }) {
       window.removeEventListener('resize', update)
     }
   }, [])
+  // The hero itself is fixed behind the page (position: sticky is unreliable
+  // here because the site's body/html overflow settings make the body the
+  // scrollport); a spacer keeps its place in the flow.
   return (
-    <section ref={ref} className="mol-hero">
-      {children}
-    </section>
+    <>
+      <div className="mol-hero-spacer" aria-hidden="true" />
+      <section ref={ref} className="mol-hero">
+        {children}
+      </section>
+    </>
   )
 }
