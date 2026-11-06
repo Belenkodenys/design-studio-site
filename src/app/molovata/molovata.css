@@ -76,3 +76,7 @@
 @media (prefers-reduced-motion: reduce) { .mol-hero-steam, .mol-hero-mist { transition: none; } }
 /* The footer must paint above the fixed hero as well. */
 .subpage:has(.mol-hero) .proposal-footer { position: relative; z-index: 1; }
+
+/* Intro text: a wide readable column, roomy leading. */
+.mol-intro { max-width: 880px; margin: 0 auto var(--sp-section, 96px); }
+.mol-intro p { max-width: none; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.65; margin-bottom: var(--sp-para, 24px); }
