@@ -4,6 +4,7 @@ import SwipeGallery from './SwipeGallery'
 import ScrollDrift from '../../components/subpage/ScrollDrift'
 import '../branding/branding.css'
 import { RITUALS, DAY_LOGIC } from './rituals'
+import { MENU_INTRO, MENU_ITEMS, SIGNATURE_INTRO, SIGNATURE, DRINKS_NOTE, FORMATS } from './kitchen'
 import './molovata.css'
 
 // Hidden working page: not linked from the site, not in the sitemap,
@@ -121,15 +122,35 @@ function Interiors() {
 }
 
 function Kitchen() {
-  if (!KITCHEN.length) return null
   return (
+    <>
     <div className="mol-kitchen">
       {KITCHEN.map((g) => (
         <figure key={g.src} className="mol-kitchen-item">
           <img src={g.src} alt={g.alt} loading="lazy" />
         </figure>
       ))}
+      <div className="mol-kitchen-text">
+        <h3 className="mol-kitchen-h">Пример основного меню</h3>
+        <p>{MENU_INTRO}</p>
+        <ul className="mol-kitchen-list">
+          {MENU_ITEMS.map(([k, v]) => <li key={k}><b>{k}:</b> {v}</li>)}
+        </ul>
+        <h3 className="mol-kitchen-h">Три фирменные позиции</h3>
+        <p>{SIGNATURE_INTRO}</p>
+        <ol className="mol-kitchen-list">
+          {SIGNATURE.map(([k, v]) => <li key={k}><b>{k}</b> — {v}</li>)}
+        </ol>
+        <p>{DRINKS_NOTE}</p>
+      </div>
     </div>
+    <table className="mol-kitchen-table">
+      <thead><tr><th>Формат</th><th>Что предложить</th><th>Как организовать</th></tr></thead>
+      <tbody>
+        {FORMATS.map(([a, b, c]) => <tr key={a}><th scope="row">{a}</th><td>{b}</td><td>{c}</td></tr>)}
+      </tbody>
+    </table>
+    </>
   )
 }
 
