@@ -12,25 +12,17 @@ export default function HeroFade({ children }) {
     const el = ref.current
     if (!el) return
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    let ticking = false
     const update = () => {
-      ticking = false
       const h = el.offsetHeight || window.innerHeight
       const p = reduce ? 0 : Math.min(1, Math.max(0, window.scrollY / (h * 0.9)))
       el.style.setProperty('--steam', p.toFixed(3))
     }
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true
-        requestAnimationFrame(update)
-      }
-    }
     update()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
     return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
     }
   }, [])
   return (
