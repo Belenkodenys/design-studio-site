@@ -302,6 +302,9 @@ export default function MolovataPage() {
             {m.id === 'rituals' && <Rituals />}
           </section>
         ))}
+        <div className="mol-end" aria-hidden="true">
+          <img src="/molovata/molovata-branding-flower-mark-cut-m.webp" alt="" loading="lazy" />
+        </div>
       </div>
     </SubpageShell>
   )
