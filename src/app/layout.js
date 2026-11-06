@@ -64,7 +64,7 @@ export const metadata = {
     description: 'Award-winning restaurant, bar, cafe & hotel interior design studio in Barcelona. Leading hospitality designers in Europe with 200+ projects.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-belenko-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Belenko Design Studio - Restaurant Interior Design Barcelona'
@@ -75,7 +75,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
     description: 'Award-winning restaurant interior design studio in Barcelona. 25+ years experience, 200+ hospitality projects worldwide.',
-    images: ['/og-image.jpg'],
+    images: ['/og-belenko-logo.jpg'],
     creator: '@belenko_studio'
   },
   robots: {
