@@ -61,6 +61,36 @@ const ARCHITECTURE = [
     src: '/molovata/molovata-architecture-aerial-river.webp',
     srcSet: '/molovata/molovata-architecture-aerial-river-m.webp 1400w, /molovata/molovata-architecture-aerial-river.webp 1719w',
     alt: 'Molovata — вид сверху на комплекс у Днестра: бассейн, арочные гроты, терраса и плавучие сауны на реке'
+  },
+  {
+    src: '/molovata/molovata-architecture-winter-facade.webp',
+    srcSet: '/molovata/molovata-architecture-winter-facade-m.webp 1400w, /molovata/molovata-architecture-winter-facade.webp 1800w',
+    alt: 'Molovata — зимний фасад: заснеженные габионы, зелёная кровля под снегом, пара у огня'
+  },
+  {
+    src: '/molovata/molovata-architecture-night-pool.webp',
+    srcSet: '/molovata/molovata-architecture-night-pool-m.webp 1400w, /molovata/molovata-architecture-night-pool.webp 1800w',
+    alt: 'Molovata — ночной бассейн под звёздным небом, подсвеченные скалы и шезлонги'
+  },
+  {
+    src: '/molovata/molovata-architecture-winter-pool-fire.webp',
+    srcSet: '/molovata/molovata-architecture-winter-pool-fire-m.webp 1400w, /molovata/molovata-architecture-winter-pool-fire.webp 1800w',
+    alt: 'Molovata — зима: тёплый бассейн с паром, очаг и пара в халатах'
+  },
+  {
+    src: '/molovata/molovata-architecture-winter-terrace.webp',
+    srcSet: '/molovata/molovata-architecture-winter-terrace-m.webp 1400w, /molovata/molovata-architecture-winter-terrace.webp 1800w',
+    alt: 'Molovata — зимняя терраса у длинного бассейна, заснеженные скалы и сосны'
+  },
+  {
+    src: '/molovata/molovata-architecture-winter-lane-jacuzzi.webp',
+    srcSet: '/molovata/molovata-architecture-winter-lane-jacuzzi-m.webp 1400w, /molovata/molovata-architecture-winter-lane-jacuzzi.webp 1800w',
+    alt: 'Molovata — зима: бассейн с горкой и джакузи, пар над водой'
+  },
+  {
+    src: '/molovata/molovata-architecture-floating-saunas-sunset.webp',
+    srcSet: '/molovata/molovata-architecture-floating-saunas-sunset-m.webp 1400w, /molovata/molovata-architecture-floating-saunas-sunset.webp 1800w',
+    alt: 'Molovata — плавучие сауны на Днестре на закате, дым из труб и ресторан на берегу'
   }
 ]
 
