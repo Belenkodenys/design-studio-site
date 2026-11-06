@@ -91,6 +91,24 @@ function BrandingDrift() {
   )
 }
 
+// Kitchen chapter — photos in a masonry-like grid; add { src, alt } here.
+const KITCHEN = [
+  { src: '/molovata/molovata-kitchen-breakfast.webp', alt: 'Molovata — завтрак на террасе: полосатая керамика, бурата с томатами, авокадо-тост, оливки' }
+]
+
+function Kitchen() {
+  if (!KITCHEN.length) return null
+  return (
+    <div className="mol-kitchen">
+      {KITCHEN.map((g) => (
+        <figure key={g.src} className="mol-kitchen-item">
+          <img src={g.src} alt={g.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  )
+}
+
 function Rituals() {
   return (
     <div className="mol-rituals">
@@ -192,6 +210,7 @@ export default function MolovataPage() {
             </h2>
             {m.id === 'architecture' && <SwipeGallery images={ARCHITECTURE} />}
             {m.id === 'branding' && <BrandingDrift />}
+            {m.id === 'kitchen' && <Kitchen />}
             {m.id === 'rituals' && <Rituals />}
           </section>
         ))}
