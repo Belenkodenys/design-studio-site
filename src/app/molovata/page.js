@@ -11,6 +11,14 @@ export const metadata = {
   openGraph: { title: 'Molovata — Belenko Design Studio' }
 }
 
+const MENU = [
+  { id: 'architecture', label: 'Архитектура' },
+  { id: 'interiors', label: 'Интерьеры' },
+  { id: 'branding', label: 'Брендинг' },
+  { id: 'kitchen', label: 'Кухня' },
+  { id: 'rituals', label: 'Ритуалы' }
+]
+
 export default function MolovataPage() {
   return (
     <SubpageShell current="/molovata" wide>
@@ -57,7 +65,22 @@ export default function MolovataPage() {
             <img src="/molovata/molovata-dniester-view.webp" alt="Днестр у Моловаты — вид с высокого берега" loading="lazy" />
           </figure>
         </section>
-        {/* Further sections are added here as the material comes in. */}
+        {/* In-page menu: a horizontal strip of the landing's chapters. */}
+        <nav className="mol-menu" aria-label="Разделы">
+          {MENU.map((m, i) => (
+            <a key={m.id} href={`#${m.id}`} className="mol-menu-item">
+              <span className="mol-menu-num">{String(i + 1).padStart(2, '0')}</span>
+              <span className="mol-menu-label">{m.label}</span>
+            </a>
+          ))}
+        </nav>
+
+        {/* Chapters — filled with material as it comes in. */}
+        {MENU.map((m) => (
+          <section key={m.id} id={m.id} className="mol-section mol-chapter">
+            <h2>{m.label}</h2>
+          </section>
+        ))}
       </div>
     </SubpageShell>
   )

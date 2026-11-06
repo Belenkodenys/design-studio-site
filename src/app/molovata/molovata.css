@@ -88,3 +88,42 @@
   .mol-intro { grid-template-columns: 1fr; }
   .mol-intro-figure { order: -1; aspect-ratio: 4 / 3; min-height: 0; }
 }
+
+/* Horizontal chapter menu: one row between two rules, items spread evenly. */
+.mol-menu {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 48px);
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  padding: clamp(18px, 2vw, 28px) 0;
+  margin: 0 0 var(--sp-section, 96px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mol-menu::-webkit-scrollbar { display: none; }
+.mol-menu-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+  color: #111;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: clamp(18px, 2.2vw, 34px);
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+.mol-menu-item:hover { opacity: 0.55; }
+.mol-menu-num { font-family: var(--font-text); font-weight: 500; font-size: 0.45em; letter-spacing: 0.08em; opacity: 0.6; }
+@media (max-width: 600px) {
+  .mol-menu { justify-content: flex-start; gap: 28px; }
+}
+
+/* Chapters: room above so the fixed header doesn't cover the heading when
+   jumped to from the menu. */
+.mol-chapter { scroll-margin-top: calc(var(--subpage-header-h, 64px) + 24px); min-height: 30vh; }
+html { scroll-behavior: smooth; }
