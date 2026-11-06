@@ -156,6 +156,16 @@ const PLANS = [
     alt: 'Molovata — мастер-план комплекса, М 1:500'
   },
   {
+    src: '/molovata/molovata-plan-basement-plan.webp',
+    srcSet: '/molovata/molovata-plan-basement-plan-m.webp 1600w, /molovata/molovata-plan-basement-plan.webp 3200w',
+    alt: 'Molovata — план подвала на отм. −3,700, направление 2, М 1:120'
+  },
+  {
+    src: '/molovata/molovata-plan-ground-plan.webp',
+    srcSet: '/molovata/molovata-plan-ground-plan-m.webp 1600w, /molovata/molovata-plan-ground-plan.webp 3200w',
+    alt: 'Molovata — план на отм. ±0,000, направление 2 — вестибюль, холл и зал ресторана'
+  },
+  {
     src: '/molovata/molovata-plan-rooms-plan.webp',
     srcSet: '/molovata/molovata-plan-rooms-plan-m.webp 1508w, /molovata/molovata-plan-rooms-plan.webp 3016w',
     alt: 'Molovata — план расстановки мебели номеров — общий, 7 номеров'
