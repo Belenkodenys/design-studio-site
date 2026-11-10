@@ -49,7 +49,12 @@ export async function generateMetadata({ params }) {
           alt: title
         }
       ],
-      type: 'article'
+      type: 'article',
+      siteName: 'Belenko Design Studio',
+      publishedTime: `${year}-01-01T00:00:00.000Z`,
+      authors: ['https://www.belenko.design/about'],
+      section: category,
+      tags: [`${category} interior design`, 'hospitality design', city, country].filter(Boolean)
     },
     twitter: {
       card: 'summary_large_image',
