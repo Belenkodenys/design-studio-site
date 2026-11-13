@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import Redis from "ioredis";
+import { createHash } from "crypto";
 
 let redis = null;
 function getRedis() {
@@ -24,8 +25,15 @@ export async function GET(request) {
       || request.headers.get("x-real-ip")
       || "unknown";
 
-    const key = "visitors:unique";
-    await r.sadd(key, ip);
+    // ?page=residential keeps a separate set for the hidden /residential page;
+    // its members are hashed so no raw IP addresses are stored for it.
+    const page = new URL(request.url).searchParams.get("page");
+    const isResidential = page === "residential";
+    const key = isResidential ? "visitors:unique:residential" : "visitors:unique";
+    const member = isResidential
+      ? createHash("sha256").update("residential:" + ip).digest("hex").slice(0, 32)
+      : ip;
+    await r.sadd(key, member);
     const count = await r.scard(key);
 
     return NextResponse.json({ count });
