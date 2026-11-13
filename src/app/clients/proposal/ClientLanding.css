@@ -246,11 +246,11 @@ html.is-glitching .proposal-glitch-btn {
   background-position: center center;
   background-size: cover;
   opacity: 0;
-  will-change: transform, opacity;
 }
 
 .proposal-hero-slide.is-hidden {
   opacity: 0;
+  display: none;
 }
 
 @keyframes hero-ken-burns {
@@ -1412,7 +1412,6 @@ html.is-glitching .proposal-glitch-btn {
 .proposal-mission .mission-letter {
   display: inline-block;
   opacity: 0;
-  will-change: transform, opacity;
 }
 
 @media (max-width: 720px) {
@@ -2067,4 +2066,14 @@ html.is-glitching .proposal-glitch-btn {
 @media (min-width: 761px) {
   .proposal-monkeys-row { background: #0b0b0b; justify-content: center; }
   .proposal-monkeys-row .vmod-frame:only-child { flex: 0 0 auto; width: min(56.25vh, 100vw); }
+}
+
+/* Phones: a blurred fixed bar is repainted on every scroll frame on iOS —
+   use a slightly denser solid tint instead. */
+@media (max-width: 720px) {
+  .proposal-topbar.is-scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(12, 12, 12, 0.9);
+  }
 }

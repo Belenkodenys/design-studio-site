@@ -355,16 +355,21 @@ function MissionScrollReveal({ text }) {
     orderRef.current = Array.from(letters).map(() => Math.random())
 
     let rafId = null
+    let lastProgress = -1
+    const els = letters
     const update = () => {
       rafId = null
       if (!ref.current) return
       const rect = ref.current.getBoundingClientRect()
       const vh = window.innerHeight || 800
+      // Nothing to do while the paragraph is far below or already fully revealed above.
+      if (rect.top > vh * 1.5 && lastProgress === 0) return
       const start = vh
       const end = vh * 0.2
       const raw = (start - rect.top) / Math.max(1, start - end)
-      const progress = Math.max(0, Math.min(1, raw))
-      const els = ref.current.querySelectorAll('.mission-letter')
+      const progress = Math.round(Math.max(0, Math.min(1, raw)) * 200) / 200
+      if (progress === lastProgress) return
+      lastProgress = progress
       // Per-letter reveal: each letter fades in over a short window centered
       // on its random threshold so the order looks scattered, not sequential.
       const window_ = 0.18
@@ -1194,6 +1199,7 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
 
 export default function ClientLanding() {
   const heroRef = useRef(null)
+  const sectionLinksRef = useRef(null)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [portfolioOpen, setPortfolioOpen] = useState(false)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
@@ -1321,8 +1327,13 @@ export default function ClientLanding() {
 
     const update = () => {
       rafId = null
-      // Hero backgrounds — entry animation + scroll parallax (left slides L, right slides R)
-      if (heroRef.current) {
+      const scrollY = window.scrollY
+      const vh = window.innerHeight
+      // Hero backgrounds — entry animation + scroll parallax (left slides L, right slides R).
+      // Skipped once the hero has scrolled out of view: nothing visible changes and the
+      // style writes would only cost paint time on phones.
+      const heroVisible = heroRef.current && scrollY < (heroRef.current.offsetHeight || vh) + 40
+      if (heroVisible) {
         const elapsed = performance.now() - mountTime
         const progress = Math.min(1, elapsed / ENTRY_DURATION)
         const eased = 1 - Math.pow(1 - progress, 4)
@@ -1330,7 +1341,7 @@ export default function ClientLanding() {
         const entryShiftLeft = -heroWidth * (1 - eased)
         const entryShiftRight = heroWidth * (1 - eased)
         const maxScroll = window.innerWidth
-        const scrollClamped = Math.min(window.scrollY, maxScroll)
+        const scrollClamped = Math.min(scrollY, maxScroll)
         heroRef.current.style.setProperty(
           '--hero-bg-shift',
           `${-scrollClamped + entryShiftLeft}px`
@@ -1342,24 +1353,33 @@ export default function ClientLanding() {
         // Mobile: vertical parallax — background flies upward faster than the screen
         heroRef.current.style.setProperty(
           '--hero-bg-shift-y',
-          `${-window.scrollY * (window.innerWidth <= 720 ? 0.8 : 0.4)}px`
+          `${-scrollY * (window.innerWidth <= 720 ? 0.8 : 0.4)}px`
         )
       }
-      // Sections — slide-in-from-right when entering and slide-out-to-right when leaving
-      const vh = window.innerHeight
+      // Sections — slide-in-from-right when entering and slide-out-to-right when leaving.
+      // Read every rect first, then write every style: interleaving the two forces a
+      // layout per row (the main source of scroll jank here on phones).
       const vCenter = vh / 2
-      document.querySelectorAll('.proposal-section-link').forEach((el) => {
-        const rect = el.getBoundingClientRect()
-        const elCenter = rect.top + rect.height / 2
-        const dist = Math.abs(elCenter - vCenter)
-        const normalized = Math.min(1, dist / vh)
-        // Never push the row (and its chevron) past the viewport's right edge:
-        // cap the shift by the free space to the right of the unshifted row.
-        const currentShift = parseFloat(el.style.getPropertyValue('--section-shift')) || 0
-        const freeRight = window.innerWidth - (rect.right - currentShift) - 16
-        const shift = Math.max(0, Math.min(normalized * MAX_SECTION_SHIFT, freeRight))
-        el.style.setProperty('--section-shift', `${shift}px`)
-      })
+      const links = sectionLinksRef.current || (sectionLinksRef.current = Array.from(document.querySelectorAll('.proposal-section-link')))
+      if (links.length) {
+        const vw = window.innerWidth
+        const reads = links.map((el) => {
+          const rect = el.getBoundingClientRect()
+          const currentShift = parseFloat(el.style.getPropertyValue('--section-shift')) || 0
+          return { el, rect, currentShift }
+        })
+        for (const { el, rect, currentShift } of reads) {
+          // Rows far outside the viewport keep their last value.
+          if (rect.bottom < -vh || rect.top > vh * 2) continue
+          const elCenter = rect.top + rect.height / 2
+          const normalized = Math.min(1, Math.abs(elCenter - vCenter) / vh)
+          // Never push the row (and its chevron) past the viewport's right edge:
+          // cap the shift by the free space to the right of the unshifted row.
+          const freeRight = vw - (rect.right - currentShift) - 16
+          const shift = Math.max(0, Math.min(normalized * MAX_SECTION_SHIFT, freeRight))
+          if (Math.abs(shift - currentShift) > 0.5) el.style.setProperty('--section-shift', `${shift}px`)
+        }
+      }
     }
     const onScroll = () => {
       if (rafId) return
@@ -1373,6 +1393,7 @@ export default function ClientLanding() {
         entryRafId = null
       }
     }
+    sectionLinksRef.current = null
     entryTick()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll)
@@ -1435,11 +1456,14 @@ export default function ClientLanding() {
             } else {
               cls += ' is-hidden'
             }
+            // Only the visible slide(s) get a background: a dozen full-screen
+            // layers with images is what made phones drop frames while scrolling.
+            const visible = isCurrent || isLeaving
             return (
               <div
                 key={`${isMobileViewport ? 'm' : 'd'}-${i}`}
                 className={cls}
-                style={{ backgroundImage: `url(${src})` }}
+                style={visible ? { backgroundImage: `url(${src})` } : { display: 'none' }}
               />
             )
           })}
