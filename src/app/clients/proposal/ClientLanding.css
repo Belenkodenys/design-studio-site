@@ -701,11 +701,12 @@ html.is-glitching .proposal-glitch-btn {
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
-  will-change: transform, opacity;
 }
 
 .studio-gallery-slide.is-current { opacity: 1; transform: translateX(0); }
-.studio-gallery-slide.is-hidden  { opacity: 0; }
+/* Hidden slides are taken out of rendering entirely: with 70+ of them per
+   gallery, promoted layers alone were enough to stall scrolling on phones. */
+.studio-gallery-slide.is-hidden  { opacity: 0; display: none; }
 
 .studio-gallery-slide-cover {
   background-size: cover;
