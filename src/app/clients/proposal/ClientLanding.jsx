@@ -1525,9 +1525,6 @@ export default function ClientLanding() {
         <VideoModule src="/projects/video3.mp4" poster="/projects/belenko-interior-design-video3-poster-2x.webp" />
       </section>
 
-      <section className="proposal-saint-stage" aria-label="Saint Bar">
-        <VideoModule src="/projects/saint.mp4" poster="/projects/belenko-interior-design-saint-poster2-2x.webp" posterMobile="/projects/belenko-interior-design-saint-poster-mobile-2x.webp" landscape />
-      </section>
 
       <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
         <p className="proposal-statement-text">
@@ -1538,11 +1535,6 @@ export default function ClientLanding() {
         <a href="/branding" className="proposal-statement-link">See our branding work →</a>
       </section>
 
-      <section className="proposal-image-stage proposal-image-stage--branding" aria-label="Roya restaurant menu design">
-        {/* Two covers edge to edge; they stack vertically when the screen is too narrow for a pair. */}
-        <img src="/projects/belenko-interior-design-roya-menu-gold-v2.webp" alt="Roya restaurant — gold menu cover with floral still life" loading="lazy" draggable={false} />
-        <img src="/projects/belenko-interior-design-roya-menu-black-v2.webp" alt="Roya restaurant — black floral menu cover" loading="lazy" draggable={false} />
-      </section>
 
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
         <VideoModule src="/projects/monkeys1.mp4" poster="/projects/belenko-interior-design-monkeys1-poster-faces-2x.webp" />
