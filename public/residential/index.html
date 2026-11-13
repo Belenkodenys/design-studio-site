@@ -42,6 +42,8 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 .bk-hero{min-height:100vh !important;min-height:100svh !important}
 body{background:#171719}
 .bk-hero{overflow:hidden}
+#bkStage{touch-action:none}
+#bkStage img{will-change:transform}
 html.lenis,html.lenis body{height:auto}
 .lenis:not(.lenis-autoToggle).lenis-stopped{overflow:clip}
 .lenis [data-lenis-prevent]{overscroll-behavior:contain}
@@ -290,15 +292,6 @@ button{font:inherit}
 
 <!-- FULL-SCREEN GALLERY -->
 <div id="bkLb" hidden role="dialog" aria-modal="true" aria-label="Project photos" style="z-index: 1000; background: #171719; overflow: hidden; display: flex; animation: bkFade 0.5s ease-out; position: fixed; inset: 0">
-<div style="flex: 0 0 85px; width: 85px; height: 100%; overflow-y: auto">
-<button type="button" class="bk-thumb" aria-label="Show photo 1" data-pick="0" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
-<button type="button" class="bk-thumb" aria-label="Show photo 2" data-pick="1" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-shelving.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
-<button type="button" class="bk-thumb" aria-label="Show photo 3" data-pick="2" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-living-view.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
-<button type="button" class="bk-thumb" aria-label="Show photo 4" data-pick="3" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-armchairs.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
-<button type="button" class="bk-thumb" aria-label="Show photo 5" data-pick="4" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-top-view.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
-<button type="button" class="bk-thumb" aria-label="Show photo 6" data-pick="5" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-kitchen.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
-<button type="button" class="bk-thumb" aria-label="Show photo 7" data-pick="6" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-kitchen-ovens.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
-</div>
 <div id="bkStage" style="flex: 1 1 auto; min-width: 0; height: 100%; position: relative; overflow: hidden">
 <div data-slide="0" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room.webp" alt="Living room with a curved sofa and hexagonal pendant lights" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
 <div data-slide="1" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-shelving.webp" alt="Hallway with walnut shelving and a floating bench" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
@@ -313,7 +306,7 @@ button{font:inherit}
 <svg width="20" height="20" viewBox="0 0 12 12" fill="currentColor"><path d="M8.8 3.7L12 6.2 8.8 8.8v-2H0V5.6h8.8z"></path></svg>
 </div>
 </div>
-<div style="flex: 0 0 85px; width: 85px; height: 100%; box-sizing: border-box; padding: 14px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 18px; color: #FFFFFF; font-size: 12px; text-align: center">
+<div style="position: absolute; right: 22px; bottom: 18px; z-index: 11; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 14px; color: #FFFFFF; font-size: 12px; text-align: center; text-shadow: 0 0 8px rgba(0,0,0,0.6)">
 <img src="/residential/belenko-mark-white.png" alt="" style="width: 26px; height: auto; display: block">
 <div><span id="bkCount" style="display: inline-block">01</span> / 07</div>
 </div>
@@ -379,12 +372,12 @@ function paintLb(live){
   thumbs.forEach(function(t,i){ t.style.opacity = i===idx ? 1 : 0.4; });
   count.textContent=(idx+1<10?'0':'')+(idx+1);
 }
-function go(i){ idx=(i+N)%N; paintLb(true); }
+function go(i){ if(typeof resetZoom==='function') resetZoom(false); idx=(i+N)%N; paintLb(true); }
 function openLb(i){ if(moved) return; idx=i; lb.hidden=false; document.documentElement.style.overflow='hidden'; if(lenis) lenis.stop(); cur.style.opacity=0; paintLb(false); setTimeout(function(){ paintLb(true); },40); }
-function closeLb(){ lb.hidden=true; document.documentElement.style.overflow=''; if(lenis) lenis.start(); }
+function closeLb(){ resetZoom(false); lb.hidden=true; document.documentElement.style.overflow=''; if(lenis) lenis.start(); }
 $$('[data-open]').forEach(function(b){ b.addEventListener('click',function(){ openLb(+b.getAttribute('data-open')); }); });
 thumbs.forEach(function(t){ t.addEventListener('click',function(){ go(+t.getAttribute('data-pick')); }); });
-$$('[data-nav]').forEach(function(b){ b.addEventListener('click',function(){ go(idx+ +b.getAttribute('data-nav')); }); });
+$$('[data-nav]').forEach(function(b){ b.addEventListener('click',function(){ if(isTouch) return; go(idx+ +b.getAttribute('data-nav')); }); });
 $('#bkClose').addEventListener('click',closeLb);
 stage.addEventListener('mousemove',function(e){
   var r=stage.getBoundingClientRect(), x=e.clientX-r.left;
@@ -431,6 +424,55 @@ if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
   targets.forEach(function(t){ io.observe(t); });
 } else targets.forEach(function(t){ t.classList.add('in'); });
+/* touch: swipe between photos, pinch / double-tap to zoom, drag to pan */
+var isTouch=false, zs=1, zx=0, zy=0, g=null, lastTap=0;
+function curImg(){ return slides[idx].querySelector('img'); }
+function applyZoom(animate){
+  var im=curImg();
+  im.style.transition = animate ? 'transform 0.3s cubic-bezier(0.215,0.61,0.355,1)' : 'none';
+  im.style.transform='translate3d('+zx.toFixed(1)+'px,'+zy.toFixed(1)+'px,0) scale('+zs.toFixed(3)+')';
+}
+function resetZoom(animate){ zs=1; zx=0; zy=0; slides.forEach(function(s){ var im=s.querySelector('img'); im.style.transition=animate?'transform 0.3s':'none'; im.style.transform=''; }); }
+function clampPan(){
+  var r=stage.getBoundingClientRect(), mx=(zs-1)*r.width/2, my=(zs-1)*r.height/2;
+  zx=Math.max(-mx,Math.min(mx,zx)); zy=Math.max(-my,Math.min(my,zy));
+}
+function dist(t){ var dx=t[0].clientX-t[1].clientX, dy=t[0].clientY-t[1].clientY; return Math.sqrt(dx*dx+dy*dy); }
+stage.addEventListener('touchstart',function(e){
+  isTouch=true;
+  if(e.touches.length===2){ g={type:'pinch',d0:dist(e.touches),s0:zs}; }
+  else if(e.touches.length===1){ var t=e.touches[0]; g={type:zs>1?'pan':'swipe',x0:t.clientX,y0:t.clientY,zx0:zx,zy0:zy,dx:0,dy:0,t0:Date.now()}; }
+},{passive:true});
+stage.addEventListener('touchmove',function(e){
+  if(!g) return;
+  e.preventDefault();
+  if(g.type==='pinch' && e.touches.length===2){
+    zs=Math.max(1,Math.min(4,g.s0*dist(e.touches)/g.d0)); clampPan(); applyZoom(false);
+  } else if(e.touches.length===1){
+    var t=e.touches[0]; g.dx=t.clientX-g.x0; g.dy=t.clientY-g.y0;
+    if(g.type==='pan'){ zx=g.zx0+g.dx; zy=g.zy0+g.dy; clampPan(); applyZoom(false); }
+    else if(g.type==='swipe'){ zx=g.dx; zy=0; applyZoom(false); }
+  }
+},{passive:false});
+stage.addEventListener('touchend',function(e){
+  if(!g) return;
+  var was=g; 
+  if(e.touches.length>0){ if(e.touches.length===1){ var t=e.touches[0]; g={type:zs>1?'pan':'swipe',x0:t.clientX,y0:t.clientY,zx0:zx,zy0:zy,dx:0,dy:0,t0:Date.now()}; } return; }
+  g=null;
+  if(was.type==='pinch'){ if(zs<1.08) resetZoom(true); return; }
+  var moved2=Math.abs(was.dx)>8||Math.abs(was.dy)>8;
+  if(!moved2){
+    var now=Date.now();
+    if(now-lastTap<320){ lastTap=0; if(zs>1) resetZoom(true); else { zs=2.5; zx=0; zy=0; applyZoom(true); } }
+    else lastTap=now;
+    if(was.type==='swipe'){ zx=0; applyZoom(true); }
+    return;
+  }
+  if(was.type==='swipe'){
+    if(Math.abs(was.dx)>50 && Math.abs(was.dx)>Math.abs(was.dy)){ resetZoom(false); go(idx+(was.dx<0?1:-1)); }
+    else { zx=0; zy=0; applyZoom(true); }
+  }
+},{passive:true});
 document.addEventListener('keydown',function(e){
   if(lb.hidden) return;
   if(e.key==='Escape') closeLb(); else if(e.key==='ArrowRight') go(idx+1); else if(e.key==='ArrowLeft') go(idx-1);
