@@ -3,6 +3,13 @@
 const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
+  // Hidden working page (static HTML in public/residential): not linked,
+  // not in the sitemap, noindex via meta + X-Robots-Tag in vercel.json.
+  async rewrites() {
+    return [
+      { source: '/residential', destination: '/residential/index.html' },
+    ]
+  },
   async redirects() {
     return [
       {

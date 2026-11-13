@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belenko — Residential Interiors</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Inter:wght@300;400&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{opacity:.65}
+.bk-strip,.bk-strip *{cursor:grab;user-select:none;-webkit-user-select:none;-webkit-user-drag:none}
+.bk-strip.bk-dragging,.bk-strip.bk-dragging *{cursor:grabbing}
+.bk-slide img{transition:transform 1.2s}
+@media (hover:hover){.bk-slide:hover img{transform:scale(1.05)}}
+.bk-close{transition:border-color 1s cubic-bezier(0.215,0.61,0.355,1),background 1s cubic-bezier(0.215,0.61,0.355,1),color 1s cubic-bezier(0.215,0.61,0.355,1)}
+.bk-close:hover{background:#FFFFFF !important;border-color:transparent !important;color:#171719 !important}
+.bk-thumb:hover{opacity:1 !important}
+.bk-header{position:fixed;top:0;left:0;width:100%;z-index:100;color:#F1F0EC;transition:transform .5s cubic-bezier(0.645,0.045,0.355,1)}
+.bk-header.bk-hidden{transform:translateY(-100%)}
+.bk-bar{position:relative;box-sizing:border-box;padding:134px clamp(24px, 9vw, 130px) 20px;transition:padding .7s}
+.bk-bar::before{content:"";position:absolute;top:0;left:0;right:0;height:100%;margin:0 calc(clamp(24px, 9vw, 130px) - 25px);background:#000;opacity:0;z-index:-1;transition:all .3s cubic-bezier(0.645,0.045,0.355,1)}
+.bk-compact .bk-bar{padding-top:20px}
+.bk-compact .bk-bar::before{opacity:.5}
+@media (max-width:991px){.bk-bar{padding-top:50px}}
+.bk-menu{position:absolute;top:100%;left:0;right:0;margin:0 calc(clamp(24px, 9vw, 130px) - 25px);padding:8px 25px 20px;background:rgba(0,0,0,.88);display:flex;flex-direction:column;font-family:Oswald,sans-serif;font-size:18px;letter-spacing:.08em;text-transform:uppercase;animation:bkFade .3s ease-out}
+.bk-menu a{display:flex;align-items:center;min-height:48px;border-bottom:1px solid rgba(255,255,255,.14)}
+.bk-menu a:last-child{border-bottom:0}
+@media (max-width:719px){.bk-bar{padding-top:20px}.bk-bar::before{margin:0}.bk-link{display:none}.bk-menu{margin:0;padding:8px 24px 20px}}
+@media (max-width:768px){.bk-slide,.bk-slide img{height:61.5vw !important}}
+@keyframes bkFade{from{opacity:0}to{opacity:1}}
+.bk-menu[hidden],#bkLb[hidden]{display:none !important}
+button{font:inherit}
+</style>
+</head>
+<body>
+<!-- Hidden working page: not linked from the site, not in the sitemap, noindex. -->
+<div style="font-family: Inter, sans-serif; font-weight: 300; color: #171719; background: #EEEEEC; line-height: 1.6; font-size: 16px; position: relative">
+
+<!-- FIXED HEADER -->
+<div class="bk-header" id="bkHeader">
+<div class="bk-bar">
+<nav style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 24px; font-family: Oswald, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; font-size: 15px; position: relative">
+<a href="#" aria-label="Belenko — home" style="display: flex; align-items: center; min-height: 44px"><img src="/residential/belenko-logo-white.png" alt="Belenko" style="height: 30px; width: auto; display: block"></a>
+<div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 48px">
+<a class="bk-link" href="#projects" style="padding: 12px 0">Projects</a>
+<a class="bk-link" href="#approach" style="padding: 12px 0">Approach</a>
+<a class="bk-link" href="#contact" style="padding: 12px 0">Contact</a>
+<button type="button" aria-label="Open menu" id="bkBurger" aria-expanded="false" style="background: none; border: 0; color: inherit; width: 44px; height: 44px; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 1h20M0 7h20M0 13h20"></path></svg>
+</button>
+</div>
+</nav>
+<div class="bk-menu" id="bkMenu" hidden>
+<a href="#projects" data-close-menu>Projects</a>
+<a href="#approach" data-close-menu>Approach</a>
+<a href="#about" data-close-menu>About</a>
+<a href="#journal" data-close-menu>Journal</a>
+<a href="#contact" data-close-menu>Contact</a>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<header style="background: #171719; color: #F1F0EC; min-height: 820px; box-sizing: border-box; padding: 220px clamp(24px, 9vw, 130px) 72px; display: flex; flex-direction: column; justify-content: flex-end; gap: 80px; position: relative; overflow: hidden">
+<img src="/residential/belenko-interior-design-residential-living-room-evening.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: opacity 2s ease-in-out; opacity: 1" data-hero="0">
+<img src="/residential/belenko-interior-design-residential-living-room-bar.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: opacity 2s ease-in-out; opacity: 0" data-hero="1">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,14,14,0.62) 0%, rgba(14,14,14,0.28) 38%, rgba(14,14,14,0.78) 100%)"></div>
+<div style="display: flex; flex-direction: column; gap: 20px; position: relative">
+<h1 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(48px, 8.4vw, 120px); line-height: 1; letter-spacing: 0.01em; text-transform: uppercase">Residential interiors</h1>
+<p style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(24px, 3.4vw, 48px); line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase">[Tagline in three or four words]</p>
+<a href="#featured" style="margin-top: 16px; padding: 12px 0; font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; align-self: flex-start">+ &nbsp; Read more</a>
+</div>
+<div style="position: absolute; right: clamp(24px, 9vw, 130px); bottom: 56px; display: flex; gap: 10px; z-index: 2">
+<button type="button" aria-label="Show background photo 1" data-hero-btn="0" style="width: 44px; height: 44px; border: 0; padding: 0; background: none; cursor: pointer; display: flex; align-items: center"><span style="display: block; width: 100%; height: 2px; background: #FFFFFF; opacity: 1; transition: opacity 0.6s"></span></button>
+<button type="button" aria-label="Show background photo 2" data-hero-btn="1" style="width: 44px; height: 44px; border: 0; padding: 0; background: none; cursor: pointer; display: flex; align-items: center"><span style="display: block; width: 100%; height: 2px; background: #FFFFFF; opacity: 0.4; transition: opacity 0.6s"></span></button>
+</div>
+</header>
+
+<!-- STATEMENT -->
+<section style="padding: clamp(80px, 11vw, 160px) clamp(24px, 9vw, 130px); display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5B57">#01</div>
+<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.05; text-transform: uppercase">What is your key idea about designing a home?</h2>
+<p style="margin: 12px 0 0; max-width: 560px; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">At BELENKO, we work with private clients who want a home shaped around their lifestyle and taste. We design contemporary apartments with thoughtful layouts, expressive materials, and custom details.</p>
+</div>
+<a href="#projects" style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid currentColor; padding: 18px 36px">All projects</a>
+</section>
+
+<!-- CATEGORIES -->
+<section style="padding: 0 clamp(24px, 9vw, 130px) clamp(80px, 11vw, 160px); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+<a href="#" style="display: flex; flex-direction: column; gap: 24px">
+<div style="aspect-ratio: 5 / 6; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Photo]</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase">+ &nbsp; Apartments</div>
+</a>
+<a href="#" style="display: flex; flex-direction: column; gap: 24px">
+<div style="aspect-ratio: 5 / 6; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Photo]</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase">+ &nbsp; Houses &amp; villas</div>
+</a>
+<a href="#" style="display: flex; flex-direction: column; gap: 24px">
+<div style="aspect-ratio: 5 / 6; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Photo]</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase">+ &nbsp; Penthouses</div>
+</a>
+<a href="#" style="display: flex; flex-direction: column; gap: 24px">
+<div style="aspect-ratio: 5 / 6; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Photo]</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase">+ &nbsp; [Fourth category]</div>
+</a>
+</section>
+
+<!-- FEATURED PROJECT -->
+<section id="featured" style="padding: 0 clamp(24px, 9vw, 130px) clamp(80px, 11vw, 160px); display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5B57">Featured project</div>
+<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: clamp(28px, 2.8vw, 40px); letter-spacing: 0.04em; text-transform: uppercase">[Project name, city]</h2>
+</div>
+<div style="aspect-ratio: 3 / 2; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Large photo of the lead project]</div>
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 760px">
+<p style="margin: 0">[Paragraph about the project: type of home, area, the client's brief.]</p>
+<p style="margin: 0">[Paragraph about the solution: layout, materials, lighting, bespoke furniture.]</p>
+<a href="#" style="padding: 12px 0; font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; align-self: flex-start">+ &nbsp; View project</a>
+</div>
+</section>
+
+<!-- PROJECT LIST -->
+<section id="projects" style="background: #171719; color: #F1F0EC; padding: clamp(80px, 9vw, 130px) clamp(24px, 9vw, 130px); display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #A3A29D">Portfolio</div>
+<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.05; text-transform: uppercase">Projects</h2>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 56px; padding: 40px 0; border-top: 1px solid #55554F">
+<div class="bk-strip" id="bkStrip" style="flex: 1 1 100%; min-width: 0; margin: 0 calc(-1 * clamp(24px, 9vw, 130px)); overflow: hidden; touch-action: pan-y">
+<div style="display: flex; gap: 3vw; width: max-content; padding: 0 clamp(24px, 9vw, 130px); transform: translateX(0px); transition: transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)">
+<button type="button" class="bk-slide" aria-label="Open photo 1 full screen" data-open="0" style="flex: 0 0 auto; height: 28vw; border: 0; padding: 0; margin: 0; background: none; overflow: hidden; display: block"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room.webp" alt="Living room with a curved sofa and hexagonal pendant lights" draggable="false" style="height: 28vw; width: auto; display: block; aspect-ratio: 1913 / 822"></button>
+<button type="button" class="bk-slide" aria-label="Open photo 2 full screen" data-open="1" style="flex: 0 0 auto; height: 28vw; border: 0; padding: 0; margin: 0; background: none; overflow: hidden; display: block"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-shelving.webp" alt="Hallway with walnut shelving and a floating bench" draggable="false" style="height: 28vw; width: auto; display: block; aspect-ratio: 9 / 16"></button>
+<button type="button" class="bk-slide" aria-label="Open photo 3 full screen" data-open="2" style="flex: 0 0 auto; height: 28vw; border: 0; padding: 0; margin: 0; background: none; overflow: hidden; display: block"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-living-view.webp" alt="Hallway opening onto the living room" draggable="false" style="height: 28vw; width: auto; display: block; aspect-ratio: 9 / 16"></button>
+<button type="button" class="bk-slide" aria-label="Open photo 4 full screen" data-open="3" style="flex: 0 0 auto; height: 28vw; border: 0; padding: 0; margin: 0; background: none; overflow: hidden; display: block"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-armchairs.webp" alt="Living room with sculptural armchairs and a round shag rug" draggable="false" style="height: 28vw; width: auto; display: block; aspect-ratio: 941 / 1672"></button>
+<button type="button" class="bk-slide" aria-label="Open photo 5 full screen" data-open="4" style="flex: 0 0 auto; height: 28vw; border: 0; padding: 0; margin: 0; background: none; overflow: hidden; display: block"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-top-view.webp" alt="Living room seen from above: sectional sofa, armchairs and shag rug" draggable="false" style="height: 28vw; width: auto; display: block; aspect-ratio: 941 / 1672"></button>
+<button type="button" class="bk-slide" aria-label="Open photo 6 full screen" data-open="5" style="flex: 0 0 auto; height: 28vw; border: 0; padding: 0; margin: 0; background: none; overflow: hidden; display: block"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-kitchen.webp" alt="Bronze-panelled kitchen with a stone worktop and linear pendant light" draggable="false" style="height: 28vw; width: auto; display: block; aspect-ratio: 941 / 1672"></button>
+</div>
+</div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(28px, 3vw, 44px); line-height: 1.1; text-transform: uppercase">[Project 1]</div>
+<div style="font-size: 14px; color: #A3A29D">Istanbul · Private apartment · 130 m² · 2023</div>
+</div>
+<a href="#" style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0">+ &nbsp; View</a>
+</div>
+<a href="#" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 56px; padding: 40px 0; border-top: 1px solid #55554F">
+<div style="flex: 1 1 320px; max-width: 520px; aspect-ratio: 3 / 2; background: #2A2A2D; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase">[Photo]</div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(28px, 3vw, 44px); line-height: 1.1; text-transform: uppercase">[Project 2]</div>
+<div style="font-size: 14px; color: #A3A29D">[City · type of home · area · year]</div>
+</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0">+ &nbsp; View</div>
+</a>
+<a href="#" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px 56px; padding: 40px 0; border-top: 1px solid #55554F; border-bottom: 1px solid #55554F">
+<div style="flex: 1 1 320px; max-width: 520px; aspect-ratio: 3 / 2; background: #2A2A2D; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase">[Photo]</div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(28px, 3vw, 44px); line-height: 1.1; text-transform: uppercase">[Project 3]</div>
+<div style="font-size: 14px; color: #A3A29D">[City · type of home · area · year]</div>
+</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0">+ &nbsp; View</div>
+</a>
+</div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" style="padding: clamp(80px, 11vw, 160px) clamp(24px, 9vw, 130px); display: flex; flex-direction: column; gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5B57">Approach</div>
+<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.05; text-transform: uppercase">From idea to keys</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">01</div>
+<h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Concept</h3>
+<p style="margin: 0; font-size: 15px">[What this stage includes and what the client receives.]</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">02</div>
+<h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Design</h3>
+<p style="margin: 0; font-size: 15px">[What this stage includes and what the client receives.]</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">03</div>
+<h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Furnishing</h3>
+<p style="margin: 0; font-size: 15px">[What this stage includes and what the client receives.]</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">04</div>
+<h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Delivery</h3>
+<p style="margin: 0; font-size: 15px">[What this stage includes and what the client receives.]</p>
+</div>
+</div>
+</section>
+
+<!-- TWO CARDS -->
+<section style="padding: 0 clamp(24px, 9vw, 130px) clamp(80px, 11vw, 160px); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px">
+<a href="#" style="display: flex; flex-direction: column; gap: 20px">
+<div style="aspect-ratio: 4 / 3; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase">[Photo: portrait or studio]</div>
+<h3 id="about" style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.04em; text-transform: uppercase">About</h3>
+<p style="margin: 0; max-width: 480px">[A short note about you and the team.]</p>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0">+ &nbsp; Read more</div>
+</a>
+<a href="#" style="display: flex; flex-direction: column; gap: 20px">
+<div style="aspect-ratio: 4 / 3; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase">[Photo: materials, details]</div>
+<h3 id="journal" style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 26px; letter-spacing: 0.04em; text-transform: uppercase">Journal</h3>
+<p style="margin: 0; max-width: 480px">[Articles, press, process.]</p>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0">+ &nbsp; Read</div>
+</a>
+</section>
+
+<!-- CONTACT + FOOTER -->
+<section id="contact" style="background: #171719; color: #F1F0EC; padding: clamp(80px, 9vw, 130px) clamp(24px, 9vw, 130px); display: flex; flex-direction: column; gap: 48px">
+<img src="/residential/belenko-mark-white.png" alt="" style="width: 44px; height: auto; display: block">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 48px">
+<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(40px, 6vw, 88px); line-height: 1; text-transform: uppercase; max-width: 720px">Let's talk about your home</h2>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 18px">
+<a href="#" style="padding: 10px 0">[Email]</a>
+<a href="#" style="padding: 10px 0">[Phone / WhatsApp]</a>
+<div style="padding: 10px 0; color: #A3A29D">[City, address]</div>
+</div>
+</div>
+</section>
+
+<!-- NEWSLETTER -->
+<section style="background: #F1F1EF; color: #171719; padding: clamp(96px, 16vw, 240px) clamp(24px, 9vw, 130px) clamp(96px, 11vw, 160px); display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 48px 80px">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: clamp(32px, 3.2vw, 46px); line-height: 1.15; letter-spacing: 0.01em; text-transform: uppercase">Subscribe to<br>our newsletter</h2>
+<p style="margin: 0; color: #6B6A66; letter-spacing: 0.03em">To stay up to date on new projects and news from Belenko</p>
+</div>
+<form style="flex: 1 1 420px; max-width: 620px; display: flex; flex-direction: column; gap: 26px; margin: 16px 0 0">
+<div style="display: flex; align-items: center; background: #FFFFFF; border-radius: 40px; padding: 4px 4px 4px 36px; min-height: 66px; box-sizing: border-box">
+<label for="nl-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%)">Email</label>
+<input id="nl-email" type="email" required placeholder="Email*" style="flex: 1 1 auto; min-width: 0; border: 0; outline-offset: 6px; background: transparent; font-family: Inter, sans-serif; font-weight: 300; font-size: 18px; letter-spacing: 0.03em; color: #171719; height: 54px">
+<button type="submit" aria-label="Subscribe" style="flex: 0 0 auto; width: 54px; height: 54px; border-radius: 50%; border: 0; background: #171719; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer">
+<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+</button>
+</div>
+<label style="display: flex; align-items: center; gap: 16px; min-height: 44px; font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6A66; cursor: pointer">
+<input type="checkbox" required style="appearance: none; -webkit-appearance: none; margin: 0; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 1px solid #8E8E8A; flex: 0 0 auto">
+<span>Agree to <a href="#" style="text-decoration: underline">terms and conditions</a></span>
+</label>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #0E0E0E; color: #F1F0EC; padding: 62px clamp(24px, 9vw, 130px) 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px">
+<div style="flex: 1 1 38%; min-width: 240px; display: flex; flex-direction: column; gap: 40px">
+<a href="#" aria-label="Belenko — home" style="align-self: flex-start"><img src="/residential/belenko-logo-white.png" alt="Belenko" style="height: 26px; width: auto; display: block"></a>
+<div style="color: #8E8E8A; letter-spacing: 0.05em">[Tax ID] / Belenko 2026</div>
+</div>
+<div style="flex: 1 1 22%; min-width: 160px; display: flex; flex-direction: column; gap: 4px; color: #8E8E8A; letter-spacing: 0.05em">
+<a href="#" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Credits</a>
+<a href="#" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Privacy</a>
+<a href="#" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Cookies</a>
+</div>
+<div style="flex: 0 1 auto; align-self: center; display: flex; flex-wrap: wrap; gap: 10px">
+<a href="#" aria-label="Instagram" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="0.6"></circle></svg></a>
+<a href="#" aria-label="Facebook" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.6-2 2-2h1.5V2H15c-3 0-5 1.8-5 5v2H7v4h3v8"></path></svg></a>
+<a href="#" aria-label="YouTube" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9l5 3-5 3z"></path></svg></a>
+<a href="#" aria-label="Pinterest" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"></circle><path d="M10 20l2-10M9.5 13.5c-1.5-3 .5-6 3-6s4 2 3.500 4.500-2.500 4-4.500 2.500"></path></svg></a>
+<a href="#" aria-label="LinkedIn" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 11v6M8 7.500v.01M12 17v-6M12 13.500c0-3.500 4.500-3.500 4.500 0V17"></path></svg></a>
+<a href="#" aria-label="Spotify" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"></circle><path d="M7.500 9.500c3-1 6.500-.8 9.500.8M8 12.500c2.500-.8 5.500-.6 8 .8M8.800 15.300c2-.6 4.200-.4 6 .6"></path></svg></a>
+</div>
+</footer>
+
+<!-- FULL-SCREEN GALLERY -->
+<div id="bkLb" hidden role="dialog" aria-modal="true" aria-label="Project photos" style="z-index: 1000; background: #171719; overflow: hidden; display: flex; animation: bkFade 0.5s ease-out; position: fixed; inset: 0">
+<div style="flex: 0 0 85px; width: 85px; height: 100%; overflow-y: auto">
+<button type="button" class="bk-thumb" aria-label="Show photo 1" data-pick="0" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
+<button type="button" class="bk-thumb" aria-label="Show photo 2" data-pick="1" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-shelving.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
+<button type="button" class="bk-thumb" aria-label="Show photo 3" data-pick="2" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-living-view.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
+<button type="button" class="bk-thumb" aria-label="Show photo 4" data-pick="3" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-armchairs.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
+<button type="button" class="bk-thumb" aria-label="Show photo 5" data-pick="4" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-top-view.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
+<button type="button" class="bk-thumb" aria-label="Show photo 6" data-pick="5" style="border: 0; padding: 0; margin: 14px; background: none; cursor: pointer; width: 57px; display: block; opacity: 0.4; transition: opacity 0.3s ease-out"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-kitchen.webp" alt="" draggable="false" style="width: 100%; height: auto; display: block"></button>
+</div>
+<div id="bkStage" style="flex: 1 1 auto; min-width: 0; height: 100%; position: relative; overflow: hidden">
+<div data-slide="0" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room.webp" alt="Living room with a curved sofa and hexagonal pendant lights" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
+<div data-slide="1" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-shelving.webp" alt="Hallway with walnut shelving and a floating bench" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
+<div data-slide="2" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-hallway-living-view.webp" alt="Hallway opening onto the living room" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
+<div data-slide="3" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-armchairs.webp" alt="Living room with sculptural armchairs and a round shag rug" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
+<div data-slide="4" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-living-room-top-view.webp" alt="Living room seen from above: sectional sofa, armchairs and shag rug" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
+<div data-slide="5" style="position: absolute; inset: 0; opacity: 0; transform: scale(1.05); transition: transform 0.8s cubic-bezier(0.25, 0.39, 0.25, 1), opacity 0.8s cubic-bezier(0.25, 0.39, 0.25, 1)"><img src="/residential/belenko-interior-design-residential-istanbul-apartment-kitchen.webp" alt="Bronze-panelled kitchen with a stone worktop and linear pendant light" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block"></div>
+<button type="button" aria-label="Previous photo" data-nav="-1" style="position: absolute; top: 0; width: 50%; height: 100%; border: 0; padding: 0; margin: 0; background: transparent; cursor: pointer; z-index: 2; left: 0"></button>
+<button type="button" aria-label="Next photo" data-nav="1" style="position: absolute; top: 0; width: 50%; height: 100%; border: 0; padding: 0; margin: 0; background: transparent; cursor: pointer; z-index: 2; right: 0"></button>
+<div id="bkCur" aria-hidden="true" style="position: absolute; left: 0px; top: 0px; margin-top: -20px; margin-left: -10px; z-index: 10; pointer-events: none; color: #FFFFFF; opacity: 0; transform: rotate(0deg); transform-origin: center center; transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; line-height: 0">
+<svg width="20" height="20" viewBox="0 0 12 12" fill="currentColor"><path d="M8.8 3.7L12 6.2 8.8 8.8v-2H0V5.6h8.8z"></path></svg>
+</div>
+</div>
+<div style="flex: 0 0 85px; width: 85px; height: 100%; box-sizing: border-box; padding: 14px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 18px; color: #FFFFFF; font-size: 12px; text-align: center">
+<img src="/residential/belenko-mark-white.png" alt="" style="width: 26px; height: auto; display: block">
+<div><span id="bkCount" style="display: inline-block">01</span> / 06</div>
+</div>
+<button type="button" class="bk-close" aria-label="Close gallery" id="bkClose" style="position: absolute; right: 19px; top: 19px; width: 46px; height: 46px; box-sizing: border-box; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; z-index: 11">
+<svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l8 8M9 1L1 9"></path></svg>
+</button>
+</div>
+
+</div>
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+/* header: hide on scroll down, show compact on scroll up */
+var header=$('#bkHeader'), menu=$('#bkMenu'), burger=$('#bkBurger'), lastY=0, nav='top', menuOpen=false;
+function paintHeader(){
+  header.className = menuOpen ? 'bk-header bk-compact' : nav==='hidden' ? 'bk-header bk-hidden' : nav==='compact' ? 'bk-header bk-compact' : 'bk-header';
+  menu.hidden=!menuOpen; burger.setAttribute('aria-expanded', menuOpen?'true':'false');
+}
+window.addEventListener('scroll',function(){
+  var y=window.scrollY||document.documentElement.scrollTop||0, d=y-lastY;
+  if(Math.abs(d)<2 && y>10) return;
+  lastY=y;
+  var next = y<=10 ? 'top' : (d>0 ? 'hidden' : 'compact');
+  if(next!==nav){ nav=next; if(next==='hidden') menuOpen=false; paintHeader(); }
+},{passive:true});
+burger.addEventListener('click',function(){ menuOpen=!menuOpen; paintHeader(); });
+$$('[data-close-menu]').forEach(function(a){ a.addEventListener('click',function(){ menuOpen=false; paintHeader(); }); });
+/* hero slideshow */
+var heroImgs=$$('[data-hero]'), heroBtns=$$('[data-hero-btn]'), hero=0, heroTimer=null;
+function paintHero(){
+  heroImgs.forEach(function(im,i){ im.style.opacity = i===hero ? 1 : 0; });
+  heroBtns.forEach(function(b,i){ b.firstElementChild.style.opacity = i===hero ? 1 : 0.4; });
+}
+function startHero(){ if(heroTimer) clearInterval(heroTimer); heroTimer=setInterval(function(){ hero=(hero+1)%heroImgs.length; paintHero(); },4000); }
+heroBtns.forEach(function(b,i){ b.addEventListener('click',function(){ hero=i; paintHero(); startHero(); }); });
+startHero();
+/* draggable strip */
+var strip=$('#bkStrip'), track=strip.firstElementChild, drag=null, moved=false, tx=0;
+function setTx(v,animate){ tx=v; track.style.transition = animate ? 'transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)' : 'none'; track.style.transform='translateX('+Math.round(v)+'px)'; }
+strip.addEventListener('pointerdown',function(e){ drag={x0:e.clientX,tx0:tx,min:Math.min(0,strip.clientWidth-track.scrollWidth),last:e.clientX,v:0}; moved=false; });
+strip.addEventListener('pointermove',function(e){
+  if(!drag) return;
+  var dx=e.clientX-drag.x0;
+  if(Math.abs(dx)>5) moved=true;
+  if(!moved) return;
+  drag.v=e.clientX-drag.last; drag.last=e.clientX;
+  var v=drag.tx0+dx;
+  if(v>0) v=v*0.35;
+  if(v<drag.min) v=drag.min+(v-drag.min)*0.35;
+  strip.classList.add('bk-dragging'); setTx(v,false);
+});
+function endDrag(){
+  if(!drag) return;
+  var d=drag; drag=null; strip.classList.remove('bk-dragging');
+  if(moved){ setTx(Math.max(d.min,Math.min(0,tx+d.v*12)),true); setTimeout(function(){ moved=false; },300); }
+}
+strip.addEventListener('pointerup',endDrag); strip.addEventListener('pointerleave',endDrag); strip.addEventListener('pointercancel',endDrag);
+/* full-screen gallery */
+var lb=$('#bkLb'), slides=$$('[data-slide]'), thumbs=$$('[data-pick]'), count=$('#bkCount'), stage=$('#bkStage'), cur=$('#bkCur'), idx=0, N=slides.length;
+function paintLb(live){
+  slides.forEach(function(s,i){ var on=live && i===idx; s.style.opacity=on?1:0; s.style.transform=on?'scale(1)':'scale(1.05)'; });
+  thumbs.forEach(function(t,i){ t.style.opacity = i===idx ? 1 : 0.4; });
+  count.textContent=(idx+1<10?'0':'')+(idx+1);
+}
+function go(i){ idx=(i+N)%N; paintLb(true); }
+function openLb(i){ if(moved) return; idx=i; lb.hidden=false; document.documentElement.style.overflow='hidden'; cur.style.opacity=0; paintLb(false); setTimeout(function(){ paintLb(true); },40); }
+function closeLb(){ lb.hidden=true; document.documentElement.style.overflow=''; }
+$$('[data-open]').forEach(function(b){ b.addEventListener('click',function(){ openLb(+b.getAttribute('data-open')); }); });
+thumbs.forEach(function(t){ t.addEventListener('click',function(){ go(+t.getAttribute('data-pick')); }); });
+$$('[data-nav]').forEach(function(b){ b.addEventListener('click',function(){ go(idx+ +b.getAttribute('data-nav')); }); });
+$('#bkClose').addEventListener('click',closeLb);
+stage.addEventListener('mousemove',function(e){
+  var r=stage.getBoundingClientRect(), x=e.clientX-r.left;
+  cur.style.left=Math.round(x)+'px'; cur.style.top=Math.round(e.clientY-r.top)+'px';
+  cur.style.opacity=1; cur.style.transform='rotate('+(x<r.width/2?180:0)+'deg)';
+});
+stage.addEventListener('mouseleave',function(){ cur.style.opacity=0; });
+document.addEventListener('keydown',function(e){
+  if(lb.hidden) return;
+  if(e.key==='Escape') closeLb(); else if(e.key==='ArrowRight') go(idx+1); else if(e.key==='ArrowLeft') go(idx-1);
+});
+})();
+</script>
+</body>
+</html>
