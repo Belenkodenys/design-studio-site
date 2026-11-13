@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 .bk-menu a:last-child{border-bottom:0}
 @media (max-width:719px){.bk-bar{padding-top:20px}.bk-bar::before{margin:0}.bk-link{display:none}.bk-menu{margin:0;padding:8px 24px 20px}}
 @media (max-width:768px){.bk-slide,.bk-slide img{height:61.5vw !important}}
-@keyframes bkScroll{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}70%{opacity:1}100%{transform:translateY(8px);opacity:0}}
+@keyframes bkScroll{0%{transform:translateY(-16px);opacity:0}25%{opacity:1}70%{opacity:1}100%{transform:translateY(22px);opacity:0}}
 .bk-scroll svg{animation:bkScroll 2.2s cubic-bezier(0.215,0.61,0.355,1) infinite}
 @media (prefers-reduced-motion:reduce){.bk-scroll svg{animation:none}}
 @keyframes bkFade{from{opacity:0}to{opacity:1}}
@@ -93,7 +93,8 @@ button{font:inherit}
 <button type="button" aria-label="Show background photo 1" data-hero-btn="0" style="width: 44px; height: 44px; border: 0; padding: 0; background: none; cursor: pointer; display: flex; align-items: center"><span style="display: block; width: 100%; height: 2px; background: #FFFFFF; opacity: 1; transition: opacity 0.6s"></span></button>
 <button type="button" aria-label="Show background photo 2" data-hero-btn="1" style="width: 44px; height: 44px; border: 0; padding: 0; background: none; cursor: pointer; display: flex; align-items: center"><span style="display: block; width: 100%; height: 2px; background: #FFFFFF; opacity: 0.4; transition: opacity 0.6s"></span></button>
 </div>
-<a class="bk-scroll" href="#intro" aria-label="Scroll down" style="position: absolute; left: 50%; bottom: 20px; margin-left: -22px; width: 44px; height: 56px; display: flex; align-items: center; justify-content: center; z-index: 2; color: #FFFFFF">
+<a class="bk-scroll" href="#intro" aria-label="Scroll down" style="position: absolute; left: 50%; bottom: 26px; margin-left: -40px; width: 80px; display: flex; flex-direction: column; align-items: center; gap: 22px; padding-bottom: 24px; z-index: 2; color: #FFFFFF">
+<span style="font-family: Oswald, sans-serif; font-weight: 200; font-size: 12px; letter-spacing: 0.34em; margin-right: -0.34em; text-transform: uppercase">Scroll</span>
 <svg aria-hidden="true" width="14" height="34" viewBox="0 0 14 34" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1v31M1.500 26.500L7 32l5.500-5.500"></path></svg>
 </a>
 </header>
