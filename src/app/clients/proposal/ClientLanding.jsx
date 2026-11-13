@@ -1526,6 +1526,10 @@ export default function ClientLanding() {
       </section>
 
 
+      <section className="proposal-saint-stage" aria-label="Saint Bar">
+        <VideoModule src="/projects/saint.mp4" poster="/projects/belenko-interior-design-saint-poster2-2x.webp" posterMobile="/projects/belenko-interior-design-saint-poster-mobile-2x.webp" landscape />
+      </section>
+
       <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
         <p className="proposal-statement-text">
           Branding that
@@ -1537,7 +1541,6 @@ export default function ClientLanding() {
 
 
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
-        <VideoModule src="/projects/monkeys1.mp4" poster="/projects/belenko-interior-design-monkeys1-poster-faces-2x.webp" />
         <VideoModule src="/projects/monkeys2.mp4" poster="/projects/belenko-interior-design-monkeys2-poster3-2x.webp" />
       </section>
 

@@ -2062,3 +2062,9 @@ html.is-glitching .proposal-glitch-btn {
   transition: opacity 0.2s ease;
 }
 .proposal-section-cta:hover { opacity: 0.6; }
+
+/* 12 Monkeys row now holds a single portrait module: centre it on dark. */
+@media (min-width: 761px) {
+  .proposal-monkeys-row { background: #0b0b0b; justify-content: center; }
+  .proposal-monkeys-row .vmod-frame:only-child { flex: 0 0 auto; width: min(56.25vh, 100vw); }
+}
