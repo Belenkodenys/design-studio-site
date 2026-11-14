@@ -64,8 +64,9 @@ button{font:inherit}
 <div class="bk-bar">
 <nav style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 24px; font-family: Oswald, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; font-size: 15px; position: relative">
 <a href="#" aria-label="Belenko — home" style="display: flex; align-items: center; min-height: 44px"><img src="/residential/belenko-logo-white.png" alt="Belenko" style="height: 30px; width: auto; display: block"></a>
-<div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 48px">
+<div style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(20px, 3vw, 48px)">
 <a class="bk-link" href="#projects" style="padding: 12px 0">Projects</a>
+<a class="bk-link" href="#objects" style="padding: 12px 0">Objects</a>
 <a class="bk-link" href="#approach" style="padding: 12px 0">Approach</a>
 <a class="bk-link" href="#contact" style="padding: 12px 0">Contact</a>
 <button type="button" aria-label="Open menu" id="bkBurger" aria-expanded="false" style="background: none; border: 0; color: inherit; width: 44px; height: 44px; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center">
@@ -75,6 +76,7 @@ button{font:inherit}
 </nav>
 <div class="bk-menu" id="bkMenu" hidden>
 <a href="#projects" data-close-menu>Projects</a>
+<a href="#objects" data-close-menu>Objects</a>
 <a href="#approach" data-close-menu>Approach</a>
 <a href="#about" data-close-menu>About</a>
 <a href="#journal" data-close-menu>Journal</a>
@@ -197,6 +199,29 @@ button{font:inherit}
 <div style="font-size: 14px; color: #A3A29D">[City · type of home · area · year]</div>
 </div>
 <div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0">+ &nbsp; View</div>
+</a>
+</div>
+</section>
+
+<!-- OBJECTS -->
+<section id="objects" style="padding: clamp(80px, 11vw, 160px) clamp(24px, 9vw, 130px); display: flex; flex-direction: column; gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5B57">Collection</div>
+<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.05; text-transform: uppercase">Objects</h2>
+<p style="margin: 12px 0 0; max-width: 560px; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">[One or two lines about the objects: furniture, lighting, decorative pieces.]</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px">
+<a href="#" style="display: flex; flex-direction: column; gap: 24px">
+<div style="aspect-ratio: 4 / 5; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Photo]</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase">+ &nbsp; Furniture</div>
+</a>
+<a href="#" style="display: flex; flex-direction: column; gap: 24px">
+<div style="aspect-ratio: 4 / 5; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Photo]</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase">+ &nbsp; Lighting</div>
+</a>
+<a href="#" style="display: flex; flex-direction: column; gap: 24px">
+<div style="aspect-ratio: 4 / 5; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 16px">[Photo]</div>
+<div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase">+ &nbsp; Decor</div>
 </a>
 </div>
 </section>
