@@ -577,7 +577,7 @@ targets.forEach(function(t){
   t.style.transitionDelay=Math.min(sib,5)*90+'ms';
 });
 if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:0.08,rootMargin:'0px 0px -6% 0px'});
+  var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:0,rootMargin:'0px 0px -8% 0px'});
   targets.forEach(function(t){ io.observe(t); });
 } else targets.forEach(function(t){ t.classList.add('in'); });
 /* touch: carousel swipe between photos, pinch / double-tap zoom, drag to pan */
