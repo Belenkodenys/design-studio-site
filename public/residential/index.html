@@ -37,6 +37,12 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 @keyframes bkScroll{0%{transform:translateY(-16px);opacity:0}25%{opacity:1}70%{opacity:1}100%{transform:translateY(22px);opacity:0}}
 .bk-scroll svg{animation:bkScroll 2.2s cubic-bezier(0.215,0.61,0.355,1) infinite}
 @media (prefers-reduced-motion:reduce){.bk-scroll svg{animation:none}}
+.bk-input::placeholder{color:#8E8E8A}
+.bk-input:focus{outline:none;border-bottom-color:#FFFFFF;box-shadow:0 1px 0 0 #FFFFFF}
+.bk-input:-webkit-autofill{-webkit-text-fill-color:#F1F0EC;transition:background-color 9999s ease-out}
+.bk-send{transition:background .3s,color .3s}
+.bk-send:hover{background:#F1F0EC !important;color:#171719 !important}
+.bk-send[disabled]{opacity:.5;cursor:default}
 @keyframes bkFade{from{opacity:0}to{opacity:1}}
 .bk-menu[hidden],#bkLb[hidden]{display:none !important}
 .bk-hero{min-height:100vh !important;min-height:100svh !important}
@@ -276,13 +282,31 @@ button{font:inherit}
 <!-- CONTACT + FOOTER -->
 <section id="contact" style="background: #171719; color: #F1F0EC; padding: clamp(80px, 9vw, 130px) clamp(24px, 9vw, 130px); display: flex; flex-direction: column; gap: 48px">
 <img src="/residential/belenko-mark-white.png" alt="" style="width: 44px; height: auto; display: block">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 56px 48px">
 <h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(40px, 6vw, 88px); line-height: 1; text-transform: uppercase; max-width: 720px">Let's talk about your home</h2>
-<div style="display: flex; flex-direction: column; gap: 4px; font-size: 18px">
-<a href="#" style="padding: 10px 0">[Email]</a>
-<a href="#" style="padding: 10px 0">[Phone / WhatsApp]</a>
-<div style="padding: 10px 0; color: #A3A29D">[City, address]</div>
+<form id="bkForm" style="flex: 1 1 380px; max-width: 520px; display: flex; flex-direction: column; gap: 26px; margin: 0">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="cf-name" style="font-family: Oswald, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #A3A29D">Name *</label>
+<input class="bk-input" id="cf-name" name="name" type="text" autocomplete="name" required style="width: 100%; box-sizing: border-box; background: transparent; border: 0; border-bottom: 1px solid #8E8E8A; border-radius: 0; color: #F1F0EC; font-family: Inter, sans-serif; font-weight: 300; font-size: 17px; padding: 10px 0 12px; min-height: 44px">
 </div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="cf-email" style="font-family: Oswald, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #A3A29D">Email *</label>
+<input class="bk-input" id="cf-email" name="email" type="email" autocomplete="email" required style="width: 100%; box-sizing: border-box; background: transparent; border: 0; border-bottom: 1px solid #8E8E8A; border-radius: 0; color: #F1F0EC; font-family: Inter, sans-serif; font-weight: 300; font-size: 17px; padding: 10px 0 12px; min-height: 44px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="cf-phone" style="font-family: Oswald, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #A3A29D">Phone / WhatsApp</label>
+<input class="bk-input" id="cf-phone" name="phone" type="tel" autocomplete="tel" style="width: 100%; box-sizing: border-box; background: transparent; border: 0; border-bottom: 1px solid #8E8E8A; border-radius: 0; color: #F1F0EC; font-family: Inter, sans-serif; font-weight: 300; font-size: 17px; padding: 10px 0 12px; min-height: 44px">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="cf-city" style="font-family: Oswald, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #A3A29D">City</label>
+<input class="bk-input" id="cf-city" name="city" type="text" autocomplete="address-level2" style="width: 100%; box-sizing: border-box; background: transparent; border: 0; border-bottom: 1px solid #8E8E8A; border-radius: 0; color: #F1F0EC; font-family: Inter, sans-serif; font-weight: 300; font-size: 17px; padding: 10px 0 12px; min-height: 44px">
+</div>
+<input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display: none">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; margin-top: 8px">
+<button type="submit" class="bk-send" style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #F1F0EC; background: transparent; border: 1px solid #F1F0EC; border-radius: 0; padding: 18px 44px; cursor: pointer">Send</button>
+<div role="status" aria-live="polite" style="font-size: 14px; color: #A3A29D; flex: 1 1 200px" id="bkFormNote"></div>
+</div>
+</form>
 </div>
 </section>
 
@@ -554,6 +578,36 @@ function endTouch(e){
 }
 stage.addEventListener('touchend',endTouch,{passive:true});
 stage.addEventListener('touchcancel',endTouch,{passive:true});
+/* contact form -> email (Web3Forms relay, same as the main site's contact form) */
+var form=$('#bkForm'), formNote=$('#bkFormNote');
+if(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(form.botcheck && form.botcheck.checked) return;
+    var btn=form.querySelector('button[type="submit"]');
+    var v=function(n){ return (form.elements[n].value||'').trim(); };
+    var name=v('name'), email=v('email'), phone=v('phone'), city=v('city');
+    btn.disabled=true; formNote.style.color='#A3A29D'; formNote.textContent='Sending…';
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        access_key:'e88480f3-403a-4b70-aa15-80625df1c6db',
+        to:'office@belenko.design',
+        subject:'Residential enquiry from '+name,
+        from_name:name,
+        name:name, email:email, phone:phone||'—', city:city||'—',
+        message:'New enquiry from the Residential Interiors page\n\nName: '+name+'\nEmail: '+email+'\nPhone / WhatsApp: '+(phone||'—')+'\nCity: '+(city||'—')
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){ return r.ok && d.success!==false; }); })
+      .then(function(ok){
+        if(ok){ form.reset(); formNote.style.color='#F1F0EC'; formNote.textContent='Thank you. We will get back to you shortly.'; }
+        else { formNote.style.color='#F1F0EC'; formNote.textContent='Something went wrong. Please write to office@belenko.design.'; }
+      })
+      .catch(function(){ formNote.style.color='#F1F0EC'; formNote.textContent='Something went wrong. Please write to office@belenko.design.'; })
+      .then(function(){ btn.disabled=false; });
+  });
+}
 /* unique-visit counter */
 var visits=$('#bkVisits');
 if(visits && window.fetch){
