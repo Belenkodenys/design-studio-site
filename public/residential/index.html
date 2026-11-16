@@ -37,6 +37,7 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 @keyframes bkScroll{0%{transform:translateY(-16px);opacity:0}25%{opacity:1}70%{opacity:1}100%{transform:translateY(22px);opacity:0}}
 .bk-scroll svg{animation:bkScroll 2.2s cubic-bezier(0.215,0.61,0.355,1) infinite}
 @media (prefers-reduced-motion:reduce){.bk-scroll svg{animation:none}}
+input[name="consent"]:checked{background:#171719 !important;box-shadow:inset 0 0 0 3px #FFFFFF}
 .bk-input::placeholder{color:#8E8E8A}
 .bk-input:focus{outline:none;border-bottom-color:#FFFFFF;box-shadow:0 1px 0 0 #FFFFFF}
 .bk-input:-webkit-autofill{-webkit-text-fill-color:#F1F0EC;transition:background-color 9999s ease-out}
@@ -316,18 +317,20 @@ button{font:inherit}
 <h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: clamp(32px, 3.2vw, 46px); line-height: 1.15; letter-spacing: 0.01em; text-transform: uppercase">Subscribe to<br>our newsletter</h2>
 <p style="margin: 0; color: #6B6A66; letter-spacing: 0.03em">To stay up to date on new projects and news from Belenko</p>
 </div>
-<form style="flex: 1 1 420px; max-width: 620px; display: flex; flex-direction: column; gap: 26px; margin: 16px 0 0">
+<form id="bkNl" style="flex: 1 1 420px; max-width: 620px; display: flex; flex-direction: column; gap: 26px; margin: 16px 0 0">
 <div style="display: flex; align-items: center; background: #FFFFFF; border-radius: 40px; padding: 4px 4px 4px 36px; min-height: 66px; box-sizing: border-box">
 <label for="nl-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%)">Email</label>
-<input id="nl-email" type="email" required placeholder="Email*" style="flex: 1 1 auto; min-width: 0; border: 0; outline-offset: 6px; background: transparent; font-family: Inter, sans-serif; font-weight: 300; font-size: 18px; letter-spacing: 0.03em; color: #171719; height: 54px">
+<input id="nl-email" name="email" type="email" required placeholder="Email*" style="flex: 1 1 auto; min-width: 0; border: 0; outline-offset: 6px; background: transparent; font-family: Inter, sans-serif; font-weight: 300; font-size: 18px; letter-spacing: 0.03em; color: #171719; height: 54px">
 <button type="submit" aria-label="Subscribe" style="flex: 0 0 auto; width: 54px; height: 54px; border-radius: 50%; border: 0; background: #171719; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer">
 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
 </button>
 </div>
 <label style="display: flex; align-items: center; gap: 16px; min-height: 44px; font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6A66; cursor: pointer">
-<input type="checkbox" required style="appearance: none; -webkit-appearance: none; margin: 0; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 1px solid #8E8E8A; flex: 0 0 auto">
+<input type="checkbox" name="consent" required style="appearance: none; -webkit-appearance: none; margin: 0; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 1px solid #8E8E8A; flex: 0 0 auto">
 <span>Agree to <a href="#" style="text-decoration: underline">terms and conditions</a></span>
 </label>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
+<div role="status" aria-live="polite" style="font-size: 14px; color: #5C5B57; min-height: 22px" id="bkNlNote"></div>
 </form>
 </section>
 
@@ -605,6 +608,30 @@ if(form){
         else { formNote.style.color='#F1F0EC'; formNote.textContent='Something went wrong. Please write to office@belenko.design.'; }
       })
       .catch(function(){ formNote.style.color='#F1F0EC'; formNote.textContent='Something went wrong. Please write to office@belenko.design.'; })
+      .then(function(){ btn.disabled=false; });
+  });
+}
+/* newsletter sign-up -> /api/residential-subscribe */
+var nl=$('#bkNl'), nlNote=$('#bkNlNote');
+if(nl){
+  nl.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=nl.querySelector('button[type="submit"]');
+    var email=(nl.elements.email.value||'').trim();
+    btn.disabled=true; nlNote.textContent='Sending…';
+    fetch('/api/residential-subscribe',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email, consent:nl.elements.consent.checked===true, website:nl.elements.website.value||''})
+    }).then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(d){
+        if(d && d.ok){ nl.reset(); nlNote.textContent = d.already ? 'This address is already subscribed.' : 'Thank you. You are subscribed.'; }
+        else if(d && d.error==='invalid_email') nlNote.textContent='Please enter a valid email address.';
+        else if(d && d.error==='consent_required') nlNote.textContent='Please agree to the terms to subscribe.';
+        else if(d && d.error==='too_many') nlNote.textContent='Too many attempts. Please try again later.';
+        else nlNote.textContent='Something went wrong. Please try again later.';
+      })
+      .catch(function(){ nlNote.textContent='Something went wrong. Please try again later.'; })
       .then(function(){ btn.disabled=false; });
   });
 }
