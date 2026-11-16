@@ -8,6 +8,7 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: '/residential', destination: '/residential/index.html' },
+      { source: '/residential/journal', destination: '/residential/journal/index.html' },
     ]
   },
   async redirects() {
