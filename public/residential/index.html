@@ -38,6 +38,9 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 .bk-scroll svg{animation:bkScroll 2.2s cubic-bezier(0.215,0.61,0.355,1) infinite}
 @media (prefers-reduced-motion:reduce){.bk-scroll svg{animation:none}}
 input[name="consent"]:checked{background:#171719 !important;box-shadow:inset 0 0 0 3px #FFFFFF}
+.bk-more summary{list-style:none}.bk-more summary::-webkit-details-marker{display:none}
+.bk-more .bk-more-close{display:none}.bk-more[open] .bk-more-open{display:none}.bk-more[open] .bk-more-close{display:inline}
+.bk-more summary:hover{opacity:.65}
 .bk-input::placeholder{color:#8E8E8A}
 .bk-input:focus{outline:none;border-bottom-color:#FFFFFF;box-shadow:0 1px 0 0 #FFFFFF}
 .bk-input:-webkit-autofill{-webkit-text-fill-color:#F1F0EC;transition:background-color 9999s ease-out}
@@ -240,32 +243,95 @@ button{font:inherit}
 <div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5B57">Approach</div>
 <h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 300; font-size: clamp(36px, 4.6vw, 64px); line-height: 1.05; text-transform: uppercase">From idea to keys</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 56px; border-top: 1px solid currentColor; padding: 32px 0 36px">
+<div style="flex: 1 1 220px; max-width: 360px; display: flex; flex-direction: column; gap: 12px">
 <div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">01</div>
 <h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Concept</h3>
+</div>
+<div style="flex: 2 1 420px; max-width: 760px; display: flex; flex-direction: column; gap: 14px">
 <p style="margin: 0; font-size: 15px">[What this stage includes and what the client receives.]</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 56px; border-top: 1px solid currentColor; padding: 32px 0 36px">
+<div style="flex: 1 1 220px; max-width: 360px; display: flex; flex-direction: column; gap: 12px">
 <div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">02</div>
 <h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Design</h3>
+</div>
+<div style="flex: 2 1 420px; max-width: 760px; display: flex; flex-direction: column; gap: 14px">
 <p style="margin: 0; font-size: 15px">[What this stage includes and what the client receives.]</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 56px; border-top: 1px solid currentColor; padding: 32px 0 36px">
+<div style="flex: 1 1 220px; max-width: 360px; display: flex; flex-direction: column; gap: 12px">
 <div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">03</div>
 <h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Furnishing</h3>
+</div>
+<div style="flex: 2 1 420px; max-width: 760px; display: flex; flex-direction: column; gap: 14px">
 <p style="margin: 0; font-size: 15px">FF&amp;E is a natural extension of interior architecture.</p>
 <p style="margin: 0; font-size: 15px">We develop a bespoke FF&amp;E concept for each project, selecting furniture, lighting, textiles, art, and decorative objects as a cohesive collection curated specifically for the space.</p>
+<details class="bk-more">
+<summary style="cursor: pointer; font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center"><span class="bk-more-open">+ &nbsp; Read more</span><span class="bk-more-close">− &nbsp; Close</span></summary>
+<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 6px">
 <p style="margin: 0; font-size: 15px">Belenko Design collaborates with leading furniture manufacturers, lighting brands, artisan workshops, and specialist producers around the world. We regularly attend major international design and furniture fairs, follow developments across the industry, discover emerging talent, and meet manufacturers in person to explore their capabilities.</p>
 <p style="margin: 0; font-size: 15px">Our selection extends beyond established brands and catalogues. We seek out exactly what each project needs: from iconic pieces of international design to work from small independent makers, vintage finds, and bespoke pieces crafted to our designs.</p>
 <p style="margin: 0; font-size: 15px">Long-standing relationships with manufacturers and suppliers allow us to secure trade terms and preferential pricing, giving our clients access to exceptional producers on favourable commercial terms.</p>
 <p style="margin: 0; font-size: 15px">We manage the entire FF&amp;E process, from sourcing and selection through negotiations, ordering, production, logistics, and delivery to site.</p>
 <p style="margin: 0; font-size: 15px">For us, FF&amp;E goes beyond adding the finishing touches to a completed space. It is an integral part of the design process, shaping its character, atmosphere, and identity.</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 1px solid currentColor; padding-top: 24px">
+</details>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 56px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; padding: 32px 0 36px">
+<div style="flex: 1 1 220px; max-width: 360px; display: flex; flex-direction: column; gap: 12px">
 <div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; color: #5C5B57">04</div>
 <h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 400; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase">Procurement</h3>
-<p style="margin: 0; font-size: 15px">[What this stage includes and what the client receives.]</p>
+</div>
+<div style="flex: 2 1 420px; max-width: 760px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">From specification to installation.</p>
+<p style="margin: 0; font-size: 15px">Procurement at Belenko Design encompasses the management of purchasing, production, and delivery for interior projects.</p>
+<p style="margin: 0; font-size: 15px">Once the concept and FF&amp;E specification are complete, an equally important stage begins: turning the selected designs into physical pieces, materials, and equipment that must be manufactured, paid for, delivered, and installed in full accordance with the design.</p>
+<p style="margin: 0; font-size: 15px">We bring this entire process under one coordinated management system.</p>
+<details class="bk-more">
+<summary style="cursor: pointer; font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center"><span class="bk-more-open">+ &nbsp; Read more</span><span class="bk-more-close">− &nbsp; Close</span></summary>
+<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 6px">
+<h4 style="margin: 18px 0 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">Working with manufacturers</h4>
+<p style="margin: 0; font-size: 15px">Through years of international practice, we have built a trusted network of furniture manufacturers, lighting and textile producers, finishing material suppliers, joinery workshops, and specialist equipment manufacturers.</p>
+<p style="margin: 0; font-size: 15px">We work with leading European brands as well as smaller workshops and manufacturers capable of producing bespoke pieces to our drawings.</p>
+<p style="margin: 0; font-size: 15px">For each project, we research the market and select manufacturers based on design, quality, budget, lead times, and technical capabilities.</p>
+<p style="margin: 0; font-size: 15px">Our task is to find the best production solution for each item in the project.</p>
+<h4 style="margin: 18px 0 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">Commercial terms</h4>
+<p style="margin: 0; font-size: 15px">Our established relationships with manufacturers and suppliers give us access to preferential terms beyond those available through standard retail purchases.</p>
+<p style="margin: 0; font-size: 15px">We request and compare quotations, negotiate prices and payment terms, assess alternatives, and develop the most effective purchasing strategy within the project budget.</p>
+<p style="margin: 0; font-size: 15px">We aim to balance design, quality, cost, and timing while preserving the standards of the original concept.</p>
+<h4 style="margin: 18px 0 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">Orders and production</h4>
+<p style="margin: 0; font-size: 15px">Procurement demands precision.</p>
+<p style="margin: 0; font-size: 15px">The dimensions, materials, finishes, colours, configuration, and technical specifications of every item must match the approved specification.</p>
+<p style="margin: 0; font-size: 15px">Before placing an order, we check quotations, product codes, dimensions, finishes, quantities, and technical documentation. For bespoke items, we review and approve shop drawings, materials, samples, and production details.</p>
+<p style="margin: 0; font-size: 15px">Once an order enters production, we monitor its progress against the agreed schedule.</p>
+<h4 style="margin: 18px 0 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">Budget management and control</h4>
+<p style="margin: 0; font-size: 15px">We establish a transparent procurement budget and track it throughout the project.</p>
+<p style="margin: 0; font-size: 15px">Product costs, optional features, bespoke manufacturing, transport, and other associated expenses are managed within a single procurement budget.</p>
+<p style="margin: 0; font-size: 15px">This provides a clear picture of the total FF&amp;E cost, supports timely decisions, and helps minimise unexpected expenses during the later stages of delivery.</p>
+<h4 style="margin: 18px 0 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">Logistics</h4>
+<p style="margin: 0; font-size: 15px">International projects require dedicated logistics expertise.</p>
+<p style="margin: 0; font-size: 15px">A single interior may bring together furniture from Italy, lighting from Spain, textiles from Belgium, bespoke pieces from Portugal, and objects sourced from small workshops across several countries.</p>
+<p style="margin: 0; font-size: 15px">We coordinate order readiness, shipment consolidation, transport, required documentation, and delivery, managing communication between suppliers, logistics companies, and the site team.</p>
+<p style="margin: 0; font-size: 15px">The goal is to bring dozens or hundreds of individual orders together into one cohesive interior.</p>
+<h4 style="margin: 18px 0 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">Delivery and installation</h4>
+<p style="margin: 0; font-size: 15px">Our work continues after the goods leave the factory.</p>
+<p style="margin: 0; font-size: 15px">We oversee deliveries to site, coordinate receipt and inspection, and verify that the supplied items match the approved specifications.</p>
+<p style="margin: 0; font-size: 15px">Where required, we coordinate with installation teams, manufacturers, and contractors to ensure that furniture, lighting, and bespoke pieces are installed in accordance with the design.</p>
+<h4 style="margin: 18px 0 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">A single point of responsibility</h4>
+<p style="margin: 0; font-size: 15px">The core value of procurement lies in managing complexity.</p>
+<p style="margin: 0; font-size: 15px">Clients gain a single, coordinated procurement service, relieving them of the need to manage communication with dozens of manufacturers, dealers, workshops, transport companies, and contractors.</p>
+<p style="margin: 0; font-size: 15px">We oversee every stage:</p>
+<p style="margin: 0; font-size: 15px">Specification → requests for quotations → negotiations → ordering → production → quality control → logistics → delivery → installation.</p>
+<p style="margin: 0; font-size: 15px">This helps preserve the original design intent, maintain control over budgets and schedules, and substantially reduce the risks that arise between design and completion.</p>
+<p style="margin: 0; font-size: 15px">Belenko Design Procurement brings the designed interior to life with precision, predictability, and consistent quality, from the initial idea to the finished space.</p>
+</div>
+</details>
+</div>
 </div>
 </div>
 </section>
