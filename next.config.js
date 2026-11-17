@@ -9,6 +9,7 @@ const nextConfig = {
     return [
       { source: '/residential', destination: '/residential/index.html' },
       { source: '/residential/journal', destination: '/residential/journal/index.html' },
+      { source: '/residential/legal', destination: '/residential/legal/index.html' },
       { source: '/residential/privacy', destination: '/residential/privacy/index.html' },
       { source: '/residential/credits', destination: '/residential/credits/index.html' },
       { source: '/residential/cookies', destination: '/residential/cookies/index.html' },
