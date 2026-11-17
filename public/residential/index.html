@@ -38,7 +38,8 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 .bk-menu{position:absolute;top:100%;left:0;right:0;margin:0 calc(clamp(24px, 9vw, 130px) - 25px);padding:8px 25px 20px;background:rgba(0,0,0,.88);display:flex;flex-direction:column;font-family:Oswald,sans-serif;font-size:18px;letter-spacing:.08em;text-transform:uppercase;animation:bkFade .3s ease-out}
 .bk-menu a{display:flex;align-items:center;min-height:48px;border-bottom:1px solid rgba(255,255,255,.14)}
 .bk-menu a:last-child{border-bottom:0}
-@media (max-width:719px){.bk-bar{padding-top:20px}.bk-bar::before{margin:0}.bk-link{display:none}.bk-menu{margin:0;padding:8px 24px 20px}}
+@media (min-width:900px){.bk-burger,.bk-menu{display:none !important}}
+@media (max-width:899px){.bk-bar{padding-top:20px}.bk-bar::before{margin:0}.bk-link{display:none}.bk-menu{margin:0;padding:8px 24px 20px}}
 @media (max-width:768px){.bk-slide:not(.bk-card),.bk-slide:not(.bk-card) img{height:61.5vw !important}}
 @keyframes bkScroll{0%{transform:translateY(-16px);opacity:0}25%{opacity:1}70%{opacity:1}100%{transform:translateY(22px);opacity:0}}
 .bk-scroll svg{animation:bkScroll 2.2s cubic-bezier(0.215,0.61,0.355,1) infinite}
@@ -85,9 +86,11 @@ button{font:inherit}
 <a class="bk-link" href="#projects" style="padding: 12px 0">Projects</a>
 <a class="bk-link" href="#objects" style="padding: 12px 0">Objects</a>
 <a class="bk-link" href="#approach" style="padding: 12px 0">Approach</a>
+<a class="bk-link" href="#about" style="padding: 12px 0">About</a>
+<a class="bk-link" href="#journal" style="padding: 12px 0">Journal</a>
 <a class="bk-link" href="#contact" style="padding: 12px 0">Contact</a>
 <div style="display: flex; align-items: center; gap: 6px">
-<button type="button" class="bk-tip" data-tip="Menu" aria-label="Open menu" id="bkBurger" aria-expanded="false" style="background: none; border: 0; color: inherit; width: 44px; height: 44px; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<button type="button" class="bk-tip bk-burger" data-tip="Menu" aria-label="Open menu" id="bkBurger" aria-expanded="false" style="background: none; border: 0; color: inherit; width: 44px; height: 44px; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center">
 <svg aria-hidden="true" width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 1h20M0 7h20M0 13h20"></path></svg>
 </button>
 <a class="bk-tip" data-tip="WhatsApp" href="https://wa.me/34671825489" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" style="color: inherit; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center">
