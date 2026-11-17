@@ -215,11 +215,11 @@ if(window.Lenis && !reduce){
 }
 var targets=[];
 function collect(el,depth){
-  if(depth<1 && el.tagName==='DIV' && el.children.length>1 && !el.closest('#privacy')){
+  if(depth<2 && (el.tagName==='DIV'||el.tagName==='ARTICLE') && el.children.length>1){
     Array.prototype.forEach.call(el.children,function(c){ collect(c,depth+1); });
   } else targets.push(el);
 }
-$$('section, footer').forEach(function(sec){ Array.prototype.forEach.call(sec.children,function(c){ collect(c,0); }); });
+$$('section:not(#privacy), footer').forEach(function(sec){ Array.prototype.forEach.call(sec.children,function(c){ collect(c,0); }); });
 targets.forEach(function(t){ t.classList.add('rv'); var sib=Array.prototype.indexOf.call(t.parentElement.children,t); t.style.transitionDelay=Math.min(sib,5)*90+'ms'; });
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:0,rootMargin:'0px 0px -8% 0px'});
