@@ -39,7 +39,7 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 .bk-menu a{display:flex;align-items:center;min-height:48px;border-bottom:1px solid rgba(255,255,255,.14)}
 .bk-menu a:last-child{border-bottom:0}
 @media (max-width:719px){.bk-bar{padding-top:20px}.bk-bar::before{margin:0}.bk-link{display:none}.bk-menu{margin:0;padding:8px 24px 20px}}
-@media (max-width:768px){.bk-slide,.bk-slide img{height:61.5vw !important}}
+@media (max-width:768px){.bk-slide:not(.bk-card),.bk-slide:not(.bk-card) img{height:61.5vw !important}}
 @keyframes bkScroll{0%{transform:translateY(-16px);opacity:0}25%{opacity:1}70%{opacity:1}100%{transform:translateY(22px);opacity:0}}
 .bk-scroll svg{animation:bkScroll 2.2s cubic-bezier(0.215,0.61,0.355,1) infinite}
 @media (prefers-reduced-motion:reduce){.bk-scroll svg{animation:none}}
