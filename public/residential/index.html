@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.65}
 .bk-slide img{transition:transform 1.2s}
 @media (hover:hover){.bk-slide:hover img{transform:scale(1.05)}}
 .bk-close{transition:border-color 1s cubic-bezier(0.215,0.61,0.355,1),background 1s cubic-bezier(0.215,0.61,0.355,1),color 1s cubic-bezier(0.215,0.61,0.355,1)}
-.bk-close:hover{background:#FFFFFF !important;border-color:transparent !important;color:#171719 !important}
+.bk-closebtn:hover .bk-close{background:#FFFFFF !important;border-color:transparent !important;color:#171719 !important}
 .bk-thumb:hover{opacity:1 !important}
 .bk-header{position:fixed;top:0;left:0;width:100%;z-index:100;color:#F1F0EC;transition:transform .5s cubic-bezier(0.645,0.045,0.355,1)}
 .bk-header.bk-hidden{transform:translateY(-100%)}
@@ -483,8 +483,11 @@ button{font:inherit}
 <img src="/residential/belenko-mark-white.png" alt="" style="width: 26px; height: auto; display: block">
 <div><span id="bkCount" style="display: inline-block">01</span> / <span id="bkTot">07</span></div>
 </div>
-<button type="button" class="bk-close" aria-label="Close gallery" id="bkClose" style="position: absolute; right: 19px; top: 19px; width: 46px; height: 46px; box-sizing: border-box; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; z-index: 11">
+<button type="button" class="bk-closebtn" aria-label="Close gallery" id="bkClose" style="position: absolute; right: 19px; top: 19px; height: 46px; border: 0; background: transparent; color: #FFFFFF; display: flex; align-items: center; gap: 14px; cursor: pointer; padding: 0; z-index: 11">
+<span style="font-family: Oswald, sans-serif; font-weight: 400; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; text-shadow: 0 1px 10px rgba(0,0,0,0.75)">Close</span>
+<span class="bk-close" style="width: 46px; height: 46px; box-sizing: border-box; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: #FFFFFF; display: flex; align-items: center; justify-content: center">
 <svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l8 8M9 1L1 9"></path></svg>
+</span>
 </button>
 </div>
 
