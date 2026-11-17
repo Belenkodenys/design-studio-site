@@ -387,9 +387,9 @@ button{font:inherit}
 
 <!-- TWO CARDS -->
 <section style="padding: 0 clamp(24px, 9vw, 130px) clamp(80px, 11vw, 160px); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start">
-<div style="display: flex; flex-direction: column; gap: 20px">
+<div id="about" data-offset style="scroll-margin-top: 110px; display: flex; flex-direction: column; gap: 20px">
 <div style="aspect-ratio: 4 / 3; background: #1F1F21; color: #A3A29D; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase">[Photo: portrait or studio]</div>
-<h3 id="about" style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.05; letter-spacing: 0.04em; text-transform: uppercase">About</h3>
+<h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.05; letter-spacing: 0.04em; text-transform: uppercase">About</h3>
 <p style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em">Belenko Design — Residential Interiors</p>
 <p style="margin: 0; max-width: 560px">Belenko Design specialises in creating residential spaces shaped by 20 years of experience, a love of natural materials, and a belief in honest, thoughtful design. Based in Barcelona, we create homes that reflect the people who live in them, bringing together everyday comfort, craftsmanship, and lasting quality.</p>
 <details class="bk-more">
@@ -409,9 +409,9 @@ button{font:inherit}
 </div>
 </details>
 </div>
-<a href="/residential/journal" style="display: flex; flex-direction: column; gap: 20px">
+<a id="journal" data-offset href="/residential/journal" style="scroll-margin-top: 110px; display: flex; flex-direction: column; gap: 20px">
 <img loading="lazy" decoding="async" src="/residential/belenko-design-barcelona-journal-cover.webp" alt="Dark room with a boulder resting on a draped metal bed" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block">
-<h3 id="journal" style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.05; letter-spacing: 0.04em; text-transform: uppercase">Journal</h3>
+<h3 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.05; letter-spacing: 0.04em; text-transform: uppercase">Journal</h3>
 <p style="margin: 0; max-width: 480px">[Articles, press, process.]</p>
 <div style="font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0">+ &nbsp; Read</div>
 </a>
@@ -654,7 +654,7 @@ $$('a[href^="#"]').forEach(function(a){
     if(id.length<2){ e.preventDefault(); if(lenis) lenis.scrollTo(0); else window.scrollTo({top:0,behavior:'smooth'}); return; }
     var t=document.querySelector(id); if(!t) return;
     e.preventDefault();
-    if(lenis) lenis.scrollTo(t,{duration:1.4}); else t.scrollIntoView({behavior:'smooth'});
+    if(lenis) lenis.scrollTo(t,{duration:1.4,offset:t.hasAttribute('data-offset')?-110:0}); else t.scrollIntoView({behavior:'smooth'});
   });
 });
 var heroEl=$('.bk-hero'), heroLayers=heroImgs.concat([heroImgs[heroImgs.length-1].nextElementSibling]);
