@@ -80,6 +80,11 @@ body{background:#171719}
 #bkStage{touch-action:none}
 @media (hover:none) and (pointer:coarse){.bk-strip{overflow-x:auto !important;overflow-y:hidden !important;touch-action:pan-x pan-y !important;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}.bk-strip::-webkit-scrollbar{display:none}}
 #bkStage img{will-change:transform}
+#bkPlay{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:14px;height:46px;padding:0 22px 0 6px;border:0;border-radius:23px;background:rgba(23,23,25,0.55);color:#FFFFFF;cursor:pointer;font-family:Oswald,sans-serif;font-weight:400;font-size:16px;letter-spacing:0.14em;text-transform:uppercase}
+#bkPlay[hidden]{display:none}
+#bkPlay .bk-play-ic{width:34px;height:34px;box-sizing:border-box;border:2px solid rgba(255,255,255,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center}
+#bkPlay:hover{background:#FFFFFF;color:#171719}
+#bkPlay:hover .bk-play-ic{border-color:#171719}
 html.lenis,html.lenis body{height:auto}
 .lenis:not(.lenis-autoToggle).lenis-stopped{overflow:clip}
 .lenis [data-lenis-prevent]{overscroll-behavior:contain}
