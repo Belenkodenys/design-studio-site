@@ -4,21 +4,7 @@
    ClientLanding.css so it overrides the earlier centred rules. */
 :root { --page-x: clamp(24px, 9vw, 130px); }
 
-/* Hero: wordmark bottom-left like the Residential hero text */
-html .proposal-hero {
-  align-items: flex-start;
-  justify-content: flex-end;
-  text-align: left;
-  padding: 220px var(--page-x) clamp(72px, 10vh, 140px);
-}
-html .proposal-hero-title {
-  position: absolute;
-  top: auto;
-  left: var(--page-x);
-  bottom: clamp(72px, 14vh, 200px);
-  transform: none;
-  width: min(1080px, 72vw);
-}
+/* Hero: the Custom Hospitality wordmark stays centred (user request). */
 
 /* Mission / about text */
 html .proposal-stack > .proposal-mission-stage { padding-left: var(--page-x); padding-right: var(--page-x); }
