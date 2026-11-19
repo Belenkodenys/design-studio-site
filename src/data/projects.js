@@ -586,6 +586,8 @@ export const projects = [
     description: 'Interior design project for a modern grilled cuisine restaurant featuring multi-level dining spaces with contemporary and rustic design elements.',
     services: ['Concept', 'Interior Design'],
     image: '/projects/belenko-interior-design-bratia-grill-restaurant-odesa-1.webp',
+    video: '/projects/bratia-grill-video.mp4',
+    videoPoster: '/projects/belenko-interior-design-bratia-grill-video-poster.webp',
     images: ['/projects/belenko-interior-design-bratia-grill-restaurant-odesa-1.webp', '/projects/belenko-interior-design-bratia-grill-restaurant-odesa-2.webp', '/projects/belenko-interior-design-bratia-grill-restaurant-odesa-3.webp', '/projects/belenko-interior-design-bratia-grill-restaurant-odesa-4.webp', '/projects/belenko-interior-design-bratia-grill-restaurant-odesa-5.webp']
   },
   {
