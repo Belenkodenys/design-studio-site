@@ -5,6 +5,7 @@ import { sections } from './sections'
 import ProposalFooter from './ProposalFooter'
 import Portfolio from '../../../components/Portfolio'
 import './ClientLanding.css'
+import './layout-left.css'
 
 const rotatingWords = ['restaurants', 'hotels', 'cafés', 'shops', 'bars']
 const longestRotatingWord = rotatingWords.reduce(

@@ -1,0 +1,62 @@
+/* Typographic layout borrowed from the Residential page: every text
+   composition sits on the same left edge (clamp(24px, 9vw, 130px)), nothing is
+   centred, copy widths are capped but flush left. Loaded after
+   ClientLanding.css so it overrides the earlier centred rules. */
+:root { --page-x: clamp(24px, 9vw, 130px); }
+
+/* Hero: wordmark bottom-left like the Residential hero text */
+html .proposal-hero {
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+  padding: 220px var(--page-x) clamp(72px, 10vh, 140px);
+}
+html .proposal-hero-title {
+  position: absolute;
+  top: auto;
+  left: var(--page-x);
+  bottom: clamp(72px, 14vh, 200px);
+  transform: none;
+  width: min(1080px, 72vw);
+}
+
+/* Mission / about text */
+html .proposal-stack > .proposal-mission-stage { padding-left: var(--page-x); padding-right: var(--page-x); }
+html .proposal-mission-block { margin: 0; padding-left: 0; padding-right: 0; max-width: 1100px; }
+html .proposal-mission { text-align: left; }
+html .proposal-mission-details-inner { margin: 0; }
+
+/* Full-screen statement slides */
+html .proposal-stack > .proposal-statement {
+  justify-content: flex-start;
+  padding-left: var(--page-x);
+  padding-right: var(--page-x);
+}
+html .proposal-stack > .proposal-statement--branding { align-items: flex-start; }
+html .proposal-statement-text { text-align: left; text-wrap: pretty; margin: 0; }
+
+/* Section heads (Services / Portfolio / About) and their lists */
+html .proposal-services-head,
+html .proposal-portfolio-head {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: var(--page-x);
+  padding-right: var(--page-x);
+  box-sizing: border-box;
+}
+html .proposal-accordion-title { text-align: left; }
+html .proposal-accordion-arrow { margin-left: 0.1em; }
+html .proposal-sections { max-width: none; margin: 0; padding-left: var(--page-x); padding-right: var(--page-x); }
+
+/* Who we work with */
+html .proposal-stack > .proposal-who { padding-left: var(--page-x); padding-right: var(--page-x); }
+html .proposal-who-title { text-align: left; }
+html .proposal-who-grid { margin: 0; max-width: none; }
+
+/* FAQ */
+html .proposal-stack > .proposal-faq { padding-left: var(--page-x); padding-right: var(--page-x); }
+html .proposal-faq-title { text-align: left; }
+html .proposal-faq-list { margin: 0; max-width: 960px; }
+
+/* Inline-video / gallery stages keep their padding on the same edge */
+html .proposal-stack > .proposal-about-title { padding-left: var(--page-x); padding-right: var(--page-x); }
