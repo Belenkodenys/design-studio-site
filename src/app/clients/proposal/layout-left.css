@@ -49,3 +49,8 @@ html .proposal-stack > .proposal-about-title { padding-left: var(--page-x); padd
 /* Services keeps its original centred slide (user request). */
 html .proposal-services-head { align-items: center; justify-content: center; }
 html .proposal-services-head .proposal-accordion-title { text-align: center; }
+
+/* Services rows drift right by up to 80px on scroll; keep that much room to the
+   right of the chevron so it always stays inside the white panel. */
+html .proposal-section-header { padding-right: 96px; }
+@media (max-width: 720px) { html .proposal-section-header { padding-right: 0; } }
