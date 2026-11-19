@@ -327,6 +327,8 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
           <video
             ref={videoRef}
             src={project.video}
+            poster={project.videoPoster}
+            preload="auto"
             autoPlay
             muted
             loop

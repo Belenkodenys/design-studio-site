@@ -570,7 +570,9 @@ export const projects = [
       '/projects/belenko-interior-design-fitz-bar-odesa-16.webp',
       '/projects/belenko-interior-design-fitz-bar-odesa-17.webp',
       '/projects/belenko-interior-design-fitz-bar-odesa-18.webp'
-    ]
+    ],
+    video: '/projects/fitz-video.mp4',
+    videoPoster: '/projects/belenko-interior-design-fitz-video-poster.webp'
   },
   {
     id: 40,
