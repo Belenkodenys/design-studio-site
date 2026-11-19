@@ -280,6 +280,7 @@ if(nl){
 
 /* unique-visit counter */
 var visits=$('#bkVisits');
+if(visits){ visits.parentElement.classList.remove('rv'); visits.parentElement.classList.add('in'); }
 if(visits && window.fetch){
   fetch('/api/counter?page=residential',{cache:'no-store'}).then(function(r){ return r.json(); }).then(function(d){ if(d && d.count>0) visits.textContent=d.count; }).catch(function(){});
 }
