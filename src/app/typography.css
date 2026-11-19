@@ -19,7 +19,7 @@
 
 :root {
   --font-display: 'Oswald', 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-text: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-text: 'Oswald', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* all copy is Oswald uppercase (user request) */
   --font-label: 'Oswald', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --t-giant: clamp(48px, 8.4vw, 120px);
@@ -37,7 +37,7 @@
   --w-display: 200;
   --w-list: 300;
   --w-intro: 200;
-  --w-body: 300;
+  --w-body: 200;
   --w-ui: 400;
 
   --track-giant: 0.01em;
@@ -508,12 +508,12 @@ html p, html li, html dd, html td { font-family: var(--font-text); font-weight: 
 html button, html .btn, html [class*="-btn"] { font-family: var(--font-label); letter-spacing: var(--track-ui); text-transform: uppercase; font-weight: var(--w-ui); }
 html strong, html b { font-weight: 500; }
 
-/* Body copy on the Residential page is Inter 300 in sentence case — undo the
-   uppercase the old system applied to running text. */
+/* Running text: same voice as the intro paragraph — Oswald 200, UPPERCASE,
+   16px, lh 1.5, tracking +0.02em. No lowercase type anywhere on the site. */
 html .proposal-section-body,
 html .proposal-section-long,
 html .proposal-section-bullets li,
-html .proposal-mission-details-inner p:not(:first-of-type),
+html .proposal-mission-details-inner p,
 html .proposal-mission-principle p,
 html .proposal-who-item p,
 html .proposal-faq-a p,
@@ -524,10 +524,23 @@ html .about-wrap p,
 html .service-content p,
 html .blog-post-content p,
 html .contact-details dd {
-  font-family: var(--font-text);
-  font-weight: var(--w-body);
-  font-size: var(--t-body);
-  line-height: 1.6;
-  letter-spacing: 0;
-  text-transform: none;
+  font-family: var(--font-label);
+  font-weight: var(--w-intro);
+  font-size: var(--t-intro);
+  line-height: 1.5;
+  letter-spacing: var(--track-intro);
+  text-transform: uppercase;
 }
+
+/* Site-wide: everything in caps. Molovata keeps its own Apple-style type. */
+html body:not(:has(.mol-page)) { text-transform: uppercase; }
+html body:not(:has(.mol-page)) p,
+html body:not(:has(.mol-page)) li,
+html body:not(:has(.mol-page)) dd,
+html body:not(:has(.mol-page)) td,
+html body:not(:has(.mol-page)) span,
+html body:not(:has(.mol-page)) a,
+html body:not(:has(.mol-page)) label { text-transform: uppercase; }
+html .mol-page, html .mol-page * { text-transform: inherit; }
+html .mol-page { text-transform: none; }
+html input, html textarea { text-transform: none; }
