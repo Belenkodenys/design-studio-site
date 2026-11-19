@@ -12,14 +12,7 @@ html .proposal-mission-block { margin: 0; padding-left: 0; padding-right: 0; max
 html .proposal-mission { text-align: left; }
 html .proposal-mission-details-inner { margin: 0; }
 
-/* Full-screen statement slides */
-html .proposal-stack > .proposal-statement {
-  justify-content: flex-start;
-  padding-left: var(--page-x);
-  padding-right: var(--page-x);
-}
-html .proposal-stack > .proposal-statement--branding { align-items: flex-start; }
-html .proposal-statement-text { text-align: left; text-wrap: pretty; margin: 0; }
+/* Full-screen statement slides stay centred (user request). */
 
 /* Section heads (Services / Portfolio / About) and their lists */
 html .proposal-portfolio-head {
