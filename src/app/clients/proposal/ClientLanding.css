@@ -2139,3 +2139,17 @@ html .rcon-send {
 .rcon-send[disabled] { opacity: .5; cursor: default; }
 .rcon-note { font-size: 14px; color: #A3A29D; flex: 1 1 200px; }
 .rcon-note.is-light { color: #F1F0EC; }
+
+/* Scroll cue — same as the Residential hero */
+.bk-scroll {
+  position: absolute; left: 50%; bottom: 26px; margin-left: -40px; width: 80px;
+  display: flex; flex-direction: column; align-items: center; gap: 22px;
+  padding-bottom: 24px; z-index: 3; color: #FFFFFF; text-decoration: none;
+}
+.bk-scroll span {
+  font-family: 'Oswald', sans-serif; font-weight: 200; font-size: 12px;
+  letter-spacing: 0.34em; margin-right: -0.34em; text-transform: uppercase;
+}
+@keyframes bkScroll { 0% { transform: translateY(-16px); opacity: 0 } 25% { opacity: 1 } 70% { opacity: 1 } 100% { transform: translateY(22px); opacity: 0 } }
+.bk-scroll svg { animation: bkScroll 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+@media (prefers-reduced-motion: reduce) { .bk-scroll svg { animation: none } }

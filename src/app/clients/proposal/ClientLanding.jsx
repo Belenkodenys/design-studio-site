@@ -1552,6 +1552,20 @@ export default function ClientLanding() {
           alt="Custom Hospitality"
           draggable={false}
         />
+        <a
+          className="bk-scroll"
+          href="#intro-film"
+          aria-label="Scroll down"
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            const next = e.currentTarget.closest('header')?.nextElementSibling
+            if (next) next.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }}
+        >
+          <span>Scroll</span>
+          <svg aria-hidden="true" width="14" height="34" viewBox="0 0 14 34" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M7 1v31M1.5 26.5L7 32l5.5-5.5" /></svg>
+        </a>
       </header>
 
       <section className="proposal-intro-video-stage" aria-label="Intro film">
