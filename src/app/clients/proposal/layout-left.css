@@ -22,7 +22,6 @@ html .proposal-stack > .proposal-statement--branding { align-items: flex-start; 
 html .proposal-statement-text { text-align: left; text-wrap: pretty; margin: 0; }
 
 /* Section heads (Services / Portfolio / About) and their lists */
-html .proposal-services-head,
 html .proposal-portfolio-head {
   align-items: flex-start;
   justify-content: flex-start;
@@ -30,8 +29,9 @@ html .proposal-portfolio-head {
   padding-right: var(--page-x);
   box-sizing: border-box;
 }
-html .proposal-accordion-title { text-align: left; }
-html .proposal-accordion-arrow { margin-left: 0.1em; }
+html .proposal-portfolio-head .proposal-accordion-title,
+html .proposal-about-title { text-align: left; }
+html .proposal-portfolio-head .proposal-accordion-arrow { margin-left: 0.1em; }
 html .proposal-sections { max-width: none; margin: 0; padding-left: var(--page-x); padding-right: var(--page-x); }
 
 /* Who we work with */
@@ -46,3 +46,7 @@ html .proposal-faq-list { margin: 0; max-width: 960px; }
 
 /* Inline-video / gallery stages keep their padding on the same edge */
 html .proposal-stack > .proposal-about-title { padding-left: var(--page-x); padding-right: var(--page-x); }
+
+/* Services keeps its original centred slide (user request). */
+html .proposal-services-head { align-items: center; justify-content: center; }
+html .proposal-services-head .proposal-accordion-title { text-align: center; }
