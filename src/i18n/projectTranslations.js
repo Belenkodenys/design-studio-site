@@ -635,24 +635,6 @@ export const projectTranslations = {
       description: 'Proyecto de diseño interior de Belenko Design Studio (2021). Galería de arte y bar, Kyiv, Ucrania. Servicios: concepto, diseño interior, dirección de arte. Características: estética industrial, instalaciones creativas, decoración ecléctica, arreglos florales, atmósfera cultural única.'
     }
   },
-  31: {
-    en: {
-      title: 'Tenor Masini Apartment',
-      description: 'Interior design project by Belenko Design Studio (2025). Residential apartment in Sants district, Barcelona, Spain. Services: interior design, decor, furniture selection. Design features: warm earthy tones, textured plaster walls, artisanal woven decor, vintage wooden doors, Mediterranean warmth.'
-    },
-    uk: {
-      title: 'Tenor Masini Apartment',
-      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2025). Житлова квартира в районі Сантс, Барселона, Іспанія. Послуги: дизайн інтер\'єру, декор, підбір меблів. Особливості: теплі земляні тони, текстуровані гіпсові стіни, ручний плетений декор, вінтажні дерев\'яні двері, середземноморське тепло.'
-    },
-    ru: {
-      title: 'Tenor Masini Apartment',
-      description: 'Проект дизайна интерьера от Belenko Design Studio (2025). Жилая квартира в районе Сантс, Барселона, Испания. Услуги: дизайн интерьера, декор, подбор мебели. Особенности: тёплые земляные тона, текстурированные гипсовые стены, ручной плетёный декор, винтажные деревянные двери, средиземноморское тепло.'
-    },
-    es: {
-      title: 'Tenor Masini Apartment',
-      description: 'Proyecto de diseño interior de Belenko Design Studio (2025). Apartamento residencial en el distrito de Sants, Barcelona, España. Servicios: diseño interior, decoración, selección de muebles. Características: tonos tierra cálidos, paredes de yeso texturizadas, decoración tejida artesanal, puertas de madera vintage, calidez mediterránea.'
-    }
-  },
   32: {
     en: {
       title: 'Coco Japanese',
