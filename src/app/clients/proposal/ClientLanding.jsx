@@ -629,32 +629,36 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
   )
 }
 
-// Contact form at the foot of the homepage (submits via Web3Forms to office@).
+// Contact section — copy of the Residential page's Contact block
+// (submits via Web3Forms to office@).
 export function HomeContactForm() {
-  const [data, setData] = useState({ name: '', email: '', message: '' })
+  const [data, setData] = useState({ name: '', email: '', phone: '', city: '' })
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const ch = (e) => setData((d) => ({ ...d, [e.target.name]: e.target.value }))
 
   const submit = async (e) => {
     e.preventDefault()
+    if (e.target.botcheck && e.target.botcheck.checked) return
     setStatus('sending')
+    const { name, email, phone, city } = data
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: 'e88480f3-403a-4b70-aa15-80625df1c6db',
           to: 'office@belenko.design',
-          subject: `New message from ${data.name}`,
-          from_name: data.name,
-          email: data.email,
-          message: data.message
+          subject: `New enquiry from ${name}`,
+          from_name: name,
+          name, email, phone: phone || '—', city: city || '—',
+          message: `New enquiry from belenko.design\n\nName: ${name}\nEmail: ${email}\nPhone / WhatsApp: ${phone || '—'}\nCity: ${city || '—'}`
         })
       })
-      if (res.ok) {
+      const d = await res.json().catch(() => ({}))
+      if (res.ok && d.success !== false) {
         if (typeof window !== 'undefined' && window.fbq) window.fbq('track', 'Lead')
         setStatus('sent')
-        setData({ name: '', email: '', message: '' })
+        setData({ name: '', email: '', phone: '', city: '' })
       } else {
         setStatus('error')
       }
@@ -663,28 +667,58 @@ export function HomeContactForm() {
     }
   }
 
+  const stroke = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }
+  const social = (href, label, svg) => (
+    <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="rcon-social">{svg}</a>
+  )
+  const field = (id, name, label, type, auto, required) => (
+    <div className="rcon-field">
+      <label htmlFor={id}>{label}{required ? ' *' : ''}</label>
+      <input className="rcon-input" id={id} name={name} type={type} autoComplete={auto} required={required} value={data[name]} onChange={ch} />
+    </div>
+  )
+
   return (
-    <section className="proposal-contact" aria-label="Contact">
-      <div className="proposal-contact-inner">
-        <h2 className="proposal-contact-title">Let&rsquo;s talk</h2>
-        <p className="proposal-contact-sub">Tell us about your project — we reply within one business day.</p>
-        {status === 'sent' ? (
-          <p className="proposal-contact-thanks">Thank you — your message has been sent.</p>
-        ) : (
-          <form className="proposal-contact-form" onSubmit={submit}>
-            <div className="proposal-cf-row">
-              <input name="name" required placeholder="Name" value={data.name} onChange={ch} />
-              <input name="email" type="email" required placeholder="Email" value={data.email} onChange={ch} />
+    <section id="contact" className="rcon" aria-label="Contact">
+      <div className="rcon-head">
+        <img src="/residential/belenko-mark-white.png" alt="" />
+        <div>Contact</div>
+      </div>
+      <div className="rcon-row">
+        <div className="rcon-left">
+          <h2>Let&rsquo;s talk about<br />your project</h2>
+          <div className="rcon-info">
+            <div className="rcon-meta">VAT B21779202 / © Belenko Design 2026<br />Sq. Lesseps, 6<br />08023, Barcelona, Catalonia, Spain</div>
+            <a href="https://wa.me/34671825489" target="_blank" rel="noopener noreferrer" aria-label="Write to us on WhatsApp: +34 671 825 489" className="rcon-phone">
+              <span>+34 671 825 489</span>
+              <span className="rcon-phone-icon"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z" /></svg></span>
+            </a>
+            <div className="rcon-socials">
+              {social('https://instagram.com/belenko', 'Instagram', <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" {...stroke}><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.6" /></svg>)}
+              {social('https://t.me/belenko_studio', 'Telegram', <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" {...stroke}><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" /></svg>)}
+              {social('https://es.pinterest.com/belenkodesign/', 'Pinterest', <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" {...stroke}><circle cx="12" cy="12" r="9.5" /><path d="M10 20l2-10M9.5 13.5c-1.5-3 .5-6 3-6s4 2 3.5 4.5-2.5 4-4.5 2.5" /></svg>)}
+              {social('https://www.linkedin.com/in/denisbelenko/', 'LinkedIn', <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" {...stroke}><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13.5c0-3.5 4.5-3.5 4.5 0V17" /></svg>)}
+              {social('https://www.behance.net/studiobelenko', 'Behance', <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" {...stroke}><path d="M2 6h6.5a3 3 0 0 1 0 6H2zM2 12h7a3.2 3.2 0 0 1 0 6.4H2zM2 6v12.4M14.5 14.5h7.5c0-2.5-1.5-4-3.7-4s-3.8 1.6-3.8 4 1.6 4 3.8 4c1.6 0 2.8-.7 3.4-2M15.5 7h5.5" /></svg>)}
+              {social('https://wa.me/34671825489', 'WhatsApp', <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z" /></svg>)}
             </div>
-            <textarea name="message" rows={5} required placeholder="Your message" value={data.message} onChange={ch} />
-            <button type="submit" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending…' : 'Send message'}
-            </button>
-            {status === 'error' && (
-              <span className="proposal-cf-error">Something went wrong — please email office@belenko.design.</span>
-            )}
-          </form>
-        )}
+          </div>
+        </div>
+        <div className="rcon-line" aria-hidden="true" />
+        <form className="rcon-form" onSubmit={submit}>
+          {field('cf-name', 'name', 'Name', 'text', 'name', true)}
+          {field('cf-email', 'email', 'Email', 'email', 'email', true)}
+          {field('cf-phone', 'phone', 'Phone / WhatsApp', 'tel', 'tel', false)}
+          {field('cf-city', 'city', 'City', 'text', 'address-level2', false)}
+          <input type="checkbox" name="botcheck" tabIndex={-1} aria-hidden="true" style={{ display: 'none' }} />
+          <div className="rcon-actions">
+            <button type="submit" className="rcon-send" disabled={status === 'sending'}>Send</button>
+            <div role="status" aria-live="polite" className={`rcon-note${status === 'sent' || status === 'error' ? ' is-light' : ''}`}>
+              {status === 'sending' && 'Sending…'}
+              {status === 'sent' && 'Thank you. We will get back to you shortly.'}
+              {status === 'error' && 'Something went wrong. Please write to office@belenko.design.'}
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   )
@@ -1652,7 +1686,7 @@ export default function ClientLanding() {
 
       <WorldMapReveal />
 
-      <div id="contact" className="proposal-outro">
+      <div className="proposal-outro">
         <div className="proposal-glitch-btn-wrap">
           <GlitchButton />
         </div>

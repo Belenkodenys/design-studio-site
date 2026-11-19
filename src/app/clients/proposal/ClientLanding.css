@@ -2081,3 +2081,61 @@ html.is-glitching .proposal-glitch-btn {
   .proposal-monkeys-row .vmod-frame:only-child { flex: 0 0 auto; width: min(56.25vh, 100vw); }
 }
 
+
+/* ---- Contact: copy of the Residential page's Contact section ---- */
+.rcon {
+  background: #171719;
+  color: #F1F0EC;
+  padding: clamp(80px, 9vw, 130px) clamp(24px, 9vw, 130px);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  position: relative;
+  z-index: 20;
+}
+.rcon a { color: inherit; text-decoration: none; }
+.rcon-head { display: flex; align-items: baseline; gap: clamp(14px, 1.6vw, 22px); }
+.rcon-head img { height: calc(0.927 * clamp(32px, 4.1vw, 57px)); width: auto; display: block; flex: 0 0 auto; }
+.rcon-head div { font-family: 'Oswald', sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.05; text-transform: uppercase; }
+.rcon-row { display: flex; flex-wrap: wrap; align-items: stretch; justify-content: space-between; gap: 56px 0; }
+@media (min-width: 1101px) { .rcon-row { flex-wrap: nowrap; } }
+.rcon-left { flex: 0 0 auto; max-width: 100%; display: flex; flex-direction: column; gap: clamp(40px, 5vw, 72px); }
+html .rcon-left h2 {
+  margin: 0; font-family: 'Oswald', sans-serif; font-weight: 200;
+  font-size: clamp(32px, 4.1vw, 57px); line-height: 1.25; letter-spacing: 0;
+  text-transform: uppercase; white-space: nowrap; color: #F1F0EC;
+}
+.rcon-info { flex: 1 1 auto; display: flex; flex-direction: column; gap: 20px; }
+.rcon-meta { font-family: 'Oswald', sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em; }
+.rcon-phone {
+  display: inline-flex; align-items: center; gap: 14px; align-self: flex-start; min-height: 44px;
+  font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 22px; letter-spacing: 0.06em;
+}
+.rcon-phone-icon { width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #8E8E8A; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.rcon-socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
+.rcon-social { width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC; }
+.rcon-social:hover, .rcon-phone:hover { opacity: 0.65; }
+.rcon-line { flex: 1 1 40px; min-width: 40px; height: 1px; background: #8E8E8A; margin: 68px 0 0 clamp(24px, 3vw, 48px); }
+@media (max-width: 1100px) { .rcon-line { display: none; } }
+.rcon-form { flex: 0 1 400px; max-width: 520px; width: 100%; display: flex; flex-direction: column; gap: 26px; margin: 0; }
+.rcon-field { display: flex; flex-direction: column; gap: 6px; }
+.rcon-field label { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #A3A29D; }
+.rcon-input {
+  width: 100%; box-sizing: border-box; background: transparent; border: 0; border-bottom: 1px solid #8E8E8A; border-radius: 0;
+  color: #F1F0EC; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 17px; padding: 10px 0 12px; min-height: 44px;
+}
+.rcon-input::placeholder { color: #8E8E8A; }
+.rcon-input:focus { outline: none; border-bottom-color: #FFFFFF; box-shadow: 0 1px 0 0 #FFFFFF; }
+.rcon-input:-webkit-autofill { -webkit-text-fill-color: #F1F0EC; transition: background-color 9999s ease-out; }
+.rcon-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; margin-top: 8px; }
+html .rcon-send {
+  font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #F1F0EC; background: transparent; border: 1px solid #F1F0EC; border-radius: 0; padding: 18px 44px; cursor: pointer;
+  transition: background .3s, color .3s;
+}
+.rcon-send:hover { background: #F1F0EC; color: #171719; }
+.rcon-send[disabled] { opacity: .5; cursor: default; }
+.rcon-note { font-size: 14px; color: #A3A29D; flex: 1 1 200px; }
+.rcon-note.is-light { color: #F1F0EC; }
