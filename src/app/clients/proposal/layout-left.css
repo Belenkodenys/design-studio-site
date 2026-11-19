@@ -32,7 +32,6 @@ html .proposal-portfolio-head {
 html .proposal-portfolio-head .proposal-accordion-title,
 html .proposal-about-title { text-align: left; }
 html .proposal-portfolio-head .proposal-accordion-arrow { margin-left: 0.1em; }
-html .proposal-sections { max-width: none; margin: 0; padding-left: var(--page-x); padding-right: var(--page-x); }
 
 /* Who we work with */
 html .proposal-stack > .proposal-who { padding-left: var(--page-x); padding-right: var(--page-x); }
