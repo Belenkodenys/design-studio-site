@@ -1575,9 +1575,9 @@ export default function ClientLanding() {
       <section className="proposal-statement" aria-label="Studio in numbers">
         <p className="proposal-statement-text">
           We have designed
-          <br />
+          {' '}<br />
           <span className="proposal-statement-num">250</span> restaurants, bars &amp; hotels
-          <br />
+          {' '}<br />
           over the last <span className="proposal-statement-num">27</span> years
         </p>
       </section>
@@ -1629,9 +1629,9 @@ export default function ClientLanding() {
       <section className="proposal-statement proposal-statement--concept" aria-label="Our approach">
         <p className="proposal-statement-text">
           We create the concept:
-          <br />
+          {' '}<br />
           from the first idea on a napkin
-          <br />
+          {' '}<br />
           to the first guests
         </p>
       </section>
@@ -1649,7 +1649,7 @@ export default function ClientLanding() {
       <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
         <p className="proposal-statement-text">
           Branding that
-          <br />
+          {' '}<br />
           reinforces the concept
         </p>
         <a href="/branding" className="proposal-statement-link">See our branding work →</a>
