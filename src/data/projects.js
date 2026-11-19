@@ -59,7 +59,14 @@ export const projects = [
       '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-19.webp',
       '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-20.webp',
       '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-21.webp',
-      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-22.webp'
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-22.webp',
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-23.webp',
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-24.webp',
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-25.webp',
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-26.webp',
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-27.webp',
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-28.webp',
+      '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-29.webp'
     ]
   },
   {
