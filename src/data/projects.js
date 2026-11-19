@@ -36,7 +36,7 @@ export const projects = [
     year: '2026',
     description: 'An elegant French-inspired restaurant featuring rich mahogany woodwork, luxurious red velvet seating, stunning crystal chandeliers, and classic mosaic flooring creating a sophisticated Parisian brasserie atmosphere.',
     services: ['Concept', 'Interior Design', 'Lighting Design'],
-    image: '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-1.webp',
+    image: '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-8.webp',
     images: [
       '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-1.webp',
       '/projects/belenko-interior-design-chou-chou-restaurant-chisinau-2.webp',
