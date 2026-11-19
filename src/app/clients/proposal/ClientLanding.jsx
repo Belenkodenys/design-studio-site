@@ -508,10 +508,26 @@ export function StudioMission() {
 // Fixed top menu bar: logo pinned left, section links right. Transparent over
 // the hero, gains a translucent dark backdrop once the page is scrolled.
 function TopBar({ setServicesOpen, setPortfolioOpen }) {
-  const [scrolled, setScrolled] = useState(false)
+  // Same behaviour as the Residential page header: full height at the top of
+  // the page, hides while scrolling down, comes back compact (dark bar) when
+  // scrolling up; the mobile menu is a dropdown panel under the bar.
+  const [mode, setMode] = useState('top') // 'top' | 'compact' | 'hidden'
   const [menuOpen, setMenuOpen] = useState(false)
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    let lastY = window.scrollY || 0
+    let cur = 'top'
+    const onScroll = () => {
+      const y = window.scrollY || 0
+      const d = y - lastY
+      if (Math.abs(d) < 2 && y > 10) return
+      lastY = y
+      const next = y <= 10 ? 'top' : d > 0 ? 'hidden' : 'compact'
+      if (next !== cur) {
+        cur = next
+        if (next === 'hidden') setMenuOpen(false)
+        setMode(next)
+      }
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -538,9 +554,8 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
     // would report the sticky-translated position). Defer a frame so any expand
     // has been committed to the DOM before measuring.
     requestAnimationFrame(() => {
-      const bar = document.querySelector('.proposal-topbar')
-      const barH = bar ? bar.offsetHeight : 0
       const gap = 24
+      const barH = 84
       let y = 0
       let node = target
       while (node) {
@@ -551,37 +566,65 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
     })
   }
 
+  const cls = `proposal-topbar${menuOpen ? ' is-compact is-menu-open' : mode === 'hidden' ? ' is-hidden' : mode === 'compact' ? ' is-compact' : ''}`
+  const links = [
+    ['/projects', 'portfolio', 'Our Works'],
+    ['/career', null, 'Career'],
+    ['/about', 'about', 'About Us'],
+    ['/contact', 'contact', 'Contacts']
+  ]
+  const waIcon = (
+    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z" /></svg>
+  )
+
   return (
-    <header
-      className={`proposal-topbar${scrolled ? ' is-scrolled' : ''}${menuOpen ? ' is-menu-open' : ''}`}
-    >
-      <a
-        href="#top"
-        className="proposal-topbar-logo"
-        onClick={(e) => go(e, 'top')}
-        aria-label="Belenko Studio — back to top"
-      >
-        <img src="/belenko-logo-footer.png" alt="Belenko" />
-      </a>
-
-      <button
-        type="button"
-        className="proposal-topbar-toggle"
-        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-        aria-expanded={menuOpen}
-        onClick={() => setMenuOpen((v) => !v)}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-
-      <nav className={`proposal-topbar-nav${menuOpen ? ' is-open' : ''}`}>
-        <a href="/projects" onClick={(e) => go(e, 'portfolio')}>Our Works</a>
-        <a href="/career">Career</a>
-        <a href="/about" onClick={(e) => go(e, 'about')}>About Us</a>
-        <a href="/contact" onClick={(e) => go(e, 'contact')}>Contacts</a>
-      </nav>
+    <header className={cls}>
+      <div className="proposal-topbar-bar">
+        <nav className="proposal-topbar-row" aria-label="Main">
+          <a
+            href="#top"
+            className="proposal-topbar-logo"
+            onClick={(e) => go(e, 'top')}
+            aria-label="Belenko Studio — back to top"
+          >
+            <img src="/belenko-logo-footer.png" alt="Belenko" />
+          </a>
+          <div className="proposal-topbar-right">
+            {links.map(([href, id, label]) => (
+              <a key={label} className="proposal-topbar-link" href={href} onClick={id ? (e) => go(e, id) : undefined}>{label}</a>
+            ))}
+            <div className="proposal-topbar-icons">
+              <button
+                type="button"
+                className="proposal-topbar-tip proposal-topbar-burger"
+                data-tip="Menu"
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((v) => !v)}
+              >
+                <svg aria-hidden="true" width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M0 1h20M0 7h20M0 13h20" /></svg>
+              </button>
+              <a
+                className="proposal-topbar-tip proposal-topbar-wa"
+                data-tip="WhatsApp"
+                href="https://wa.me/34671825489"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+              >
+                {waIcon}
+              </a>
+            </div>
+          </div>
+        </nav>
+        {menuOpen && (
+          <div className="proposal-topbar-menu">
+            {links.map(([href, id, label]) => (
+              <a key={label} href={href} onClick={id ? (e) => go(e, id) : () => setMenuOpen(false)}>{label}</a>
+            ))}
+          </div>
+        )}
+      </div>
     </header>
   )
 }
