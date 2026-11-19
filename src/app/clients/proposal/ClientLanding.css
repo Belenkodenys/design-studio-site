@@ -94,7 +94,7 @@ html.is-glitching body {
 
 html.is-glitching .proposal-hero,
 html.is-glitching .proposal-sections,
-html.is-glitching .proposal-footer {
+html.is-glitching .rfoot {
   animation: proposalGlitchShift 0.18s steps(1) infinite;
 }
 

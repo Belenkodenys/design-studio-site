@@ -1,152 +1,33 @@
-.proposal-footer {
-  border-top: 1px solid #eee;
-  padding: clamp(28px, 3.5vw, 48px) 24px clamp(48px, 6vw, 80px);
-  background: #fff;
-}
-
-.proposal-footer-inner {
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(48px);
-  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.proposal-footer.is-visible .proposal-footer-inner {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.proposal-footer-mark {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #111;
-}
-
-.proposal-footer-address {
-  font-size: 14px;
-  color: #666;
-  letter-spacing: 0.05em;
-}
-
-.proposal-footer-contact {
+/* Footer copied from the Residential page (belenko.design/residential),
+   plus the unique-visits counter bottom right. */
+.rfoot {
+  background: #0E0E0E;
+  color: #F1F0EC;
+  padding: 62px clamp(24px, 9vw, 130px) 56px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #666;
+  justify-content: space-between;
+  gap: 40px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 20;
 }
-
-.proposal-footer-contact a {
-  color: #444;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+.rfoot a { color: inherit; text-decoration: none; }
+.rfoot a:hover { opacity: 0.65; }
+.rfoot-col--brand { flex: 1 1 38%; min-width: 240px; display: flex; flex-direction: column; gap: 40px; }
+.rfoot-logo { align-self: flex-start; }
+.rfoot-logo img { height: 26px; width: auto; display: block; }
+.rfoot-meta { display: flex; flex-direction: column; gap: 14px; color: #8E8E8A; letter-spacing: 0.05em; }
+.rfoot-meta address { font-style: normal; line-height: 1.6; }
+.rfoot-col--links { flex: 1 1 22%; min-width: 160px; display: flex; flex-direction: column; gap: 4px; color: #8E8E8A; letter-spacing: 0.05em; }
+.rfoot-col--links a { text-decoration: underline; text-underline-offset: 4px; align-self: flex-start; }
+.rfoot-socials { flex: 0 1 auto; align-self: center; display: flex; flex-wrap: wrap; gap: 10px; }
+.rfoot-social {
+  width: 50px; height: 50px; box-sizing: border-box;
+  border: 1px solid #6E6E6A; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: #F1F0EC;
 }
-
-.proposal-footer-contact a:hover {
-  color: #111;
-  border-bottom-color: #111;
-}
-
-.proposal-footer-divider {
-  color: #ccc;
-}
-
-.proposal-footer-social {
-  display: flex;
-  gap: 18px;
-  margin-top: 6px;
-}
-
-.proposal-footer-social-link {
-  color: #555;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.proposal-footer-social-link:hover {
-  color: #111;
-  transform: translateY(-1px);
-}
-
-.proposal-footer-copyright {
-  margin-top: 18px;
-  font-size: 12px;
-  color: #999;
-  letter-spacing: 0.05em;
-}
-
-/* Mobile: black footer with light text. */
-@media (max-width: 720px) {
-  .proposal-footer {
-    background: #000;
-    border-top-color: #222;
-  }
-  .proposal-footer-mark {
-    color: #fff;
-  }
-  .proposal-footer-address,
-  .proposal-footer-contact {
-    color: #aaa;
-  }
-  .proposal-footer-contact a {
-    color: #ddd;
-  }
-  .proposal-footer-contact a:hover {
-    color: #fff;
-    border-bottom-color: #fff;
-  }
-  .proposal-footer-divider {
-    color: #555;
-  }
-  .proposal-footer-social-link {
-    color: #bbb;
-  }
-  .proposal-footer-social-link:hover {
-    color: #fff;
-  }
-  .proposal-footer-copyright {
-    color: #777;
-  }
-}
-
-/* Unique-visit counter — tiny, muted, at the very bottom */
-.proposal-footer-count {
-  margin-top: 12px;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: #bbb;
-  font-variant-numeric: tabular-nums;
-}
-@media (max-width: 720px) {
-  .proposal-footer-count { color: #666; }
-}
-
-.proposal-footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px 22px;
-  margin: 18px 0 14px;
-}
-.proposal-footer-nav a {
-  color: inherit;
-  opacity: 0.75;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.proposal-footer-nav a:hover { opacity: 1; }
+.rfoot-visits { flex: 1 1 100%; text-align: right; font-size: 11px; letter-spacing: 0.12em; color: #8E8E8A; }
