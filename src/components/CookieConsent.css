@@ -123,8 +123,8 @@
     font-size: 13px;
   }
 
+  /* No floating "Cookies" button on phones — the footer Cookies link remains. */
   .cookie-manage {
-    left: 12px;
-    bottom: 12px;
+    display: none;
   }
 }

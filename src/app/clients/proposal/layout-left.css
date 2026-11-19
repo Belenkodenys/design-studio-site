@@ -47,3 +47,10 @@ html .proposal-services-head .proposal-accordion-title { text-align: center; }
    right of the chevron so it always stays inside the white panel. */
 html .proposal-section-header { padding-right: 96px; }
 @media (max-width: 720px) { html .proposal-section-header { padding-right: 0; } }
+
+/* Phones: no horizontal drift of the Services rows — the text must fit the
+   screen width. */
+@media (max-width: 720px) {
+  html .proposal-section-link { transform: none; will-change: auto; }
+  html .proposal-section-link > .proposal-section { max-width: 100%; }
+}
