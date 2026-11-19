@@ -507,3 +507,27 @@ html h3, html h4 { font-weight: var(--w-list); }
 html p, html li, html dd, html td { font-family: var(--font-text); font-weight: var(--w-body); }
 html button, html .btn, html [class*="-btn"] { font-family: var(--font-label); letter-spacing: var(--track-ui); text-transform: uppercase; font-weight: var(--w-ui); }
 html strong, html b { font-weight: 500; }
+
+/* Body copy on the Residential page is Inter 300 in sentence case — undo the
+   uppercase the old system applied to running text. */
+html .proposal-section-body,
+html .proposal-section-long,
+html .proposal-section-bullets li,
+html .proposal-mission-details-inner p:not(:first-of-type),
+html .proposal-mission-principle p,
+html .proposal-who-item p,
+html .proposal-faq-a p,
+html .project-description p,
+html .svc-package p,
+html .svc-package li,
+html .about-wrap p,
+html .service-content p,
+html .blog-post-content p,
+html .contact-details dd {
+  font-family: var(--font-text);
+  font-weight: var(--w-body);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-transform: none;
+}
