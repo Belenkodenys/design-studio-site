@@ -34,23 +34,27 @@ function detectBrowserLanguage() {
 }
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguageState] = useState('en')
   const [isHydrated, setIsHydrated] = useState(false)
 
-  // Initialize language on client side only
+  // English is the default on every page. Only an explicit choice made in the
+  // language switcher is remembered (key "languageChoice"); the browser
+  // language is no longer auto-detected.
   useEffect(() => {
-    const saved = typeof window !== 'undefined' ? localStorage.getItem('language') : null
-    if (saved) {
-      setLanguage(saved)
-    } else {
-      setLanguage(detectBrowserLanguage())
+    const saved = typeof window !== 'undefined' ? localStorage.getItem('languageChoice') : null
+    if (saved && languages.some((l) => l.code === saved)) {
+      setLanguageState(saved)
     }
     setIsHydrated(true)
   }, [])
 
+  const setLanguage = (code) => {
+    setLanguageState(code)
+    if (typeof window !== 'undefined') localStorage.setItem('languageChoice', code)
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined' && isHydrated) {
-      localStorage.setItem('language', language)
       document.documentElement.lang = language
     }
   }, [language, isHydrated])
