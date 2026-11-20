@@ -551,17 +551,29 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
     // bar (its true beginning), not the empty top padding above it.
     const target =
       el.querySelector('.proposal-services-head, .proposal-portfolio-head') || el
-    // offsetTop chain is robust for the sticky-stacked panels (getBoundingClientRect
-    // would report the sticky-translated position). Defer a frame so any expand
-    // has been committed to the DOM before measuring.
+    // The homepage panels are a sticky "stack": once scrolled, a stuck panel's
+    // offsetTop / getBoundingClientRect report its *stuck* position, not its
+    // place in the document. So compute the natural document position of the
+    // stack child by summing the heights of the siblings above it (layout is
+    // unaffected by sticky), then add the target's offset inside that child.
+    // Defer a frame so any expand has been committed to the DOM before measuring.
     requestAnimationFrame(() => {
       const gap = 24
       const barH = 84
-      let y = 0
-      let node = target
-      while (node) {
-        y += node.offsetTop
-        node = node.offsetParent
+      const stack = el.closest('.proposal-stack')
+      let y
+      if (stack) {
+        let child = el
+        while (child.parentElement && child.parentElement !== stack) child = child.parentElement
+        y = stack.getBoundingClientRect().top + window.scrollY
+        for (let s = stack.firstElementChild; s && s !== child; s = s.nextElementSibling) {
+          const cs = getComputedStyle(s)
+          y += s.offsetHeight + (parseFloat(cs.marginTop) || 0) + (parseFloat(cs.marginBottom) || 0)
+        }
+        y += (parseFloat(getComputedStyle(child).marginTop) || 0)
+        y += target.getBoundingClientRect().top - child.getBoundingClientRect().top
+      } else {
+        y = target.getBoundingClientRect().top + window.scrollY
       }
       window.scrollTo({ top: Math.max(0, y - barH - gap), behavior: 'smooth' })
     })
