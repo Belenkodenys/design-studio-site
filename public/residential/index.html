@@ -90,12 +90,7 @@ body{background:#171719}
 #bkLb{top:0;left:0;right:0;bottom:0;width:100%;height:100%}
 #bkLb [data-slide],#bkLb [data-slide]>img,#bkLb [data-slide]>video{top:0;left:0;width:100%;height:100%}
 #bkStage{-webkit-tap-highlight-color:transparent}
-#bkTools{position:absolute;left:16px;bottom:22px;z-index:12;display:flex;gap:10px}
-#bkTools[hidden]{display:none}
-#bkTools button{height:44px;min-width:44px;padding:0;border:1px solid rgba(255,255,255,0.7);border-radius:22px;background:rgba(23,23,25,0.55);color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:Oswald,sans-serif;font-weight:300;font-size:14px;letter-spacing:0.14em;text-transform:uppercase}
-#bkTools #bkSave{padding:0 18px 0 14px}
-@media (hover:hover) and (pointer:fine){#bkTools [data-z]{display:none}}
-#bkStage img{-webkit-touch-callout:default}
+@media (hover:hover) and (pointer:fine){#bkStage img{-webkit-touch-callout:default}
 #bkPlay .bk-play-ic{width:34px;height:34px;box-sizing:border-box;border:2px solid rgba(255,255,255,0.6);border-radius:50%;display:flex;align-items:center;justify-content:center}
 #bkPlay:hover{background:#FFFFFF;color:#171719}
 #bkPlay:hover .bk-play-ic{border-color:#171719}
@@ -754,25 +749,16 @@ lb.appendChild(playBtn);
 function curVideo(){ return slides[idx] ? slides[idx].querySelector('video') : null; }
 function paintPlay(){ var v=curVideo(); playBtn.hidden=!v; if(!v) return; var on=!v.paused && !v.ended; playBtn.setAttribute('aria-label',on?'Pause the film':'Play the film'); playBtn.querySelector('.bk-play-tx').textContent=on?'Pause':'Play'; playBtn.querySelector('.bk-play-ic').innerHTML=on?'<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>':'<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l14 8-14 8z"/></svg>'; }
 function stopVideos(except){ vids.forEach(function(v){ if(v!==except && !v.paused) v.pause(); }); }
-function syncVideo(autoplay){ var v=curVideo(); stopVideos(v); if(typeof paintTools==='function') paintTools(); if(v && autoplay){ var p=v.play(); if(p && p.catch) p.catch(function(){}); } paintPlay(); }
+function syncVideo(autoplay){ var v=curVideo(); stopVideos(v); if(v && autoplay){ var p=v.play(); if(p && p.catch) p.catch(function(){}); } paintPlay(); }
 playBtn.addEventListener('click',function(){ var v=curVideo(); if(!v) return; if(v.paused||v.ended){ var p=v.play(); if(p && p.catch) p.catch(function(){}); } else v.pause(); });
 vids.forEach(function(v){ ['play','pause','ended'].forEach(function(n){ v.addEventListener(n,paintPlay); }); });
-/* only the current photo and its two neighbours are rendered; every other slide is display:none, so a phone never decodes or composites the whole gallery at once (that crashed iOS Safari) */
-function mountSlides(){
-  var n=slides.length;
-  slidesAll.forEach(function(s){
-    var k=slides.indexOf(s), d=k<0?9:Math.abs(k-idx), near=k>=0 && (d<=1 || n-d<=1);
-    s.style.display=near?'':'none';
-    if(near) $$('img',s).forEach(function(im){ if(im.loading==='lazy') im.loading='eager'; });
-  });
-}
 function paintLb(live){
-  mountSlides();
   slidesAll.forEach(function(s){ var on=live && slides[idx]===s; s.style.opacity=on?1:0; s.style.transform=on?'scale(1)':'scale(1.05)'; });
   count.textContent=pad2(idx+1); tot.textContent=pad2(slides.length);
 }
 function go(i){ if(typeof resetZoom==='function') resetZoom(false); idx=(i+slides.length)%slides.length; paintLb(true); syncVideo(false); }
-function openLb(g,i){ if(moved) return; slides=slidesAll.filter(function(s){ return s.getAttribute('data-slide').split(':')[0]===g; }); if(!slides.length) return; idx=Math.max(0,Math.min(slides.length-1,i)); mountSlides(); lb.hidden=false; lb.style.display='flex';
+function openLb(g,i){ if(moved) return; slides=slidesAll.filter(function(s){ return s.getAttribute('data-slide').split(':')[0]===g; }); if(!slides.length) return; idx=Math.max(0,Math.min(slides.length-1,i)); lb.hidden=false; lb.style.display='flex';
+  slides.forEach(function(s){ $$('img',s).forEach(function(im){ if(im.loading==='lazy') im.loading='eager'; }); });
   try{ document.documentElement.style.overflow='hidden'; if(lenis) lenis.stop(); cur.style.opacity=0; }catch(err){}
   paintLb(false); setTimeout(function(){ paintLb(true); },40);
   try{ syncVideo(true); }catch(err){} }
@@ -860,7 +846,6 @@ function dist(t){ var dx=t[0].clientX-t[1].clientX, dy=t[0].clientY-t[1].clientY
 function place(s,x,t){ s.style.transition=t||'none'; s.style.opacity=1; s.style.transform='translate3d('+x.toFixed(1)+'px,0,0)'; }
 /* settle every slide into its resting state without the fade/zoom transition */
 function snap(){
-  mountSlides();
   slidesAll.forEach(function(s){ var on=slides[idx]===s; s.style.transition='none'; s.style.opacity=on?1:0; s.style.transform=on?'scale(1)':'scale(1.05)'; });
   void lb.offsetWidth;
   slidesAll.forEach(function(s){ s.style.transition=SLIDE_T; });
@@ -915,33 +900,6 @@ function endTouch(e){
 }
 stage.addEventListener('touchend',endTouch,{passive:true});
 stage.addEventListener('touchcancel',endTouch,{passive:true});
-/* full-screen tools: zoom in / out (touch screens) and save the photo */
-var tools=document.createElement('div'); tools.id='bkTools';
-tools.innerHTML='<button type="button" data-z="1" aria-label="Zoom in"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" data-z="-1" aria-label="Zoom out"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12h14"/></svg></button><button type="button" id="bkSave" aria-label="Save photo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><span>Save</span></button>';
-lb.appendChild(tools);
-function paintTools(){ tools.hidden=!!curVideo(); }
-$$('[data-z]',tools).forEach(function(b){ b.addEventListener('click',function(){
-  if(busy || curVideo()) return;
-  var d=+b.getAttribute('data-z'); zs = d>0 ? Math.min(4,zs*1.6) : Math.max(1,zs/1.6);
-  if(zs<1.05){ resetZoom(true); return; }
-  clampPan(); applyZoom(true);
-}); });
-function saveBlob(blob,name){ var u=URL.createObjectURL(blob), a=document.createElement('a'); a.href=u; a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(u); },4000); }
-$('#bkSave').addEventListener('click',function(){
-  var im=slides[idx] && slides[idx].querySelector('img'); if(!im || !im.naturalWidth) return;
-  var name=(im.currentSrc||im.src).split('/').pop().split('?')[0].replace(/\.\w+$/,'')+'.jpg';
-  var cv=document.createElement('canvas'); cv.width=im.naturalWidth; cv.height=im.naturalHeight;
-  try{
-    cv.getContext('2d').drawImage(im,0,0);
-    cv.toBlob(function(blob){
-      if(!blob){ window.open(im.currentSrc||im.src,'_blank'); return; }
-      var file=null; try{ file=new File([blob],name,{type:'image/jpeg'}); }catch(err){}
-      if(isTouch && file && navigator.canShare && navigator.canShare({files:[file]})){
-        navigator.share({files:[file]}).catch(function(err){ if(err && err.name!=='AbortError') saveBlob(blob,name); });
-      } else saveBlob(blob,name);
-    },'image/jpeg',0.92);
-  }catch(err){ window.open(im.currentSrc||im.src,'_blank'); }
-});
 /* contact form -> email (Web3Forms relay, same as the main site's contact form) */
 var form=$('#bkForm'), formNote=$('#bkFormNote');
 if(form){
