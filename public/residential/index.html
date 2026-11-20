@@ -756,13 +756,22 @@ function stopVideos(except){ vids.forEach(function(v){ if(v!==except && !v.pause
 function syncVideo(autoplay){ var v=curVideo(); stopVideos(v); if(typeof paintTools==='function') paintTools(); if(v && autoplay){ var p=v.play(); if(p && p.catch) p.catch(function(){}); } paintPlay(); }
 playBtn.addEventListener('click',function(){ var v=curVideo(); if(!v) return; if(v.paused||v.ended){ var p=v.play(); if(p && p.catch) p.catch(function(){}); } else v.pause(); });
 vids.forEach(function(v){ ['play','pause','ended'].forEach(function(n){ v.addEventListener(n,paintPlay); }); });
+/* only the current photo and its two neighbours are rendered; every other slide is display:none, so a phone never decodes or composites the whole gallery at once (that crashed iOS Safari) */
+function mountSlides(){
+  var n=slides.length;
+  slidesAll.forEach(function(s){
+    var k=slides.indexOf(s), d=k<0?9:Math.abs(k-idx), near=k>=0 && (d<=1 || n-d<=1);
+    s.style.display=near?'':'none';
+    if(near) $$('img',s).forEach(function(im){ if(im.loading==='lazy') im.loading='eager'; });
+  });
+}
 function paintLb(live){
+  mountSlides();
   slidesAll.forEach(function(s){ var on=live && slides[idx]===s; s.style.opacity=on?1:0; s.style.transform=on?'scale(1)':'scale(1.05)'; });
   count.textContent=pad2(idx+1); tot.textContent=pad2(slides.length);
 }
 function go(i){ if(typeof resetZoom==='function') resetZoom(false); idx=(i+slides.length)%slides.length; paintLb(true); syncVideo(false); }
-function openLb(g,i){ if(moved) return; slides=slidesAll.filter(function(s){ return s.getAttribute('data-slide').split(':')[0]===g; }); if(!slides.length) return; idx=Math.max(0,Math.min(slides.length-1,i)); lb.hidden=false; lb.style.display='flex';
-  slides.forEach(function(s){ $$('img',s).forEach(function(im){ if(im.loading==='lazy') im.loading='eager'; }); });
+function openLb(g,i){ if(moved) return; slides=slidesAll.filter(function(s){ return s.getAttribute('data-slide').split(':')[0]===g; }); if(!slides.length) return; idx=Math.max(0,Math.min(slides.length-1,i)); mountSlides(); lb.hidden=false; lb.style.display='flex';
   try{ document.documentElement.style.overflow='hidden'; if(lenis) lenis.stop(); cur.style.opacity=0; }catch(err){}
   paintLb(false); setTimeout(function(){ paintLb(true); },40);
   try{ syncVideo(true); }catch(err){} }
@@ -850,6 +859,7 @@ function dist(t){ var dx=t[0].clientX-t[1].clientX, dy=t[0].clientY-t[1].clientY
 function place(s,x,t){ s.style.transition=t||'none'; s.style.opacity=1; s.style.transform='translate3d('+x.toFixed(1)+'px,0,0)'; }
 /* settle every slide into its resting state without the fade/zoom transition */
 function snap(){
+  mountSlides();
   slidesAll.forEach(function(s){ var on=slides[idx]===s; s.style.transition='none'; s.style.opacity=on?1:0; s.style.transform=on?'scale(1)':'scale(1.05)'; });
   void lb.offsetWidth;
   slidesAll.forEach(function(s){ s.style.transition=SLIDE_T; });
