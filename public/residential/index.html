@@ -87,6 +87,9 @@ body{background:#171719}
 #bkStage img{will-change:transform}
 #bkPlay{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:14px;height:46px;padding:0 22px 0 6px;border:0;border-radius:23px;background:rgba(23,23,25,0.55);color:#FFFFFF;cursor:pointer;font-family:Oswald,sans-serif;font-weight:400;font-size:16px;letter-spacing:0.14em;text-transform:uppercase}
 #bkPlay[hidden]{display:none}
+#bkLb{top:0;left:0;right:0;bottom:0;width:100%;height:100%}
+#bkLb [data-slide],#bkLb [data-slide]>img,#bkLb [data-slide]>video{top:0;left:0;width:100%;height:100%}
+#bkStage{-webkit-tap-highlight-color:transparent}
 #bkTools{position:absolute;left:16px;bottom:22px;z-index:12;display:flex;gap:10px}
 #bkTools[hidden]{display:none}
 #bkTools button{height:44px;min-width:44px;padding:0;border:1px solid rgba(255,255,255,0.7);border-radius:22px;background:rgba(23,23,25,0.55);color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:Oswald,sans-serif;font-weight:300;font-size:14px;letter-spacing:0.14em;text-transform:uppercase}
@@ -686,6 +689,7 @@ button{font:inherit}
 <script src="/residential/lenis.min.js"></script>
 <script>
 (function(){
+if(/[?&]debug=1/.test(location.search)){ window.addEventListener('error',function(e){ var d=document.createElement('div'); d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#B00020;color:#fff;font:12px/1.4 monospace;padding:8px;text-transform:none;white-space:pre-wrap'; d.textContent=(e.message||'error')+' @ '+(e.filename||'').split('/').pop()+':'+e.lineno+':'+e.colno; document.body.appendChild(d); }); }
 var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 /* header: hide on scroll down, show compact on scroll up */
 var header=$('#bkHeader'), menu=$('#bkMenu'), burger=$('#bkBurger'), lastY=0, nav='top', menuOpen=false;
@@ -756,9 +760,29 @@ function paintLb(live){
   count.textContent=pad2(idx+1); tot.textContent=pad2(slides.length);
 }
 function go(i){ if(typeof resetZoom==='function') resetZoom(false); idx=(i+slides.length)%slides.length; paintLb(true); syncVideo(false); }
-function openLb(g,i){ if(moved) return; slides=slidesAll.filter(function(s){ return s.getAttribute('data-slide').split(':')[0]===g; }); idx=i; lb.hidden=false; document.documentElement.style.overflow='hidden'; if(lenis) lenis.stop(); cur.style.opacity=0; paintLb(false); setTimeout(function(){ paintLb(true); },40); syncVideo(true); }
-function closeLb(){ resetZoom(false); stopVideos(null); playBtn.hidden=true; lb.hidden=true; document.documentElement.style.overflow=''; if(lenis) lenis.start(); }
-$$('[data-open]').forEach(function(b){ b.addEventListener('click',function(){ var p=b.getAttribute('data-open').split(':'); openLb(p[0],+p[1]); }); });
+function openLb(g,i){ if(moved) return; slides=slidesAll.filter(function(s){ return s.getAttribute('data-slide').split(':')[0]===g; }); if(!slides.length) return; idx=Math.max(0,Math.min(slides.length-1,i)); lb.hidden=false; lb.style.display='flex';
+  slides.forEach(function(s){ $$('img',s).forEach(function(im){ if(im.loading==='lazy') im.loading='eager'; }); });
+  try{ document.documentElement.style.overflow='hidden'; if(lenis) lenis.stop(); cur.style.opacity=0; }catch(err){}
+  paintLb(false); setTimeout(function(){ paintLb(true); },40);
+  try{ syncVideo(true); }catch(err){} }
+function closeLb(){ resetZoom(false); stopVideos(null); playBtn.hidden=true; lb.hidden=true; lb.style.display='none'; document.documentElement.style.overflow=''; if(lenis) lenis.start(); }
+/* open on click; on touch screens a tap is recognised directly (iOS Safari does not always turn a tap inside a scrolling strip into a click) */
+var tapAt=0;
+$$('[data-open]').forEach(function(b){
+  function open(){ var p=b.getAttribute('data-open').split(':'); openLb(p[0],+p[1]); }
+  var t0=null;
+  b.addEventListener('click',function(){ if(Date.now()-tapAt<900) return; open(); });
+  b.addEventListener('touchstart',function(e){ t0 = e.touches.length===1 ? {x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now(),sy:window.pageYOffset} : null; },{passive:true});
+  b.addEventListener('touchmove',function(e){ if(t0 && (Math.abs(e.touches[0].clientX-t0.x)>10 || Math.abs(e.touches[0].clientY-t0.y)>10)) t0=null; },{passive:true});
+  b.addEventListener('touchcancel',function(){ t0=null; },{passive:true});
+  b.addEventListener('touchend',function(e){
+    var s=t0; t0=null; if(!s || !e.changedTouches.length) return;
+    var t=e.changedTouches[0];
+    if(Math.abs(t.clientX-s.x)>10 || Math.abs(t.clientY-s.y)>10 || Date.now()-s.t>700 || Math.abs(window.pageYOffset-s.sy)>4) return;
+    if(e.cancelable) e.preventDefault();
+    tapAt=Date.now(); isTouch=true; moved=false; open();
+  },{passive:false});
+});
 $$('[data-nav]').forEach(function(b){ b.addEventListener('click',function(){ if(isTouch) return; go(idx+ +b.getAttribute('data-nav')); }); });
 $('#bkClose').addEventListener('click',closeLb);
 stage.addEventListener('mousemove',function(e){
