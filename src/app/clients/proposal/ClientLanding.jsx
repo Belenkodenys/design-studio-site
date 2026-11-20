@@ -570,6 +570,7 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
   const cls = `proposal-topbar${menuOpen ? ' is-compact is-menu-open' : mode === 'hidden' ? ' is-hidden' : mode === 'compact' ? ' is-compact' : ''}`
   const links = [
     ['/projects', 'portfolio', 'Our Works'],
+    ['/services', 'services', 'Services'],
     ['/career', null, 'Career'],
     ['/about', 'about', 'About Us'],
     ['/contact', 'contact', 'Contacts']
