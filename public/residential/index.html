@@ -872,6 +872,12 @@ stage.addEventListener('touchmove',function(e){
     var t=e.touches[0]; g.dx=t.clientX-g.x0; g.dy=t.clientY-g.y0;
     if(g.type==='pan'){ zx=g.zx0+g.dx; zy=g.zy0+g.dy; clampPan(); applyZoom(false); return; }
     if(!g.lock && (Math.abs(g.dx)>8 || Math.abs(g.dy)>8)) g.lock = Math.abs(g.dx)>=Math.abs(g.dy) ? 'x' : 'y';
+    if(g.lock==='y'){ /* swipe up / down: the photo follows the finger and the backdrop fades */
+      var sy=slides[idx], ady=Math.abs(g.dy);
+      sy.style.transition='none'; sy.style.transform='translate3d(0,'+g.dy.toFixed(1)+'px,0) scale('+(1-Math.min(ady/2000,0.12)).toFixed(3)+')';
+      lb.style.backgroundColor='rgba(23,23,25,'+(1-Math.min(ady/380,0.75)).toFixed(3)+')';
+      return;
+    }
     if(g.lock!=='x' || slides.length<2) return;
     var dir=g.dx<0?1:-1, nb=slides[(idx+dir+slides.length)%slides.length];
     if(g.nb && g.nb!==nb){ g.nb.style.transition='none'; g.nb.style.opacity=0; }
@@ -895,6 +901,15 @@ function endTouch(e){
     if(commit){ place(cur,-dir*was.w,SWIPE_T); place(nb,0,SWIPE_T); }
     else { place(cur,0,SWIPE_T); place(nb,dir*was.w,SWIPE_T); }
     setTimeout(function(){ if(commit) idx=(idx+dir+slides.length)%slides.length; snap(); busy=false; if(commit) syncVideo(false); },440);
+    return;
+  }
+  if(was.lock==='y'){
+    var sv=slides[idx], dty=Date.now()-was.t0, shut=Math.abs(was.dy)>90 || (Math.abs(was.dy)>36 && dty<260);
+    busy=true;
+    sv.style.transition='transform 0.26s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.26s linear'; lb.style.transition='background-color 0.26s linear';
+    if(shut){ sv.style.transform='translate3d(0,'+(was.dy<0?-1:1)*window.innerHeight+'px,0) scale(0.88)'; sv.style.opacity=0; lb.style.backgroundColor='rgba(23,23,25,0)'; }
+    else { sv.style.transform='translate3d(0,0,0) scale(1)'; lb.style.backgroundColor='rgba(23,23,25,1)'; }
+    setTimeout(function(){ if(shut) closeLb(); lb.style.transition=''; lb.style.backgroundColor='#171719'; snap(); busy=false; },280);
     return;
   }
   if(!was.lock){
