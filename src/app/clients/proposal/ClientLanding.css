@@ -2257,3 +2257,18 @@ html .proposal-statement-text--bold {
   text-transform: uppercase;
   color: #171719;
 }
+
+/* Fly-in letters for the positioning statement */
+.proposal-flyin-line { display: block; }
+.proposal-flyin-word { display: inline-block; white-space: nowrap; margin-right: 0.28em; }
+.proposal-flyin-word:last-child { margin-right: 0; }
+.proposal-flyin-ch {
+  display: inline-block;
+  opacity: 0;
+  transform: translate(var(--dx), var(--dy)) rotate(var(--dr)) scale(0.8);
+  filter: blur(3px);
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.6s ease, filter 0.7s ease;
+  transition-delay: var(--dl);
+}
+.proposal-flyin.is-on .proposal-flyin-ch { opacity: 1; transform: none; filter: blur(0); }
+@media (prefers-reduced-motion: reduce) { .proposal-flyin-ch { opacity: 1; transform: none; filter: none; transition: none; } }

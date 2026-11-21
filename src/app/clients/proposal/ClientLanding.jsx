@@ -532,6 +532,45 @@ export function StudioMission({ more = false, setMore = () => {} }) {
   )
 }
 
+// Positioning statement: letters fly in from random directions when the slide
+// scrolls into view (replays each time it re-enters).
+function FlyInStatement({ lines }) {
+  const ref = useRef(null)
+  const [on, setOn] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setOn(e.isIntersecting && e.intersectionRatio > 0.35), { threshold: [0, 0.35, 0.6] })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+  let k = 0
+  return (
+    <h2 ref={ref} className={`proposal-statement-text proposal-statement-text--bold proposal-flyin${on ? ' is-on' : ''}`} aria-label={lines.join(' ')}>
+      {lines.map((line, li) => (
+        <span key={li} className="proposal-flyin-line" aria-hidden="true">
+          {line.split(' ').map((word, wi) => (
+            <span key={wi} className="proposal-flyin-word">
+              {word.split('').map((ch, ci) => {
+                const i = k++
+                // deterministic pseudo-random offsets per letter
+                const a = (i * 137.508) % 360
+                const d = 70 + ((i * 53) % 90)
+                const x = Math.round(Math.cos((a * Math.PI) / 180) * d)
+                const y = Math.round(Math.sin((a * Math.PI) / 180) * d)
+                const r = ((i * 29) % 41) - 20
+                return (
+                  <span key={ci} className="proposal-flyin-ch" style={{ '--dx': `${x}px`, '--dy': `${y}px`, '--dr': `${r}deg`, '--dl': `${i * 28}ms` }}>{ch}</span>
+                )
+              })}
+            </span>
+          ))}
+        </span>
+      ))}
+    </h2>
+  )
+}
+
 // Fixed top menu bar: logo pinned left, section links right. Transparent over
 // the hero, gains a translucent dark backdrop once the page is scrolled.
 function TopBar({ setServicesOpen, setPortfolioOpen }) {
@@ -1642,11 +1681,7 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-statement" aria-label="Studio positioning">
-        <h2 className="proposal-statement-text proposal-statement-text--bold">
-          Creative Design Studio
-          {' '}<br />
-          for Hospitality Business
-        </h2>
+        <FlyInStatement lines={['Creative Design Studio', 'for Hospitality Business']} />
       </section>
 
       <div className="studio-gallery-pin proposal-galleries-row">
