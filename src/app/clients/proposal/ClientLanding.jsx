@@ -595,9 +595,9 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
   const links = [
     ['/projects', 'portfolio', 'Our Works'],
     ['/services', 'services', 'Services'],
-    ['/career', null, 'Career'],
     ['/about', 'about', 'About Us'],
     ['/awards', null, 'Awards'],
+    ['/career', null, 'Career'],
     ['/contact', 'contact', 'Contacts']
   ]
   const waIcon = (
