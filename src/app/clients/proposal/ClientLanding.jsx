@@ -597,6 +597,7 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
     ['/services', 'services', 'Services'],
     ['/about', 'about', 'About Us'],
     ['/awards', null, 'Awards'],
+    ['/blog', null, 'Journal'],
     ['/career', null, 'Career'],
     ['/contact', 'contact', 'Contacts']
   ]
