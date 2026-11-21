@@ -8,6 +8,8 @@ export const projects = [
     description: 'A 560 m² boutique hotel under vaulted plaster ceilings: guest rooms with bouclé beds and arched oak doors, a lounge with a carved plaster relief, limewashed bathrooms with brass fittings and a staircase lit by a recessed handrail — warm, quiet and shaped by Mediterranean light.',
     services: ['Concept', 'Interior Design', 'Lighting Design', 'FF&E'],
     image: '/projects/belenko-interior-design-costa-brava-hotel-spain-1.webp',
+    video: '/projects/costa-brava-hotel-video.mp4',
+    videoPoster: '/projects/belenko-interior-design-costa-brava-hotel-video-poster.webp',
     images: [
       '/projects/belenko-interior-design-costa-brava-hotel-spain-1.webp',
       '/projects/belenko-interior-design-costa-brava-hotel-spain-2.webp',
