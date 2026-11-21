@@ -2238,3 +2238,6 @@ html .proposal-stack > .proposal-who.proposal-mission-more:not(.is-open) { paddi
 /* Collapsed "Who we work with": no margin, border or height — otherwise the
    sticky Services panel underneath shows through the slit. */
 html .proposal-stack > .proposal-who.proposal-mission-more:not(.is-open) { margin: 0; border: 0; min-height: 0; height: 0; overflow: hidden; }
+
+/* No gap between About and "Who we work with" in either state */
+html .proposal-stack > .proposal-who.proposal-mission-more { margin-top: 0; background: #fff; box-shadow: 0 -2px 0 0 #fff; }
