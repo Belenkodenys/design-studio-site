@@ -178,7 +178,11 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
   }, [lightboxOpen, lightboxNext, lightboxPrev])
 
   // Lightbox swipe handlers (TikTok style with velocity)
+  const touchStartY = useRef(0)
+  const touchCurrentY = useRef(0)
   const handleLightboxTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY
+    touchCurrentY.current = touchStartY.current
     if (isAnimating) return
     touchStartX.current = e.touches[0].clientX
     touchCurrentX.current = e.touches[0].clientX
@@ -193,6 +197,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
 
     const prevX = touchCurrentX.current
     touchCurrentX.current = e.touches[0].clientX
+    touchCurrentY.current = e.touches[0].clientY
     const diff = touchCurrentX.current - touchStartX.current
 
     // Calculate velocity
@@ -207,6 +212,15 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
   const handleLightboxTouchEnd = () => {
     if (!isSwiping) return
     setIsSwiping(false)
+
+    // A mostly vertical swipe (up or down) dismisses the full-screen view.
+    const dy = touchCurrentY.current - touchStartY.current
+    const dx = touchCurrentX.current - touchStartX.current
+    if (Math.abs(dy) > 70 && Math.abs(dy) > Math.abs(dx) * 1.3) {
+      setSwipeOffset(0)
+      closeLightbox()
+      return
+    }
 
     const diff = touchStartX.current - touchCurrentX.current
     const threshold = window.innerWidth * 0.15

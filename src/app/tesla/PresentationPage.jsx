@@ -157,13 +157,18 @@ function InteriorLightbox({ images, index, onClose, onPrev, onNext }) {
     }
   }, [onClose, onPrev, onNext])
 
+  const touchStartY = useRef(0)
   const onTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
   }
   const onTouchEnd = (e) => {
     if (touchStartX.current == null) return
     const dx = e.changedTouches[0].clientX - touchStartX.current
+    const dy = e.changedTouches[0].clientY - touchStartY.current
     touchStartX.current = null
+    // vertical swipe (up or down) closes the full-screen view
+    if (Math.abs(dy) > 70 && Math.abs(dy) > Math.abs(dx) * 1.3) { onClose(); return }
     if (Math.abs(dx) > 40) {
       if (dx < 0) onNext()
       else onPrev()

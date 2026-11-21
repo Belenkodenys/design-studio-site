@@ -109,7 +109,22 @@ export default function WorkDetail({ project, basePath = '/florida', marketLabel
 
       {/* Fullscreen lightbox */}
       {lb !== null && (
-        <div className="work-lightbox" onClick={close} role="dialog" aria-modal="true">
+        <div
+          className="work-lightbox"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+          onTouchStart={(e) => { lbTouch.current = [e.touches[0].clientX, e.touches[0].clientY] }}
+          onTouchEnd={(e) => {
+            if (!lbTouch.current) return
+            const dx = e.changedTouches[0].clientX - lbTouch.current[0]
+            const dy = e.changedTouches[0].clientY - lbTouch.current[1]
+            lbTouch.current = null
+            // vertical swipe (up or down) closes; horizontal swipe steps
+            if (Math.abs(dy) > 70 && Math.abs(dy) > Math.abs(dx) * 1.3) { close(); return }
+            if (Math.abs(dx) > 45 && gallery.length > 1) step(dx < 0 ? 1 : -1)
+          }}
+        >
           <button type="button" className="work-lb-close" onClick={close} aria-label="Close">×</button>
           {gallery.length > 1 && (
             <button type="button" className="work-lb-nav work-lb-prev" onClick={(e) => { e.stopPropagation(); step(-1) }} aria-label="Previous">‹</button>

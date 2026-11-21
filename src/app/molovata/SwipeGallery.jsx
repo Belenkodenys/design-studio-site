@@ -105,9 +105,13 @@ export default function SwipeGallery({ images, className = '' }) {
           role="dialog"
           aria-modal="true"
           onClick={() => setOpen(false)}
-          onTouchStart={(e) => { lbTouch.current = e.touches[0].clientX }}
+          onTouchStart={(e) => { lbTouch.current = [e.touches[0].clientX, e.touches[0].clientY] }}
           onTouchEnd={(e) => {
-            const dx = e.changedTouches[0].clientX - (lbTouch.current ?? e.changedTouches[0].clientX)
+            const [sx, sy] = lbTouch.current ?? [e.changedTouches[0].clientX, e.changedTouches[0].clientY]
+            const dx = e.changedTouches[0].clientX - sx
+            const dy = e.changedTouches[0].clientY - sy
+            // vertical swipe (up or down) closes the full-screen view
+            if (Math.abs(dy) > 70 && Math.abs(dy) > Math.abs(dx) * 1.3) { setOpen(false); return }
             if (dx < -40) setLi((k) => (k + 1) % images.length)
             else if (dx > 40) setLi((k) => (k - 1 + images.length) % images.length)
           }}
