@@ -2194,3 +2194,12 @@ html .rcon-send {
 /* Team photo in the About section */
 .proposal-mission-photo { margin: 0 0 40px; }
 .proposal-mission-photo img { display: block; width: 100%; height: auto; max-height: 78vh; object-fit: cover; object-position: center 40%; }
+
+/* Contact on phones/tablets: heading → form → details & social icons */
+@media (max-width: 1100px) {
+  .rcon-left { display: contents; }
+  .rcon-left h2 { order: 1; width: 100%; margin-bottom: 8px; }
+  .rcon-form { order: 2; max-width: none; }
+  .rcon-info { order: 3; width: 100%; padding-top: 16px; border-top: 1px solid #2A2A2C; }
+  .rcon-row { gap: 40px 0; }
+}
