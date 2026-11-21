@@ -295,7 +295,13 @@ if(nl){
       body:JSON.stringify({email:email, consent:nl.elements.consent.checked===true, website:nl.elements.website.value||''})
     }).then(function(r){ return r.json().catch(function(){ return {}; }); })
       .then(function(d){
-        if(d && d.ok){ nl.reset(); nlNote.textContent = d.already ? 'This address is already subscribed.' : 'Thank you. You are subscribed.'; }
+        if(d && d.ok){
+          nl.reset(); nlNote.textContent = d.already ? 'This address is already subscribed.' : 'Thank you. You are subscribed.';
+          /* tell the studio about every new subscriber (same mail relay as the contact form) */
+          if(!d.already){ try{ fetch('https://api.web3forms.com/submit',{ method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+            body:JSON.stringify({ access_key:'e88480f3-403a-4b70-aa15-80625df1c6db', to:'office@belenko.design', subject:'New newsletter subscriber: '+email, from_name:'Belenko Residential newsletter', email:email,
+              message:'New newsletter subscriber on the Residential page\n\nEmail: '+email+'\nDate: '+new Date().toISOString().slice(0,16).replace('T',' ')+' UTC\n\nFull list (Excel): https://www.belenko.design/admin/subscribers' }) }).catch(function(){}); }catch(err){} }
+        }
         else if(d && d.error==='invalid_email') nlNote.textContent='Please enter a valid email address.';
         else if(d && d.error==='consent_required') nlNote.textContent='Please agree to the terms to subscribe.';
         else if(d && d.error==='too_many') nlNote.textContent='Too many attempts. Please try again later.';
