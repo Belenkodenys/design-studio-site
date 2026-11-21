@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Redis from "ioredis";
 import { createHash } from "crypto";
+import { recordVisit } from "@/lib/geo";
 
 let redis = null;
 function getRedis() {
@@ -27,7 +28,10 @@ export async function GET(request) {
 
     // ?page=residential keeps a separate set for the hidden /residential page;
     // its members are hashed so no raw IP addresses are stored for it.
-    const page = new URL(request.url).searchParams.get("page");
+    const params = new URL(request.url).searchParams;
+    const page = params.get("page");
+    // Geography of visits (admin -> География): country / city per page, no addresses stored.
+    try { await recordVisit(r, request, params.get("p") || (page === "residential" ? "/residential" : "/")); } catch {}
     const isResidential = page === "residential";
     const key = isResidential ? "visitors:unique:residential" : "visitors:unique";
     const member = isResidential

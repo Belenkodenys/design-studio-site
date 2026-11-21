@@ -12,11 +12,11 @@ function Footer() {
   const [visitorCount, setVisitorCount] = useState(null)
 
   useEffect(() => {
-    fetch('/api/counter')
+    fetch('/api/counter?p=' + encodeURIComponent(pathname || '/'))
       .then(r => r.json())
       .then(d => setVisitorCount(d.count))
       .catch(() => {})
-  }, [])
+  }, [pathname])
 
   const handleNavClick = (e, sectionId) => {
     e.preventDefault()

@@ -6,6 +6,7 @@ const links = [
   { href: "/admin", label: "Панель" },
   { href: "/admin/blog", label: "Статьи" },
   { href: "/admin/subscribers", label: "Подписчики" },
+  { href: "/admin/geography", label: "География посещений" },
   { href: "/admin/code-injection", label: "Код и аналитика" },
   { href: "/admin/meta", label: "Мета-теги" },
   { href: "/admin/robots", label: "Robots.txt" },
