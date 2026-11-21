@@ -434,7 +434,7 @@ function ExpandIcon() {
 
 // Studio mission statement followed by the full About content (studio story,
 // principles and stats from the earlier site) — always expanded, no toggle.
-export function StudioMission() {
+export function StudioMission({ more = false, setMore = () => {} }) {
   return (
     <div className="proposal-mission-block is-open">
       <h2 className="proposal-accordion-title proposal-about-title">About</h2>
@@ -458,6 +458,18 @@ export function StudioMission() {
               loading="lazy"
             />
           </figure>
+          <button
+            type="button"
+            className={`proposal-mission-more-btn${more ? ' is-open' : ''}`}
+            aria-expanded={more}
+            aria-controls="proposal-mission-more"
+            onClick={() => setMore(!more)}
+          >
+            {more ? 'Show less' : 'Read more'}
+            <span aria-hidden="true">{more ? '↑' : '↓'}</span>
+          </button>
+          <div id="proposal-mission-more" className={`proposal-mission-more${more ? ' is-open' : ''}`}>
+          <div className="proposal-mission-more-inner">
           <p>
             Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 1999. In 27 years the studio has designed 250 restaurants, bars, cafés, hotels and beach clubs in 11 countries across Europe, the Caucasus and the United States — over 538,000 sq ft of venues, from concept and interior to brand, FF&amp;E and opening.
           </p>
@@ -512,6 +524,8 @@ export function StudioMission() {
             <p>&ldquo;The most expensive thing in a restaurant is an empty table.&rdquo;</p>
             <cite>— Denys Belenko</cite>
           </blockquote>
+          </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1333,6 +1347,7 @@ export default function ClientLanding() {
   const heroRef = useRef(null)
   const sectionLinksRef = useRef(null)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [aboutMore, setAboutMore] = useState(false)
   const [portfolioOpen, setPortfolioOpen] = useState(false)
   const [isMobileViewport, setIsMobileViewport] = useState(false)
   const [shuffledSlides, setShuffledSlides] = useState(null)
@@ -1724,10 +1739,11 @@ export default function ClientLanding() {
       <PortfolioSection open={portfolioOpen} setOpen={setPortfolioOpen} />
 
       <section id="about" className="proposal-mission-stage">
-        <StudioMission />
+        <StudioMission more={aboutMore} setMore={setAboutMore} />
       </section>
 
-      <section className="proposal-who" aria-label="Who we work with">
+      <section className={`proposal-who proposal-mission-more${aboutMore ? ' is-open' : ''}`} aria-label="Who we work with" aria-hidden={!aboutMore}>
+        <div className="proposal-mission-more-inner">
         <h2 className="proposal-who-title">Who we work with</h2>
         <div className="proposal-who-grid">
           <article className="proposal-who-item">
@@ -1746,6 +1762,7 @@ export default function ClientLanding() {
             <h3>Investors &amp; Developers</h3>
             <p>Hospitality concepts built around commercial performance.</p>
           </article>
+        </div>
         </div>
       </section>
 

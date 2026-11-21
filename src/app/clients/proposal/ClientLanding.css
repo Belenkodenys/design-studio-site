@@ -2209,3 +2209,22 @@ html .rcon-send {
   .proposal-mission-stats { flex-direction: column; gap: 28px; }
   .proposal-mission-stat { flex: 0 0 auto; width: 100%; max-width: none; }
 }
+
+/* About: everything below the team photo (text, principles, stats, quote and
+   "Who we work with") is collapsed behind a Read more toggle. */
+.proposal-mission-more-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin: 0 0 8px; padding: 14px 0; background: none; border: 0; border-bottom: 1px solid #171719;
+  cursor: pointer; color: #171719;
+  font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.proposal-mission-more-btn span { font-size: 16px; transition: transform .3s; }
+.proposal-mission-more-btn:hover { opacity: .65; }
+.proposal-mission-more {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.proposal-mission-more.is-open { grid-template-rows: 1fr; }
+.proposal-mission-more > .proposal-mission-more-inner { overflow: hidden; min-height: 0; }
+.proposal-mission-more.is-open > .proposal-mission-more-inner { padding-top: 32px; }
+html .proposal-stack > .proposal-who.proposal-mission-more:not(.is-open) { padding-top: 0; padding-bottom: 0; }
