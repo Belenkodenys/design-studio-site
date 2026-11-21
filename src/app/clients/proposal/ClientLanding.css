@@ -2241,3 +2241,7 @@ html .proposal-stack > .proposal-who.proposal-mission-more:not(.is-open) { margi
 
 /* No gap between About and "Who we work with" in either state */
 html .proposal-stack > .proposal-who.proposal-mission-more { margin-top: 0; background: #fff; box-shadow: 0 -2px 0 0 #fff; }
+
+/* Read more: no underlines (neither on the button nor on the legacy wrapper rule) */
+html .proposal-mission-more-btn { border: 0; padding: 10px 0 0; margin: 0; }
+html .proposal-mission-more, html .proposal-mission-more.is-open { border: 0; margin-top: 0; padding: 0; }
