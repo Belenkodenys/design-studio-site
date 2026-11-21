@@ -29,6 +29,7 @@ const gallery = [
   { src: '/projects/belenko-interior-design-roya-menu-gold-v2-cut.webp', alt: 'Roya restaurant — gold menu cover' },
   { src: '/projects/belenko-interior-design-roya-menu-black-v2-cut.webp', alt: 'Roya restaurant — black floral menu cover' },
   { src: '/projects/belenko-branding-design-chou-chou-logo-cut.webp', alt: 'Chou Chou — gold foil logo with two hearts' },
+  { src: '/projects/belenko-branding-design-sixth-key-miami-logo.svg', alt: 'Sixth Key Miami — logo', gap: true },
   { src: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals' },
   { src: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board' },
   { src: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-17-cut.webp', alt: 'Filosofia — staff T-shirt with the logo' },
