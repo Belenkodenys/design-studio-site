@@ -2228,3 +2228,9 @@ html .rcon-send {
 .proposal-mission-more > .proposal-mission-more-inner { overflow: hidden; min-height: 0; }
 .proposal-mission-more.is-open > .proposal-mission-more-inner { padding-top: 32px; }
 html .proposal-stack > .proposal-who.proposal-mission-more:not(.is-open) { padding-top: 0; padding-bottom: 0; }
+
+/* Collapsed state must really be zero-height (grid 0fr alone let the content
+   keep its own height and spill over the photo). */
+.proposal-mission-more > .proposal-mission-more-inner { align-self: stretch; height: 100%; }
+.proposal-mission-more:not(.is-open) > .proposal-mission-more-inner { height: 0; visibility: hidden; padding: 0; }
+.proposal-mission-more.is-open > .proposal-mission-more-inner { height: auto; visibility: visible; }
