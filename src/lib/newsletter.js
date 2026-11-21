@@ -137,3 +137,14 @@ export async function runCheck() {
   }
   return out;
 }
+
+// Admin "send me a test": the newest item, exactly as subscribers get it, sent to the studio only.
+export async function sendTest() {
+  const m = mailer(); if (!m) return { ok: false, error: "Почтовый сервис не подключён (нет RESEND_API_KEY)." };
+  const items = await loadFeed(); const item = items[items.length - 1];
+  if (!item) return { ok: false, error: "В ленте нет ни одного проекта или статьи." };
+  const e = renderEmail(item, { unsubscribeUrl: SITE + "/api/residential-unsubscribe?t=test" });
+  const r = await m.emails.send({ from: FROM, to: OWNER, subject: "[Test] " + e.subject, html: e.html, text: e.text });
+  if (r.error) return { ok: false, error: r.error.message || String(r.error) };
+  return { ok: true, to: OWNER, title: item.title };
+}

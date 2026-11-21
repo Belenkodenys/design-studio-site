@@ -3,6 +3,13 @@ import { useState, useEffect } from "react";
 
 export default function SubscribersPage() {
   const [data, setData] = useState(null);
+  const [test, setTest] = useState("");
+  const sendTest = () => {
+    setTest("Отправляю…");
+    fetch("/api/panel/newsletter-test", { method: "POST" }).then(r => r.json())
+      .then(d => setTest(d.ok ? `Тестовое письмо «${d.title}» отправлено на ${d.to}` : `Не отправлено: ${d.error || "ошибка"}`))
+      .catch(() => setTest("Не отправлено: ошибка сети"));
+  };
 
   useEffect(() => {
     fetch("/api/panel/subscribers", { cache: "no-store" }).then(r => r.json()).then(setData).catch(() => setData({ count: 0, subscribers: [] }));
@@ -21,6 +28,10 @@ export default function SubscribersPage() {
           style={{ background: "#1a2332", color: "#fff", padding: "10px 24px", borderRadius: 8, fontWeight: 500, textDecoration: "none", fontSize: 14 }}>
           Скачать Excel
         </a>
+        <button type="button" onClick={sendTest}
+          style={{ background: "#fff", color: "#1a2332", padding: "10px 24px", borderRadius: 8, fontWeight: 500, fontSize: 14, border: "1px solid #1a2332", cursor: "pointer" }}>
+          Отправить себе тестовое письмо
+        </button>
         <span style={{ fontSize: 14, color: "#1a2332" }}>{data ? `Всего: ${data.count}` : "Загрузка…"}</span>
         {data && (
           <span style={{ fontSize: 13, color: data.mailerConfigured ? "#15803d" : "#b45309" }}>
@@ -28,6 +39,10 @@ export default function SubscribersPage() {
           </span>
         )}
       </div>
+      {test && <p style={{ fontSize: 13, color: "#1a2332", margin: "0 0 20px" }}>{test}</p>}
+      <p style={{ fontSize: 13, color: "#6b7280", margin: "0 0 20px", maxWidth: 760 }}>
+        Когда на странице /residential появляется новый проект или новая статья в журнале, на office@belenko.design приходит письмо-предпросмотр со ссылками «Send now» и «Do not send». Если ничего не нажимать, через 24 часа письмо уходит всем подписчикам.
+      </p>
       <div style={{ background: "#fff", borderRadius: 12, border: "1px solid #f3f4f6", overflow: "hidden" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
