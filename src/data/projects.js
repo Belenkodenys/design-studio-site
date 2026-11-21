@@ -1,5 +1,24 @@
 export const projects = [
   {
+    id: 43,
+    title: 'Hotel on the Costa Brava',
+    category: 'Hotel',
+    location: 'Costa Brava, Spain',
+    year: '2026',
+    description: 'A 560 m² boutique hotel under vaulted plaster ceilings: guest rooms with bouclé beds and arched oak doors, a lounge with a carved plaster relief, limewashed bathrooms with brass fittings and a staircase lit by a recessed handrail — warm, quiet and shaped by Mediterranean light.',
+    services: ['Concept', 'Interior Design', 'Lighting Design', 'FF&E'],
+    image: '/projects/belenko-interior-design-costa-brava-hotel-spain-1.webp',
+    images: [
+      '/projects/belenko-interior-design-costa-brava-hotel-spain-1.webp',
+      '/projects/belenko-interior-design-costa-brava-hotel-spain-2.webp',
+      '/projects/belenko-interior-design-costa-brava-hotel-spain-3.webp',
+      '/projects/belenko-interior-design-costa-brava-hotel-spain-4.webp',
+      '/projects/belenko-interior-design-costa-brava-hotel-spain-5.webp',
+      '/projects/belenko-interior-design-costa-brava-hotel-spain-6.webp',
+      '/projects/belenko-interior-design-costa-brava-hotel-spain-7.webp'
+    ]
+  },
+  {
     id: 42,
     title: 'Filosofia',
     category: 'Restaurant',

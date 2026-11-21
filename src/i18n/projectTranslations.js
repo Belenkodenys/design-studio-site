@@ -1,4 +1,30 @@
 export const projectTranslations = {
+  43: {
+    en: {
+      title: 'Hotel on the Costa Brava',
+      description: 'Interior design project by Belenko Design Studio (2026). Boutique hotel of 560 m² on the Costa Brava, Spain. Services: concept, interior design, lighting design, FF&E. Design features: vaulted plaster ceilings, arched oak doors, bouclé upholstered beds on turned feet, limewashed walls and floors, a carved plaster wall relief in the lounge, alabaster pendants, brass fittings, dressing alcoves behind linen curtains and a staircase with a light-filled handrail recess.',
+      quote: 'Light is the only decoration a vault needs.',
+      quoteAuthor: 'Denys Belenko'
+    },
+    uk: {
+      title: 'Готель на Коста-Браві',
+      description: 'Проєкт дизайну інтер\'єру від Belenko Design Studio (2026). Бутик-готель площею 560 м² на Коста-Браві, Іспанія. Послуги: концепція, дизайн інтер\'єру, світловий дизайн, FF&E. Особливості: склепінчасті тиньковані стелі, арочні дубові двері, ліжка в букле на точених ніжках, вапняні стіни та підлоги, різьблений гіпсовий рельєф у лаунжі, алебастрові підвіси, латунна фурнітура, гардеробні ніші за лляними шторами та сходи з підсвіченим поручнем.',
+      quote: 'Світло — єдина прикраса, якої потребує склепіння.',
+      quoteAuthor: 'Денис Беленко'
+    },
+    ru: {
+      title: 'Отель на Коста-Браве',
+      description: 'Проект дизайна интерьера от Belenko Design Studio (2026). Бутик-отель площадью 560 м² на Коста-Браве, Испания. Услуги: концепция, дизайн интерьера, световой дизайн, FF&E. Особенности: сводчатые оштукатуренные потолки, арочные дубовые двери, кровати в букле на точёных ножках, известковые стены и полы, резной гипсовый рельеф в лаунже, алебастровые подвесы, латунная фурнитура, гардеробные ниши за льняными шторами и лестница с подсвеченным поручнем.',
+      quote: 'Свет — единственное украшение, которое нужно своду.',
+      quoteAuthor: 'Денис Беленко'
+    },
+    es: {
+      title: 'Hotel en la Costa Brava',
+      description: 'Proyecto de diseño interior de Belenko Design Studio (2026). Hotel boutique de 560 m² en la Costa Brava, España. Servicios: concepto, diseño interior, diseño de iluminación, FF&E. Características: techos abovedados de yeso, puertas de roble en arco, camas tapizadas en bouclé sobre patas torneadas, paredes y suelos a la cal, un relieve de yeso tallado en el salón, colgantes de alabastro, grifería de latón, vestidores tras cortinas de lino y una escalera con pasamanos retroiluminado.',
+      quote: 'La luz es el único adorno que necesita una bóveda.',
+      quoteAuthor: 'Denys Belenko'
+    }
+  },
   42: {
     en: {
       title: 'Filosofia',
