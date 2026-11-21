@@ -233,3 +233,14 @@
     transform: none;
   }
 }
+
+/* Vacancy descriptions read as running text: sentence case, Inter. */
+html body .career-page .position-description,
+html body .career-page .career-page-subtitle {
+  text-transform: none;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
