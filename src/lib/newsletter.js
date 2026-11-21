@@ -54,18 +54,17 @@ export function renderEmail(item, { unsubscribeUrl = "", banner = "" } = {}) {
 ${banner ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FFF6D6;"><tr><td align="center" style="padding:18px 16px;font:14px/1.5 Arial,Helvetica,sans-serif;color:#171719;">${banner}</td></tr></table>` : ""}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EEEEEC;"><tr><td align="center" style="padding:32px 12px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#FFFFFF;">
-<tr><td style="background:#171719;padding:28px 36px;"><a href="${SITE}/residential" style="text-decoration:none;"><img src="${SITE}/residential/belenko-logo-white.png" alt="Belenko" height="24" style="height:24px;width:auto;display:block;border:0;"></a></td></tr>
+<tr><td bgcolor="#171719" style="background:#171719;padding:28px 36px;"><a href="${SITE}/residential" style="text-decoration:none;"><img src="${SITE}/residential/belenko-logo-white.png" alt="Belenko" height="24" style="height:24px;width:auto;display:block;border:0;"></a></td></tr>
 ${item.image ? `<tr><td><a href="${esc(item.url)}"><img src="${esc(item.image)}" alt="${esc(item.title)}" width="600" style="width:100%;max-width:600px;height:auto;display:block;border:0;"></a></td></tr>` : ""}
 <tr><td style="padding:40px 36px 12px;font-family:${F};font-weight:300;font-size:12px;line-height:1.4;letter-spacing:0.14em;text-transform:uppercase;color:#77766F;">${esc(eyebrow)}</td></tr>
 <tr><td style="padding:0 36px 18px;font-family:${F};font-weight:200;font-size:34px;line-height:1.12;letter-spacing:0.03em;text-transform:uppercase;color:#171719;">${esc(item.title)}</td></tr>
 <tr><td style="padding:0 36px 30px;font-family:${F};font-weight:300;font-size:15px;line-height:1.6;letter-spacing:0.02em;text-transform:uppercase;color:#171719;">${esc(item.text)}</td></tr>
 <tr><td style="padding:0 36px 44px;"><a href="${esc(item.url)}" style="display:inline-block;border:1px solid #171719;padding:14px 26px;font-family:${F};font-weight:400;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#171719;text-decoration:none;">+ &nbsp; ${cta}</a></td></tr>
-<tr><td style="background:#171719;padding:28px 36px;font-family:${F};font-weight:300;font-size:11px;line-height:1.7;letter-spacing:0.08em;text-transform:uppercase;color:#A3A29D;">
-Belenko Design · Sq. Lesseps, 6 · 08023 Barcelona, Spain<br>
-<a href="${SITE}/residential" style="color:#F1F0EC;text-decoration:none;">belenko.design</a> &nbsp;·&nbsp; <a href="mailto:office@belenko.design" style="color:#F1F0EC;text-decoration:none;">office@belenko.design</a><br><br>
-You receive this email because you subscribed to Belenko news.${unsubscribeUrl ? ` <a href="${esc(unsubscribeUrl)}" style="color:#F1F0EC;text-decoration:underline;">Unsubscribe</a>` : ""}
+<tr><td bgcolor="#FFFFFF" style="background:#FFFFFF;border-top:1px solid #DDDCD7;padding:26px 36px 34px;font-family:${F};font-weight:300;font-size:12px;line-height:1.7;letter-spacing:0.08em;text-transform:uppercase;color:#171719;">
+Belenko Design Studio<br>
+<span style="color:#55554F;">You receive this email because you subscribed to Belenko news.</span>${unsubscribeUrl ? `<br><a href="${esc(unsubscribeUrl)}" style="color:#171719;text-decoration:underline;">Unsubscribe</a>` : ""}
 </td></tr></table></td></tr></table></body></html>`;
-  const text = `${eyebrow}: ${item.title}\n\n${item.text}\n\n${cta}: ${item.url}\n\nBelenko Design · Sq. Lesseps, 6 · 08023 Barcelona, Spain${unsubscribeUrl ? `\nUnsubscribe: ${unsubscribeUrl}` : ""}`;
+  const text = `${eyebrow}: ${item.title}\n\n${item.text}\n\n${cta}: ${item.url}\n\nBelenko Design Studio${unsubscribeUrl ? `\nUnsubscribe: ${unsubscribeUrl}` : ""}`;
   const subject = `${eyebrow}: ${item.title} — Belenko Design`;
   return { subject, html, text };
 }
