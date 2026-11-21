@@ -31,7 +31,6 @@ const gallery = [
   { src: '/projects/belenko-branding-design-chou-chou-logo-cut.webp', alt: 'Chou Chou — gold foil logo with two hearts' },
   { src: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-14-cut.webp', alt: 'Filosofia — logo in Greek capitals' },
   { src: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-15-cut.webp', alt: 'Filosofia — coaster and menu board' },
-  { src: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-16-cut.webp', alt: 'Filosofia — postcard and printed menu' },
   { src: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-17-cut.webp', alt: 'Filosofia — staff T-shirt with the logo' },
   { src: '/projects/belenko-branding-design-12monkeys-logo-cut.webp', alt: '12 Monkeys — logotype' },
   { src: '/projects/belenko-branding-design-atelier-coffee-illustration-cut.webp', alt: 'Atelier Design & Coffee — illustrated coffee characters' },
