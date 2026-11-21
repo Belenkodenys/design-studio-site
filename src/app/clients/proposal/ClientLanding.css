@@ -2245,3 +2245,15 @@ html .proposal-stack > .proposal-who.proposal-mission-more { margin-top: 0; back
 /* Read more: no underlines (neither on the button nor on the legacy wrapper rule) */
 html .proposal-mission-more-btn { border: 0; padding: 10px 0 0; margin: 0; }
 html .proposal-mission-more, html .proposal-mission-more.is-open { border: 0; margin-top: 0; padding: 0; }
+
+/* Positioning statement: large and bold */
+html .proposal-statement-text--bold {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: clamp(40px, 6.4vw, 96px);
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #171719;
+}
