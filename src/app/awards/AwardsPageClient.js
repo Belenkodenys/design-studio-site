@@ -81,7 +81,7 @@ export default function AwardsPageClient() {
   return (
     <div className="aw">
       <header className="aw-top">
-        <a href="/" className="aw-logo" aria-label="Belenko — home"><img src="/belenko-logo-footer.png" alt="Belenko" /></a>
+        <a href="/" className="aw-logo" aria-label="Belenko — home"><img src="/residential/belenko-logo-white.png" alt="Belenko" /></a>
         <a href="/" className="aw-back">← Back to site</a>
       </header>
 
