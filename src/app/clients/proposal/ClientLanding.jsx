@@ -773,6 +773,33 @@ export const homeFaq = [
   }
 ]
 
+// Compact awards strip — three international wins, links to /awards.
+function HomeAwards() {
+  const wins = [
+    { year: '2024', award: 'FoodInSpace Awards', status: 'Winner ×2', project: 'Pixi · Mamaliga' },
+    { year: '2023', award: 'Kyoto Global Design Awards', status: 'Laureate', project: 'Nikos' },
+    { year: '2022', award: 'Restaurant & Bar Design Awards', status: 'Winner', project: 'Nikos Greek Bistro' }
+  ]
+  return (
+    <section className="proposal-awards" id="awards" aria-label="Awards">
+      <div className="proposal-awards-head">
+        <h2 className="proposal-awards-title">Awards &amp; Recognition</h2>
+        <a href="/awards" className="proposal-awards-link">All awards →</a>
+      </div>
+      <div className="proposal-awards-grid">
+        {wins.map((w) => (
+          <a key={w.award} href="/awards" className="proposal-awards-item">
+            <span className="proposal-awards-year">{w.year}</span>
+            <span className="proposal-awards-name">{w.award}</span>
+            <span className="proposal-awards-status">{w.status}</span>
+            <span className="proposal-awards-project">{w.project}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function HomeFaq() {
   const [open, setOpen] = useState(null)
   return (
@@ -1708,6 +1735,8 @@ export default function ClientLanding() {
           </article>
         </div>
       </section>
+
+      <HomeAwards />
 
       <HomeFaq />
 

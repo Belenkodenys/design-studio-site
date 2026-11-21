@@ -2153,3 +2153,18 @@ html .rcon-send {
 @keyframes bkScroll { 0% { transform: translateY(-16px); opacity: 0 } 25% { opacity: 1 } 70% { opacity: 1 } 100% { transform: translateY(22px); opacity: 0 } }
 .bk-scroll svg { animation: bkScroll 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
 @media (prefers-reduced-motion: reduce) { .bk-scroll svg { animation: none } }
+
+/* ---- Awards strip on the homepage ---- */
+.proposal-awards { position: relative; z-index: 20; background: #171719; color: #F1F0EC; padding: clamp(64px, 8vw, 110px) var(--page-x, clamp(24px, 9vw, 130px)); }
+.proposal-awards-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px 32px; margin-bottom: clamp(32px, 4vw, 56px); }
+.proposal-awards-title { margin: 0; font-family: 'Oswald', sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.05; letter-spacing: 0; text-transform: uppercase; color: #F1F0EC; }
+.proposal-awards-link { font-family: 'Oswald', sans-serif; font-weight: 300; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #F1F0EC; text-decoration: underline; text-underline-offset: 6px; }
+.proposal-awards-link:hover { opacity: .65; }
+.proposal-awards-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #2A2A2C; border: 1px solid #2A2A2C; }
+.proposal-awards-item { background: #171719; padding: 32px 28px 36px; display: flex; flex-direction: column; gap: 12px; color: inherit; text-decoration: none; font-family: 'Oswald', sans-serif; text-transform: uppercase; transition: background .3s; }
+.proposal-awards-item:hover { background: #1F1F22; }
+.proposal-awards-year { font-weight: 200; font-size: clamp(32px, 3.4vw, 48px); line-height: 1; letter-spacing: 0; }
+.proposal-awards-name { font-weight: 300; font-size: 18px; letter-spacing: 0.04em; line-height: 1.3; margin-top: 6px; }
+.proposal-awards-status { font-weight: 300; font-size: 12px; letter-spacing: 0.18em; color: #C9C8C3; }
+.proposal-awards-project { font-weight: 200; font-size: 13px; letter-spacing: 0.1em; color: #8E8E8A; }
+@media (max-width: 900px) { .proposal-awards-grid { grid-template-columns: 1fr; } }
