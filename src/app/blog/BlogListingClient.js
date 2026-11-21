@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useLanguage } from '../../i18n/LanguageContext'
 import LanguageSwitcher from '../../components/LanguageSwitcher'
+import ProposalFooter from '../clients/proposal/ProposalFooter'
 import SocialFloat from '../../components/SocialFloat'
 import './BlogListing.css'
 
@@ -107,6 +108,7 @@ export default function BlogListingClient({ posts }) {
       </div>
 
       <SocialFloat />
+      <ProposalFooter />
     </div>
   )
 }
