@@ -20,7 +20,7 @@ export default function ConceptPage() {
       heroImage="/service-1.png"
       stats={[
         { number: '200+', labelKey: 'conceptsDeveloped' },
-        { number: '25+', labelKey: 'yearsExperience' },
+        { number: '27', labelKey: 'yearsExperience' },
         { number: '95%', labelKey: 'clientSatisfaction' }
       ]}
       projects={projects.slice(0, 6)}

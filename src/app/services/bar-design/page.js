@@ -56,7 +56,7 @@ export default function BarDesignPage() {
       heroImage="/projects/belenko-interior-design-saint-bar-kyiv-1.webp"
       stats={[
         { number: '80+', label: 'Bars Designed' },
-        { number: '25+', label: 'Years Experience' },
+        { number: '27', label: 'Years Experience' },
         { number: '12+', label: 'Countries' }
       ]}
       introTitle="We create bars that become destinations"

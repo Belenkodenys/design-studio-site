@@ -9,7 +9,7 @@ const CONTACT_PHONE = '+34 671 825 489'
 const HERO_SLIDES = [1, 2, 3, 4, 5, 6].map((n) => `/belenko-studio-hero-${n}.jpg`)
 
 const proof = [
-  { num: '25+', label: 'Years in hospitality' },
+  { num: '27', label: 'Years in hospitality' },
   { num: '200+', label: 'Completed projects' },
   { num: '11', label: 'Countries' }
 ]
@@ -128,7 +128,7 @@ export default function MiamiLanding() {
           <p className="miami-eyebrow">Miami · South Florida</p>
           <h1 className="miami-hero-title">Hospitality design for restaurants, bars and boutique hotels in Miami</h1>
           <p className="miami-hero-sub">We create distinctive concepts people remember — and places they come back to.</p>
-          <p className="miami-hero-trust">25+ years · 200+ projects · Europe + USA</p>
+          <p className="miami-hero-trust">27 years · 200+ projects · Europe + USA</p>
           <div className="miami-hero-cta">
             <a className="miami-btn miami-btn-light" href="#contact" onClick={scrollTo('contact')}>Discuss Your Project</a>
             <a className="miami-btn miami-btn-ghost" href="#work" onClick={scrollTo('work')}>View Selected Work</a>
@@ -279,7 +279,7 @@ export default function MiamiLanding() {
           <p className="miami-kicker">Denys Belenko</p>
           <h2>Founder &amp; Creative Director</h2>
           <p>
-            25+ years creating restaurants, bars and hospitality destinations across Europe
+            27 years creating restaurants, bars and hospitality destinations across Europe
             and internationally, with 200+ completed projects. Denys personally leads the
             creative direction of every Belenko hospitality project.
           </p>

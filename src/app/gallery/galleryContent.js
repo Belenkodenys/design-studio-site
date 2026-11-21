@@ -15,7 +15,7 @@ export const GALLERY_CONTENT = {
     about: {
       heading: 'О студии',
       paras: [
-        'Belenko Design — студия интерьерного дизайна с более чем 25-летним опытом создания пространств с характером и собственной идентичностью. Сегодня студия базируется в Барселоне и работает с проектами в Европе, США и на Ближнем Востоке.',
+        'Belenko Design — студия интерьерного дизайна с 27-летним опытом создания пространств с характером и собственной идентичностью. Сегодня студия базируется в Барселоне и работает с проектами в Европе, США и на Ближнем Востоке.',
         'Мы не следуем готовым стилистическим формулам. Каждый интерьер начинается с поиска его характера — идеи, атмосферы и сценария, которые делают пространство узнаваемым и позволяют ему оставаться актуальным вне времени.',
         'Нас интересует не декоративность сама по себе, а атмосфера — то, как человек воспринимает пространство, движется через него и запоминает его. Поэтому наши интерьеры могут быть разными, но в них всегда есть авторская позиция, внимание к материалу и работа со сценарием.',
       ],
@@ -54,7 +54,7 @@ export const GALLERY_CONTENT = {
       text: 'Базируясь в Барселоне, мы работаем с клиентами по всей Европе, в США и на Ближнем Востоке. Наша команда ведёт проекты для клиентов, которые не находятся постоянно в стране, где расположена их резиденция, — координируя дизайн, поставщиков, подрядчиков, закупки и монтаж от их имени.',
     },
     stats: [
-      ['25+', 'лет опыта'],
+      ['27', 'лет опыта'],
       ['200+', 'реализованных проектов'],
       ['11', 'стран'],
       ['Barcelona', 'база в Европе'],
@@ -150,7 +150,7 @@ export const GALLERY_CONTENT = {
     about: {
       heading: 'About the studio',
       paras: [
-        'Belenko Design is an interior design studio with over 25 years of experience creating spaces with character and a distinct identity. Today the studio is based in Barcelona and works on projects across Europe, the United States and the Middle East.',
+        'Belenko Design is an interior design studio with 27 years of experience creating spaces with character and a distinct identity. Today the studio is based in Barcelona and works on projects across Europe, the United States and the Middle East.',
         'We do not follow ready-made stylistic formulas. Each interior begins with a search for its character — the idea, the atmosphere and the narrative that make a space recognisable and allow it to remain relevant beyond time.',
         'We are interested not in decoration for its own sake, but in atmosphere — how a person perceives a space, moves through it and remembers it. That is why our interiors may differ, yet each one always carries an authorial point of view, attention to material and a considered narrative.',
       ],
@@ -189,7 +189,7 @@ export const GALLERY_CONTENT = {
       text: 'Based in Barcelona, we work with clients across Europe, in the United States and the Middle East. Our team manages projects for clients who are not permanently present in the country where their residence is located — coordinating design, suppliers, contractors, procurement and installation on their behalf.',
     },
     stats: [
-      ['25+', 'years of experience'],
+      ['27', 'years of experience'],
       ['200+', 'completed projects'],
       ['11', 'countries'],
       ['Barcelona', 'base in Europe'],

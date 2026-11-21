@@ -3,7 +3,7 @@ import ServicePageClient from '../ServicePageClient'
 
 export const metadata = {
   title: 'Restaurant Interior Design Barcelona | Award-Winning Studio | Belenko',
-  description: 'Best restaurant interior design studio in Barcelona, Spain. 25+ years experience, 200+ hospitality projects worldwide. Specializing in fine dining, casual restaurants, and bars. Free consultation available.',
+  description: 'Best restaurant interior design studio in Barcelona, Spain. 27 years experience, 200+ hospitality projects worldwide. Specializing in fine dining, casual restaurants, and bars. Free consultation available.',
   keywords: [
     'restaurant interior design Barcelona',
     'diseño de interiores restaurantes Barcelona',
@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: {
     title: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
-    description: 'Award-winning restaurant interior design studio in Barcelona. Transform your restaurant with 25+ years of hospitality design expertise. Free consultation.',
+    description: 'Award-winning restaurant interior design studio in Barcelona. Transform your restaurant with 27 years of hospitality design expertise. Free consultation.',
     images: [{ url: 'https://belenko.design/projects/belenko-interior-design-wine-love-restaurant-kyiv-1.webp', width: 1200, height: 630 }],
     type: 'website',
     locale: 'en_US',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Restaurant Interior Design Barcelona | Belenko Design',
-    description: 'Award-winning restaurant interior design studio in Barcelona with 25+ years experience and 200+ projects.',
+    description: 'Award-winning restaurant interior design studio in Barcelona with 27 years experience and 200+ projects.',
   },
   alternates: {
     canonical: 'https://www.belenko.design/services/restaurant-design',
@@ -74,7 +74,7 @@ const restaurantProjects = projects.filter(p =>
 const faqs = [
   {
     question: 'What is the best restaurant interior design studio in Barcelona?',
-    answer: 'Belenko Design Studio is an award-winning restaurant interior design studio based in Barcelona with 25+ years of experience and 200+ completed hospitality projects worldwide. We specialize in creating unique atmospheres for restaurants, bars, cafes, and hotels that combine aesthetic excellence with commercial success.'
+    answer: 'Belenko Design Studio is an award-winning restaurant interior design studio based in Barcelona with 27 years of experience and 200+ completed hospitality projects worldwide. We specialize in creating unique atmospheres for restaurants, bars, cafes, and hotels that combine aesthetic excellence with commercial success.'
   },
   {
     question: 'How much does restaurant interior design cost in Barcelona?',
@@ -176,12 +176,12 @@ export default function RestaurantDesignPage() {
         heroImage="/projects/belenko-interior-design-wine-love-restaurant-kyiv-1.webp"
         stats={[
           { number: '200+', label: 'Restaurants Designed' },
-          { number: '25+', label: 'Years Experience' },
+          { number: '27', label: 'Years Experience' },
           { number: '15+', label: 'Countries' }
         ]}
         introTitle="Barcelona's premier restaurant interior design studio"
         introText={[
-          'Based in Barcelona, Belenko Design Studio brings 25+ years of experience to every restaurant project. We understand the unique hospitality culture of Spain and create spaces that resonate with local and international guests alike.',
+          'Based in Barcelona, Belenko Design Studio brings 27 years of experience to every restaurant project. We understand the unique hospitality culture of Spain and create spaces that resonate with local and international guests alike.',
           'Our approach to restaurant interior design goes beyond aesthetics — we create immersive environments where architecture, lighting, and atmosphere work together to enhance the culinary experience. From fine dining establishments to casual eateries, we transform your vision into reality.',
           'Every restaurant has a unique story to tell. We consider every touchpoint: the entrance that builds anticipation, the lighting that flatters both food and guests, the acoustics that allow conversation to flow, and the details that make your venue unforgettable.'
         ]}

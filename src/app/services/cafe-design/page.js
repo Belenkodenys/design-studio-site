@@ -57,7 +57,7 @@ export default function CafeDesignPage() {
       heroImage="/projects/belenko-interior-design-milk-bar-cafe-kyiv-1.webp"
       stats={[
         { number: '50+', label: 'Cafes Designed' },
-        { number: '25+', label: 'Years Experience' },
+        { number: '27', label: 'Years Experience' },
         { number: '10+', label: 'Countries' }
       ]}
       introTitle="We design cafes that build community"

@@ -57,7 +57,7 @@ export default function HotelDesignPage() {
       heroImage="/projects/belenko-interior-design-agatha-restaurant-kyiv-1.webp"
       stats={[
         { number: '30+', label: 'Hotels Designed' },
-        { number: '25+', label: 'Years Experience' },
+        { number: '27', label: 'Years Experience' },
         { number: '12+', label: 'Countries' }
       ]}
       introTitle="We design hotels that guests remember forever"

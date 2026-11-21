@@ -20,7 +20,7 @@ export default function AuthorSupervisionPage() {
       heroImage="/service-7.png"
       stats={[
         { number: '150+', labelKey: 'projectsSupervised' },
-        { number: '25+', labelKey: 'yearsExperience' },
+        { number: '27', labelKey: 'yearsExperience' },
         { number: '98%', labelKey: 'clientSatisfaction' }
       ]}
       projects={projects.slice(0, 6)}

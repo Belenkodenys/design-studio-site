@@ -11,7 +11,7 @@ export const metadata = {
     default: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
     template: '%s | Belenko Design'
   },
-  description: 'Award-winning restaurant, bar, cafe & hotel interior design studio in Barcelona. Leading hospitality designers in Europe with 25+ years experience and 200+ projects in Spain, Portugal, France, Italy, Germany, UK. Free consultation.',
+  description: 'Award-winning restaurant, bar, cafe & hotel interior design studio in Barcelona. Leading hospitality designers in Europe with 27 years experience and 200+ projects in Spain, Portugal, France, Italy, Germany, UK. Free consultation.',
   keywords: [
     // Barcelona & Spain
     'restaurant interior design Barcelona',
@@ -74,7 +74,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
-    description: 'Award-winning restaurant interior design studio in Barcelona. 25+ years experience, 200+ hospitality projects worldwide.',
+    description: 'Award-winning restaurant interior design studio in Barcelona. 27 years experience, 200+ hospitality projects worldwide.',
     images: ['/og-belenko-logo.jpg'],
     creator: '@belenko_studio'
   },
@@ -125,7 +125,7 @@ export default function RootLayout({ children }) {
               "@id": "https://www.belenko.design/#organization",
               "name": "Belenko Design Studio",
               "alternateName": ["Belenko Studio", "Студія Беленко", "Estudio Belenko"],
-              "description": "Award-winning restaurant interior design studio based in Barcelona, Spain. Specializing in restaurant, bar, cafe, and hotel interior design with 25+ years of experience and 200+ completed projects worldwide.",
+              "description": "Award-winning restaurant interior design studio based in Barcelona, Spain. Specializing in restaurant, bar, cafe, and hotel interior design with 27 years of experience and 200+ completed projects worldwide.",
               "url": "https://www.belenko.design",
               "logo": {
                 "@type": "ImageObject",
@@ -242,7 +242,7 @@ export default function RootLayout({ children }) {
                 "@type": "Person",
                 "name": "Denys Belenko",
                 "jobTitle": "Founder & Creative Director",
-                "description": "Award-winning interior designer with 25+ years of experience in hospitality design."
+                "description": "Award-winning interior designer with 27 years of experience in hospitality design."
               },
               "numberOfEmployees": {
                 "@type": "QuantitativeValue",
@@ -312,7 +312,7 @@ export default function RootLayout({ children }) {
               "name": "Denys Belenko",
               "alternateName": ["Denis Belenko", "Денис Беленко"],
               "jobTitle": "Founder & Creative Director",
-              "description": "Award-winning interior designer and founder of Belenko Design Studio, specializing in restaurant and hospitality design with 25+ years of experience.",
+              "description": "Award-winning interior designer and founder of Belenko Design Studio, specializing in restaurant and hospitality design with 27 years of experience.",
               "url": "https://www.belenko.design",
               "image": "https://belenko.design/about-founder.jpg",
               "worksFor": {

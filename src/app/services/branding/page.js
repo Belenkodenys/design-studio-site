@@ -20,7 +20,7 @@ export default function BrandingPage() {
       heroImage="/service-5.png"
       stats={[
         { number: '200+', labelKey: 'brandsCreated' },
-        { number: '25+', labelKey: 'yearsExperience' },
+        { number: '27', labelKey: 'yearsExperience' },
         { number: '15+', labelKey: 'countriesWorked' }
       ]}
       projects={projects.slice(0, 6)}

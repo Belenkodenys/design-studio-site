@@ -20,7 +20,7 @@ export default function ArchitecturePage() {
       heroImage="/service-2.png"
       stats={[
         { number: '150+', labelKey: 'projectsBuilt' },
-        { number: '25+', labelKey: 'yearsExperience' },
+        { number: '27', labelKey: 'yearsExperience' },
         { number: '50K+', labelKey: 'sqmDesigned' }
       ]}
       projects={projects.slice(0, 6)}
