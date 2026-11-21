@@ -1,12 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './WorkDetail.css'
 
 const CONTACT_EMAIL = 'office@belenko.design'
 
 export default function WorkDetail({ project, basePath = '/florida', marketLabel = 'Miami' }) {
   const [lb, setLb] = useState(null) // lightbox index, or null when closed
+  const lbTouch = useRef(null)
 
   useEffect(() => {
     document.documentElement.classList.add('miami-bg')
