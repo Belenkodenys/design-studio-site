@@ -55,7 +55,7 @@ export const GALLERY_CONTENT = {
     },
     stats: [
       ['27', 'лет опыта'],
-      ['200+', 'реализованных проектов'],
+      ['250', 'реализованных проектов'],
       ['11', 'стран'],
       ['Barcelona', 'база в Европе'],
     ],
@@ -190,7 +190,7 @@ export const GALLERY_CONTENT = {
     },
     stats: [
       ['27', 'years of experience'],
-      ['200+', 'completed projects'],
+      ['250', 'completed projects'],
       ['11', 'countries'],
       ['Barcelona', 'base in Europe'],
     ],

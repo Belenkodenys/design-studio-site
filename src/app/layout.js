@@ -11,7 +11,7 @@ export const metadata = {
     default: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
     template: '%s | Belenko Design'
   },
-  description: 'Award-winning restaurant, bar, cafe & hotel interior design studio in Barcelona. Leading hospitality designers in Europe with 27 years experience and 200+ projects in Spain, Portugal, France, Italy, Germany, UK. Free consultation.',
+  description: 'Award-winning restaurant, bar, cafe & hotel interior design studio in Barcelona. Leading hospitality designers in Europe with 27 years experience and 250 projects in Spain, Portugal, France, Italy, Germany, UK. Free consultation.',
   keywords: [
     // Barcelona & Spain
     'restaurant interior design Barcelona',
@@ -61,7 +61,7 @@ export const metadata = {
     url: 'https://www.belenko.design',
     siteName: 'Belenko Design Studio',
     title: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
-    description: 'Award-winning restaurant, bar, cafe & hotel interior design studio in Barcelona. Leading hospitality designers in Europe with 200+ projects.',
+    description: 'Award-winning restaurant, bar, cafe & hotel interior design studio in Barcelona. Leading hospitality designers in Europe with 250 projects.',
     images: [
       {
         url: '/og-belenko-logo.jpg',
@@ -74,7 +74,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
-    description: 'Award-winning restaurant interior design studio in Barcelona. 27 years experience, 200+ hospitality projects worldwide.',
+    description: 'Award-winning restaurant interior design studio in Barcelona. 27 years experience, 250 hospitality projects worldwide.',
     images: ['/og-belenko-logo.jpg'],
     creator: '@belenko_studio'
   },
@@ -125,7 +125,7 @@ export default function RootLayout({ children }) {
               "@id": "https://www.belenko.design/#organization",
               "name": "Belenko Design Studio",
               "alternateName": ["Belenko Studio", "Студія Беленко", "Estudio Belenko"],
-              "description": "Award-winning restaurant interior design studio based in Barcelona, Spain. Specializing in restaurant, bar, cafe, and hotel interior design with 27 years of experience and 200+ completed projects worldwide.",
+              "description": "Award-winning restaurant interior design studio based in Barcelona, Spain. Specializing in restaurant, bar, cafe, and hotel interior design with 27 years of experience and 250 completed projects worldwide.",
               "url": "https://www.belenko.design",
               "logo": {
                 "@type": "ImageObject",
@@ -261,7 +261,7 @@ export default function RootLayout({ children }) {
               ],
               "award": [
                 "Award-winning hospitality design studio",
-                "200+ completed hospitality projects"
+                "250 completed hospitality projects"
               ],
               "priceRange": "$$$$",
               "paymentAccepted": ["Bank Transfer", "Credit Card"],
@@ -343,7 +343,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "ImageGallery",
               "name": "Belenko Design Studio Portfolio",
-              "description": "Portfolio of 200+ restaurant, bar, cafe and hotel interior design projects by Belenko Design Studio",
+              "description": "Portfolio of 250 restaurant, bar, cafe and hotel interior design projects by Belenko Design Studio",
               "url": "https://www.belenko.design/#portfolio",
               "numberOfItems": 200,
               "author": {

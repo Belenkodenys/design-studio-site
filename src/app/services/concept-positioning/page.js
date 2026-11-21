@@ -19,7 +19,7 @@ export default function ConceptPage() {
       serviceKey="concept"
       heroImage="/service-1.png"
       stats={[
-        { number: '200+', labelKey: 'conceptsDeveloped' },
+        { number: '250', labelKey: 'conceptsDeveloped' },
         { number: '27', labelKey: 'yearsExperience' },
         { number: '95%', labelKey: 'clientSatisfaction' }
       ]}

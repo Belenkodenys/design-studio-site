@@ -17,7 +17,7 @@ export const translations = {
     },
     about: {
       title: 'About us',
-      intro: 'Hospitality interior design studio, Barcelona — 27 years, 200+ venues in 11 countries',
+      intro: 'Hospitality interior design studio, Barcelona — 27 years, 250 venues in 11 countries',
       introText: ' in designing commercial and residential interiors, transforming architecture into a storytelling tool.',
       paragraph2: 'Instead of simply decorating spaces, the team focuses on creating a unique atmosphere',
       paragraph2Muted: ' and emotional experience',
@@ -55,7 +55,7 @@ export const translations = {
       stat2Number: '28',
       stat2Label: 'Team members',
       stat2Desc: 'Architects, designers, brand strategists, creators, and producers',
-      stat3Number: '200+',
+      stat3Number: '250',
       stat3Label: 'Projects',
       stat3Desc: 'Completed in 11 countries, covering more than 538,000 sq ft of designed atmosphere'
     },
@@ -325,7 +325,7 @@ export const translations = {
     },
     about: {
       title: 'Про нас',
-      intro: 'Студія дизайну ресторанів і готелів, Барселона — 27 років, 200+ проєктів в 11 країнах',
+      intro: 'Студія дизайну ресторанів і готелів, Барселона — 27 років, 250 проєктів в 11 країнах',
       introText: ' у проєктуванні громадських та житлових інтер\'єрів, перетворюючи архітектуру на інструмент оповідання.',
       paragraph2: 'Замість звичайного декорування приміщень команда фокусується на створенні унікальної атмосфери',
       paragraph2Muted: ' та емоційного досвіду',
@@ -363,7 +363,7 @@ export const translations = {
       stat2Number: '28',
       stat2Label: 'Членів команди',
       stat2Desc: 'Архітектори, дизайнери, бренд-стратеги, креатори та продюсери',
-      stat3Number: '200+',
+      stat3Number: '250',
       stat3Label: 'Проєктів',
       stat3Desc: 'Завершено в 11 країнах, охоплюючи понад 50 000 м² спроєктованих просторів'
     },
@@ -633,7 +633,7 @@ export const translations = {
     },
     about: {
       title: 'О нас',
-      intro: 'Студия дизайна ресторанов и отелей, Барселона — 27 лет, 200+ проектов в 11 странах',
+      intro: 'Студия дизайна ресторанов и отелей, Барселона — 27 лет, 250 проектов в 11 странах',
       introText: ' в проектировании общественных и жилых интерьеров, превращая архитектуру в инструмент повествования.',
       paragraph2: 'Вместо обычного декорирования помещений команда фокусируется на создании уникальной атмосферы',
       paragraph2Muted: ' и эмоционального опыта',
@@ -671,7 +671,7 @@ export const translations = {
       stat2Number: '28',
       stat2Label: 'Членов команды',
       stat2Desc: 'Архитекторы, дизайнеры, бренд-стратеги, креаторы и продюсеры',
-      stat3Number: '200+',
+      stat3Number: '250',
       stat3Label: 'Проектов',
       stat3Desc: 'Завершено в 11 странах, охватывая более 50 000 м² спроектированной атмосферы'
     },
@@ -941,7 +941,7 @@ export const translations = {
     },
     about: {
       title: 'Nosotros',
-      intro: 'Estudio de interiorismo para hostelería, Barcelona — 27 años, 200+ locales en 11 países',
+      intro: 'Estudio de interiorismo para hostelería, Barcelona — 27 años, 250 locales en 11 países',
       introText: ' en el diseño de interiores comerciales y residenciales, transformando la arquitectura en una herramienta narrativa.',
       paragraph2: 'En lugar de simplemente decorar espacios, el equipo se enfoca en crear una atmósfera única',
       paragraph2Muted: ' y una experiencia emocional',
@@ -979,7 +979,7 @@ export const translations = {
       stat2Number: '28',
       stat2Label: 'Miembros del equipo',
       stat2Desc: 'Arquitectos, diseñadores, estrategas de marca, creativos y productores',
-      stat3Number: '200+',
+      stat3Number: '250',
       stat3Label: 'Proyectos',
       stat3Desc: 'Completados en 11 países, cubriendo más de 50,000 m² de espacios diseñados'
     },

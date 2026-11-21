@@ -19,7 +19,7 @@ export default function CreativeContentPage() {
       serviceKey="creative"
       heroImage="/service-6.png"
       stats={[
-        { number: '200+', labelKey: 'projectsCompleted' },
+        { number: '250', labelKey: 'projectsCompleted' },
         { number: '27', labelKey: 'yearsExperience' },
         { number: '15+', labelKey: 'countriesWorked' }
       ]}

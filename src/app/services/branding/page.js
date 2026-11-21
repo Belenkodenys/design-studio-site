@@ -19,7 +19,7 @@ export default function BrandingPage() {
       serviceKey="branding"
       heroImage="/service-5.png"
       stats={[
-        { number: '200+', labelKey: 'brandsCreated' },
+        { number: '250', labelKey: 'brandsCreated' },
         { number: '27', labelKey: 'yearsExperience' },
         { number: '15+', labelKey: 'countriesWorked' }
       ]}

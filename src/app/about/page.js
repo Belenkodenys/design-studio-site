@@ -5,11 +5,11 @@ import '../clients/proposal/ClientLanding.css'
 export const metadata = {
   title: 'About Us',
   description:
-    'Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 1999: 27 years, 200+ restaurants, bars, cafés and hotels in 11 countries, projects in Europe and the U.S.',
+    'Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 1999: 27 years, 250 restaurants, bars, cafés and hotels in 11 countries, projects in Europe and the U.S.',
   alternates: { canonical: 'https://www.belenko.design/about' },
   openGraph: {
     title: 'About Us — Belenko Design Studio',
-    description: 'Hospitality interior design studio in Barcelona — founded 1999, 200+ venues in 11 countries.',
+    description: 'Hospitality interior design studio in Barcelona — founded 1999, 250 venues in 11 countries.',
     url: 'https://www.belenko.design/about',
     type: 'website'
   }

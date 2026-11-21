@@ -19,7 +19,7 @@ export default function DecorFurniturePage() {
       serviceKey="decor"
       heroImage="/service-4.png"
       stats={[
-        { number: '200+', labelKey: 'projectsCompleted' },
+        { number: '250', labelKey: 'projectsCompleted' },
         { number: '27', labelKey: 'yearsExperience' },
         { number: '15+', labelKey: 'countriesWorked' }
       ]}

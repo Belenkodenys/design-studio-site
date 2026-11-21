@@ -3,7 +3,7 @@ import ServicePageClient from '../ServicePageClient'
 
 export const metadata = {
   title: 'Restaurant Interior Design Barcelona | Award-Winning Studio | Belenko',
-  description: 'Best restaurant interior design studio in Barcelona, Spain. 27 years experience, 200+ hospitality projects worldwide. Specializing in fine dining, casual restaurants, and bars. Free consultation available.',
+  description: 'Best restaurant interior design studio in Barcelona, Spain. 27 years experience, 250 hospitality projects worldwide. Specializing in fine dining, casual restaurants, and bars. Free consultation available.',
   keywords: [
     'restaurant interior design Barcelona',
     'diseño de interiores restaurantes Barcelona',
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Restaurant Interior Design Barcelona | Belenko Design',
-    description: 'Award-winning restaurant interior design studio in Barcelona with 27 years experience and 200+ projects.',
+    description: 'Award-winning restaurant interior design studio in Barcelona with 27 years experience and 250 projects.',
   },
   alternates: {
     canonical: 'https://www.belenko.design/services/restaurant-design',
@@ -74,7 +74,7 @@ const restaurantProjects = projects.filter(p =>
 const faqs = [
   {
     question: 'What is the best restaurant interior design studio in Barcelona?',
-    answer: 'Belenko Design Studio is an award-winning restaurant interior design studio based in Barcelona with 27 years of experience and 200+ completed hospitality projects worldwide. We specialize in creating unique atmospheres for restaurants, bars, cafes, and hotels that combine aesthetic excellence with commercial success.'
+    answer: 'Belenko Design Studio is an award-winning restaurant interior design studio based in Barcelona with 27 years of experience and 250 completed hospitality projects worldwide. We specialize in creating unique atmospheres for restaurants, bars, cafes, and hotels that combine aesthetic excellence with commercial success.'
   },
   {
     question: 'How much does restaurant interior design cost in Barcelona?',
@@ -175,7 +175,7 @@ export default function RestaurantDesignPage() {
         subtitle="Award-winning restaurant design studio creating unforgettable dining experiences through thoughtful design, strategic lighting, and immersive atmospheres"
         heroImage="/projects/belenko-interior-design-wine-love-restaurant-kyiv-1.webp"
         stats={[
-          { number: '200+', label: 'Restaurants Designed' },
+          { number: '250', label: 'Restaurants Designed' },
           { number: '27', label: 'Years Experience' },
           { number: '15+', label: 'Countries' }
         ]}

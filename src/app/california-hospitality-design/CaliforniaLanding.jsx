@@ -11,7 +11,7 @@ const HERO_SLIDES = [7, 8, 9, 10, 11, 12].map((n) => `/belenko-studio-hero-${n}.
 
 const proof = [
   { num: '27', label: 'Years in hospitality' },
-  { num: '200+', label: 'Completed projects' },
+  { num: '250', label: 'Completed projects' },
   { num: '11', label: 'Countries' }
 ]
 
@@ -128,7 +128,7 @@ export default function CaliforniaLanding() {
           <p className="miami-eyebrow">California · West Coast</p>
           <h1 className="miami-hero-title">Hospitality design for restaurants, bars and boutique hotels in California</h1>
           <p className="miami-hero-sub">We create distinctive concepts people remember — and places they come back to.</p>
-          <p className="miami-hero-trust">27 years · 200+ projects · Europe + USA</p>
+          <p className="miami-hero-trust">27 years · 250 projects · Europe + USA</p>
           <div className="miami-hero-cta">
             <a className="miami-btn miami-btn-light" href="#contact" onClick={scrollTo('contact')}>Discuss Your Project</a>
             <a className="miami-btn miami-btn-ghost" href="#work" onClick={scrollTo('work')}>View Selected Work</a>
@@ -280,7 +280,7 @@ export default function CaliforniaLanding() {
           <h2>Founder &amp; Creative Director</h2>
           <p>
             27 years creating restaurants, bars and hospitality destinations across Europe
-            and internationally, with 200+ completed projects. Denys personally leads the
+            and internationally, with 250 completed projects. Denys personally leads the
             creative direction of every Belenko hospitality project.
           </p>
           <a className="miami-btn miami-btn-dark" href="#contact" onClick={scrollTo('contact')}>Talk to Denys Belenko</a>

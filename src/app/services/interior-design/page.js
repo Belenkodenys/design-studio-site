@@ -19,7 +19,7 @@ export default function InteriorDesignPage() {
       serviceKey="interior"
       heroImage="/service-3.png"
       stats={[
-        { number: '200+', labelKey: 'interiorsDesigned' },
+        { number: '250', labelKey: 'interiorsDesigned' },
         { number: '27', labelKey: 'yearsExperience' },
         { number: '15+', labelKey: 'countriesWorked' }
       ]}
