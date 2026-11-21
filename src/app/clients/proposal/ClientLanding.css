@@ -2168,3 +2168,7 @@ html .rcon-send {
 .proposal-awards-status { font-weight: 300; font-size: 12px; letter-spacing: 0.18em; color: #C9C8C3; }
 .proposal-awards-project { font-weight: 200; font-size: 13px; letter-spacing: 0.1em; color: #8E8E8A; }
 @media (max-width: 900px) { .proposal-awards-grid { grid-template-columns: 1fr; } }
+
+/* Team photo in the About section */
+.proposal-mission-photo { margin: 0 0 40px; }
+.proposal-mission-photo img { display: block; width: 100%; height: auto; max-height: 78vh; object-fit: cover; object-position: center 40%; }
