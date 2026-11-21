@@ -6,7 +6,7 @@ import BlogListingClient from './BlogListingClient'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'Blog — Interior Design Insights | Belenko Design',
+  title: 'Journal — Interior Design Insights | Belenko Design',
   description: 'Expert insights on restaurant, bar, and hospitality interior design. Tips on lighting, materials, color psychology, and trends from Belenko Design Studio.',
   keywords: ['interior design blog', 'restaurant design tips', 'bar design', 'hospitality design', 'lighting design', 'color psychology'],
   authors: [{ name: 'Denis Belenko' }],
@@ -16,7 +16,7 @@ export const metadata = {
     canonical: 'https://www.belenko.design/blog',
   },
   openGraph: {
-    title: 'Blog — Interior Design Insights | Belenko Design',
+    title: 'Journal — Interior Design Insights | Belenko Design',
     description: 'Expert insights on restaurant, bar, and hospitality interior design from Belenko Design Studio.',
     images: ['/hero-bg.jpg'],
     type: 'website',
@@ -28,7 +28,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.belenko.design/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.belenko.design/blog" }
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://www.belenko.design/blog" }
   ]
 }
 

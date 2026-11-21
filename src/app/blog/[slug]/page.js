@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
   const description = post.excerpt.en
 
   return {
-    title: `${title} | Belenko Design Blog`,
+    title: `${title} | Belenko Design Journal`,
     description: description,
     authors: [{ name: 'Denis Belenko' }],
     keywords: ['interior design', 'restaurant design', 'bar design', 'hospitality design', post.category],
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }) {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.belenko.design/" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.belenko.design/blog" },
+      { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://www.belenko.design/blog" },
       { "@type": "ListItem", "position": 3, "name": postTitle, "item": `https://www.belenko.design/blog/${slug}` }
     ]
   }

@@ -110,7 +110,7 @@ export default function BlogPostClient({ post, relatedProjects }) {
 
         <div className="blog-post-body">
           <div className="blog-post-meta">
-            <span className="blog-post-category">{post.category}</span>
+            <span className="blog-post-category">{post.category === 'Blog' ? 'Journal' : post.category}</span>
             <span className="blog-post-date">{formatDate(post.date)}</span>
             <span className="blog-post-read-time">{post.readTime} min read</span>
           </div>

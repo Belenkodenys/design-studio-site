@@ -5,7 +5,7 @@ export const translations = {
       about: 'About',
       services: 'Services',
       portfolio: 'Portfolio',
-      blog: 'Blog',
+      blog: 'Journal',
       career: 'Career',
       contact: 'Contact'
     },
@@ -83,7 +83,7 @@ export const translations = {
       projectsCount: 'projects'
     },
     blog: {
-      title: 'Blog',
+      title: 'Journal',
       subtitle: 'Insights, trends, and stories from the world of hospitality design',
       readMore: 'Read More',
       post1Title: 'The Art of Restaurant Interior Design',
@@ -315,7 +315,7 @@ export const translations = {
       about: 'Про нас',
       services: 'Послуги',
       portfolio: 'Портфоліо',
-      blog: 'Блог',
+      blog: 'Журнал',
       career: 'Кар\'єра',
       contact: 'Контакти'
     },
@@ -393,7 +393,7 @@ export const translations = {
       projectsCount: 'проєктів'
     },
     blog: {
-      title: 'Блог',
+      title: 'Журнал',
       subtitle: 'Інсайти, тренди та історії зі світу дизайну гостинності',
       readMore: 'Читати далі',
       post1Title: 'Мистецтво дизайну інтер\'єру ресторану',
@@ -625,7 +625,7 @@ export const translations = {
       about: 'О нас',
       services: 'Услуги',
       portfolio: 'Портфолио',
-      blog: 'Блог',
+      blog: 'Журнал',
       career: 'Карьера',
       contact: 'Контакты'
     },
@@ -703,7 +703,7 @@ export const translations = {
       projectsCount: 'проектов'
     },
     blog: {
-      title: 'Блог',
+      title: 'Журнал',
       subtitle: 'Инсайты, тренды и истории из мира дизайна гостеприимства',
       readMore: 'Читать далее',
       post1Title: 'Искусство дизайна интерьера ресторана',
@@ -935,7 +935,7 @@ export const translations = {
       about: 'Nosotros',
       services: 'Servicios',
       portfolio: 'Portafolio',
-      blog: 'Blog',
+      blog: 'Journal',
       career: 'Carreras',
       contact: 'Contacto'
     },
@@ -1013,7 +1013,7 @@ export const translations = {
       projectsCount: 'proyectos'
     },
     blog: {
-      title: 'Blog',
+      title: 'Journal',
       subtitle: 'Ideas, tendencias e historias del mundo del diseño de hostelería',
       readMore: 'Leer más',
       post1Title: 'El Arte del Diseño de Interiores de Restaurantes',

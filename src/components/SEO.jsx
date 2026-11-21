@@ -239,7 +239,7 @@ export function getBlogPostSEO(post, lang = 'en') {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Blog",
+        "name": "Journal",
         "item": `${BASE_URL}/blog/`
       },
       {

@@ -22,7 +22,7 @@ function BlogCard({ post, index }) {
     >
       <div className="blog-card-image">
         <img src={post.image} alt={title} loading="lazy" />
-        {post.category && <span className="blog-card-category">{post.category}</span>}
+        {post.category && <span className="blog-card-category">{post.category === 'Blog' ? 'Journal' : post.category}</span>}
       </div>
       <div className="blog-card-content">
         <span className="blog-card-date">

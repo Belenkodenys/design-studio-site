@@ -37,7 +37,7 @@ function BlogPostCard({ post, index }) {
       </div>
       <div className="blog-card-content">
         <div className="blog-card-meta">
-          <span className="blog-card-category">{post.category}</span>
+          <span className="blog-card-category">{post.category === 'Blog' ? 'Journal' : post.category}</span>
           <span className="blog-card-date">{formatDate(post.date)}</span>
         </div>
         <h2 className="blog-card-title">{title}</h2>
