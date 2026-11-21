@@ -882,5 +882,11 @@
         }
       ]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/residential-newsletter",
+      "schedule": "7 * * * *"
+    }
   ]
 }
