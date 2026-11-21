@@ -40,7 +40,7 @@ const gallery = [
   { src: '/projects/belenko-branding-design-ladies-room-lollipop-cut.webp', alt: 'Ladies Room bar — lollipop in a foil wrapper with the logo' },
   { src: '/projects/belenko-branding-design-roya-gold-bag-cut.webp', alt: 'Roya restaurant — gold foil bag with the R monogram' },
   { src: '/projects/belenko-branding-design-mimosa-pizza-box-green-cut.webp', alt: 'Mimosa Brooklyn Pizza — box, green edition' },
-  { src: '/projects/belenko-branding-design-cent-aura-logo-cut.webp', alt: 'Cent Aura restaurant, Lviv — logo, established in 1765' },
+  { src: '/projects/belenko-branding-design-cent-aura-logo-cut.webp', alt: 'Cent Aura restaurant, Lviv — logo, established in 1765', size: 'large' },
   { src: '/projects/belenko-branding-design-beerbasa-identity-cut.webp', alt: 'Beerbasa — beer & grill identity: logo on cards, glass and brewery wall' },
   { src: '/projects/belenko-branding-design-iva-business-cards-cut.webp', alt: 'Iva restaurant, Baku — green and orange business cards' },
   { src: '/projects/belenko-branding-design-iva-menu-gold-foil-cut.webp', alt: 'Iva restaurant menu — gold foil section rules on grey paper' },
@@ -90,7 +90,7 @@ export default function BrandingPage() {
 
       <div className="br-gallery">
         {gallery.map((g, i) => (
-          <ScrollDrift key={g.src} fx={FX[i % FX.length]} className={`br-slot br-slot--${POS[i % POS.length]}${g.size === 'small' ? ' br-slot--small' : ''}${g.gap ? ' br-slot--gap' : ''}`}>
+          <ScrollDrift key={g.src} fx={FX[i % FX.length]} className={`br-slot br-slot--${POS[i % POS.length]}${g.size === 'small' ? ' br-slot--small' : g.size === 'large' ? ' br-slot--large' : ''}${g.gap ? ' br-slot--gap' : ''}`}>
             <img
               src={g.src}
               srcSet={`${g.src.replace('-cut.webp', '-cut-m.webp')} 1000w, ${g.src} 2200w`}

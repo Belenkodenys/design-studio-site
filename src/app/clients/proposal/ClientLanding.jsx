@@ -508,9 +508,10 @@ export function StudioMission() {
             </div>
           </div>
 
-          <p className="proposal-mission-founder">
-            &ldquo;The most expensive thing in a restaurant is an empty table.&rdquo; — Denys Belenko
-          </p>
+          <blockquote className="proposal-mission-founder">
+            <p>&ldquo;The most expensive thing in a restaurant is an empty table.&rdquo;</p>
+            <cite>— Denys Belenko</cite>
+          </blockquote>
         </div>
       </div>
     </div>

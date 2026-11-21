@@ -11,7 +11,8 @@ const positionsData = [
   { id: 1, location: 'Barcelona / Remote' },
   { id: 2, location: 'Barcelona / Remote' },
   { id: 3, location: 'Barcelona' },
-  { id: 4, location: 'Barcelona / Remote' }
+  { id: 4, location: 'Barcelona / Remote' },
+  { id: 5, location: 'Barcelona / Remote' }
 ]
 
 function PositionCard({ position, index }) {

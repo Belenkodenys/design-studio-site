@@ -87,3 +87,8 @@
 @media (prefers-reduced-motion: reduce) {
   .drift { transition: none; transform: none !important; opacity: 1 !important; }
 }
+
+/* 1.5x pieces */
+.br-slot--large { max-height: calc(var(--slot) * 1.5); }
+.br-slot--large img { max-height: calc(var(--slot) * 1.5); max-width: 90vw; }
+@media (max-width: 600px) { .br-slot--large img { width: 100vw; max-width: 100vw; } }
