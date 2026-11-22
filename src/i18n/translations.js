@@ -150,8 +150,8 @@ export const translations = {
       services: 'Services',
       interestedTitle: 'Interested in a similar project?',
       getInTouch: 'Get in Touch',
-      prevProject: 'Previous Project',
-      nextProject: 'Next Project'
+      prevProject: 'Previous',
+      nextProject: 'Next'
     },
     allProjects: {
       title: 'All Projects',
@@ -460,8 +460,8 @@ export const translations = {
       services: 'Послуги',
       interestedTitle: 'Зацікавлені в подібному проєкті?',
       getInTouch: 'Зв\'язатися',
-      prevProject: 'Попередній проєкт',
-      nextProject: 'Наступний проєкт'
+      prevProject: 'Попередній',
+      nextProject: 'Наступний'
     },
     allProjects: {
       title: 'Усі проєкти',
@@ -770,8 +770,8 @@ export const translations = {
       services: 'Услуги',
       interestedTitle: 'Заинтересованы в подобном проекте?',
       getInTouch: 'Связаться',
-      prevProject: 'Предыдущий проект',
-      nextProject: 'Следующий проект'
+      prevProject: 'Предыдущий',
+      nextProject: 'Следующий'
     },
     allProjects: {
       title: 'Все проекты',
@@ -1080,8 +1080,8 @@ export const translations = {
       services: 'Servicios',
       interestedTitle: '¿Interesado en un proyecto similar?',
       getInTouch: 'Contáctanos',
-      prevProject: 'Proyecto Anterior',
-      nextProject: 'Proyecto Siguiente'
+      prevProject: 'Anterior',
+      nextProject: 'Siguiente'
     },
     allProjects: {
       title: 'Todos los Proyectos',

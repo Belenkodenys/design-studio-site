@@ -7,6 +7,7 @@ import { useLanguage } from '../../../i18n/LanguageContext'
 import { projectTranslations } from '../../../i18n/projectTranslations'
 import LanguageSwitcher from '../../../components/LanguageSwitcher'
 import SocialFloat from '../../../components/SocialFloat'
+import ProposalFooter from '../../clients/proposal/ProposalFooter'
 import Breadcrumbs from '../../../components/Breadcrumbs'
 import '../../../page-components/ProjectDetail.css'
 
@@ -486,6 +487,8 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
           <span className="project-nav-title">{nextProjectTrans?.title || nextProject.title}</span>
         </Link>
       </div>
+
+      <ProposalFooter />
 
       {/* Lightbox - TikTok Style */}
       {lightboxOpen && (
