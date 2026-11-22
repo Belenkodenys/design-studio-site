@@ -611,10 +611,12 @@ function endTouch(e){
 stage.addEventListener('touchend',endTouch,{passive:true});
 stage.addEventListener('touchcancel',endTouch,{passive:true});
 /* featured carousels on the home page: arrows, photo counter, neighbours loaded ahead (swipe is native scroll-snap) */
-/* home page: featured galleries open the project page on click */
+/* home page: featured galleries open the project page on click (phones only) */
 document.addEventListener('click',function(e){
   var card=e.target.closest('.bk-card, .bk-mvideo'); if(!card) return;
   var feat=card.closest('.bk-feat[data-project]'); if(!feat) return;
+  /* desktop: the click falls through to the full-screen gallery; phones go to the project page */
+  if(!window.matchMedia('(max-width:768px)').matches) return;
   e.preventDefault(); e.stopImmediatePropagation();
   var m=feat.getAttribute('data-project-mobile');
   location.href=(m && window.matchMedia('(max-width:768px)').matches) ? m : feat.getAttribute('data-project');
