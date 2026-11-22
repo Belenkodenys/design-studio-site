@@ -86,6 +86,9 @@ body{background:#171719}
 #bkStage img{will-change:transform}
 #bkPlay{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:14px;height:46px;padding:0 22px 0 6px;border:0;border-radius:23px;background:rgba(23,23,25,0.55);color:#FFFFFF;cursor:pointer;font-family:Oswald,sans-serif;font-weight:400;font-size:16px;letter-spacing:0.14em;text-transform:uppercase}
 #bkPlay[hidden]{display:none}
+.bk-fscroll::-webkit-scrollbar{display:none}
+@media (hover:none),(max-width:768px){.bk-farrow{display:none !important}}
+.bk-farrow:hover{background:#FFFFFF !important;color:#171719 !important}
 #bkLb{top:0;left:0;right:0;bottom:0;width:100%;height:100%}
 #bkLb [data-slide],#bkLb [data-slide]>img,#bkLb [data-slide]>video{top:0;left:0;width:100%;height:100%}
 #bkStage{-webkit-tap-highlight-color:transparent}
@@ -466,6 +469,17 @@ function endTouch(e){
 }
 stage.addEventListener('touchend',endTouch,{passive:true});
 stage.addEventListener('touchcancel',endTouch,{passive:true});
+/* featured carousel on the home page: arrows and the photo counter (swipe is native scroll-snap) */
+var feat=$('#bkFeat');
+if(feat){
+  var featN=$('#bkFeatN'), featCount=feat.children.length;
+  var featIdx=function(){ return Math.max(0,Math.min(featCount-1,Math.round(feat.scrollLeft/Math.max(1,feat.clientWidth)))); };
+  feat.addEventListener('scroll',function(){ if(featN){ var k=featIdx()+1; featN.textContent=(k<10?'0':'')+k; } },{passive:true});
+  $$('[data-feat]').forEach(function(b){ b.addEventListener('click',function(){
+    var k=featIdx()+ +b.getAttribute('data-feat'); if(k<0) k=featCount-1; if(k>=featCount) k=0;
+    feat.scrollTo({left:k*feat.clientWidth,behavior:'smooth'});
+  }); });
+}
 /* contact form -> email (Web3Forms relay, same as the main site's contact form) */
 var form=$('#bkForm'), formNote=$('#bkFormNote');
 if(form){
