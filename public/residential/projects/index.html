@@ -485,17 +485,18 @@ function endTouch(e){
 }
 stage.addEventListener('touchend',endTouch,{passive:true});
 stage.addEventListener('touchcancel',endTouch,{passive:true});
-/* featured carousel on the home page: arrows and the photo counter (swipe is native scroll-snap) */
-var feat=$('#bkFeat');
-if(feat){
-  var featN=$('#bkFeatN'), featCount=feat.children.length;
-  var featIdx=function(){ return Math.max(0,Math.min(featCount-1,Math.round(feat.scrollLeft/Math.max(1,feat.clientWidth)))); };
-  feat.addEventListener('scroll',function(){ if(featN){ var k=featIdx()+1; featN.textContent=(k<10?'0':'')+k; } },{passive:true});
-  $$('[data-feat]').forEach(function(b){ b.addEventListener('click',function(){
-    var k=featIdx()+ +b.getAttribute('data-feat'); if(k<0) k=featCount-1; if(k>=featCount) k=0;
-    feat.scrollTo({left:k*feat.clientWidth,behavior:'smooth'});
+/* featured carousels on the home page: arrows, photo counter, neighbours loaded ahead (swipe is native scroll-snap) */
+$$('.bk-fscroll').forEach(function(feat){
+  var box=feat.parentElement, num=$('.bk-fnum',box), n=feat.children.length;
+  var at=function(){ return Math.max(0,Math.min(n-1,Math.round(feat.scrollLeft/Math.max(1,feat.clientWidth)))); };
+  var warm=function(k){ [k,k+1,k+2].forEach(function(j){ var b=feat.children[j]; if(b) $$('img[loading="lazy"]',b).forEach(function(im){ im.loading='eager'; }); }); };
+  feat.addEventListener('scroll',function(){ var k=at(); if(num) num.textContent=(k+1<10?'0':'')+(k+1); warm(k); },{passive:true});
+  $$('[data-feat]',box).forEach(function(b){ b.addEventListener('click',function(){
+    var k=at()+ +b.getAttribute('data-feat'); if(k<0) k=n-1; if(k>=n) k=0;
+    warm(k); feat.scrollTo({left:k*feat.clientWidth,behavior:'smooth'});
   }); });
-}
+  if('IntersectionObserver' in window){ var fo=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ warm(0); fo.disconnect(); } }); },{rootMargin:'600px 0px'}); fo.observe(feat); } else warm(0);
+});
 /* contact form -> email (Web3Forms relay, same as the main site's contact form) */
 var form=$('#bkForm'), formNote=$('#bkFormNote');
 if(form){
