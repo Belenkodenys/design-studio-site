@@ -7,7 +7,7 @@ import '../../app/clients/proposal/layout.css'
 import './SubpageShell.css'
 
 const NAV = [
-  { href: '/projects', label: 'Our Works' },
+  { href: '/#portfolio', label: 'Our Works' },
   { href: '/career', label: 'Career' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contacts' }

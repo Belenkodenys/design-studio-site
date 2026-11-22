@@ -461,11 +461,6 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
         ))}
       </div>
 
-      <div className="project-cta">
-        <h2>{t('project.interestedTitle')}</h2>
-        <a href="/#contact" onClick={handleContactClick} className="cta-button">{t('project.getInTouch')}</a>
-      </div>
-
       {/* Project Navigation */}
       <div className="project-navigation">
         <Link href={`/project/${prevProject.id}`} className="project-nav-link prev">

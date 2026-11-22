@@ -599,6 +599,15 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Deep links (/#portfolio etc.) land on the section, already unfolded.
+  useEffect(() => {
+    const id = (window.location.hash || '').replace('#', '')
+    if (!['portfolio', 'services', 'about', 'contact'].includes(id)) return
+    const t = setTimeout(() => go({ preventDefault() {} }, id), 500)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const go = (e, id) => {
     e.preventDefault()
     setMenuOpen(false)
