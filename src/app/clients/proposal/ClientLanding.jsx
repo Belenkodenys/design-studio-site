@@ -534,7 +534,7 @@ export function StudioMission({ more = false, setMore = () => {} }) {
 
 // Positioning statement: letters fly in from random directions when the slide
 // scrolls into view (replays each time it re-enters).
-function FlyInStatement({ lines }) {
+function FlyInStatement({ lines, className = 'proposal-statement-text proposal-statement-text--bold' }) {
   const ref = useRef(null)
   const [on, setOn] = useState(false)
   useEffect(() => {
@@ -546,7 +546,7 @@ function FlyInStatement({ lines }) {
   }, [])
   let k = 0
   return (
-    <h2 ref={ref} className={`proposal-statement-text proposal-statement-text--bold proposal-flyin${on ? ' is-on' : ''}`} aria-label={lines.join(' ')}>
+    <h2 ref={ref} className={`${className} proposal-flyin${on ? ' is-on' : ''}`} aria-label={lines.join(' ')}>
       {lines.map((line, li) => (
         <span key={li} className="proposal-flyin-line" aria-hidden="true">
           {line.split(' ').map((word, wi) => (
@@ -1729,13 +1729,7 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-statement proposal-statement--concept" aria-label="Our approach">
-        <p className="proposal-statement-text">
-          We create the concept:
-          {' '}<br />
-          from the first idea on a napkin
-          {' '}<br />
-          to the first guests
-        </p>
+        <FlyInStatement className="proposal-statement-text" lines={['We create the concept:', 'from the first idea on a napkin', 'to the first guests']} />
       </section>
 
       <section className="proposal-modules-row" aria-label="Projects">
