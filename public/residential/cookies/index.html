@@ -88,6 +88,7 @@ body{background:#171719}
 #bkStage img{will-change:transform}
 #bkPlay{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:14px;height:46px;padding:0 22px 0 6px;border:0;border-radius:23px;background:rgba(23,23,25,0.55);color:#FFFFFF;cursor:pointer;font-family:Oswald,sans-serif;font-weight:400;font-size:16px;letter-spacing:0.14em;text-transform:uppercase}
 #bkPlay[hidden]{display:none}
+.bk-filter [aria-pressed="true"]{background:#F1F0EC !important;color:#171719 !important;border-color:#F1F0EC !important}
 .bk-fscroll::-webkit-scrollbar{display:none}
 @media (hover:none),(max-width:768px){.bk-farrow{display:none !important}}
 .bk-farrow:hover{background:#FFFFFF !important;color:#171719 !important}
@@ -121,10 +122,9 @@ button{font:inherit}
 <a href="/residential" aria-label="Belenko — home" style="display: flex; align-items: center; min-height: 44px"><img src="/residential/belenko-logo-white.png" alt="Belenko" style="height: 30px; width: auto; display: block"></a>
 <div style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(20px, 3vw, 48px)">
 <a class="bk-link" href="/residential/projects" style="padding: 12px 0">Projects</a>
-<a class="bk-link" href="/residential/objects" style="padding: 12px 0">Objects</a>
 <a class="bk-link" href="/residential/approach" style="padding: 12px 0">Approach</a>
-<a class="bk-link" href="/residential/about" style="padding: 12px 0">About</a>
-<a class="bk-link" href="/residential/journal" style="padding: 12px 0">Journal</a>
+<a class="bk-link" href="/residential/expertise" style="padding: 12px 0">Expertise</a>
+<a class="bk-link" href="/residential/studio" style="padding: 12px 0">Studio</a>
 <a class="bk-link" href="/residential/contact" style="padding: 12px 0">Contact</a>
 <div style="display: flex; align-items: center; gap: 6px">
 <button type="button" class="bk-tip bk-burger" data-tip="Menu" aria-label="Open menu" id="bkBurger" aria-expanded="false" style="background: none; border: 0; color: inherit; width: 44px; height: 44px; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center">
@@ -138,10 +138,9 @@ button{font:inherit}
 </nav>
 <div class="bk-menu" id="bkMenu" hidden>
 <a href="/residential/projects">Projects</a>
-<a href="/residential/objects">Objects</a>
 <a href="/residential/approach">Approach</a>
-<a href="/residential/about">About</a>
-<a href="/residential/journal">Journal</a>
+<a href="/residential/expertise">Expertise</a>
+<a href="/residential/studio">Studio</a>
 <a href="/residential/contact">Contact</a>
 </div>
 </div>
@@ -226,6 +225,9 @@ button{font:inherit}
 </div>
 </div>
 <div style="flex: 1 1 22%; min-width: 160px; display: flex; flex-direction: column; gap: 4px; color: #8E8E8A; letter-spacing: 0.05em">
+<a href="/residential/journal" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Journal</a>
+<a href="/residential/objects" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Objects</a>
+<a href="/residential/book" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Book</a>
 <a href="/residential/legal" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Legal notice</a>
 <a href="/residential/credits" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Credits</a>
 <a href="/residential/privacy" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Privacy</a>

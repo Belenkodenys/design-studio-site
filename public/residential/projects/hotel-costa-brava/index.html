@@ -88,6 +88,7 @@ body{background:#171719}
 #bkStage img{will-change:transform}
 #bkPlay{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:14px;height:46px;padding:0 22px 0 6px;border:0;border-radius:23px;background:rgba(23,23,25,0.55);color:#FFFFFF;cursor:pointer;font-family:Oswald,sans-serif;font-weight:400;font-size:16px;letter-spacing:0.14em;text-transform:uppercase}
 #bkPlay[hidden]{display:none}
+.bk-filter [aria-pressed="true"]{background:#F1F0EC !important;color:#171719 !important;border-color:#F1F0EC !important}
 .bk-fscroll::-webkit-scrollbar{display:none}
 @media (hover:none),(max-width:768px){.bk-farrow{display:none !important}}
 .bk-farrow:hover{background:#FFFFFF !important;color:#171719 !important}
@@ -121,10 +122,9 @@ button{font:inherit}
 <a href="/residential" aria-label="Belenko — home" style="display: flex; align-items: center; min-height: 44px"><img src="/residential/belenko-logo-white.png" alt="Belenko" style="height: 30px; width: auto; display: block"></a>
 <div style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(20px, 3vw, 48px)">
 <a class="bk-link" href="/residential/projects" style="padding: 12px 0">Projects</a>
-<a class="bk-link" href="/residential/objects" style="padding: 12px 0">Objects</a>
 <a class="bk-link" href="/residential/approach" style="padding: 12px 0">Approach</a>
-<a class="bk-link" href="/residential/about" style="padding: 12px 0">About</a>
-<a class="bk-link" href="/residential/journal" style="padding: 12px 0">Journal</a>
+<a class="bk-link" href="/residential/expertise" style="padding: 12px 0">Expertise</a>
+<a class="bk-link" href="/residential/studio" style="padding: 12px 0">Studio</a>
 <a class="bk-link" href="/residential/contact" style="padding: 12px 0">Contact</a>
 <div style="display: flex; align-items: center; gap: 6px">
 <button type="button" class="bk-tip bk-burger" data-tip="Menu" aria-label="Open menu" id="bkBurger" aria-expanded="false" style="background: none; border: 0; color: inherit; width: 44px; height: 44px; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center">
@@ -138,10 +138,9 @@ button{font:inherit}
 </nav>
 <div class="bk-menu" id="bkMenu" hidden>
 <a href="/residential/projects">Projects</a>
-<a href="/residential/objects">Objects</a>
 <a href="/residential/approach">Approach</a>
-<a href="/residential/about">About</a>
-<a href="/residential/journal">Journal</a>
+<a href="/residential/expertise">Expertise</a>
+<a href="/residential/studio">Studio</a>
 <a href="/residential/contact">Contact</a>
 </div>
 </div>
@@ -157,6 +156,7 @@ button{font:inherit}
 <div style="font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #A3A29D">Project</div>
 <h1 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.05; text-transform: uppercase">[Project 5]</h1>
 <div style="font-size: 14px; color: #A3A29D">Costa Brava, Spain · Hotel · 560 m²</div>
+<p style="margin: 0; max-width: 640px; font-family: Oswald, sans-serif; font-weight: 200; font-size: 16px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.02em; margin-top: 18px; max-width: 760px">A 560 m² hotel on the Costa Brava, Spain: guest rooms, a lounge and bathrooms under vaulted plaster ceilings, in a palette taken from the coast.</p>
 </div>
 <div style="columns: 2 420px; column-gap: 24px">
 <button type="button" class="bk-slide bk-card" aria-label="Open photo 1 full screen" data-open="n:0" style="position: relative; display: block; width: 100%; border: 0; padding: 0; margin: 0 0 24px; background: none; overflow: hidden; cursor: zoom-in; break-inside: avoid"><img loading="lazy" decoding="async" src="/residential/belenko-design-barcelona-hotel-interior-design-costa-brava-bedroom-vaulted-ceiling-front.webp" alt="Bedroom under a vaulted plaster ceiling with a low upholstered bed and an arched oak door — interior design by Denys Belenko, Belenko Design studio, Barcelona" draggable="false" style="width: 100%; height: auto; display: block; aspect-ratio: 1673 / 940"></button>
@@ -183,6 +183,9 @@ button{font:inherit}
 </div>
 </div>
 <div style="flex: 1 1 22%; min-width: 160px; display: flex; flex-direction: column; gap: 4px; color: #8E8E8A; letter-spacing: 0.05em">
+<a href="/residential/journal" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Journal</a>
+<a href="/residential/objects" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Objects</a>
+<a href="/residential/book" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Book</a>
 <a href="/residential/legal" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Legal notice</a>
 <a href="/residential/credits" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Credits</a>
 <a href="/residential/privacy" style="text-decoration: underline; text-underline-offset: 4px; align-self: flex-start">Privacy</a>
@@ -483,6 +486,15 @@ $$('.bk-fscroll').forEach(function(feat){
   }); });
   if('IntersectionObserver' in window){ var fo=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ warm(0); fo.disconnect(); } }); },{rootMargin:'600px 0px'}); fo.observe(feat); } else warm(0);
 });
+/* portfolio: category filter */
+$$('.bk-filter').forEach(function(bar){
+  var btns=$$('[data-filter]',bar), items=$$('[data-cat]');
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var f=b.getAttribute('data-filter');
+    btns.forEach(function(x){ x.setAttribute('aria-pressed', x===b ? 'true' : 'false'); });
+    items.forEach(function(it){ it.style.display = (!f || it.getAttribute('data-cat')===f) ? '' : 'none'; });
+  }); });
+});
 /* contact form -> email (Web3Forms relay, same as the main site's contact form) */
 var form=$('#bkForm'), formNote=$('#bkFormNote');
 if(form){
@@ -490,8 +502,8 @@ if(form){
     e.preventDefault();
     if(form.botcheck && form.botcheck.checked) return;
     var btn=form.querySelector('button[type="submit"]');
-    var v=function(n){ return (form.elements[n].value||'').trim(); };
-    var name=v('name'), email=v('email'), phone=v('phone'), city=v('city');
+    var v=function(n){ var el=form.elements[n]; return el ? (el.value||'').trim() : ''; };
+    var name=v('name'), email=v('email'), phone=v('phone'), loc=v('location'), ptype=v('type'), area=v('area'), budget=v('budget'), start=v('start'), msg=v('message');
     btn.disabled=true; formNote.style.color='#A3A29D'; formNote.textContent='Sending…';
     fetch('https://api.web3forms.com/submit',{
       method:'POST',
@@ -501,8 +513,8 @@ if(form){
         to:'office@belenko.design',
         subject:'Residential enquiry from '+name,
         from_name:name,
-        name:name, email:email, phone:phone||'—', city:city||'—',
-        message:'New enquiry from the Residential Interiors page\n\nName: '+name+'\nEmail: '+email+'\nPhone / WhatsApp: '+(phone||'—')+'\nCity: '+(city||'—')
+        name:name, email:email, phone:phone||'—', location:loc||'—', property_type:ptype||'—', area:area||'—', budget:budget||'—', planned_start:start||'—',
+        message:'New enquiry from the Belenko Residential site\n\nName: '+name+'\nEmail: '+email+'\nPhone / WhatsApp: '+(phone||'—')+'\nProperty location: '+(loc||'—')+'\nProperty type: '+(ptype||'—')+'\nArea: '+(area||'—')+'\nEstimated budget: '+(budget||'—')+'\nPlanned start: '+(start||'—')+'\n\nProject: '+(msg||'—')
       })
     }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){ return r.ok && d.success!==false; }); })
       .then(function(ok){
