@@ -2272,3 +2272,6 @@ html .proposal-statement-text--bold {
 }
 .proposal-flyin.is-on .proposal-flyin-ch { opacity: 1; transform: none; filter: blur(0); }
 @media (prefers-reduced-motion: reduce) { .proposal-flyin-ch { opacity: 1; transform: none; filter: none; transition: none; } }
+
+/* One-frame measurement mode used by the top menu: no sticky offsets */
+.proposal-stack.is-measuring > * { position: relative !important; top: auto !important; }
