@@ -471,7 +471,7 @@ export function StudioMission({ more = false, setMore = () => {} }) {
           <div id="proposal-mission-more" className={`proposal-mission-more${more ? ' is-open' : ''}`}>
           <div className="proposal-mission-more-inner">
           <p>
-            Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 1999. In 27 years the studio has designed 250 restaurants, bars, cafés, hotels and beach clubs in 11 countries across Europe, the Caucasus and the United States — over 538,000 sq ft of venues, from concept and interior to brand, FF&amp;E and opening.
+            Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 2000. In 27 years the studio has designed 250 restaurants, bars, cafés, hotels and beach clubs in 11 countries across Europe, the Caucasus and the United States — over 538,000 sq ft of venues, from concept and interior to brand, FF&amp;E and opening.
           </p>
           <p>
             Instead of simply decorating spaces, the team focuses on creating a unique atmosphere and emotional experience for every visitor.
@@ -811,7 +811,7 @@ export function HomeContactForm() {
 export const homeFaq = [
   {
     q: 'What does Belenko Design Studio do?',
-    a: 'We are a Barcelona-based hospitality interior design studio. We design restaurants, bars, cafés, hotels and beach clubs as complete business products: concept and positioning, architecture and interior, brand identity, menu and guest experience, FF&E procurement and construction administration through to opening. Founded in 1999, 250 venues completed in 11 countries.'
+    a: 'We are a Barcelona-based hospitality interior design studio. We design restaurants, bars, cafés, hotels and beach clubs as complete business products: concept and positioning, architecture and interior, brand identity, menu and guest experience, FF&E procurement and construction administration through to opening. Founded in 2000, 250 venues completed in 11 countries.'
   },
   {
     q: 'Do you work with clients in the United States?',

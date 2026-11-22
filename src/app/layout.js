@@ -237,7 +237,7 @@ export default function RootLayout({ children }) {
                   }
                 ]
               },
-              "foundingDate": "1999",
+              "foundingDate": "2000",
               "founder": {
                 "@type": "Person",
                 "name": "Denys Belenko",
