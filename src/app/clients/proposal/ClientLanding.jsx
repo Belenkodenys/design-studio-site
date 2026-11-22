@@ -1729,7 +1729,7 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-statement proposal-statement--concept" aria-label="Our approach">
-        <FlyInStatement className="proposal-statement-text" lines={['We create the concept:', 'from the first idea on a napkin', 'to the first guests']} />
+        <FlyInStatement lines={['We create the concept:', 'from the first idea on a napkin', 'to the first guests']} />
       </section>
 
       <section className="proposal-modules-row" aria-label="Projects">
@@ -1743,7 +1743,7 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
-        <FlyInStatement className="proposal-statement-text" lines={['Branding that', 'reinforces the concept']} />
+        <FlyInStatement lines={['Branding that', 'reinforces the concept']} />
         <a href="/branding" className="proposal-statement-link">See our branding work →</a>
       </section>
 
