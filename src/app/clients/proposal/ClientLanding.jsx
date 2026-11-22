@@ -1743,11 +1743,7 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
-        <p className="proposal-statement-text">
-          Branding that
-          {' '}<br />
-          reinforces the concept
-        </p>
+        <FlyInStatement className="proposal-statement-text" lines={['Branding that', 'reinforces the concept']} />
         <a href="/branding" className="proposal-statement-link">See our branding work →</a>
       </section>
 
