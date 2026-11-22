@@ -8,6 +8,13 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: '/residential', destination: '/residential/index.html' },
+      { source: '/residential/featured-project', destination: '/residential/featured-project/index.html' },
+      { source: '/residential/projects', destination: '/residential/projects/index.html' },
+      { source: '/residential/objects', destination: '/residential/objects/index.html' },
+      { source: '/residential/approach', destination: '/residential/approach/index.html' },
+      { source: '/residential/about', destination: '/residential/about/index.html' },
+      { source: '/residential/book', destination: '/residential/book/index.html' },
+      { source: '/residential/contact', destination: '/residential/contact/index.html' },
       { source: '/residential/journal', destination: '/residential/journal/index.html' },
       { source: '/residential/legal', destination: '/residential/legal/index.html' },
       { source: '/residential/privacy', destination: '/residential/privacy/index.html' },
