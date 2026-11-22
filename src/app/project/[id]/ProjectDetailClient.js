@@ -337,7 +337,7 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
       </header>
 
       {project.video ? (
-        <div className="project-hero project-hero-video">
+        <div className={`project-hero project-hero-video${project.videoFit === 'width' ? ' project-hero-video--fit' : ''}`}>
           <video
             ref={videoRef}
             src={project.video}

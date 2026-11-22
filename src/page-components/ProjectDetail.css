@@ -709,3 +709,7 @@
     bottom: 20px;
   }
 }
+
+/* Hero video shown full-width at its own aspect ratio (no vertical crop) */
+.project-hero.project-hero-video--fit { height: auto; aspect-ratio: 16 / 9; max-height: none; }
+.project-hero.project-hero-video--fit video { width: 100%; height: 100%; object-fit: contain; background: #000; }

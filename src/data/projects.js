@@ -9,6 +9,7 @@ export const projects = [
     services: ['Concept', 'Interior Design', 'Lighting Design', 'FF&E'],
     image: '/projects/belenko-interior-design-costa-brava-hotel-spain-1.webp',
     video: '/projects/costa-brava-hotel-video.mp4',
+    videoFit: 'width', // show the whole frame full-width (no vertical crop)
     videoPoster: '/projects/belenko-interior-design-costa-brava-hotel-video-poster.webp',
     images: [
       '/projects/belenko-interior-design-costa-brava-hotel-spain-1.webp',
