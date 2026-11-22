@@ -10,6 +10,7 @@ const nextConfig = {
       { source: '/residential', destination: '/residential/index.html' },
       { source: '/residential/featured-project', destination: '/residential/featured-project/index.html' },
       { source: '/residential/projects', destination: '/residential/projects/index.html' },
+      { source: '/residential/projects/:slug', destination: '/residential/projects/:slug/index.html' },
       { source: '/residential/objects', destination: '/residential/objects/index.html' },
       { source: '/residential/approach', destination: '/residential/approach/index.html' },
       { source: '/residential/about', destination: '/residential/about/index.html' },
