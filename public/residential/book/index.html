@@ -107,7 +107,7 @@ html{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,body::
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 button{font:inherit}
-</style>
+#bkNl input::placeholder{color:#8E8E8A}#bkNl input[type=checkbox]:checked{background:#F1F0EC}#bkNl input[type=email]:-webkit-autofill{-webkit-text-fill-color:#F1F0EC;transition:background-color 9999s ease-out}</style>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -164,28 +164,6 @@ button{font:inherit}
 <a href="#newsletter" style="align-self: flex-start; font-family: Oswald, sans-serif; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">+ &nbsp; Subscribe to hear when it is out</a>
 </section>
 
-<!-- NEWSLETTER -->
-<section id="newsletter" style="background: #F1F1EF; color: #171719; padding: clamp(96px, 16vw, 240px) clamp(24px, 9vw, 130px) clamp(96px, 11vw, 160px); display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 48px 80px">
-<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 28px">
-<h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 200; font-size: clamp(32px, 4.1vw, 57px); line-height: 1.15; letter-spacing: 0.01em; text-transform: uppercase">Subscribe to<br>our newsletter</h2>
-<p style="margin: 0; color: #6B6A66; letter-spacing: 0.03em">To stay up to date on new projects and news from Belenko</p>
-</div>
-<form id="bkNl" style="flex: 1 1 420px; max-width: 620px; display: flex; flex-direction: column; gap: 26px; margin: 16px 0 0">
-<div style="display: flex; align-items: center; background: #FFFFFF; border-radius: 40px; padding: 4px 4px 4px 36px; min-height: 66px; box-sizing: border-box">
-<label for="nl-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%)">Email</label>
-<input id="nl-email" name="email" type="email" required placeholder="Email*" style="flex: 1 1 auto; min-width: 0; border: 0; outline-offset: 6px; background: transparent; font-family: Inter, sans-serif; font-weight: 300; font-size: 18px; letter-spacing: 0.03em; color: #171719; height: 54px">
-<button type="submit" aria-label="Subscribe" style="flex: 0 0 auto; width: 54px; height: 54px; border-radius: 50%; border: 0; background: #171719; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer">
-<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
-</button>
-</div>
-<label style="display: flex; align-items: center; gap: 16px; min-height: 44px; font-family: Oswald, sans-serif; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6A66; cursor: pointer">
-<input type="checkbox" name="consent" required style="appearance: none; -webkit-appearance: none; margin: 0; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 1px solid #8E8E8A; flex: 0 0 auto">
-<span>Agree to <a href="#" style="text-decoration: underline">terms and conditions</a></span>
-</label>
-<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
-<div role="status" aria-live="polite" style="font-size: 14px; color: #5C5B57; min-height: 22px" id="bkNlNote"></div>
-</form>
-</section>
 
 <!-- FOOTER -->
 <footer style="background: #0E0E0E; color: #F1F0EC; padding: 62px clamp(24px, 9vw, 130px) 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px">
@@ -212,6 +190,20 @@ button{font:inherit}
 <a href="https://www.behance.net/studiobelenko" target="_blank" rel="noopener noreferrer" aria-label="Behance" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h6.500a3 3 0 0 1 0 6H2zM2 12h7a3.200 3.200 0 0 1 0 6.400H2zM2 6v12.400M14.500 14.500h7.500c0-2.500-1.500-4-3.700-4s-3.800 1.600-3.800 4 1.600 4 3.800 4c1.600 0 2.800-.7 3.400-2M15.500 7h5.500"></path></svg></a>
 <a href="https://wa.me/34671825489" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="width: 50px; height: 50px; box-sizing: border-box; border: 1px solid #6E6E6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #F1F0EC"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.650a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"></path></svg></a>
 </div>
+<form id="bkNl" style="flex: 1 1 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; padding-top: 32px; border-top: 1px solid #2A2A2C; margin-top: 8px">
+<div style="font-family: Oswald, sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #F1F0EC; flex: 0 0 auto">Newsletter</div>
+<div style="display: flex; align-items: center; flex: 1 1 260px; max-width: 420px; border-bottom: 1px solid #6E6E6A">
+<label for="nl-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%)">Email</label>
+<input id="nl-email" name="email" type="email" required placeholder="Your email" style="flex: 1 1 auto; min-width: 0; border: 0; background: transparent; font-family: Inter, sans-serif; font-weight: 300; font-size: 15px; letter-spacing: 0.02em; color: #F1F0EC; height: 40px; outline: none">
+<button type="submit" aria-label="Subscribe" style="flex: 0 0 auto; width: 40px; height: 40px; border: 0; background: transparent; color: #F1F0EC; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+<label style="display: flex; align-items: center; gap: 10px; font-family: Oswald, sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8E8E8A; cursor: pointer; flex: 0 0 auto">
+<input type="checkbox" name="consent" required style="appearance: none; -webkit-appearance: none; margin: 0; width: 14px; height: 14px; border-radius: 50%; background: transparent; border: 1px solid #8E8E8A; flex: 0 0 auto">
+<span>Agree to <a href="/residential/privacy" style="text-decoration: underline">terms</a></span>
+</label>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
+<div role="status" aria-live="polite" style="font-family: Inter, sans-serif; font-weight: 300; font-size: 12px; color: #8E8E8A; flex: 1 1 100%; min-height: 0" id="bkNlNote"></div>
+</form>
 <div title="Unique visits" style="flex: 1 1 100%; text-align: right; font-size: 11px; letter-spacing: 0.12em; color: #8E8E8A"><span id="bkVisits" aria-label="Unique visits">—</span></div>
 <div style="flex: 1 1 100%; display: flex; justify-content: center; padding-top: 28px"><a href="https://www.belenko.design/" aria-label="Belenko Design — main site" style="display: block"><img loading="lazy" decoding="async" src="/residential/belenko-design-custom-hospitality-logo.webp" alt="Custom Hospitality — Belenko Design, Barcelona" style="width: clamp(170px, 18vw, 250px); height: auto; aspect-ratio: 960 / 419; display: block"></a></div>
 </footer>
