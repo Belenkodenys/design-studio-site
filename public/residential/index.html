@@ -76,7 +76,7 @@ input[name="consent"]:checked{background:#171719 !important;box-shadow:inset 0 0
 @keyframes bkFade{from{opacity:0}to{opacity:1}}
 .bk-menu[hidden],#bkLb[hidden]{display:none !important}
 .bk-hero{min-height:100vh !important;min-height:100svh !important}
-@supports (height:100lvh){.bk-hero{min-height:100lvh !important;padding-bottom:calc(72px + 100lvh - 100svh) !important}.bk-scroll{bottom:calc(26px + 100lvh - 100svh) !important}}
+@supports (height:100lvh){.bk-hero{min-height:calc(100lvh + var(--bk-extra,0px)) !important;padding-bottom:calc(72px + 100lvh - 100svh + var(--bk-extra,0px)) !important}.bk-scroll{bottom:calc(26px + 100lvh - 100svh) !important}}
 html{background:#171719}
 @keyframes bkKen{from{scale:1}to{scale:1.08}}
 .bk-hero [data-hero]{animation:bkKen 14s ease-in-out infinite alternate;transform-origin:center center;will-change:scale}
@@ -516,6 +516,26 @@ function parallax(){
   heroLast=v;
   for(var i=0;i<heroLayers.length;i++) heroLayers[i].style.transform='translate3d(0,'+v+'px,0)';
 }
+/* phones: the picture of the first screen reaches the very bottom of the display, also under
+   the floating Safari toolbar, where 100lvh stops short. The text keeps its place. */
+(function(){
+  if(!heroEl || !window.matchMedia) return;
+  var probe=document.createElement('div');
+  probe.style.cssText='position:fixed;left:0;top:0;width:0;height:100vh;height:100lvh;visibility:hidden;pointer-events:none';
+  document.body.appendChild(probe);
+  function fit(){
+    var phone=window.matchMedia('(max-width:768px) and (pointer:coarse)').matches;
+    var portrait=window.innerHeight>=window.innerWidth;
+    var full=Math.max(screen.height||0, screen.width||0);
+    var extra=(phone && portrait) ? Math.round(full-probe.offsetHeight) : 0;
+    if(!(extra>0)) extra=0;
+    if(extra>220) extra=220;
+    heroEl.style.setProperty('--bk-extra', extra+'px');
+  }
+  fit();
+  window.addEventListener('orientationchange',function(){ setTimeout(fit,300); });
+  window.addEventListener('resize',fit,{passive:true});
+})();
 var finePointer=window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 if(!reduce && finePointer && heroEl && heroLayers.length){
   var heroSize=function(){ heroH=heroEl.offsetHeight; };
