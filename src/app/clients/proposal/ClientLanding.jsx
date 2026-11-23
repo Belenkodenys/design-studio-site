@@ -468,8 +468,8 @@ export function StudioMission({ more = false, setMore = () => {} }) {
             {more ? 'Show less' : 'Read more'}
             <span aria-hidden="true">{more ? '↑' : '↓'}</span>
           </button>
-          <div id="proposal-mission-more" className={`proposal-mission-more${more ? ' is-open' : ''}`}>
-          <div className="proposal-mission-more-inner">
+          <div id="proposal-mission-more" className={`proposal-mission-fold${more ? ' is-open' : ''}`}>
+          <div className="proposal-mission-fold-inner">
           <p>
             Belenko Design Studio is a hospitality interior design studio founded in Barcelona by architect Denys Belenko in 2000. In 27 years the studio has designed 250 restaurants, bars, cafés, hotels and beach clubs in 11 countries across Europe, the Caucasus and the United States — over 538,000 sq ft of venues, from concept and interior to brand, FF&amp;E and opening.
           </p>
@@ -1766,8 +1766,8 @@ export default function ClientLanding() {
         <StudioMission more={aboutMore} setMore={setAboutMore} />
       </section>
 
-      <section className={`proposal-who proposal-mission-more${aboutMore ? ' is-open' : ''}`} aria-label="Who we work with" aria-hidden={!aboutMore}>
-        <div className="proposal-mission-more-inner">
+      <section className={`proposal-who proposal-mission-fold${aboutMore ? ' is-open' : ''}`} aria-label="Who we work with" aria-hidden={!aboutMore}>
+        <div className="proposal-mission-fold-inner">
         <h2 className="proposal-who-title">Who we work with</h2>
         <div className="proposal-who-grid">
           <article className="proposal-who-item">

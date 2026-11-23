@@ -2220,31 +2220,31 @@ html .rcon-send {
 }
 .proposal-mission-more-btn span { font-size: 16px; transition: transform .3s; }
 .proposal-mission-more-btn:hover { opacity: .65; }
-.proposal-mission-more {
+.proposal-mission-fold {
   display: grid; grid-template-rows: 0fr;
   transition: grid-template-rows 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.proposal-mission-more.is-open { grid-template-rows: 1fr; }
-.proposal-mission-more > .proposal-mission-more-inner { overflow: hidden; min-height: 0; }
-.proposal-mission-more.is-open > .proposal-mission-more-inner { padding-top: 32px; }
-html .proposal-stack > .proposal-who.proposal-mission-more:not(.is-open) { padding-top: 0; padding-bottom: 0; }
+.proposal-mission-fold.is-open { grid-template-rows: 1fr; }
+.proposal-mission-fold > .proposal-mission-fold-inner { overflow: hidden; min-height: 0; }
+.proposal-mission-fold.is-open > .proposal-mission-fold-inner { padding-top: 32px; }
+html .proposal-stack > .proposal-who.proposal-mission-fold:not(.is-open) { padding-top: 0; padding-bottom: 0; }
 
 /* Collapsed state must really be zero-height (grid 0fr alone let the content
    keep its own height and spill over the photo). */
-.proposal-mission-more > .proposal-mission-more-inner { align-self: stretch; height: 100%; }
-.proposal-mission-more:not(.is-open) > .proposal-mission-more-inner { height: 0; visibility: hidden; padding: 0; }
-.proposal-mission-more.is-open > .proposal-mission-more-inner { height: auto; visibility: visible; }
+.proposal-mission-fold > .proposal-mission-fold-inner { align-self: stretch; height: 100%; }
+.proposal-mission-fold:not(.is-open) > .proposal-mission-fold-inner { height: 0; visibility: hidden; padding: 0; }
+.proposal-mission-fold.is-open > .proposal-mission-fold-inner { height: auto; visibility: visible; }
 
 /* Collapsed "Who we work with": no margin, border or height — otherwise the
    sticky Services panel underneath shows through the slit. */
-html .proposal-stack > .proposal-who.proposal-mission-more:not(.is-open) { margin: 0; border: 0; min-height: 0; height: 0; overflow: hidden; }
+html .proposal-stack > .proposal-who.proposal-mission-fold:not(.is-open) { margin: 0; border: 0; min-height: 0; height: 0; overflow: hidden; }
 
 /* No gap between About and "Who we work with" in either state */
-html .proposal-stack > .proposal-who.proposal-mission-more { margin-top: 0; background: #fff; box-shadow: 0 -2px 0 0 #fff; }
+html .proposal-stack > .proposal-who.proposal-mission-fold { margin-top: 0; background: #fff; box-shadow: 0 -2px 0 0 #fff; }
 
 /* Read more: no underlines (neither on the button nor on the legacy wrapper rule) */
 html .proposal-mission-more-btn { border: 0; padding: 10px 0 0; margin: 0; }
-html .proposal-mission-more, html .proposal-mission-more.is-open { border: 0; margin-top: 0; padding: 0; }
+html .proposal-mission-fold, html .proposal-mission-fold.is-open { border: 0; margin-top: 0; padding: 0; }
 
 /* Positioning statement: large and bold */
 html .proposal-statement-text--bold {
