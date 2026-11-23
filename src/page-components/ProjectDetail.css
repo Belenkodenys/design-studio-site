@@ -713,3 +713,14 @@
 /* Hero video shown full-width at its own aspect ratio (no vertical crop) */
 .project-hero.project-hero-video--fit { height: auto; aspect-ratio: 16 / 9; max-height: none; }
 .project-hero.project-hero-video--fit video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+
+/* Lightbox: pinch-zoom + save */
+.lightbox-slide img { pointer-events: auto; -webkit-touch-callout: default; -webkit-user-select: none; user-select: none; transform-origin: center center; }
+.lightbox-slide img.is-zoomed { border-radius: 0; animation: none; }
+.lightbox-download {
+  position: absolute; top: 20px; right: 84px; z-index: 10001;
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.35);
+  display: flex; align-items: center; justify-content: center; color: #fff; background: rgba(0,0,0,.35);
+}
+.lightbox-download:hover { background: rgba(255,255,255,.15); }
+@media (max-width: 720px) { .lightbox-download { top: 14px; right: 70px; width: 44px; height: 44px; } }

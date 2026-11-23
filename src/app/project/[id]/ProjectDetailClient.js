@@ -20,6 +20,11 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
 
   // Swipe state for lightbox (TikTok style)
   const [swipeOffset, setSwipeOffset] = useState(0)
+  // Pinch-zoom state for the active lightbox slide (phones)
+  const [zoom, setZoom] = useState({ s: 1, x: 0, y: 0 })
+  const pinch = useRef(null) // { d0, s0, cx, cy, x0, y0 }
+  const pan = useRef(null) // { x0, y0, px, py }
+  const lastTap = useRef(0)
   const [isSwiping, setIsSwiping] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
@@ -139,6 +144,8 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
     document.body.style.overflow = 'hidden'
   }
 
+  useEffect(() => { resetZoom() }, [lightboxIndex, lightboxOpen]) // eslint-disable-line react-hooks/exhaustive-deps
+
   const closeLightbox = () => {
     setLightboxOpen(false)
     document.body.style.overflow = ''
@@ -181,7 +188,33 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
   // Lightbox swipe handlers (TikTok style with velocity)
   const touchStartY = useRef(0)
   const touchCurrentY = useRef(0)
+  const resetZoom = () => { setZoom({ s: 1, x: 0, y: 0 }); pinch.current = null; pan.current = null }
+
   const handleLightboxTouchStart = (e) => {
+    // Two fingers: start a pinch; never treat as a swipe.
+    if (e.touches.length === 2) {
+      const [a, b] = e.touches
+      const d0 = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY)
+      pinch.current = { d0, s0: zoom.s, cx: (a.clientX + b.clientX) / 2, cy: (a.clientY + b.clientY) / 2, x0: zoom.x, y0: zoom.y }
+      setIsSwiping(false)
+      return
+    }
+    // One finger while zoomed: pan the image instead of swiping slides.
+    if (zoom.s > 1) {
+      pan.current = { x0: e.touches[0].clientX, y0: e.touches[0].clientY, px: zoom.x, py: zoom.y }
+      return
+    }
+    // Double tap toggles 2.5x zoom.
+    const now = Date.now()
+    if (now - lastTap.current < 300) {
+      lastTap.current = 0
+      const r = e.currentTarget.getBoundingClientRect()
+      const tx = e.touches[0].clientX - r.left - r.width / 2
+      const ty = e.touches[0].clientY - r.top - r.height / 2
+      setZoom({ s: 2.5, x: -tx * 1.5, y: -ty * 1.5 })
+      return
+    }
+    lastTap.current = now
     touchStartY.current = e.touches[0].clientY
     touchCurrentY.current = touchStartY.current
     if (isAnimating) return
@@ -193,6 +226,20 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
   }
 
   const handleLightboxTouchMove = (e) => {
+    if (pinch.current && e.touches.length === 2) {
+      e.preventDefault()
+      const [a, b] = e.touches
+      const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY)
+      const ns = Math.min(5, Math.max(1, pinch.current.s0 * (d / pinch.current.d0)))
+      const cx = (a.clientX + b.clientX) / 2, cy = (a.clientY + b.clientY) / 2
+      setZoom({ s: ns, x: pinch.current.x0 + (cx - pinch.current.cx), y: pinch.current.y0 + (cy - pinch.current.cy) })
+      return
+    }
+    if (pan.current && zoom.s > 1) {
+      e.preventDefault()
+      setZoom((z) => ({ ...z, x: pan.current.px + (e.touches[0].clientX - pan.current.x0), y: pan.current.py + (e.touches[0].clientY - pan.current.y0) }))
+      return
+    }
     if (!isSwiping || isAnimating) return
     e.preventDefault()
 
@@ -210,7 +257,16 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
     setSwipeOffset(diff)
   }
 
-  const handleLightboxTouchEnd = () => {
+  const handleLightboxTouchEnd = (e) => {
+    if (pinch.current) {
+      if (!e || e.touches.length < 2) {
+        pinch.current = null
+        if (zoom.s <= 1.02) resetZoom()
+      }
+      return
+    }
+    if (pan.current) { pan.current = null; return }
+    if (zoom.s > 1) return
     if (!isSwiping) return
     setIsSwiping(false)
 
@@ -494,6 +550,18 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
           onMouseUp={handleLightboxMouseUp}
           onMouseLeave={handleLightboxMouseUp}
         >
+          <a
+            className="lightbox-download"
+            href={project.images[lightboxIndex]}
+            download
+            target="_blank"
+            rel="noopener"
+            onClick={(e) => e.stopPropagation()}
+            aria-label="Save photo"
+            title="Save photo"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" /></svg>
+          </a>
           <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
               <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -522,6 +590,8 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
                   loading="lazy"
                   decoding="async"
                   draggable="false"
+                  className={index === lightboxIndex && zoom.s > 1 ? 'is-zoomed' : undefined}
+                  style={index === lightboxIndex && zoom.s > 1 ? { transform: `translate(${zoom.x}px, ${zoom.y}px) scale(${zoom.s})`, transition: pinch.current || pan.current ? 'none' : 'transform .2s ease-out' } : undefined}
                 />
               </div>
             ))}
