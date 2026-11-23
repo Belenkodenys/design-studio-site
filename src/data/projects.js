@@ -31,6 +31,7 @@ export const projects = [
     services: ['Concept', 'Interior Design', 'Branding', 'Author Supervision'],
     image: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-7.webp',
     images: [
+      '/projects/belenko-interior-design-filosofia-restaurant-dnipro-18.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-7.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-2.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-3.webp',
