@@ -504,12 +504,25 @@ $$('a[href^="#"]').forEach(function(a){
   });
 });
 var heroEl=$('.bk-hero'), heroLayers=heroImgs.length ? heroImgs.concat([heroImgs[heroImgs.length-1].nextElementSibling]) : [];
+/* hero parallax: desktop only, one update per frame. On touch screens the scroll events
+   arrive unevenly and the banner jerked, so there it simply scrolls with the page. */
+var heroH=0, heroTick=false, heroLast=-1;
 function parallax(){
-  var y=window.scrollY||0;
-  if(y>heroEl.offsetHeight) return;
-  heroLayers.forEach(function(l){ l.style.transform='translate3d(0,'+(y*0.4).toFixed(1)+'px,0)'; });
+  heroTick=false;
+  var y=Math.max(0,window.scrollY||0);
+  if(y>heroH) y=heroH;
+  var v=Math.round(y*0.4);
+  if(v===heroLast) return;
+  heroLast=v;
+  for(var i=0;i<heroLayers.length;i++) heroLayers[i].style.transform='translate3d(0,'+v+'px,0)';
 }
-if(!reduce && heroEl && heroLayers.length){ window.addEventListener('scroll',parallax,{passive:true}); parallax(); }
+var finePointer=window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+if(!reduce && finePointer && heroEl && heroLayers.length){
+  var heroSize=function(){ heroH=heroEl.offsetHeight; };
+  heroSize(); window.addEventListener('resize',heroSize,{passive:true});
+  window.addEventListener('scroll',function(){ if(!heroTick){ heroTick=true; requestAnimationFrame(parallax); } },{passive:true});
+  parallax();
+}
 var targets=[];
 function collect(el,depth){
   if(depth<2 && el.tagName==='DIV' && el.children.length>1 && !el.classList.contains('bk-strip')){
