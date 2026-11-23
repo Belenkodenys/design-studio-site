@@ -37,7 +37,6 @@ export const projects = [
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-5.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-6.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-7.webp',
-      '/projects/belenko-interior-design-filosofia-restaurant-dnipro-8.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-9.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-10.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-11.webp',
