@@ -29,7 +29,7 @@ export const projects = [
     year: '2026',
     description: 'A two-storey Greek restaurant where wood and marble set the tone: a double-height hall under a cloud of hand-formed ceramic pebbles, timber-lattice walls stacked with firewood, fluted stone columns, a wrought-iron spiral stair and sepia portraits of the ancient philosophers watching over a long shared table.',
     services: ['Concept', 'Interior Design', 'Branding', 'Author Supervision'],
-    image: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-1.webp',
+    image: '/projects/belenko-interior-design-filosofia-restaurant-dnipro-7.webp',
     images: [
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-2.webp',
       '/projects/belenko-interior-design-filosofia-restaurant-dnipro-3.webp',
