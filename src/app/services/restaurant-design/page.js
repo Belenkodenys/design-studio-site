@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'Restaurant Interior Design Barcelona | Belenko Design Studio',
     description: 'Award-winning restaurant interior design studio in Barcelona. Transform your restaurant with 27 years of hospitality design expertise. Free consultation.',
-    images: [{ url: 'https://belenko.design/projects/belenko-interior-design-wine-love-restaurant-kyiv-1.webp', width: 1200, height: 630 }],
+    images: [{ url: 'https://belenko.design/projects/belenko-design-barcelona-restaurant-interior-design-wine-love-kyiv-01.webp', width: 1200, height: 630 }],
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['es_ES'],
@@ -173,7 +173,7 @@ export default function RestaurantDesignPage() {
       <ServicePageClient slug="restaurant-design"
         title="Restaurant Interior Design Barcelona"
         subtitle="Award-winning restaurant design studio creating unforgettable dining experiences through thoughtful design, strategic lighting, and immersive atmospheres"
-        heroImage="/projects/belenko-interior-design-wine-love-restaurant-kyiv-1.webp"
+        heroImage="/projects/belenko-design-barcelona-restaurant-interior-design-wine-love-kyiv-01.webp"
         stats={[
           { number: '250', label: 'Restaurants Designed' },
           { number: '27', label: 'Years Experience' },

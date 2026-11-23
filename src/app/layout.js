@@ -134,9 +134,9 @@ export default function RootLayout({ children }) {
                 "height": 100
               },
               "image": [
-                "https://belenko.design/projects/belenko-interior-design-wine-love-restaurant-kyiv-1.webp",
-                "https://belenko.design/projects/belenko-interior-design-agatha-restaurant-kyiv-1.webp",
-                "https://belenko.design/projects/belenko-interior-design-milk-bar-cafe-kyiv-1.webp"
+                "https://belenko.design/projects/belenko-design-barcelona-restaurant-interior-design-wine-love-kyiv-01.webp",
+                "https://belenko.design/projects/belenko-design-barcelona-restaurant-interior-design-agatha-kyiv-01.webp",
+                "https://belenko.design/projects/belenko-design-barcelona-cafe-interior-design-milk-bar-kyiv-01.webp"
               ],
               "telephone": "+34671825489",
               "email": "office@belenko.design",

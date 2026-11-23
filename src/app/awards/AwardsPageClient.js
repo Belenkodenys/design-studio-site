@@ -11,8 +11,8 @@ const WINS = [
     status: 'Winner',
     note: 'Two categories, two projects',
     entries: [
-      { project: 'Pixi', city: 'Istanbul, Turkey', category: 'Club', href: '/project/4', image: '/projects/belenko-interior-design-pixi-restaurant-istanbul-1.webp' },
-      { project: 'Mamaliga', city: 'Odesa, Ukraine', category: 'Ethnic', href: '/project/3', image: '/projects/belenko-interior-design-mamaliga-restaurant-odesa-1.webp' }
+      { project: 'Pixi', city: 'Istanbul, Turkey', category: 'Club', href: '/project/4', image: '/projects/belenko-design-barcelona-restaurant-interior-design-pixi-istanbul-01.webp' },
+      { project: 'Mamaliga', city: 'Odesa, Ukraine', category: 'Ethnic', href: '/project/3', image: '/projects/belenko-design-barcelona-restaurant-interior-design-mamaliga-odesa-01.webp' }
     ]
   },
   {
@@ -21,7 +21,7 @@ const WINS = [
     status: 'Laureate',
     note: 'Restaurant / Hotel / Bar',
     entries: [
-      { project: 'Nikos', city: 'Odesa, Ukraine', category: 'Restaurant / Hotel / Bar', href: '/project/7', image: '/projects/belenko-interior-design-nikos-restaurant-odesa-1.webp' }
+      { project: 'Nikos', city: 'Odesa, Ukraine', category: 'Restaurant / Hotel / Bar', href: '/project/7', image: '/projects/belenko-design-barcelona-restaurant-interior-design-nikos-odesa-01.webp' }
     ]
   },
   {
@@ -30,7 +30,7 @@ const WINS = [
     status: 'Winner',
     note: 'Europe — Café',
     entries: [
-      { project: 'Nikos Greek Bistro', city: 'Odesa, Ukraine', category: 'Café, Europe', href: '/project/7', image: '/projects/belenko-interior-design-nikos-restaurant-odesa-1.webp' }
+      { project: 'Nikos Greek Bistro', city: 'Odesa, Ukraine', category: 'Café, Europe', href: '/project/7', image: '/projects/belenko-design-barcelona-restaurant-interior-design-nikos-odesa-01.webp' }
     ]
   }
 ]
