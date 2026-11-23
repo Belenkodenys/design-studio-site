@@ -724,3 +724,8 @@
 }
 .lightbox-download:hover { background: rgba(255,255,255,.15); }
 @media (max-width: 720px) { .lightbox-download { top: 14px; right: 70px; width: 44px; height: 44px; } }
+
+/* Prev/next navigation: half-size captions */
+html .project-nav-title { font-size: clamp(14px, 1.5vw, 22px); line-height: 1.2; }
+html .project-nav-label { font-size: 11px; letter-spacing: 0.12em; }
+html .project-nav-label svg { width: 12px; height: 12px; }
