@@ -1240,7 +1240,7 @@ function PixiVideo() {
 // Reusable click-to-play video module (cover + sound + return-to-cover, and a
 // rotated/upright full-screen overlay on phones). `landscape` rotates 90° for
 // landscape clips; portrait clips fill the phone screen as-is.
-function VideoModule({ src, poster, posterMobile, landscape = false }) {
+function VideoModule({ src, poster, posterMobile, landscape = false, alt = 'Hospitality interior design film — Belenko Design Studio, Barcelona' }) {
   const videoRef = useRef(null)
   const frameRef = useRef(null)
   const startedRef = useRef(false)
@@ -1350,6 +1350,7 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
     >
       <video
         ref={videoRef}
+        aria-label={alt}
         className="vmod-video"
         src={src}
         poster={poster}
@@ -1360,7 +1361,7 @@ function VideoModule({ src, poster, posterMobile, landscape = false }) {
       {!started && (
         <picture className="vmod-cover">
           {posterMobile && <source media="(max-width: 720px)" srcSet={posterMobile} />}
-          <img src={poster} alt="" draggable={false} />
+          <img src={poster} alt={alt} draggable={false} />
         </picture>
       )}
       {started && (
@@ -1677,7 +1678,7 @@ export default function ClientLanding() {
       </header>
 
       <section className="proposal-intro-video-stage" aria-label="Intro film">
-        <VideoModule src="/projects/intro.mp4" poster="/projects/belenko-interior-design-intro-poster-2x.webp" />
+        <VideoModule src="/projects/intro.mp4" alt="Belenko Design Studio showreel — restaurant, bar and hotel interiors" poster="/projects/belenko-interior-design-intro-poster-2x.webp" />
       </section>
 
       <section className="proposal-statement" aria-label="Studio positioning">
@@ -1733,13 +1734,13 @@ export default function ClientLanding() {
       </section>
 
       <section className="proposal-modules-row" aria-label="Projects">
-        <VideoModule src="/projects/agata.mp4" poster="/projects/belenko-interior-design-agata-poster2-2x.webp" />
-        <VideoModule src="/projects/video3.mp4" poster="/projects/belenko-interior-design-video3-poster-2x.webp" />
+        <VideoModule src="/projects/agata.mp4" alt="Agatha restaurant interior — film by Belenko Design Studio" poster="/projects/belenko-interior-design-agata-poster2-2x.webp" />
+        <VideoModule src="/projects/video3.mp4" alt="Restaurant interior — film by Belenko Design Studio" poster="/projects/belenko-interior-design-video3-poster-2x.webp" />
       </section>
 
 
       <section className="proposal-saint-stage" aria-label="Saint Bar">
-        <VideoModule src="/projects/saint.mp4" poster="/projects/belenko-interior-design-saint-poster2-2x.webp" posterMobile="/projects/belenko-interior-design-saint-poster-mobile-2x.webp" landscape />
+        <VideoModule src="/projects/saint.mp4" alt="Saint Bar interior — film by Belenko Design Studio" poster="/projects/belenko-interior-design-saint-poster2-2x.webp" posterMobile="/projects/belenko-interior-design-saint-poster-mobile-2x.webp" landscape />
       </section>
 
       <section className="proposal-statement proposal-statement--branding" aria-label="Branding">
@@ -1749,12 +1750,12 @@ export default function ClientLanding() {
 
 
       <section className="proposal-modules-row proposal-monkeys-row" aria-label="12 Monkeys">
-        <VideoModule src="/projects/monkeys2.mp4" poster="/projects/belenko-interior-design-monkeys2-poster3-2x.webp" />
+        <VideoModule src="/projects/monkeys2.mp4" alt="12 Monkeys bar interior, Odesa — film by Belenko Design Studio" poster="/projects/belenko-interior-design-monkeys2-poster3-2x.webp" />
       </section>
 
       <section className="proposal-modules-row proposal-final-row" aria-label="Projects">
-        <VideoModule src="/projects/final.mp4" poster="/projects/belenko-interior-design-cent-aura-poster-2x.webp" />
-        <VideoModule src="/projects/nikos.mp4" poster="/projects/belenko-interior-design-nikos-poster2-2x.webp" />
+        <VideoModule src="/projects/final.mp4" alt="Cent Aura restaurant interior — film by Belenko Design Studio" poster="/projects/belenko-interior-design-cent-aura-poster-2x.webp" />
+        <VideoModule src="/projects/nikos.mp4" alt="Nikos restaurant interior — film by Belenko Design Studio" poster="/projects/belenko-interior-design-nikos-poster2-2x.webp" />
       </section>
 
       <Sections servicesOpen={servicesOpen} setServicesOpen={setServicesOpen} />

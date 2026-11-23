@@ -8,7 +8,6 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: '/residential', destination: '/residential/index.html' },
-      { source: '/residential/featured-project', destination: '/residential/featured-project/index.html' },
       { source: '/residential/projects', destination: '/residential/projects/index.html' },
       { source: '/residential/projects/:slug', destination: '/residential/projects/:slug/index.html' },
       { source: '/residential/objects', destination: '/residential/objects/index.html' },
@@ -16,7 +15,6 @@ const nextConfig = {
       { source: '/residential/expertise', destination: '/residential/expertise/index.html' },
       { source: '/residential/expertise/process', destination: '/residential/expertise/process/index.html' },
       { source: '/residential/studio', destination: '/residential/studio/index.html' },
-      { source: '/residential/book', destination: '/residential/book/index.html' },
       { source: '/residential/contact', destination: '/residential/contact/index.html' },
       { source: '/residential/journal', destination: '/residential/journal/index.html' },
       { source: '/residential/legal', destination: '/residential/legal/index.html' },
@@ -27,6 +25,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/residential/book', destination: '/residential#book', permanent: false },
+      { source: '/residential/featured-project', destination: '/residential/projects', permanent: false },
       {
         source: '/residential/about',
         destination: '/residential/studio',
