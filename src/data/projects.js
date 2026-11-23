@@ -630,7 +630,15 @@ export const projects = [
     description: 'A whimsical restaurant interior featuring decorative installations with suspended fabric panels, paper butterflies, origami elements, and floral arrangements.',
     services: ['Concept', 'Interior Design', 'Decor'],
     image: '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-01.webp',
-    images: ['/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-01.webp', '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-02.webp', '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-03.webp', '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-04.webp', '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-05.webp']
+    award: { logo: '/awards/restaurant-bar-design-awards-white.png', label: 'Restaurant & Bar Design Awards' },
+    images: [
+      '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-01.webp',
+      '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-02.webp',
+      '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-03.webp',
+      '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-04.webp',
+      '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-05.webp',
+      '/projects/belenko-design-barcelona-restaurant-interior-design-bule-odesa-06.webp'
+    ]
   },
   {
     id: 20,

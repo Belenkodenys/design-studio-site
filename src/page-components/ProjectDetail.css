@@ -729,3 +729,11 @@
 html .project-nav-title { font-size: clamp(14px, 1.5vw, 22px); line-height: 1.2; }
 html .project-nav-label { font-size: 11px; letter-spacing: 0.12em; }
 html .project-nav-label svg { width: 12px; height: 12px; }
+
+/* Award badge beside the hero image */
+.project-award-badge {
+  position: absolute; right: clamp(20px, 4vw, 56px); bottom: clamp(20px, 4vw, 56px); z-index: 5;
+  padding: 14px 18px; background: rgba(0,0,0,.45); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.25);
+}
+.project-award-badge img { display: block; height: clamp(28px, 3vw, 44px); width: auto; }
+@media (max-width: 720px) { .project-award-badge { right: 14px; bottom: 14px; padding: 10px 12px; } .project-award-badge img { height: 24px; } }

@@ -450,6 +450,11 @@ export default function ProjectDetailClient({ project, prevProject, nextProject 
               </div>
             )}
           </div>
+          {project.award && (
+            <div className="project-award-badge" title={project.award.label}>
+              <img src={project.award.logo} alt={project.award.label} />
+            </div>
+          )}
         </div>
       )}
 
