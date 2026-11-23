@@ -19,7 +19,8 @@ export const projects = [
       '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-05.webp',
       '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-06.webp',
       '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-07.webp',
-      '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-08.webp'
+      '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-08.webp',
+      '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-09.webp'
     ]
   },
   {
