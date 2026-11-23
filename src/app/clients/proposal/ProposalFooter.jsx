@@ -36,7 +36,7 @@ export default function ProposalFooter() {
       <div className="rfoot-col rfoot-col--brand">
         <a href="/" aria-label="Belenko — home" className="rfoot-logo"><img src="/residential/belenko-logo-white.png" alt="Belenko" /></a>
         <div className="rfoot-meta">
-          <div>VAT B21779202 / © Belenko Design 2026</div>
+          <div>VAT B21779202 / © Belenko Design S.L. 2026</div>
           <address>Sq. Lesseps, 6<br />08023, Barcelona, Catalonia, Spain</address>
         </div>
       </div>
