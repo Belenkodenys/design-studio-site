@@ -104,12 +104,26 @@
  {
   "path": "/residential/projects",
   "images": [
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-dining-room-garden-view.webp",
    "/residential/belenko-design-barcelona-hotel-interior-design-costa-brava-bedroom-vaulted-ceiling-front.webp",
    "/residential/belenko-design-barcelona-penthouse-interior-design-living-dining-room.webp",
    "/residential/belenko-design-barcelona-rooftop-apartment-interior-design-living-room-fireplace.webp",
    "/residential/belenko-design-barcelona-villa-v-interior-design-film-poster.webp",
    "/residential/belenko-interiors-barcelona-loft-apartment-design-odesa-sofa-mirrors.webp",
    "/residential/belenko-design-barcelona-apartment-interior-design-istanbul-living-room.webp"
+  ],
+  "lastModified": "2026-11-24"
+ },
+ {
+  "path": "/residential/projects/apartment-t",
+  "images": [
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-dining-room-garden-view.webp",
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-bedroom-linen-plaster.webp",
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-reading-corner-boucle-armchair.webp",
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-hallway-walnut-doors.webp",
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-study-niche-walnut-desk.webp",
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-archway-reading-corner.webp",
+   "/residential/belenko-design-barcelona-apartment-t-interior-design-plaster-wall-wooden-ladder.webp"
   ],
   "lastModified": "2026-11-24"
  },
