@@ -648,6 +648,7 @@ function TopBar({ setServicesOpen, setPortfolioOpen }) {
   const links = [
     ['/projects', 'portfolio', 'Our Works'],
     ['/services', 'services', 'Services'],
+    ['/residential', null, 'Residential'],
     ['/about', 'about', 'About Us'],
     ['/awards', null, 'Awards'],
     ['/blog', null, 'Journal'],

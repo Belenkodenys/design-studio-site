@@ -41,6 +41,7 @@ export default function ProposalFooter() {
         </div>
       </div>
       <div className="rfoot-col rfoot-col--links">
+        <a href="/residential">Residential interiors</a>
         <a href="/residential/legal">Legal notice</a>
         <a href="/residential/credits">Credits</a>
         <a href="/residential/privacy">Privacy</a>

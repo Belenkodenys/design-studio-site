@@ -2,6 +2,7 @@ import { projects } from '../data/projects'
 import { blogPosts } from '../data/blogPosts'
 import { listBlogPosts } from '../lib/storage'
 import { gallery as brandingGallery } from './branding/gallery'
+import residentialPages from '../data/residentialSitemap.json'
 
 const BASE = 'https://www.belenko.design'
 
@@ -54,6 +55,15 @@ export default async function sitemap() {
     images: (p.images || [p.image]).filter(Boolean).map((i) => `${BASE}${i}`)
   }))
 
+  // Belenko Residential (static pages in public/residential); list built by scripts/residential-sitemap.mjs
+  const residential = residentialPages.map((p) => ({
+    url: `${BASE}${p.path}`,
+    lastModified: new Date(p.lastModified),
+    changeFrequency: p.path === '/residential' || p.path.endsWith('/journal') || p.path.endsWith('/projects') ? 'weekly' : 'monthly',
+    priority: p.path === '/residential' ? 0.9 : p.path.includes('/projects/') ? 0.8 : 0.7,
+    images: p.images.map((i) => `${BASE}${i}`)
+  }))
+
   let adminPosts = []
   try {
     adminPosts = (await listBlogPosts()) || []
@@ -72,5 +82,5 @@ export default async function sitemap() {
       }))
   ]
 
-  return [...staticPages, ...servicePages, ...projectPages, ...blogPages]
+  return [...staticPages, ...servicePages, ...projectPages, ...residential, ...blogPages]
 }

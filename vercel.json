@@ -865,20 +865,29 @@
       ]
     },
     {
-      "source": "/residential",
+      "source": "/residential/(legal|privacy|credits|cookies)",
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "noindex, nofollow, noarchive, nosnippet, noimageindex"
+          "value": "noindex, follow"
         }
       ]
     },
     {
-      "source": "/residential/(.*)",
+      "source": "/residential/mail/(.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "noindex, nofollow, noarchive, nosnippet, noimageindex"
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/residential/feed.json",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
         }
       ]
     }
