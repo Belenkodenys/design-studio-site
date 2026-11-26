@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import { useLanguage } from '../../i18n/LanguageContext'
@@ -18,12 +19,26 @@ const positionsData = [
 function PositionCard({ position, index }) {
   const { t } = useLanguage()
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.1 })
+  const [copied, setCopied] = useState(false)
+  const EMAIL = 'office@belenko.design'
 
-  const handleApply = () => {
-    const positionTitle = t(`career.position${position.id}Title`)
-    const subject = encodeURIComponent(`${t('career.applicationSubject')}: ${positionTitle}`)
-    const body = encodeURIComponent(t('career.applicationBody'))
-    window.location.href = `mailto:office@belenko.design?subject=${subject}&body=${body}`
+  const positionTitle = t(`career.position${position.id}Title`)
+  const subject = `${t('career.applicationSubject')}: ${positionTitle}`
+  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(t('career.applicationBody'))}`
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (_) {
+      // Clipboard blocked: select the address so it can be copied by hand
+      const el = document.getElementById(`apply-email-${position.id}`)
+      if (el && window.getSelection) {
+        const r = document.createRange(); r.selectNodeContents(el)
+        const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r)
+      }
+    }
   }
 
   return (
@@ -39,7 +54,16 @@ function PositionCard({ position, index }) {
         </div>
       </div>
       <p className="position-description">{t(`career.position${position.id}Desc`)}</p>
-      <button className="position-apply" onClick={handleApply}>{t('career.applyNow')}</button>
+      <div className="position-actions">
+        <a className="position-apply" href={mailto}>{t('career.applyNow')}</a>
+        <div className="position-email">
+          <span className="position-email-label">{t('career.orEmail')}</span>
+          <a id={`apply-email-${position.id}`} href={mailto} className="position-email-address">{EMAIL}</a>
+          <button type="button" className="position-email-copy" onClick={copyEmail} aria-live="polite">
+            {copied ? t('career.copied') : t('career.copy')}
+          </button>
+        </div>
+      </div>
     </article>
   )
 }

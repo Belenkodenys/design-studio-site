@@ -244,3 +244,12 @@ html body .career-page .career-page-subtitle {
   line-height: 1.65;
   letter-spacing: 0;
 }
+
+/* Apply: mailto button + visible address with a copy action (mail apps are not always set up) */
+.position-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 8px; }
+.position-apply { text-decoration: none; display: inline-flex; align-items: center; }
+.position-email { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 14px; text-transform: none; letter-spacing: 0; }
+.position-email-label { opacity: .6; }
+.position-email-address { color: inherit; text-decoration: underline; text-underline-offset: 4px; word-break: break-all; }
+.position-email-copy { background: none; border: 1px solid currentColor; border-radius: 0; padding: 5px 10px; font: inherit; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: inherit; cursor: pointer; opacity: .8; }
+.position-email-copy:hover { opacity: 1; }
