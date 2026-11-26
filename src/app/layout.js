@@ -89,15 +89,6 @@ export const metadata = {
       'max-snippet': -1
     }
   },
-  alternates: {
-    canonical: 'https://www.belenko.design',
-    languages: {
-      'en': 'https://www.belenko.design',
-      'es': 'https://www.belenko.design',
-      'ru': 'https://www.belenko.design',
-      'uk': 'https://www.belenko.design'
-    }
-  },
   verification: {
     google: 'LSOY2QzqjCexbMAi7TQuLwDTbzeNNg-l85zs4wPGCWg',
     // Pinterest website claim (Settings → Link to Pinterest → Websites)

@@ -26,6 +26,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Apex host → www (one canonical host for Google)
+      { source: '/:path*', has: [{ type: 'host', value: 'belenko.design' }], destination: 'https://www.belenko.design/:path*', permanent: true },
       // Portfolio images renamed for SEO (Nov 2026): old URLs 301 to the new names
       { source: '/projects/belenko-interior-design-costa-brava-hotel-spain-1.webp', destination: '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-01.webp', permanent: true },
       { source: '/projects/belenko-interior-design-costa-brava-hotel-spain-2.webp', destination: '/projects/belenko-design-barcelona-hotel-interior-design-hotel-on-the-costa-brava-02.webp', permanent: true },

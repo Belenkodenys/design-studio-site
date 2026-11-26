@@ -29,12 +29,10 @@ export default async function sitemap() {
     { url: `${BASE}/projects`, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/contact`, changeFrequency: 'yearly', priority: 0.8 },
     { url: `${BASE}/branding`, changeFrequency: 'monthly', priority: 0.8, images: brandingGallery.map((g) => `${BASE}${g.src}`) },
-    { url: `${BASE}/studio`, changeFrequency: 'monthly', priority: 0.6 },
         { url: `${BASE}/blog`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE}/career`, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${BASE}/florida`, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/california-hospitality-design`, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/llms.txt`, changeFrequency: 'monthly', priority: 0.3 }
+    { url: `${BASE}/california-hospitality-design`, changeFrequency: 'monthly', priority: 0.8 }
   ]
 
   const servicePages = [
